@@ -123,8 +123,8 @@ it:
     txt: "Testi"
     dts: "Date e Ore"
     rand: "Dati Casuali"
-    min: "Minimizzare il Codice"
-    fmt: "Formattare il Codice"
+    min: "Minimizza Codice"
+    fmt: "Formatta Codice"
     conv: "Convertitori"
     misc: "Diversi"
 id:
@@ -132,10 +132,10 @@ id:
     clr: "Warna"
     img: "Gambar"
     txt: "Teks"
-    dts: "Tanggal & Waktu"
+    dts: "Tanggal dan Waktu"
     rand: "Data Acak"
     min: "Minifikasi Kode"
-    fmt: "Pemformat Kode"
+    fmt: "Format Kode"
     conv: "Konverter"
     misc: "Berbagai Alat"
 de:
@@ -148,7 +148,7 @@ de:
     min: "Code minimieren"
     fmt: "Code formatieren"
     conv: "Konverter"
-    misc: "Handliche Tools"
+    misc: "Verschiedenes"
 </i18n>
 
 <style scoped>
