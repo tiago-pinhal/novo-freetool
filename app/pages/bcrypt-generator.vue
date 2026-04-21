@@ -7,12 +7,19 @@ const { t, locale } = useI18n({ useScope: 'local' })
 const localePath = useLocalePath()
 
 usePageJsonLd({
-  name: `${t('title')} ${t('m_title')}`,
+  name: t('title'),
   description: t('meta'),
   type: 'tool',
   breadcrumb: [
     { name: 'Home', url: localePath('/') },
     { name: t('title') }
+  ]
+})
+
+useHead({
+  title: t('title'),
+  meta: [
+    { name: 'description', content: t('meta') }
   ]
 })
 
@@ -86,7 +93,7 @@ defineI18nRoute({
 
 <template>
   <ToolPage
-    :title="`${t('title')} ${t('m_title')}`"
+    :title="t('title')"
     :description="t('meta')"
     :info-description="t('desc')"
     :show-ads="!!stateGen.hash || stateCheck.check !== null"
@@ -204,8 +211,7 @@ defineI18nRoute({
 <i18n lang="yaml">
 {
   en: {
-    m_title: "and Verifier",
-    title: "Bcrypt Generator",
+    title: "Bcrypt Generator and Verifier",
     meta: "Generate secure Bcrypt hashes from any input text with customizable rounds, or verify existing hashes against a source string.",
     desc: "Bcrypt is a highly secure hashing method designed for password encryption, incorporating a unique 'Salt' to prevent rainbow table attacks. By adjusting the 'Rounds' parameter, you set the computational cost, making brute-force attempts significantly harder. Even with the same password, each generation produces a different hash, ensuring top-tier security for your data.",
     check: "Validate Hash",
@@ -222,8 +228,7 @@ defineI18nRoute({
     see4: "XML to JSON Converter"
   },
   pt: {
-    m_title: "e Verificador",
-    title: "Gerador de Bcrypt",
+    title: "Gerador e Verificador de Bcrypt",
     meta: "Gere hashes Bcrypt seguros a partir de qualquer texto com rounds personalizáveis, ou verifique hashes existentes contra um texto original.",
     desc: "O Bcrypt é um método de hashing amplamente utilizado para criptografar senhas devido à sua resistência a ataques de força bruta. Este algoritmo adiciona sequências aleatórias (Salt) à senha, produzindo resultados complexos e aumentando a segurança. O termo Rounds refere-se ao custo computacional: quanto maior, mais difícil e lento é o processamento, dificultando ataques.",
     check: "Verificar Correspondência",
@@ -240,8 +245,7 @@ defineI18nRoute({
     see4: "Conversor de XML para JSON"
   },
   es: {
-    m_title: "y Verificador",
-    title: "Generador de Bcrypt",
+    title: "Generador y Verificador de Bcrypt",
     meta: "Genere hashes Bcrypt seguros a partir de cualquier texto con rondas personalizables, o verifique hashes existentes.",
     desc: "Bcrypt es un método de cifrado de contraseñas altamente seguro. Utiliza un 'Salt' aleatorio que evita ataques de tablas arcoíris. El factor de costo (Rounds) determina la complejidad computacional, haciendo que los ataques de fuerza bruta sean extremadamente lentos y costosos para un atacante.",
     check: "Validar Hash",
@@ -258,8 +262,7 @@ defineI18nRoute({
     see4: "Convertidor de XML a JSON"
   },
   fr: {
-    m_title: "et Vérificateur",
-    title: "Générateur Bcrypt",
+    title: "Générateur et Vérificateur Bcrypt",
     meta: "Générez des hachages Bcrypt sécurisés avec des cycles personnalisables ou vérifiez la correspondance d'un hachage.",
     desc: "Bcrypt est une méthode de hachage conçue pour sécuriser les mots de passe. Il intègre un 'Salt' unique pour prévenir les attaques par tables arc-en-ciel. Le paramètre 'Rounds' définit le coût de calcul, rendant les tentatives de force brute beaucoup plus difficiles.",
     check: "Vérifier le Hachage",
@@ -276,8 +279,7 @@ defineI18nRoute({
     see4: "Convertisseur de XML vers JSON"
   },
   it: {
-    m_title: "e Verificatore",
-    title: "Generatore Bcrypt",
+    title: "Generatore e Verificatore Bcrypt",
     meta: "Genera hash Bcrypt sicuri con round personalizzabili o verifica la corrispondenza tra un hash e un testo di input.",
     desc: "Bcrypt è uno standard di hashing per proteggere le password. Utilizza un 'Salt' casuale per ogni password, assicurando che hash identici non corrispondano mai allo stesso testo, aumentando drasticamente la sicurezza contro attacchi brute-force.",
     check: "Verifica Corrispondenza",
@@ -294,8 +296,7 @@ defineI18nRoute({
     see4: "Convertitore da XML a JSON"
   },
   id: {
-    m_title: "dan Verifikator",
-    title: "Generator Bcrypt",
+    title: "Generator dan Verifikator Bcrypt",
     meta: "Buat hash Bcrypt yang aman dengan round yang dapat disesuaikan atau verifikasi kecocokan hash yang ada.",
     desc: "Bcrypt adalah metode hashing yang dirancang untuk mengenkripsi kata sandi secara sangat aman. Fitur 'Salt' mencegah serangan tabel pelangi, sementara 'Rounds' menentukan tingkat kesulitan komputasi agar tahan terhadap serangan brute-force.",
     check: "Validasi Hash",
@@ -312,8 +313,7 @@ defineI18nRoute({
     see4: "Konverter XML ke JSON"
   },
   de: {
-    m_title: "und Verifizierer",
-    title: "Bcrypt-Generator",
+    title: "Bcrypt-Generator und Verifizierer",
     meta: "Generieren Sie sichere Bcrypt-Hashes mit anpassbaren Rounds oder überprüfen Sie bestehende Hashes.",
     desc: "Bcrypt ist eine hochsichere Hashing-Methode für Passwörter. Ein einzigartiger 'Salt' verhindert Rainbow-Table-Angriffe, während der 'Rounds'-Parameter die Rechenkomplexität bestimmt, um Brute-Force-Angriffe zu erschweren.",
     check: "Hash validieren",
