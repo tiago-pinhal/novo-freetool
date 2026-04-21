@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n({ useScope: 'local' })
+
 interface Props {
   title?: string
   description?: string
@@ -30,7 +32,7 @@ defineProps<Props>()
       </div>
 
       <div v-if="wikiUrl" class="mt-8 pt-6 border-t border-info/10 flex items-center gap-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-base-content/40">Fonte:</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-base-content/40">{{ t('label') }}</span>
         <a 
           :href="wikiUrl" 
           target="_blank" 
@@ -47,6 +49,23 @@ defineProps<Props>()
     </div>
   </section>
 </template>
+
+<i18n lang="yaml">
+en:
+  label: "Recommended Reading:"
+pt:
+  label: "Leitura Recomendada:"
+es:
+  label: "Lectura Recomendada:"
+fr:
+  label: "Lecture recommandée :"
+it:
+  label: "Lettura consigliata:"
+de:
+  label: "Leseempfehlung:"
+id:
+  label: "Bacaan yang Disarankan:"
+</i18n>
 
 <style scoped>
 @reference "../assets/css/main.css";
