@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n({ useScope: 'local' })
+const { t } = useI18n()
 
 useHead({
   title: 'Home | Freetool.Dev',
