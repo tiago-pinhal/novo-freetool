@@ -13,7 +13,7 @@ body {
 }
 
 .tools-title {
-  @apply text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent italic
+  @apply text-3xl md:text-5xl font-extrabold tracking-tight mt-6 mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent italic
 }
 
 .layout-wrapper {
