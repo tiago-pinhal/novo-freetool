@@ -177,13 +177,13 @@ defineI18nRoute({
     see4: "Convertidor de XML a JSON",
     tip_title: "Aviso de Seguridad",
     tip_security: "MD5 no es seguro para contraseñas ya que es vulnerable a ataques de colisión.",
-    tip_usage: "Recomendamos usar Bcrypt para mayor seguridad. MD5 é ideal para verificar a integridade de arquivos (Checksum)."
+    tip_usage: "Recomendamos usar Bcrypt para mayor seguridad. MD5 es ideal para verificar la integridad de archivos (Checksum)."
   },
   fr: {
     title: "Générateur de Hash MD5",
     meta: "Calculez facilement le hash MD5 (empreinte 128 bits) de n'importe quel texte. Vérifiez l'intégrité des données en ligne.",
     desc: "Le MD5 (Message Digest Algorithm 5) est un algorithme de hachage cryptographique largement utilisé qui produit une empreinte digitale de 128 bits (32 caractères) pour tout texte ou données d'entrée. Il est principalement utilisé pour vérifier l'intégrité des données, car il générera un hachage unique et constant. Même la plus petite modification dans le texte modifie ce code, facilitant l'identification de tout changement. Pour le hachage sécurisé des mots de passe, des algorithmes plus récents comme SHA-256 ou Bcrypt sont recommandés.",
-    bt: "Calculer le",
+    bt: "Calculer",
     plc: "Texte à calculer",
     see1: "Générateur Bcrypt",
     see2: "Visualiseur JSON",
