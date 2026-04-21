@@ -52,7 +52,7 @@ const toolCategories = [
           <div class="h-px flex-1 bg-base-content/10"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="flex flex-wrap justify-center gap-6">
           <ToolCard
             v-for="(tool, i) in toolCategories"
             :key="tool.id"
@@ -60,6 +60,7 @@ const toolCategories = [
             :icon="tool.icon"
             :title="tool.title"
             :index="i"
+            class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-20px)]"
           />
         </div>
       </div>

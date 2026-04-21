@@ -23,7 +23,7 @@ const currentGradient = computed(() => gradients[(props.index || 0) % gradients.
 <template>
   <NuxtLinkLocale
     :to="to"
-    class="group relative p-[2px] rounded-3xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
+    class="group relative p-[2px] rounded-3xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer sm:min-h-[220px]"
     :class="`bg-gradient-to-br ${currentGradient}`"
   >
     <!-- Card Inner -->

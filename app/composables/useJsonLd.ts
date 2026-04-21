@@ -204,7 +204,14 @@ export function usePageJsonLd(options: PageJsonLdOptions) {
   }
 
   if (options.breadcrumb?.length) {
-    schemas.push(buildBreadcrumbList(options.breadcrumb))
+    const origin = reqUrl.origin
+    const resolvedBreadcrumb = options.breadcrumb.map((item) => ({
+      ...item,
+      url: item.url
+        ? item.url.startsWith('http') ? item.url : `${origin}${item.url}`
+        : undefined,
+    }))
+    schemas.push(buildBreadcrumbList(resolvedBreadcrumb))
   }
 
   if (options.faq?.length) {

@@ -8,11 +8,12 @@
 }
 
 body {
+  @apply antialiased;
   min-height: 100vh;
 }
 
-.title-page {
-  @apply text-2xl font-light text-orange-300 bg-gradient-to-l from-slate-800/30 from-55% w-full mb-4
+.tools-title {
+  @apply text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent italic
 }
 
 .layout-wrapper {
