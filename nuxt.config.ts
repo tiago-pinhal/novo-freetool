@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   scripts: {
     registry: {
       googleAdsense: {
-        client: 'ca-pub-3940256099942544'
+        client: 'ca-pub-6172875094663882'
       }
     }
   },
