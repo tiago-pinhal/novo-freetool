@@ -5,7 +5,7 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="footer p-4 bg-base-200 text-base-content border-t border-base-content/5 mt-auto flex flex-wrap items-center justify-between gap-y-4 px-6 md:px-10">
+  <footer class="footer p-4 bg-base-200 text-base-content border-t border-base-content/5 mt-2 flex flex-wrap items-center justify-between gap-y-4 px-6 md:px-10">
     <aside class="flex items-center">
       <p class="text-sm opacity-60">
         &copy; {{ currentYear }} <span class="font-bold">FreeTool.Dev</span> — {{ t('r') }}

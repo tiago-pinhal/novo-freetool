@@ -63,7 +63,7 @@ defineI18nRoute({
     ]"
   >
     <div class="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-base-200/50 p-6 md:p-10 rounded-3xl border border-base-content/5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-6 md:p-10 rounded-3xl">
         
         <!-- Logic Groups -->
         <div class="space-y-6">
@@ -127,10 +127,6 @@ defineI18nRoute({
 
         <!-- Result Display -->
         <div class="flex flex-col items-center justify-center space-y-4 p-8 bg-base-100 rounded-2xl border border-base-content/10 shadow-lg relative overflow-hidden" aria-live="polite">
-          <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-            <Icon name="heroicons:variable-20-solid" class="w-24 h-24" aria-hidden="true" />
-          </div>
-          
           <h2 class="text-sm font-semibold text-base-content/80 uppercase tracking-widest">{{ t('result') }}</h2>
           
           <div class="text-5xl md:text-6xl font-black text-primary transition-all duration-300 tabular-nums">
@@ -153,10 +149,10 @@ defineI18nRoute({
       <div class="space-y-4">
         <p>{{ t('desc') }}</p>
         <div class="bg-primary/10 p-4 rounded-xl border border-primary/20">
-          <h3 class="font-bold mb-2 text-primary flex items-center gap-2">
+          <div class="font-bold mb-2 text-primary flex items-center gap-2">
             <Icon name="heroicons:light-bulb-20-solid" class="w-5 h-5" aria-hidden="true" />
             {{ t('tip_title') }}
-          </h3>
+          </div>
           <p class="text-sm text-base-content/80">
             {{ t('tip_formula') }}: <code class="bg-base-200 px-1 rounded">X = (V3 * V2) / V1</code>
           </p>
