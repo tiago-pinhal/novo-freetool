@@ -132,7 +132,7 @@ defineI18nRoute({
        
       <!-- Viewer Output -->
       <div v-show="!state.error && state.hasCode" class="space-y-3">
-        <div class="flex items-center gap-2 text-sm font-bold text-base-content/60 uppercase tracking-wider">
+        <div class="flex items-center gap-2 font-bold text-base-content/60 uppercase tracking-wider">
           <Icon name="heroicons:eye-20-solid" class="w-4 h-4" />
           {{ t('result') }}
         </div>
@@ -181,21 +181,21 @@ defineI18nRoute({
                 <span class="font-bold text-primary text-xl">1</span>
               </div>
               <h3 class="font-bold text-base-content mb-2">{{ t('hiw_1_title') }}</h3>
-              <p class="text-sm text-base-content/60 leading-relaxed">{{ t('hiw_1_desc') }}</p>
+              <p class="text-base-content/60 leading-relaxed">{{ t('hiw_1_desc') }}</p>
             </div>
             <div class="bg-base-200/50 p-6 rounded-2xl border border-base-content/5 hover:border-primary/20 transition-colors group">
               <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <span class="font-bold text-primary text-xl">2</span>
               </div>
               <h3 class="font-bold text-base-content mb-2">{{ t('hiw_2_title') }}</h3>
-              <p class="text-sm text-base-content/60 leading-relaxed">{{ t('hiw_2_desc') }}</p>
+              <p class="text-base-content/60 leading-relaxed">{{ t('hiw_2_desc') }}</p>
             </div>
             <div class="bg-base-200/50 p-6 rounded-2xl border border-base-content/5 hover:border-primary/20 transition-colors group">
               <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <span class="font-bold text-primary text-xl">3</span>
               </div>
               <h3 class="font-bold text-base-content mb-2">{{ t('hiw_3_title') }}</h3>
-              <p class="text-sm text-base-content/60 leading-relaxed">{{ t('hiw_3_desc') }}</p>
+              <p class="text-base-content/60 leading-relaxed">{{ t('hiw_3_desc') }}</p>
             </div>
           </div>
         </section>
@@ -212,21 +212,21 @@ defineI18nRoute({
                 <div class="mt-1"><Icon name="heroicons:check-circle" class="text-primary w-5 h-5" /></div>
                 <div>
                   <strong class="text-base-content block mb-1 uppercase text-xs tracking-widest font-black">{{ t('uc_1_title') }}</strong>
-                  <span class="text-sm text-base-content/60 leading-relaxed">{{ t('uc_1_desc') }}</span>
+                  <span class="text-base-content/60 leading-relaxed">{{ t('uc_1_desc') }}</span>
                 </div>
               </li>
               <li class="flex gap-4">
                 <div class="mt-1"><Icon name="heroicons:check-circle" class="text-primary w-5 h-5" /></div>
                 <div>
                   <strong class="text-base-content block mb-1 uppercase text-xs tracking-widest font-black">{{ t('uc_2_title') }}</strong>
-                  <span class="text-sm text-base-content/60 leading-relaxed">{{ t('uc_2_desc') }}</span>
+                  <span class="text-base-content/60 leading-relaxed">{{ t('uc_2_desc') }}</span>
                 </div>
               </li>
               <li class="flex gap-4 sm:col-span-2">
                 <div class="mt-1"><Icon name="heroicons:check-circle" class="text-primary w-5 h-5" /></div>
                 <div>
                   <strong class="text-base-content block mb-1 uppercase text-xs tracking-widest font-black">{{ t('uc_3_title') }}</strong>
-                  <span class="text-sm text-base-content/60 leading-relaxed">{{ t('uc_3_desc') }}</span>
+                  <span class="text-base-content/60 leading-relaxed">{{ t('uc_3_desc') }}</span>
                 </div>
               </li>
             </ul>
@@ -292,10 +292,10 @@ defineI18nRoute({
     pt: {
         m_title: "Visualizador de JSON Online - Visualize e Formate JSON de Graça",
         title: "Visualizador de JSON",
-        meta: "Visualizador de JSON online gratuito. Cole ou envie seu JSON e visualize instantaneamente como uma árvore recolhível com campos coloridos. Sem cadastro.",
+        meta: "Visualizador de JSON online gratuito. Cole ou digite seu JSON e visualize instantaneamente em uma estrutura de árvore recolhível com campos coloridos.",
         info_title: "Informações",
-        d1: "Este visualizador de JSON online exibe seus dados em um formato de árvore interativa, onde cada nó é indentado para refletir a hierarquia das informações. Você pode expandir ou recolher qualquer grupo para focar apenas no que importa.",
-        d2: "Campos e valores são coloridos para facilitar a leitura, e qualquer alteração feita na entrada é validada instantaneamente. Ideal para desenvolvedores depurando APIs, validando respostas ou inspecionando arquivos de configuração, sem instalação nem cadastro.",
+        d1: "Este visualizador de JSON online exibe seus dados em um formato de árvore interativa, onde cada nó é indentado para refletir a hierarquia das informações. Você pode expandir ou recolher qualquer grupo para focar em determinados conjuntos de dados.",
+        d2: "Campos e valores são coloridos para facilitar a leitura, e qualquer alteração feita no texto de entrada é refletida instantaneamente. Por isso, a ferramenta é ideal para desenvolvedores que depuram APIs, validam respostas ou inspecionam arquivos de configuração, sem instalação nem cadastro.",
         result: "Resultado",
         plc: "Insira o código JSON aqui ou arraste um arquivo",
         err: "Informe um JSON estruturalmente válido",
