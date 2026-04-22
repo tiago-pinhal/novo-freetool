@@ -90,8 +90,8 @@ defineI18nRoute({
               />
             </div>
             <div class="flex justify-between px-1">
-              <span class="text-[10px] text-base-content/70 uppercase tracking-tighter">{{ t('val1') }}</span>
-              <span class="text-[10px] text-base-content/70 uppercase tracking-tighter">{{ t('val2') }}</span>
+              <span class="text-[10px] text-base-content uppercase tracking-tighter">{{ t('val1') }}</span>
+              <span class="text-[10px] text-base-content uppercase tracking-tighter">{{ t('val2') }}</span>
             </div>
           </div>
 
@@ -119,7 +119,7 @@ defineI18nRoute({
               </div>
             </div>
             <div class="flex justify-between px-1">
-              <span class="text-[10px] text-base-content/70 uppercase tracking-tighter">{{ t('val3') }}</span>
+              <span class="text-[10px] text-base-content uppercase tracking-tighter">{{ t('val3') }}</span>
               <span class="text-[10px] text-primary/70 uppercase tracking-tighter font-bold">{{ t('result') }}</span>
             </div>
           </div>
@@ -127,7 +127,7 @@ defineI18nRoute({
 
         <!-- Result Display -->
         <div class="flex flex-col items-center justify-center space-y-4 p-8 bg-base-100 rounded-2xl border border-base-content/10 shadow-lg relative overflow-hidden" aria-live="polite">
-          <h2 class="text-sm font-semibold text-base-content/80 uppercase tracking-widest">{{ t('result') }}</h2>
+          <h2 class="text-sm font-semibold text-base-content uppercase tracking-widest">{{ t('result') }}</h2>
           
           <div class="text-5xl md:text-6xl font-black text-primary transition-all duration-300 tabular-nums">
             {{ output ?? '...' }}
@@ -138,7 +138,7 @@ defineI18nRoute({
               {{ t('copy_result') }}
             </Blockcopy>
           </div>
-          <p v-else class="text-xs text-base-content/80 text-center italic">
+          <p v-else class="text-xs text-base-content text-center italic">
             {{ t('waiting') }}
           </p>
         </div>
@@ -153,7 +153,7 @@ defineI18nRoute({
             <Icon name="heroicons:light-bulb-20-solid" class="w-5 h-5" aria-hidden="true" />
             {{ t('tip_title') }}
           </div>
-          <p class="text-sm text-base-content/80">
+          <p class="text-sm text-base-content">
             {{ t('tip_formula') }}: <code class="bg-base-200 px-1 rounded">X = (V3 * V2) / V1</code>
           </p>
         </div>

@@ -39,7 +39,7 @@ withDefaults(defineProps<Props>(), {
         <div class="collapse-title text-lg font-bold text-base-content hover:text-primary transition-colors">
           {{ item.question }}
         </div>
-        <div class="collapse-content text-base-content/80 leading-relaxed pb-4">
+        <div class="collapse-content text-base-content leading-relaxed pb-4">
           <p>{{ item.answer }}</p>
         </div>
       </div>

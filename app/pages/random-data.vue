@@ -34,7 +34,7 @@ defineI18nRoute({
       <h1 class="tools-title">
         {{ t('title') }}
       </h1>
-      <p class="text-lg text-base-content/70 mx-auto">
+      <p class="text-lg text-base-content mx-auto">
         {{ t('desc') }}
       </p>
     </div>

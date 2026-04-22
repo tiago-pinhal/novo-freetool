@@ -165,7 +165,7 @@ defineI18nRoute({
     <template #info>
       <div class="space-y-12">
         <!-- Main Description -->
-        <div class="prose prose-sm max-w-none text-base-content/70 leading-relaxed">
+        <div class="prose prose-sm max-w-none text-base-content leading-relaxed">
           <p class="text-lg">{{ t('d1') }} {{ t('d2') }}</p>
         </div>
 

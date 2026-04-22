@@ -15,7 +15,7 @@ const localePath = useLocalePath()
 <template>
   <section class="mt-8">
     <div class="flex items-center gap-4 mb-8">
-      <h2 class="text-sm font-bold text-base-content/80 uppercase tracking-widest">
+      <h2 class="text-sm font-bold text-base-content uppercase tracking-widest">
         {{ t('see') }}
       </h2>
       <div class="h-px flex-1 bg-base-content/10"></div>
@@ -24,7 +24,7 @@ const localePath = useLocalePath()
     <nav class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <NuxtLink v-for="(link, idx) in links" :key="idx" :to="localePath(link.to)"
         class="group flex items-center justify-between p-4 bg-base-200 hover:bg-base-200 rounded-2xl border border-base-content/10 hover:border-primary/30 transition-all duration-300 active:scale-[0.98] cursor-pointer">
-        <span class="font-medium text-base-content/80 group-hover:text-primary transition-colors">
+        <span class="font-medium text-base-content group-hover:text-primary transition-colors">
           {{ link.label }}
         </span>
         <Icon name="heroicons:arrow-small-right-20-solid"

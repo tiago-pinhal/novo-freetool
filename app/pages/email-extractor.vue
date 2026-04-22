@@ -94,7 +94,7 @@ defineI18nRoute({
     <div class="space-y-6">
       <div class="form-control w-full">
         <label class="label">
-          <span class="label-text font-bold text-base-content/80">{{ t('plc') }}</span>
+          <span class="label-text font-bold text-base-content">{{ t('plc') }}</span>
         </label>
         <textarea 
           v-model="state.text" 
@@ -154,7 +154,7 @@ defineI18nRoute({
 {
     en: {
         title: "Email Extractor",
-        meta: "Extract multiple email addresses from any large text automatically with our free online Email Extractor. Remove duplicates and clean your list instantly.",
+        meta: "Extract multiple email addresses automatically from any text with our online Email Extractor.",
         desc: "Need to extract dozens of contacts hidden inside a large block of text or data? Our Email Extractor makes that easy. Just paste or drag your content into the box, choose your preferred separator for the output list (comma, line break, semicolon, or pipe), and click 'Extract'. The tool automatically finds valid email addresses, removes duplicates, and generates a clean, ready-to-use list.",
         sep: "Separate by",
         empty: "No email found",
@@ -172,7 +172,7 @@ defineI18nRoute({
     },
     pt: {
         title: "Extrator de E-mails",
-        meta: "Extraia múltiplos endereços de e-mail de qualquer texto automaticamente com nosso Extrator de E-mails online gratuito. Remova duplicados e limpe sua lista na hora.",
+        meta: "Extraia automaticamente múltiplos endereços de e-mail de qualquer texto com nosso Extrator de E-mails online.",
         desc: "Precisa extrair dezenas de contatos escondidos em um grande bloco de texto ou dados? Nosso Extrator de E-mails facilita esse trabalho. Basta colar ou arrastar o conteúdo, escolher o separador da lista de saída (vírgula, quebra de linha, ponto e vírgula ou pipe) e clicar em 'Extrair'. A ferramenta encontra automaticamente todos os e-mails válidos, remove duplicados e gera uma lista limpa e pronta para uso.",
         sep: "Separar por",
         empty: "Nenhum e-mail encontrado",
@@ -190,7 +190,7 @@ defineI18nRoute({
     },
     es: {
         title: "Extractor de Emails",
-        meta: "Extrae múltiples direcciones de email de cualquier texto automáticamente con nuestro Extractor de Emails online gratuito. Elimina duplicados y limpia tu lista al instante.",
+        meta: "Extrae automáticamente múltiples direcciones de email de cualquier texto con nuestro Extractor de Emails online.",
         desc: "¿Necesitas extraer decenas de contactos ocultos dentro de un gran bloque de texto o datos? Nuestro Extractor de Emails te facilita ese trabajo. Solo tienes que pegar o arrastrar el contenido, elegir el separador de la lista de salida que prefieras (coma, salto de línea, punto y coma o pipe) y hacer clic en 'Extraer'. La herramienta detecta automáticamente todos los emails válidos, elimina los duplicados y genera una lista limpia y lista para usar.",
         sep: "Separar por",
         empty: "No se encontraron emails",
@@ -208,7 +208,7 @@ defineI18nRoute({
     },
     fr: {
         title: "Extracteur d'Emails",
-        meta: "Extrayez automatiquement plusieurs adresses e-mail à partir de n'importe quel texte avec notre Extracteur d'Emails gratuit en ligne. Supprimez les doublons et nettoyez votre liste instantanément.",
+        meta: "Extrayez automatiquement plusieurs adresses e-mail à partir de n'importe quel texte avec notre Extracteur d'Emails en ligne.",
         desc: "Vous avez besoin d'extraire des dizaines de contacts cachés dans un grand bloc de texte ou de données ? Notre Extracteur d'Emails simplifie ce travail. Il suffit de coller ou de faire glisser votre contenu, puis de choisir le séparateur de la liste de sortie (virgule, saut de ligne, point-virgule ou pipe) et de cliquer sur 'Extraire'. L'outil détecte automatiquement toutes les adresses e-mail valides, supprime les doublons et génère une liste propre, prête à l'emploi.",
         sep: "Séparer par",
         empty: "Aucun e-mail trouvé",
@@ -226,7 +226,7 @@ defineI18nRoute({
     },
     it: {
         title: "Estrattore di Email",
-        meta: "Estrai automaticamente più indirizzi email da qualsiasi testo con il nostro Estrattore di Email online gratuito. Rimuovi i duplicati e pulisci la tua lista all'istante.",
+        meta: "Estrai automaticamente più indirizzi email da qualsiasi testo con il nostro Estrattore di Email online.",
         desc: "Hai bisogno di estrarre decine di contatti nascosti all'interno di un grande blocco di testo o dati? Il nostro Estrattore di Email semplifica questo lavoro. Basta incollare o trascinare il contenuto, scegliere il separatore dell'elenco di output (virgola, interruzione di riga, punto e virgola o pipe) e fare clic su 'Estrai'. Lo strumento rileva automaticamente tutte le email valide, rimuove i duplicati e genera un elenco pulito e pronto all'uso.",
         sep: "Separare per",
         empty: "Nessuna email trovata",
@@ -244,7 +244,7 @@ defineI18nRoute({
     },
     id: {
         title: "Ekstraktor Email",
-        meta: "Ekstrak beberapa alamat email dari teks apa pun secara otomatis dengan Ekstraktor Email online gratis kami. Hapus duplikat dan rapikan daftar Anda seketika.",
+        meta: "Ekstrak beberapa alamat email secara otomatis dari teks apa pun dengan Ekstraktor Email online kami.",
         desc: "Perlu mengekstrak puluhan kontak yang tersembunyi di dalam blok teks atau data yang besar? Ekstraktor Email kami memudahkan pekerjaan itu. Cukup tempel atau seret konten Anda ke dalam kotak, pilih pemisah untuk daftar hasil (koma, jeda baris, titik koma, atau pipe), lalu klik 'Ekstrak'. Alat ini secara otomatis menemukan semua email yang valid, menghapus duplikat, dan menghasilkan daftar yang bersih serta siap digunakan.",
         sep: "Pisahkan dengan",
         empty: "Email tidak ditemukan",

@@ -34,7 +34,7 @@ async function copy() {
         : 'bg-base-200 border-base-content/10 hover:border-primary/20'"
     >
       <!-- Conteúdo (Truncado) -->
-      <div class="flex-1 font-mono text-base font-medium text-base-content/80 truncate">
+      <div class="flex-1 font-mono text-base font-medium text-base-content truncate">
         <slot>{{ content }}</slot>
       </div>
 

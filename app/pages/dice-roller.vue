@@ -110,7 +110,7 @@ defineI18nRoute({
             <div class="space-y-6">
                 <div>
                     <label class="label">
-                        <span class="label-text font-bold text-base-content/80">{{ t('dice_type') }}</span>
+                        <span class="label-text font-bold text-base-content">{{ t('dice_type') }}</span>
                     </label>
                     <div class="grid grid-cols-4 sm:grid-cols-7 gap-2">
                         <button 
@@ -133,7 +133,7 @@ defineI18nRoute({
                 <div class="grid grid-cols-2 gap-4">
                     <div class="form-control">
                         <label for="amount" class="label">
-                            <span class="label-text font-bold text-base-content/80">{{ t('amount') }}</span>
+                            <span class="label-text font-bold text-base-content">{{ t('amount') }}</span>
                         </label> 
                         <input 
                             id="amount" 
@@ -147,7 +147,7 @@ defineI18nRoute({
 
                     <div class="form-control">
                         <label for="modifier" class="label">
-                            <span class="label-text font-bold text-base-content/80">{{ t('modifier') }}</span>
+                            <span class="label-text font-bold text-base-content">{{ t('modifier') }}</span>
                         </label> 
                         <input 
                             id="modifier" 
@@ -205,7 +205,7 @@ defineI18nRoute({
                         <Icon name="heroicons:information-circle-20-solid" class="w-6 h-6 text-primary" />
                         {{ t('how_title') }}
                     </h2>
-                    <p class="text-base-content/80 leading-relaxed">{{ t('how_desc') }}</p>
+                    <p class="text-base-content leading-relaxed">{{ t('how_desc') }}</p>
                 </section>
 
                 <section>
@@ -216,7 +216,7 @@ defineI18nRoute({
                     <ul class="grid sm:grid-cols-2 gap-3">
                         <li v-for="i in 4" :key="i" class="flex items-start gap-2 bg-base-200/40 p-3 rounded-xl border border-primary/5">
                             <Icon name="heroicons:check-circle-20-solid" class="w-5 h-5 text-success shrink-0 mt-0.5" />
-                            <span class="text-sm text-base-content/80">{{ t(`uc${i}`) }}</span>
+                            <span class="text-sm text-base-content">{{ t(`uc${i}`) }}</span>
                         </li>
                     </ul>
                 </section>
@@ -232,7 +232,7 @@ defineI18nRoute({
                             <div class="collapse-title text-lg font-bold">
                                 {{ t(`faq${i}q`) }}
                             </div>
-                            <div class="collapse-content text-base-content/70"> 
+                            <div class="collapse-content text-base-content"> 
                                 <p>{{ t(`faq${i}a`) }}</p>
                             </div>
                         </div>

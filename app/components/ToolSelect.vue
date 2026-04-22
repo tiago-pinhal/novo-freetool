@@ -26,7 +26,7 @@ function handleChange(event: Event) {
 <template>
   <div class="form-control w-full">
     <label v-if="label" :for="id" class="label cursor-pointer">
-      <span class="label-text font-bold text-base-content/80 text-xs uppercase tracking-wider">
+      <span class="label-text font-bold text-base-content text-xs uppercase tracking-wider">
         {{ label }}
       </span>
     </label>

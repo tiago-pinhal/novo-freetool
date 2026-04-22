@@ -38,7 +38,7 @@ const toolCategories = [
               {{ t('d1') }} Freetool
             </span>
           </h1>
-          <p class="text-lg sm:text-xl text-base-content/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p class="text-lg sm:text-xl text-base-content leading-relaxed mb-10 max-w-2xl mx-auto">
             {{ t('d2') }}
           </p>
         </div>
