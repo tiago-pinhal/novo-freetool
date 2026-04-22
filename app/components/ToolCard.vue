@@ -18,6 +18,13 @@ const gradients = [
 ]
 
 const currentGradient = computed(() => gradients[(props.index || 0) % gradients.length])
+
+const titleParts = computed(() => {
+  if (props.title.includes('→')) {
+    return props.title.split('→').map(s => s.trim())
+  }
+  return null
+})
 </script>
 
 <template>
@@ -40,8 +47,13 @@ const currentGradient = computed(() => gradients[(props.index || 0) % gradients.
         <Icon :name="icon" class="w-7 h-7 text-primary group-hover:brightness-125" aria-hidden="true" />
       </div>
 
-      <div class="text-base font-bold text-base-content group-hover:text-white transition-colors leading-tight">
-        {{ title }}
+      <div class="text-base font-bold text-base-content group-hover:text-white transition-all leading-tight">
+        <div v-if="titleParts" class="flex items-center gap-2">
+          <span>{{ titleParts[0] }}</span>
+          <Icon name="heroicons:arrow-long-right-20-solid" class="w-5 h-5 shrink-0 text-primary group-hover:text-white transition-colors opacity-50" aria-hidden="true" />
+          <span>{{ titleParts[1] }}</span>
+        </div>
+        <span v-else>{{ title }}</span>
       </div>
 
       <!-- Arrow icon -->
