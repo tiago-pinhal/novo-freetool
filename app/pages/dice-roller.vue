@@ -55,7 +55,7 @@ usePageJsonLd({
     description: t('meta'),
     type: 'tool',
     breadcrumb: [
-        { name: t('home'), url: localePath('/') },
+        { name: 'Home', url: localePath('/') },
         { name: t('title') }
     ],
     features: [
@@ -110,7 +110,7 @@ defineI18nRoute({
             <div class="space-y-6">
                 <div>
                     <label class="label">
-                        <span class="label-text font-bold text-base-content">{{ t('dice_type') }}</span>
+                        <span class="label-text font-bold text-base-content/80">{{ t('dice_type') }}</span>
                     </label>
                     <div class="grid grid-cols-4 sm:grid-cols-7 gap-2">
                         <button 
@@ -133,7 +133,7 @@ defineI18nRoute({
                 <div class="grid grid-cols-2 gap-4">
                     <div class="form-control">
                         <label for="amount" class="label">
-                            <span class="label-text font-bold text-base-content">{{ t('amount') }}</span>
+                            <span class="label-text font-bold text-base-content/80">{{ t('amount') }}</span>
                         </label> 
                         <input 
                             id="amount" 
@@ -147,7 +147,7 @@ defineI18nRoute({
 
                     <div class="form-control">
                         <label for="modifier" class="label">
-                            <span class="label-text font-bold text-base-content">{{ t('modifier') }}</span>
+                            <span class="label-text font-bold text-base-content/80">{{ t('modifier') }}</span>
                         </label> 
                         <input 
                             id="modifier" 
@@ -172,11 +172,11 @@ defineI18nRoute({
             <div class="bg-base-200/50 border border-primary/10 rounded-2xl p-6 min-h-[16rem] flex flex-col items-center justify-center">
                 <div v-if="state.total !== null || state.isRolling" class="text-center mb-6">
                     <h2 class="text-3xl font-black text-primary flex items-baseline justify-center gap-2">
-                        {{ t('total') }}: 
+                        Total: 
                         <span v-if="!state.isRolling">{{ state.total }}</span>
                         <span v-else class="loading loading-dots loading-md text-primary"></span>
                     </h2>
-                    <p v-if="state.modifier !== 0 && !state.isRolling" class="text-sm font-medium opacity-60">
+                    <p v-if="state.modifier !== 0 && !state.isRolling" class="font-medium opacity-60">
                         ({{ state.baseTotal }} {{ state.modifier > 0 ? '+' : '' }}{{ state.modifier }})
                     </p>
                 </div>
@@ -193,7 +193,7 @@ defineI18nRoute({
 
                 <div v-if="state.total === null && !state.isRolling" class="text-center opacity-40">
                     <Icon name="heroicons:cube-transparent" class="w-16 h-16 mx-auto mb-2" />
-                    <p class="font-medium italic">{{ t('ready') }}</p>
+                    <p class="font-medium italic">{{ locale === 'pt' ? 'Pronto para rolar' : 'Ready to roll' }}</p>
                 </div>
             </div>
         </div>
@@ -205,7 +205,7 @@ defineI18nRoute({
                         <Icon name="heroicons:information-circle-20-solid" class="w-6 h-6 text-primary" />
                         {{ t('how_title') }}
                     </h2>
-                    <p class="text-base-content leading-relaxed">{{ t('how_desc') }}</p>
+                    <p class="text-base-content/80 leading-relaxed">{{ t('how_desc') }}</p>
                 </section>
 
                 <section>
@@ -216,7 +216,7 @@ defineI18nRoute({
                     <ul class="grid sm:grid-cols-2 gap-3">
                         <li v-for="i in 4" :key="i" class="flex items-start gap-2 bg-base-200/40 p-3 rounded-xl border border-primary/5">
                             <Icon name="heroicons:check-circle-20-solid" class="w-5 h-5 text-success shrink-0 mt-0.5" />
-                            <span class="text-sm text-base-content">{{ t(`uc${i}`) }}</span>
+                            <span class="text-base-content/80">{{ t(`uc${i}`) }}</span>
                         </li>
                     </ul>
                 </section>
@@ -227,12 +227,12 @@ defineI18nRoute({
                         {{ t('faq_title') }}
                     </h2>
                     <div class="space-y-4">
-                        <div v-for="i in 4" :key="i" class="collapse collapse-plus bg-base-200/50 rounded-2xl border border-base-300">
+                        <div v-for="i in 3" :key="i" class="collapse collapse-plus bg-base-200/50 rounded-2xl border border-base-300">
                             <input type="radio" name="dice-faq" /> 
                             <div class="collapse-title text-lg font-bold">
                                 {{ t(`faq${i}q`) }}
                             </div>
-                            <div class="collapse-content text-base-content"> 
+                            <div class="collapse-content text-base-content/70"> 
                                 <p>{{ t(`faq${i}a`) }}</p>
                             </div>
                         </div>
@@ -243,7 +243,7 @@ defineI18nRoute({
     </ToolPage>
 </template>
 
-<<i18n lang="yaml">
+<i18n lang="yaml">
 {
     en: {
         pageTitle: "Online Virtual Dice Roller (D&D / RPG) | Free",
@@ -267,19 +267,14 @@ defineI18nRoute({
         faq2a: "Absolutely. Simply change the 'Number of Dice' field to whatever quantity you require. The simulator will cast all of them simultaneously and automatically calculate the sum total for your convenience.",
         faq3q: "What does the 'Modifier' field do?",
         faq3a: "In RPGs, you often need to attach a flat bonus or penalty to your roll (like 1d20 + 4). By adding a value to the Modifier field, the engine automatically considers this math operation in the final 'Total' output.",
-        faq4q: "Is the tool completely free to use?",
-        faq4a: "Yes, our dice generator is 100% free, requires no downloads, and works securely entirely offline from your browser after loading, making it extremely lightweight for mobile devices during a tabletop session.",
         dice_type: "Dice Type",
         amount: "Number of Dice",
         modifier: "Modifier (+/-)",
         bt: "Roll Dice",
         see1: "Percentage Calculator",
         see2: "List Randomizer",
-        see3: "Rule of Three Calculator",
-        see4: "Email Extractor",
-        total: "Total",
-        ready: "Ready to roll",
-        home: "Home"
+        see3: "Rule of Three",
+        see4: "Email Extractor"
     },
     pt: {
         pageTitle: "Dado Virtual Online e Lançador de RPG (D20, D6) | Grátis",
@@ -290,7 +285,7 @@ defineI18nRoute({
         f_3: "Soma instantânea e resultados animados",
         f_4: "100% gratuito, sem necessidade de download",
         how_title: "Como funciona o Lançador de Dados",
-        how_desc: "Esta ferramenta gera resultados altamente aleatórios utilizando funções matemáticas seguras nativas dos navegadores modernos. Ela simula perfeitamente os pesos físicos e probabilidades dos clássicos dados poliedrais de RPG de mesa (D4, D6, D8, D10, D12, D20 e D100). Você pode rolar incontáveis dados simultaneamente e incluir modificadores (+ e -) exigidos pelos atributos de seus personagens para facilitar toda a matemática da partida.",
+        how_desc: "Esta ferramenta gera resultados altamente aleatórios utilizando funções matemáticas seguras nativas dos navegadores modernos. Ela simula perfeitamente os pesos físicos e probabilidades dos clássicos dados poliedrais de RPG de mesa (D4, D6, D8, D10, D12, D20 e D100). Você pode rolar incontáveis dados simultaneamente e incluir modificadores (+ e -) exigidos pelas acrobacias de seus personagens para facilitar toda a matemática da partida.",
         usecases_title: "Casos de Uso Comuns",
         uc1: "Jogar RPG de mesa como Dungeons & Dragons ou Pathfinder rapidamente pelo celular.",
         uc2: "Gerar atributos na criação de personagens, simplificando rolagens repetidas de 4d6.",
@@ -303,19 +298,14 @@ defineI18nRoute({
         faq2a: "Com certeza. Basta alterar o campo de 'Quantidade de Dados'. O simulador jogará todos simultaneamente e calculará o somatório total para você.",
         faq3q: "Para que serve o campo 'Modificador'?",
         faq3a: "Em RPGs, costuma-se atrelar bônus (ex: 1d20 + 4). Ao preencher este campo, o motor aplica a operação automaticamente no resultado final.",
-        faq4q: "Preciso pagar para usar?",
-        faq4a: "Não. O lançador é 100% gratuito e funciona diretamente no navegador, inclusive no celular.",
         dice_type: "Tipo de Dado",
         amount: "Quantidade de Dados",
         modifier: "Modificador (+/-)",
         bt: "Rolar Dados",
         see1: "Calculadora de Porcentagem",
         see2: "Sorteador de Listas",
-        see3: "Calculadora de Regra de Três",
-        see4: "Extrator de E-mails",
-        total: "Total",
-        ready: "Pronto para rolar",
-        home: "Início"
+        see3: "Regra de Três",
+        see4: "Extrator de E-mails"
     },
     es: {
         pageTitle: "Dado Virtual Online y Lanzador de Rol (D20, D6) | Gratis",
@@ -334,27 +324,22 @@ defineI18nRoute({
         uc4: "Juegos de mesa diarios, resolver dilemas domésticos y ejercicios didácticos.",
         faq_title: "Preguntas Frecuentes",
         faq1q: "¿El lanzamiento es verdaderamente aleatorio?",
-        faq1a: "Sí. La herramienta utiliza los generadores pseudoaleatorios nativos del navegador, lo que garantiza una distribución de resultados completamente equetativa.",
+        faq1a: "Sí. La herramienta utiliza los generadores pseudoaleatorios nativos del navegador, lo que garantiza una distribución de resultados completamente equitativa.",
         faq2q: "¿Puedo lanzar varios a la vez?",
         faq2a: "Claro que sí. Modifica el campo 'Cantidad de Dados' y la plataforma lanzará todos al mismo tiempo y sumará automáticamente los valores.",
         faq3q: "¿Qué función cumple el espacio de 'Modificador (+/-)'?",
-        faq3a: "En RPGs cada lanzamiento puede tener un bono (Ej: 1D20 + 4). Esta caja absorbe tu número y devuelve la suma total en tiempo real.",
-        faq4q: "¿Cobra alguna licencia?",
-        faq4a: "Ninguna. La tecnología de este simulador de rol vive 100% en el navegador libre de descargas de aplicaciones.",
+        faq3a: "En RPGs cada lanzamiento puede tener un bônus (Ej: 1D20 + 4). Esta caja absorbe tu número y devuelve la suma total en tiempo real.",
         dice_type: "Tipo de Dado",
         amount: "Cantidad de Dados",
         modifier: "Modificador (+/-)",
         bt: "Lanzar Dados",
         see1: "Calculadora de Porcentaje",
         see2: "Aleatorizador de Listas",
-        see3: "Calculadora de Regla de Tres",
-        see4: "Extractor de Correos",
-        total: "Total",
-        ready: "Listo para lanzar",
-        home: "Inicio"
+        see3: "Regra de Tres",
+        see4: "Extractor de Correos Electrónicos"
     },
     fr: {
-        pageTitle: "Dé Virtuel en Ligne (JDR & D&D) — Simulateur Polyédrique | Gratuit",
+        pageTitle: "Dé Virtuel en Ligne (JDR & D&D) — Simulateur Polyédrique",
         title: "Lanceur de Dés",
         meta: "Lancez des dés virtuels polyédriques en ligne. Simulateur de dés gratuit parfait pour les jeux de rôle, D&D, et jeux de société avec D4, D6, D10, D20.",
         f_1: "Générez des nombres aléatoires de D4 à D100",
@@ -375,19 +360,14 @@ defineI18nRoute({
         faq2a: "Définitivement ! Renseignez tout simplement votre 'Nombre de dés' et l'application jettera l'ensemble.",
         faq3q: "Pourquoi utiliser un modificateur ?",
         faq3a: "En JDR, la mécanique demande souvent un bonus inné (ex: 1d20+5). L'interface intégrera d'office cette mathématique au rendu final.",
-        faq4q: "L'application est-elle gratuite ?",
-        faq4a: "Oui, l'outil est entièrement gratuit et fonctionne directement dans le navigateur, y compris sur mobile.",
         dice_type: "Type de dé",
         amount: "Nombre de Dés",
         modifier: "Modificateur (+/-)",
         bt: "Lancer Dés",
         see1: "Calculatrice de Pourcentage",
         see2: "Mélangeur de Listes",
-        see3: "Calculatrice de Règle de Trois",
-        see4: "Extracteur d'E-mails",
-        total: "Total",
-        ready: "Prêt à lancer",
-        home: "Accueil"
+        see3: "Règle de Trois",
+        see4: "Extracteur d'e-mails"
     },
     it: {
         pageTitle: "Dado Virtuale Online per GDR e D&D (D20, D6) | Gratis",
@@ -398,7 +378,7 @@ defineI18nRoute({
         f_3: "Somma istantanea e risultati animati",
         f_4: "100% gratuito, senza installazione",
         how_title: "Come Funziona il Dado Virtuale",
-        how_desc: "Utilizziamo l'algoritmo di calcolo nativo do tuo browser per offrire risultati pseudo-casuali estremamente giusti simulando meticolosamente l'uso di veri e propri dadi di plastica sul tavolo. L'applicazione ingloba il set completo di dadi poliedrici richiesti per il Role Playing Game (D4, D6, D8, D10, D12, D20 e D100) dandovi flessibilità totale di raggruppamento e somministrazione di modificatori di gioco automatici.",
+        how_desc: "Utilizziamo l'algoritmo di calcolo nativo del tuo browser per offrire risultati pseudo-casuali estremamente giusti simulando meticolosamente l'uso di veri e propri dadi di plastica sul tavolo. L'applicazione ingloba il set completo di dadi poliedrici richiesti per il Role Playing Game (D4, D6, D8, D10, D12, D20 e D100) dandovi flessibilità totale di raggruppamento e somministrazione di modificatori di gioco automatici.",
         usecases_title: "Casi d'Uso Tipici",
         uc1: "Masterizzare sessioni di D&D e Pathfinder in mobilità senza dadi fisici.",
         uc2: "Creazione rapida delle schede calcolando tiri voluminosi di 4d6 consecutivamente.",
@@ -411,19 +391,14 @@ defineI18nRoute({
         faq2a: "Certo che sì. Immettendo il valore nel numero dei dadi l'applicativo fa rimbalzare tutte le richieste e ne stampa il risultato finale.",
         faq3q: "Che significato ha il Modificatore (+/-)?",
         faq3a: "Nei GDR ad un evento basico occorre addizionare la bravura dell'eroe (Ex: D20 + 4). Lo script chiuderà la somma regalandoti il totale finale.",
-        faq4q: "Quest'applicazione implica dei costi?",
-        faq4a: "Zero costi e zero installazioni. È sufficiente aprire il sito nel browser per utilizzarlo immediatamente.",
         dice_type: "Tipo di Dado",
         amount: "Numero di Dadi",
         modifier: "Modificatore (+/-)",
         bt: "Lancia Dadi",
         see1: "Calcolatrice di Percentuale",
-        see2: "Randomizzatore di Liste",
-        see3: "Calcolatrice di Regola di Tre",
-        see4: "Estrattore di Email",
-        total: "Totale",
-        ready: "Pronto a lanciare",
-        home: "Home"
+        see2: "Generatore di Liste Casuali",
+        see3: "Regola di Tre",
+        see4: "Estrattore di Email"
     },
     id: {
         pageTitle: "Pelempar Dadu Virtual Online (RPG / D&D) | Gratis",
@@ -444,22 +419,17 @@ defineI18nRoute({
         faq1q: "Apakah angka keluaran ini adil?",
         faq1a: "Iya, murni adil tanpa pemberat. Alat ini mengacu pada penghasil bilik semu acak canggih bawaan peramban.",
         faq2q: "Bolehkah saya menggelindingkan lusinan keping?",
-        faq2a: "Sangat diperbolehkan. Sesuaikan kuantitas Anda, ia akan memutar serentak e menggabungkan hasil bulat total.",
+        faq2a: "Sangat diperbolehkan. Sesuaikan kuantitas Anda, ia akan memutar serentak dan menggabungkan hasil bulat total.",
         faq3q: "Bagian 'Modifikator (+/-)' difungsikan sebagai apa?",
         faq3a: "Demi menyesuaikan formula pertempuran di mana lemparan Anda dijumlah bersama nilai karakter (Misal 1D20 + 3).",
-        faq4q: "Apakah wajib aplikasi terunduh?",
-        faq4a: "Tidak perlu instalasi apa pun. Alat ini sepenuhnya berbasis web dan gratis.",
         dice_type: "Jenis Dadu",
         amount: "Jumlah Dadu",
         modifier: "Modifikator (+/-)",
         bt: "Lempar Dadu",
         see1: "Kalkulator Persentase",
         see2: "Pengacak Daftar",
-        see3: "Kalkulator Aturan Tiga",
-        see4: "Ekstraktor Email",
-        total: "Total",
-        ready: "Siap melempar",
-        home: "Beranda"
+        see3: "Aturan Tiga",
+        see4: "Ekstraktor Email"
     }
 }
 </i18n>
