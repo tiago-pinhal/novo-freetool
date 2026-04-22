@@ -22,7 +22,7 @@ const toggleMenu = () => {
 }
 
 const route = useRoute()
-const isHomePage = computed(() => route.path === localePath('/'))
+const detailsRef = ref<HTMLDetailsElement | null>(null)
 </script>
 
 <template>
@@ -49,7 +49,7 @@ const isHomePage = computed(() => route.path === localePath('/'))
       <div class="flex items-center">
         <ul class="menu menu-horizontal p-0">
           <li>
-            <details>
+            <details ref="detailsRef">
               <summary class="flex items-center gap-2 px-4 py-2 rounded-lg text-base-content hover:bg-base-content/10 transition-colors duration-200 cursor-pointer list-none">
                 <Icon name="language.svg?width=18&height=18" aria-hidden="true" />
                 <span class="hidden sm:inline font-medium text-sm">{{ currentLocaleName }}</span>
@@ -59,6 +59,7 @@ const isHomePage = computed(() => route.path === localePath('/'))
                   <NuxtLink
                     :to="switchLocalePath(loc.code)"
                     class="text-sm font-medium whitespace-nowrap"
+                    @click="detailsRef ? detailsRef.removeAttribute('open') : null"
                   >
                     {{ loc.name }}
                   </NuxtLink>

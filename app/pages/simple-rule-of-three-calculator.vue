@@ -68,59 +68,60 @@ defineI18nRoute({
         <!-- Logic Groups -->
         <div class="space-y-6">
           <!-- Concept: If A -> B -->
-          <div class="space-y-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-primary">{{ t('if') }}</span>
-            <div class="flex items-center gap-3">
-              <input 
-                id="v1"
-                v-model.number="state.v1" 
-                type="number"
-                class="input input-bordered input-lg w-full bg-base-100 focus:border-primary transition-all rounded-xl font-mono text-lg"
-                placeholder="0"
-                :aria-label="`${t('if')} - ${t('val1')}`"
-              />
-              <Icon name="heroicons:arrow-long-right-20-solid" class="w-6 h-6 shrink-0 opacity-30" aria-hidden="true" />
-              <input 
-                id="v2"
-                v-model.number="state.v2" 
-                type="number"
-                class="input input-bordered input-lg w-full bg-base-100 focus:border-primary transition-all rounded-xl font-mono text-lg"
-                placeholder="0"
-                :aria-label="t('val2')"
-              />
-            </div>
-            <div class="flex justify-between px-1">
-              <span class="text-[10px] text-base-content uppercase tracking-tighter">{{ t('val1') }}</span>
-              <span class="text-[10px] text-base-content uppercase tracking-tighter">{{ t('val2') }}</span>
+          <div class="space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-primary px-1">{{ t('if') }}</span>
+            <div class="space-y-1.5">
+              <div class="flex justify-between px-1">
+                <span class="text-sm font-bold text-base-content uppercase tracking-tighter">{{ t('val1') }}</span>
+                <span class="text-sm font-bold text-base-content uppercase tracking-tighter">{{ t('val2') }}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <input 
+                  id="v1"
+                  v-model.number="state.v1" 
+                  type="number"
+                  class="input input-bordered input-lg w-full h-16 bg-base-100 focus:border-primary transition-all rounded-xl font-mono text-lg"
+                  placeholder="0"
+                  :aria-label="`${t('if')} - ${t('val1')}`"
+                />
+                <Icon name="heroicons:arrow-long-right-20-solid" class="w-6 h-6 shrink-0 opacity-30" aria-hidden="true" />
+                <input 
+                  id="v2"
+                  v-model.number="state.v2" 
+                  type="number"
+                  class="input input-bordered input-lg w-full h-16 bg-base-100 focus:border-primary transition-all rounded-xl font-mono text-lg"
+                  placeholder="0"
+                  :aria-label="t('val2')"
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Divider with label -->
-          <div class="relative flex items-center py-2">
-            <div class="flex-grow border-t border-base-content/10"></div>
-            <span class="flex-shrink mx-4 text-xs font-medium text-base-content/60 uppercase tracking-widest">{{ t('then') }}</span>
-            <div class="flex-grow border-t border-base-content/10"></div>
+          <!-- Header for Objective -->
+          <div class="pt-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-base-content/60 px-1">{{ t('then') }}</span>
           </div>
 
           <!-- Concept: Then C -> X -->
-          <div class="space-y-3">
+          <!-- Concept: Then C -> X -->
+          <div class="space-y-1.5">
+            <div class="flex justify-between px-1">
+              <span class="text-sm font-bold text-base-content uppercase tracking-tighter">{{ t('val3') }}</span>
+              <span class="text-sm text-primary uppercase tracking-tighter font-black">{{ t('result') }}</span>
+            </div>
             <div class="flex items-center gap-3">
               <input 
                 id="v3"
                 v-model.number="state.v3" 
                 type="number"
-                class="input input-bordered input-lg w-full bg-base-100 focus:border-primary transition-all rounded-xl font-mono text-lg"
+                class="input input-bordered input-lg w-full h-16 bg-base-100 focus:border-primary transition-all rounded-xl font-mono text-lg"
                 placeholder="0"
                 :aria-label="`${t('then')} - ${t('val3')}`"
               />
               <Icon name="heroicons:arrow-long-right-20-solid" class="w-6 h-6 shrink-0 opacity-30" aria-hidden="true" />
-              <div class="w-full flex items-center justify-center h-16 bg-primary/5 rounded-xl border border-primary/20 border-dashed" aria-hidden="true">
-                <span class="text-primary font-bold text-xl">X</span>
+              <div class="w-full flex items-center justify-center h-16 bg-primary/5 rounded-xl border border-primary/10 border-dashed" aria-hidden="true">
+                <span class="text-primary font-black text-2xl">X</span>
               </div>
-            </div>
-            <div class="flex justify-between px-1">
-              <span class="text-[10px] text-base-content uppercase tracking-tighter">{{ t('val3') }}</span>
-              <span class="text-[10px] text-primary/70 uppercase tracking-tighter font-bold">{{ t('result') }}</span>
             </div>
           </div>
         </div>
@@ -165,9 +166,9 @@ defineI18nRoute({
 <i18n lang="yaml">
 {
     en: {
-        title: "Rule of Three Calculator",
-        meta: "Calculate cross multiplication and direct proportions online with our free Rule of Three Calculator. Solve proportions quickly and easily.",
-        desc: "The simple rule of three (also known as cross-multiplication) is the most practical mathematical method to find an unknown fourth value when you already know three values that have a direct proportional relationship. Our calculator makes it effortless: whether you're resizing an image, scaling a recipe, calculating percentages, or doing homework, just enter the three known values and we will automatically compute and reveal the missing fourth value instantly.",
+        title: "Simple Rule of Three Calculator",
+        meta: "Calculate simple rule of three proportions online with our free calculator. Find unknown values in direct proportions quickly and easily.",
+        desc: "The simple rule of three, also known as cross-multiplication, is a practical mathematical method used to find an unknown fourth value when you already know three values with a direct proportional relationship. Our calculator makes the process easy: whether you're scaling a recipe, calculating percentages, adjusting measurements, or doing homework, just fill in the fields with the known values and the calculator will automatically perform the calculation and show the result.",
         if: "Conditions",
         then: "Target",
         val1: "Value A",
@@ -189,8 +190,8 @@ defineI18nRoute({
     },
     pt: {
         title: "Calculadora de Regra de Três Simples",
-        meta: "Calcule a regra de três simples online com nossa calculadora gratuita. Descubra facilmente valores desconhecidos em proporções diretas e frações.",
-        desc: "A regra de três simples e direta (ou multiplicação cruzada) é o método matemático mais prático para descobrir um valor desconhecido a partir de três valores direta e proporcionalmente relacionados que você já possui. Nossa calculadora facilita sua vida: seja para adaptar receitas, calcular porcentagens, ajustar escalas no design ou resolver exercícios escolares, basta preencher os 3 valores sabidos que o sistema revelará o 4º valor automaticamente.",
+        meta: "Calcule regra de três simples online com nossa calculadora gratuita. Descubra valores desconhecidos em proporções diretas de forma rápida e fácil.",
+        desc: "A regra de três simples, também conhecida como multiplicação cruzada, é um método matemático prático para descobrir um quarto valor desconhecido quando você já conhece três valores com proporção direta entre si. Nossa calculadora facilita esse processo: seja para adaptar receitas, calcular porcentagens, ajustar medidas ou resolver exercícios escolares, basta preencher os campos com os valores conhecidos para que a calculadora faça o cálculo automaticamente e mostre o resultado.",
         if: "Condições",
         then: "Objetivo",
         val1: "Valor A",
@@ -212,8 +213,8 @@ defineI18nRoute({
     },
     es: {
         title: "Calculadora de Regla de Tres Simple",
-        meta: "Calcula la regla de tres simple online con nuestra calculadora gratis. Descubre el valor de la incógnita en proporciones directas fácilmente.",
-        desc: "La regla de tres simple y directa es el método matemático más útil para averiguar un valor desconocido a partir de tres valores proporcionales que ya conoces. Nuestra herramienta te facilitará enormemente la tarea: ya sea para ajustar los ingredientes de una receta, calcular porcentajes rápidos, escalar imágenes o resolver deberes escolares, basta con introducir los tres datos que tienes y la aplicación revelará automáticamente el cuarto valor faltante.",
+        meta: "Calcula la regla de tres simple online con nuestra calculadora gratis. Descubre valores desconocidos en proporciones directas de forma rápida y sencilla.",
+        desc: "La regla de tres simple, también conocida como multiplicación cruzada, es un método matemático práctico para descubrir un cuarto valor desconocido cuando ya conoces tres valores con una relación de proporcionalidad directa. Nuestra herramienta facilita este proceso: ya sea para ajustar una receta, calcular porcentajes, adaptar medidas o resolver tareas escolares, solo tienes que completar los campos con los valores conocidos para que la calculadora haga el cálculo automáticamente y muestre el resultado.",
         if: "Condiciones",
         then: "Objetivo",
         val1: "Valor A",
@@ -234,9 +235,9 @@ defineI18nRoute({
         f_4: "Sin registro ni instalación"
     },
     fr: {
-        title: "Calculatrice de Règle de Trois (Produit en Croix)",
-        meta: "Faites le calcul de la règle de trois (produit en croix) en ligne avec notre calculatrice gratuite. Trouvez rapidement la valeur d'une proportion.",
-        desc: "La règle de trois (également célèbre sous le nom de produit en croix) est la méthode mathématique la plus pratique pour déterminer une valeur inconnue à partir de trois autres quantités directement proportionnelles. Notre calculatrice vous simplifie la vie : qu'il s'agisse d'adapter une recette, d'ajuster des échelles de design, de calculer des pourcentages ou de faire des exercices scolaires, entrez simplement les trois valeurs connues.",
+        title: "Calculatrice de Règle de Trois Simple",
+        meta: "Calculez une règle de trois simple en ligne avec notre calculatrice gratuite. Trouvez rapidement et facilement une valeur inconnue dans une proportion directe.",
+        desc: "La règle de trois simple, également appelée produit en croix, est une méthode mathématique pratique pour trouver une quatrième valeur inconnue lorsque vous connaissez déjà trois valeurs liées par une proportion directe. Notre calculatrice simplifie ce calcul : que ce soit pour adapter une recette, calculer des pourcentages, ajuster des mesures ou faire des exercices scolaires, il suffit de remplir les champs avec les valeurs connues pour que la calculatrice effectue automatiquement le calcul et affiche le résultat.",
         if: "Conditions",
         then: "Cible",
         val1: "Valeur A",
@@ -258,8 +259,8 @@ defineI18nRoute({
     },
     it: {
         title: "Calcolatrice di Regola di Tre Semplice",
-        meta: "Calcola proporzioni e regola del tre semplice online. Scopri un valore incognito partendo da tre numeri noti in modo facile e veloce.",
-        desc: "La regola del tre semplice è il metodo matematico più pratico per trovare un quarto valore incognito quando possiedi già tre valori tra loro direttamente proporzionali. Il nostro calcolatore semplifica ogni operazione: per adattare quantità in ricette, fare calcoli in scala per la grafica, calcolare percentuali o per aiutare gli studenti, ti basterà inserire nei campi i tre valori a te noti.",
+        meta: "Calcola la regola di tre semplice online con la nostra calcolatrice gratuita. Trova valori sconosciuti nelle proporzioni dirette in modo rapido e semplice.",
+        desc: "La regola di tre semplice, nota anche come moltiplicazione incrociata, è un metodo matematico pratico per trovare un quarto valore sconosciuto quando conosci già tre valori in proporzione diretta tra loro. La nostra calcolatrice semplifica il procedimento: che tu debba adattare una ricetta, calcolare percentuali, regolare misure o svolgere compiti scolastici, ti basta compilare i campi con i valori noti perché la calcolatrice esegua automaticamente il calcolo e mostri il risultato.",
         if: "Condizioni",
         then: "Obiettivo",
         val1: "Valore A",
@@ -281,8 +282,8 @@ defineI18nRoute({
     },
     id: {
         title: "Kalkulator Aturan Tiga Sederhana",
-        meta: "Hitung perkalian silang dan perbandingan senilai secara online dengan Kalkulator Aturan Tiga gratis kami. Selesaikan perbandingan dengan cepat dan mudah.",
-        desc: "Aturan tiga sederhana (juga dikenal sebagai perkalian silang) adalah metode matematika paling praktis untuk menemukan nilai keempat yang tidak diketahui ketika Anda sudah mengetahui tiga nilai yang memiliki hubungan perbandingan senilai. Kalkulator kami membuatnya mudah: baik Anda sedang mengubah ukuran gambar, menyesuaikan takaran resep, menghitung persentase, atau mengerjakan tugas sekolah.",
+        meta: "Hitung aturan tiga sederhana secara online dengan kalkulator gratis kami. Temukan nilai yang belum diketahui dalam perbandingan senilai dengan cepat dan mudah.",
+        desc: "Aturan tiga sederhana, yang juga dikenal sebagai perkalian silang, adalah metode matematika praktis untuk menemukan nilai keempat yang belum diketahui ketika Anda sudah memiliki tiga nilai dengan hubungan perbandingan senilai. Kalkulator kami mempermudah proses ini: baik untuk menyesuaikan resep, menghitung persentase, mengatur ukuran, atau mengerjakan tugas sekolah, cukup isi kolom dengan nilai-nilai yang sudah diketahui agar kalkulator menghitung secara otomatis dan menampilkan hasilnya.",
         if: "Kondisi",
         then: "Target",
         val1: "Nilai A",
