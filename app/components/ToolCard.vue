@@ -40,9 +40,9 @@ const currentGradient = computed(() => gradients[(props.index || 0) % gradients.
         <Icon :name="icon" class="w-7 h-7 text-primary group-hover:brightness-125" aria-hidden="true" />
       </div>
 
-      <h3 class="text-base font-bold text-base-content group-hover:text-white transition-colors leading-tight">
+      <div class="text-base font-bold text-base-content group-hover:text-white transition-colors leading-tight">
         {{ title }}
-      </h3>
+      </div>
 
       <!-- Arrow icon -->
       <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-60 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
