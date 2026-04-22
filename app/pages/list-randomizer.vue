@@ -153,7 +153,7 @@ defineI18nRoute({
   en: {
     title: "List Randomizer & List Shuffler",
     meta: "Easily shuffle names, words, or items with our free online List Randomizer. Generate random orders and fair draws in a matter of seconds.",
-    desc: "To use it, simply enter your list items in the field and click 'Shuffle'. You will instantly get a new sequence arranged in a random order. This tool is ideal for drawing random names, shuffling groups, or reorganizing tasks quickly. It helps ensure fair and unbiased results in games, competitions, classroom activities, and everyday decisions.",
+    desc: "This tool randomizes the order of names, words, or any list of items quickly and fairly. It is ideal for drawing random names, shuffling groups, reorganizing tasks, and ensuring unbiased results in games, competitions, classroom activities, and everyday decisions.",
     bt: "Shuffle",
     result: "Result",
     plc: "Enter your list of items",
@@ -174,7 +174,7 @@ defineI18nRoute({
   pt: {
     title: "Embaralhador e Sorteador de Listas",
     meta: "Embaralhe nomes, palavras ou itens facilmente com nosso Sorteador de Listas online gratuito. Crie ordens aleatórias para sorteios em segundos.",
-    desc: "Para usar, basta inserir os itens da sua lista no campo e clicar em 'Embaralhar'. Você receberá instantaneamente uma nova sequência em ordem aleatória. Esta ferramenta é ideal para sortear nomes, embaralhar grupos ou reorganizar tarefas rapidamente. Ela ajuda a garantir resultados justos e imparciais em jogos, sorteios, atividades em grupo e decisões do dia a dia.",
+    desc: "Esta ferramenta embaralha nomes, palavras ou qualquer lista de itens de forma rápida e imparcial. Ela é ideal para sortear nomes, embaralhar grupos, reorganizar tarefas e garantir resultados justos em jogos, sorteios, atividades em grupo e decisões do dia a dia.",
     bt: "Embaralhar",
     result: "Resultado",
     plc: "Insira sua lista de itens",
@@ -195,7 +195,7 @@ defineI18nRoute({
   es: {
     title: "Aleatorizador y Mezclador de Listas",
     meta: "Mezcla nombres, palabras o elementos fácilmente con nuestro Aleatorizador de Listas online gratuito. Genera un orden al azar para sorteos en segundos.",
-    desc: "Para usarlo, solo tienes que introducir los elementos de tu lista en el campo y hacer clic en 'Mezclar'. Obtendrás al instante una nueva secuencia en orden aleatorio. Esta herramienta es ideal para sortear nombres, mezclar grupos u organizar tareas rápidamente. También ayuda a garantizar resultados justos e imparciales en juegos, concursos, actividades en grupo y decisiones cotidianas.",
+    desc: "Esta herramienta mezcla nombres, palabras o cualquier lista de elementos de forma rápida e imparcial. Es ideal para sortear nombres, mezclar grupos, reorganizar tareas y garantizar resultados justos en juegos, concursos, actividades en grupo y decisiones cotidianas.",
     bt: "Mezclar",
     result: "Resultado",
     plc: "Ingrese su lista de elementos",
@@ -216,7 +216,7 @@ defineI18nRoute({
   fr: {
     title: "Générateur de Liste Aléatoire & Mélangeur",
     meta: "Mélangez facilement des noms, mots ou éléments avec notre générateur de liste aléatoire en ligne. Créez un ordre au hasard pour vos tirages au sort.",
-    desc: "Pour l'utiliser, il suffit de saisir les éléments de votre liste dans le champ puis de cliquer sur 'Mélanger'. Vous obtiendrez immédiatement une nouvelle séquence dans un ordre aléatoire. Cet outil est idéal pour tirer des noms au sort, mélanger des groupes ou réorganiser rapidement des tâches. Il aide à garantir des résultats justes et impartiaux dans les jeux, les concours, les activités de groupe et les décisions du quotidien.",
+    desc: "Cet outil mélange rapidement et de manière impartiale des noms, des mots ou tout autre type de liste. Il est idéal pour tirer des noms au sort, mélanger des groupes, réorganiser des tâches et garantir des résultats justes dans les jeux, les concours, les activités de groupe et les décisions du quotidien.",
     bt: "Mélanger",
     result: "Résultat",
     plc: "Entrez votre liste d'éléments",
@@ -237,7 +237,7 @@ defineI18nRoute({
   it: {
     title: "Randomizzatore di Liste",
     meta: "Mescola facilmente nomi, parole o elementi con il nostro generatore di liste casuali online. Crea un ordine casuale per i tuoi sorteggi in pochi secondi.",
-    desc: "Per usarlo, basta inserire gli elementi dell'elenco nel campo e fare clic su 'Mescola'. Otterrai subito una nuova sequenza in ordine casuale. Questo strumento è ideale per estrarre nomi a caso, mescolare gruppi o riorganizzare rapidamente le attività. Aiuta a garantire risultati equi e imparziali in giochi, sorteggi, attività di gruppo e decisioni quotidiane.",
+    desc: "Questo strumento mescola nomi, parole o qualsiasi elenco di elementi in modo rapido e imparziale. È ideale per estrarre nomi a caso, mescolare gruppi, riorganizzare attività e garantire risultati equi in giochi, sorteggi, attività di gruppo e decisioni quotidiane.",
     bt: "Mescola",
     result: "Risultato",
     plc: "Inserisci la tua lista di elementi",
@@ -258,7 +258,7 @@ defineI18nRoute({
   id: {
     title: "Pengacak Daftar",
     meta: "Mudah mengocok nama, kata, atau item dengan Pengacak Daftar online gratis kami. Hasilkan urutan acak dan undian yang adil dalam hitungan detik.",
-    desc: "Untuk menggunakannya, cukup masukkan item daftar Anda ke kolom yang tersedia lalu klik 'Kocok'. Anda akan langsung mendapatkan urutan baru dalam susunan acak. Alat ini ideal untuk mengundi nama, mengacak kelompok, atau menyusun ulang tugas dengan cepat. Alat ini membantu memberikan hasil yang adil dan tidak memihak untuk permainan, undian, aktivitas kelompok, dan keputusan sehari-hari.",
+    desc: "Alat ini mengacak nama, kata, atau daftar item apa pun dengan cepat dan adil. Alat ini ideal untuk mengundi nama, mengacak kelompok, menyusun ulang tugas, dan membantu memberikan hasil yang tidak memihak untuk permainan, undian, aktivitas kelompok, dan keputusan sehari-hari.",
     bt: "Kocok",
     result: "Hasil",
     plc: "Masukkan daftar item Anda",
