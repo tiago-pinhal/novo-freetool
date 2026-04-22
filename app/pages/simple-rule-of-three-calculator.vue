@@ -69,7 +69,7 @@ defineI18nRoute({
         <div class="space-y-6">
           <!-- Concept: If A -> B -->
           <div class="space-y-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-primary opacity-80">{{ t('if') }}</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-primary">{{ t('if') }}</span>
             <div class="flex items-center gap-3">
               <input 
                 id="v1"
@@ -142,7 +142,7 @@ defineI18nRoute({
               {{ t('copy_result') }}
             </Blockcopy>
           </div>
-          <p v-else class="text-xs text-base-content/60 text-center italic">
+          <p v-else class="text-xs text-base-content/80 text-center italic">
             {{ t('waiting') }}
           </p>
         </div>
@@ -157,7 +157,7 @@ defineI18nRoute({
             <Icon name="heroicons:light-bulb-20-solid" class="w-5 h-5" aria-hidden="true" />
             {{ t('tip_title') }}
           </h3>
-          <p class="text-sm text-base-content/70">
+          <p class="text-sm text-base-content/80">
             {{ t('tip_formula') }}: <code class="bg-base-200 px-1 rounded">X = (V3 * V2) / V1</code>
           </p>
         </div>

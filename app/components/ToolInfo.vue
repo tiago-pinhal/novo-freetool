@@ -12,7 +12,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <section class="mt-8 bg-base-200 rounded-3xl p-8 border border-base-content/10">
+  <section class="mt-8 bg-base-200 rounded-3xl p-8 border border-base-content/20">
     <div>
       <div class="flex items-center gap-3 mb-4">
         <div class="w-10 h-10 rounded-xl bg-info/20 flex items-center justify-center">
@@ -23,7 +23,7 @@ defineProps<Props>()
         </h2>
       </div>
 
-      <div class="prose prose-sm max-w-none text-base-content/70 leading-relaxed space-y-4">
+      <div class="prose prose-sm max-w-none text-base-content/90 leading-relaxed space-y-4">
         <p v-if="description">
           {{ description }}
         </p>
@@ -32,7 +32,7 @@ defineProps<Props>()
       </div>
 
       <div v-if="wikiUrl" class="mt-8 pt-6 border-t border-info/10 flex items-center gap-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-base-content/40">{{ t('label') }}</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-base-content/70">{{ t('label') }}</span>
         <a 
           :href="wikiUrl" 
           target="_blank" 

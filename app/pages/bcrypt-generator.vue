@@ -136,7 +136,7 @@ defineI18nRoute({
         <div class="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div class="form-control w-full">
             <label class="label">
-              <span class="label-text font-bold text-base-content/60">{{ t('plc') }}</span>
+              <span class="label-text font-bold text-base-content/80">{{ t('plc') }}</span>
             </label>
             <input 
               v-model="stateGen.text"
@@ -178,7 +178,7 @@ defineI18nRoute({
         <div class="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div class="form-control w-full">
             <label class="label">
-              <span class="label-text font-bold text-base-content/60">{{ t('plcgen') }}</span>
+              <span class="label-text font-bold text-base-content/80">{{ t('plcgen') }}</span>
             </label>
             <input 
               v-model="stateCheck.hash"
@@ -190,7 +190,7 @@ defineI18nRoute({
 
           <div class="form-control w-full">
             <label class="label">
-              <span class="label-text font-bold text-base-content/60">{{ t('plcver') }}</span>
+              <span class="label-text font-bold text-base-content/80">{{ t('plcver') }}</span>
             </label>
             <input 
               v-model="stateCheck.text"

@@ -89,7 +89,7 @@ defineI18nRoute({
       <!-- Input Area -->
       <div class="form-control w-full">
         <label class="label">
-          <span class="label-text font-bold text-base-content/60">{{ t('plc') }}</span>
+          <span class="label-text font-bold text-base-content/80">{{ t('plc') }}</span>
         </label>
         <textarea 
           v-model="state.text"
@@ -131,7 +131,7 @@ defineI18nRoute({
             <Icon name="heroicons:exclamation-triangle-20-solid" class="w-5 h-5" />
             {{ t('tip_title') }}
           </h4>
-          <ul class="list-disc list-inside text-sm space-y-1 text-base-content/70">
+          <ul class="list-disc list-inside text-sm space-y-1 text-base-content/80">
             <li>{{ t('tip_security') }}</li>
             <li>{{ t('tip_usage') }}</li>
           </ul>

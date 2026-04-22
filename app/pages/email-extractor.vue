@@ -94,7 +94,7 @@ defineI18nRoute({
     <div class="space-y-6">
       <div class="form-control w-full">
         <label class="label">
-          <span class="label-text font-bold text-base-content/60">{{ t('plc') }}</span>
+          <span class="label-text font-bold text-base-content/80">{{ t('plc') }}</span>
         </label>
         <textarea 
           v-model="state.text" 
