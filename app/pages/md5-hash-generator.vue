@@ -127,10 +127,10 @@ defineI18nRoute({
       <div class="space-y-4">
         <p>{{ t('desc') }}</p>
         <div class="bg-warning/10 p-4 rounded-xl border border-warning/20">
-          <h4 class="font-bold mb-2 text-warning flex items-center gap-2">
+          <div class="font-bold mb-2 text-warning flex items-center gap-2">
             <Icon name="heroicons:exclamation-triangle-20-solid" class="w-5 h-5" />
             {{ t('tip_title') }}
-          </h4>
+          </div>
           <ul class="list-disc list-inside text-sm space-y-1 text-base-content/80">
             <li>{{ t('tip_security') }}</li>
             <li>{{ t('tip_usage') }}</li>
