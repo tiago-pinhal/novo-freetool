@@ -19,7 +19,7 @@ defineProps<Props>()
           <Icon name="heroicons:information-circle-20-solid" class="w-6 h-6 text-info" aria-hidden="true" />
         </div>
         <h2 class="text-2xl font-bold text-base-content">
-          {{ title || 'Sobre esta ferramenta' }}
+          {{ title || t('about') }}
         </h2>
       </div>
 
@@ -52,16 +52,22 @@ defineProps<Props>()
 
 <i18n lang="yaml">
 en:
+  about: "About this tool"
   label: "Recommended Reading:"
 pt:
+  about: "Sobre esta ferramenta"
   label: "Leitura Recomendada:"
 es:
+  about: "Sobre esta herramienta"
   label: "Lectura Recomendada:"
 fr:
+  about: "À propos de cet outil"
   label: "Lecture recommandée :"
 it:
+  about: "Informazioni su questo strumento"
   label: "Lettura consigliata:"
 id:
+  about: "Tentang alat ini"
   label: "Bacaan yang Disarankan:"
 </i18n>
 
