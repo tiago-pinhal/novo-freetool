@@ -4,7 +4,6 @@ const { t } = useI18n({ useScope: 'local' })
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
-  type: 'tool',
   features: [
     "Extract all valid email addresses from any text automatically",
     "Remove duplicate emails automatically",

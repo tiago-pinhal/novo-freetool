@@ -7,6 +7,12 @@ useHead({
   meta: [{ name: "description", content: t('d2') }],
 })
 
+usePageJsonLd({
+  type: 'page',
+  name: 'Freetool.Dev',
+  description: t('d2')
+})
+
 const toolCategories = [
   { id: 'pdf', to: '/pdf-tools', icon: 'document', title: t('pdf') },
   { id: 'color', to: '/color-tools', icon: 'swatch', title: t('clr') },

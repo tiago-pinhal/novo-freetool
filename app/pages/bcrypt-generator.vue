@@ -8,7 +8,6 @@ const { t, locale } = useI18n({ useScope: 'local' })
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
-  type: 'tool',
   features: [
     t('f_1'),
     t('f_2'),

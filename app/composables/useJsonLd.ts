@@ -198,8 +198,8 @@ export function useJsonLd(schema: JsonLdInput | JsonLdInput[]) {
   useHead({
     script: schemas.map((s) => ({
       type: 'application/ld+json',
-      innerHTML: JSON.stringify(s),
-    })),
+      innerHTML: JSON.stringify(s)
+    }))
   })
 }
 
@@ -226,7 +226,17 @@ export function usePageJsonLd(options: PageJsonLdOptions) {
 
   const schemas: JsonLdInput[] = []
 
-  if (options.type === 'tool') {
+  if (options.type === 'page') {
+    schemas.push(
+      buildWebPage({
+        name: options.name,
+        url: pageUrl,
+        description: options.description,
+        inLanguage: locale.value,
+      })
+    )
+  } else {
+    // Default is 'tool'
     schemas.push(
       buildWebApp({
         name: options.name,
@@ -237,15 +247,6 @@ export function usePageJsonLd(options: PageJsonLdOptions) {
         offers: FREE_OFFER,
         inLanguage: locale.value,
         featureList: options.features,
-      })
-    )
-  } else {
-    schemas.push(
-      buildWebPage({
-        name: options.name,
-        url: pageUrl,
-        description: options.description,
-        inLanguage: locale.value,
       })
     )
   }

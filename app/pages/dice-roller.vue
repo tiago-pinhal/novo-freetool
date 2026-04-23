@@ -51,7 +51,6 @@ function roll() {
 usePageJsonLd({
     name: t('title'),
     description: t('meta'),
-    type: 'tool',
     features: [
         t('f_1'),
         t('f_2'),
