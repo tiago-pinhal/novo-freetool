@@ -4,16 +4,11 @@ useScript('https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js',
 })
 
 const { t, locale } = useI18n({ useScope: 'local' })
-const localePath = useLocalePath()
 
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
   type: 'tool',
-  breadcrumb: [
-    { name: 'Home', url: localePath('/') },
-    { name: t('title') }
-  ],
   features: [
     t('f_1'),
     t('f_2'),

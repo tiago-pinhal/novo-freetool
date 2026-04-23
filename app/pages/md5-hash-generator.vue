@@ -4,16 +4,10 @@ useScript('https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.js',
 })
 
 const { t, locale } = useI18n({ useScope: 'local' })
-const localePath = useLocalePath()
 
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
-  type: 'tool',
-  breadcrumb: [
-    { name: 'Home', url: localePath('/') },
-    { name: t('title') }
-  ],
   features: [
     t('f_1'),
     t('f_2'),

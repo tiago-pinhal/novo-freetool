@@ -86,11 +86,6 @@ const r7 = computed(() => {
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
-  type: 'tool',
-  breadcrumb: [
-    { name: 'Home', url: localePath('/') },
-    { name: t('title') }
-  ],
   features: [
     t('f1'),
     t('f2'),

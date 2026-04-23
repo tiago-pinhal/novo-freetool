@@ -1,15 +1,10 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const localePath = useLocalePath()
 
 usePageJsonLd({
   type: 'page',
   name: t('title'),
-  description: t('meta'),
-  breadcrumb: [
-    { name: 'Home', url: localePath('/') },
-    { name: t('title') },
-  ],
+  description: t('meta')
 })
 
 useHead({

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const { t, locale } = useI18n({ useScope: 'local' })
-const localePath = useLocalePath()
-const route = useRoute()
 
 const availableDice = [4, 6, 8, 10, 12, 20, 100]
 
@@ -54,10 +52,6 @@ usePageJsonLd({
     name: t('title'),
     description: t('meta'),
     type: 'tool',
-    breadcrumb: [
-        { name: 'Home', url: localePath('/') },
-        { name: t('title') }
-    ],
     features: [
         t('f_1'),
         t('f_2'),

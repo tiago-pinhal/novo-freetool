@@ -4,18 +4,12 @@ useScript('https://cdn.jsdelivr.net/npm/jsnview/build/index.min.js', {
 })
 
 const { t } = useI18n({ useScope: 'local' })
-const localePath = useLocalePath()
 
 // JSON-LD Metadata
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
   type: 'tool',
-  applicationCategory: 'DeveloperApplication',
-  breadcrumb: [
-    { name: 'Home', url: localePath('/') },
-    { name: t('title') }
-  ],
   features: [
     t('f_1'),
     t('f_2'),
