@@ -2,7 +2,7 @@
 useScript('https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.js', {
   trigger: 'client'
 })
-useScript('https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/4.2.5/fxparser.min.js', {
+useScript('https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/4.5.1/fxparser.min.js', {
   trigger: 'client'
 })
 
