@@ -40,7 +40,8 @@ const output = computed(() => {
   try {
     const convert = (window as any).convert
     if (!convert) return null
-    return String(convert.convert(+state.value, state.from).to(state.to))
+    const result = convert.convert(+state.value, state.from).to(state.to)
+    return String(Number(result.toFixed(10)))
   } catch {
     return t('err')
   }
