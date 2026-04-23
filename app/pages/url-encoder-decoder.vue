@@ -68,10 +68,11 @@ defineI18nRoute({
 
     <div class="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div class="form-control w-full">
-        <label class="label">
+        <label for="url-input" class="label">
           <span class="label-text font-bold text-base-content">{{ t('in') }}</span>
         </label>
         <input
+          id="url-input"
           v-model="state.url"
           type="text"
           class="input input-bordered input-lg w-full bg-base-200 focus:bg-base-200 transition-all rounded-2xl"

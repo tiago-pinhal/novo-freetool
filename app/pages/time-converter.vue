@@ -83,10 +83,11 @@ defineI18nRoute({
     <div class="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div class="grid sm:grid-cols-3 gap-4">
         <div class="form-control w-full">
-          <label class="label">
+          <label for="time-value" class="label">
             <span class="label-text font-bold text-base-content">{{ t('value') }}</span>
           </label>
           <input
+            id="time-value"
             v-model.number="state.value"
             type="number"
             class="input input-bordered input-lg w-full bg-base-200 focus:bg-base-200 transition-all rounded-2xl"
