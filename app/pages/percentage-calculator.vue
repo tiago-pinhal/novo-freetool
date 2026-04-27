@@ -131,112 +131,112 @@ defineI18nRoute({
       
       <!-- Calculation 1: X% of Y -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('what') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('what') }}</legend>
         
         <div class="flex w-full mb-4">
           <input type="number" v-model.number="p1.v1" class="input input-bordered rounded-e-none w-full bg-base-100 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Percentage value" />
           <div class="flex items-center justify-center px-4 bg-base-300/30 border border-s-0 border-base-content/20 rounded-e-lg text-base-content/60 font-bold">%</div>
         </div>
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('of') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('of') }}</label>
         <input type="number" v-model.number="p1.v2" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Base value" />
 
         <div class="pt-4 border-t border-base-content/10 w-full">
-          <span class="text-sm opacity-60 mr-2">{{ t('answer') }}</span>
+          <span class="text-sm font-bold mr-2">{{ t('answer') }}</span>
           <span class="text-2xl font-black text-primary">{{ r1 }}</span>
         </div>
       </fieldset>
 
       <!-- Calculation 2: X is what % of Y -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('value') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('value') }}</legend>
         
         <input type="number" v-model.number="p2.v1" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="First value" />
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('rep_of') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('rep_of') }}</label>
         <input type="number" v-model.number="p2.v2" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Second value" />
 
         <div class="pt-4 border-t border-base-content/10 w-full">
-          <span class="text-sm opacity-60 mr-2">{{ t('answer') }}</span>
+          <span class="text-sm font-bold mr-2">{{ t('answer') }}</span>
           <span class="text-2xl font-black text-primary">{{ r2 }}</span>
         </div>
       </fieldset>
 
       <!-- Calculation 3: X is Y% of how much -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('value') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('value') }}</legend>
         
         <input type="number" v-model.number="p3.v1" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Result value" />
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('rep') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('rep') }}</label>
         <div class="flex w-full mb-4">
           <input type="number" v-model.number="p3.v2" class="input input-bordered rounded-e-none w-full bg-base-100 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Percentage" />
           <div class="flex items-center justify-center px-4 bg-base-300/30 border border-s-0 border-base-content/20 rounded-e-lg text-base-content/60 font-bold">%</div>
         </div>
 
         <div class="pt-4 border-t border-base-content/10 w-full">
-          <span class="text-sm opacity-60 mr-2">{{ t('of') }}</span>
+          <span class="text-sm font-bold mr-2">{{ t('of') }}</span>
           <span class="text-2xl font-black text-primary">{{ r3 }}</span>
         </div>
       </fieldset>
 
       <!-- Calculation 4: Percentage Increase -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('inc') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('inc') }}</legend>
         
         <input type="number" v-model.number="p4.v1" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Original value" />
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('by') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('by') }}</label>
         <div class="flex w-full mb-4">
           <input type="number" v-model.number="p4.v2" class="input input-bordered rounded-e-none w-full bg-base-100 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Percentage increase" />
           <div class="flex items-center justify-center px-4 bg-base-300/30 border border-s-0 border-base-content/20 rounded-e-lg text-base-content/60 font-bold">%</div>
         </div>
 
         <div class="pt-4 border-t border-base-content/10 w-full">
-          <span class="text-sm opacity-60 mr-2">{{ t('res') }}</span>
+          <span class="text-sm font-bold mr-2">{{ t('res') }}</span>
           <span class="text-2xl font-black text-primary">{{ r4 }}</span>
         </div>
       </fieldset>
 
       <!-- Calculation 5: Percentage Decrease -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('dec') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('dec') }}</legend>
         
         <input type="number" v-model.number="p5.v1" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Original value" />
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('by') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('by') }}</label>
         <div class="flex w-full mb-4">
           <input type="number" v-model.number="p5.v2" class="input input-bordered rounded-e-none w-full bg-base-100 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Percentage decrease" />
           <div class="flex items-center justify-center px-4 bg-base-300/30 border border-s-0 border-base-content/20 rounded-e-lg text-base-content/60 font-bold">%</div>
         </div>
 
         <div class="pt-4 border-t border-base-content/10 w-full flex flex-col">
-          <div><span class="text-sm opacity-60 mr-2">{{ t('res') }}</span><span class="text-2xl font-black text-primary">{{ r5 }}</span></div>
+          <div><span class="text-sm font-bold mr-2">{{ t('res') }}</span><span class="text-2xl font-black text-primary">{{ r5 }}</span></div>
         </div>
       </fieldset>
 
       <!-- Calculation 6: Percentage Difference -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('diff') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('diff') }}</legend>
         
         <input type="number" v-model.number="p6.v1" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="First value" />
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('and') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('and') }}</label>
         <input type="number" v-model.number="p6.v2" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Second value" />
 
         <div class="pt-4 border-t border-base-content/10 w-full">
-          <span class="text-sm opacity-60 mr-2">{{ t('is') }}</span>
+          <span class="text-sm font-bold mr-2">{{ t('is') }}</span>
           <span class="text-2xl font-black text-primary">{{ r6 }}</span>
         </div>
       </fieldset>
 
       <!-- Calculation 7: Profit Margin -->
       <fieldset class="fieldset bg-base-200/40 border border-base-content/20 p-5 rounded-2xl shadow-sm hover:border-primary/20 transition-all">
-        <legend class="fieldset-legend font-bold text-sm text-base-content/70 uppercase tracking-wider px-2">{{ t('cost') }}</legend>
+        <legend class="fieldset-legend font-bold text-sm text-base-content uppercase tracking-wider px-2">{{ t('cost') }}</legend>
         
         <input type="number" v-model.number="p7.v1" class="input input-bordered w-full bg-base-100 mb-4 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Cost price" />
 
-        <label class="fieldset-label font-bold text-sm text-base-content/70 uppercase tracking-wider mb-2">{{ t('margin') }}</label>
+        <label class="fieldset-label font-bold text-sm text-base-content uppercase tracking-wider mb-2">{{ t('margin') }}</label>
         <div class="flex w-full mb-4">
           <input type="number" v-model.number="p7.v2" class="input input-bordered rounded-e-none w-full bg-base-100 border-base-content/20 focus:border-primary" placeholder="0" aria-label="Profit margin" />
           <div class="flex items-center justify-center px-4 bg-base-300/30 border border-s-0 border-base-content/20 rounded-e-lg text-base-content/60 font-bold">%</div>

@@ -23,7 +23,7 @@ async function copy() {
 
 <template>
   <div v-if="content" class="my-6">
-    <span class="text-xs font-bold uppercase tracking-wider text-base-content/70 px-1">
+    <span class="text-xs font-bold uppercase tracking-wider text-base-content px-1">
       {{ label }}:
     </span>
 

@@ -23,7 +23,7 @@ function handleClick() {
   <button 
     type="button" 
     @click.prevent="handleClick" 
-    class="relative group transition-all duration-300 active:scale-90"
+    class="btn btn-outline btn-lg rounded-2xl relative group transition-all duration-300 active:scale-95 px-8 gap-2"
     :aria-label="ariaLabel"
   >
     <slot />
