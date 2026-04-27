@@ -26,7 +26,7 @@ const detailsRef = ref<HTMLDetailsElement | null>(null)
 </script>
 
 <template>
-  <header class="navbar bg-base-200 shadow-sm w-full sticky top-0 z-50 h-16 px-4">
+  <header class="navbar bg-base-100/80 backdrop-blur-md border-b border-base-content/5 w-full sticky top-0 z-50 h-16 px-4">
     <div class="navbar-start flex items-center h-full">
       <button
         @click="toggleMenu"
