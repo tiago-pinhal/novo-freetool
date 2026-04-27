@@ -150,15 +150,15 @@ defineI18nRoute({
       <div class="flex flex-col sm:flex-row gap-6 flex-wrap">
         <!-- Header checkbox -->
         <div class="form-control w-fit">
-          <label class="label cursor-pointer gap-3">
+          <label class="label cursor-pointer justify-start gap-3">
             <input
               id="chk-header"
               type="checkbox"
               v-model="state.options.header"
               :disabled="state.resetable"
-              class="checkbox checkbox-primary"
+              class="toggle toggle-primary"
             />
-            <span class="label-text">{{ t('header') }}</span>
+            <span class="label-text font-medium">{{ t('header') }}</span>
           </label>
         </div>
 
