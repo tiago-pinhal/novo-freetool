@@ -53,8 +53,10 @@ function convertOrReset() {
 }
 
 function minifyCode() {
-  const htmlMinifier = (window as any).htmlMinifier
-  if (!htmlMinifier) {
+  let minifyFn: any
+  try {
+    minifyFn = (window as any).require('html-minifier').minify
+  } catch (error) {
     document.location.reload()
     return
   }
@@ -78,7 +80,7 @@ function minifyCode() {
   }
 
   try {
-    editor.value!.setValue(htmlMinifier.minify(editor.value!.getValue(), options))
+    editor.value!.setValue(minifyFn(editor.value!.getValue(), options))
     editor.value!.setReadOnly(true)
     state.resetable = true
     state.ads = true

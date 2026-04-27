@@ -53,8 +53,10 @@ function convertOrReset() {
 }
 
 function minifyCode() {
-  const htmlMinifier = (window as any).htmlMinifier
-  if (!htmlMinifier) {
+  let minifyFn: any
+  try {
+    minifyFn = (window as any).require('html-minifier').minify
+  } catch (error) {
     document.location.reload()
     return
   }
@@ -67,7 +69,7 @@ function minifyCode() {
     if (addOpen) code = '<style>' + code
     if (addClose) code += '</style>'
 
-    code = htmlMinifier.minify(code, { collapseWhitespace: true, minifyCSS: true })
+    code = minifyFn(code, { collapseWhitespace: true, minifyCSS: true })
 
     if (addOpen) code = code.replace('<style>', '')
     if (addClose) code = code.replace('</style>', '')
