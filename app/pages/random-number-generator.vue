@@ -236,7 +236,7 @@ defineI18nRoute({
         <section>
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
             <Icon name="heroicons:briefcase-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('usecases_title') }}
+            {{ t('use_cases_title') }}
           </h2>
           <ul class="grid sm:grid-cols-2 gap-3">
             <li
@@ -291,7 +291,7 @@ defineI18nRoute({
     f_2: "Multiple Numbers: Specify exactly how many numbers to generate in a single operation.",
     f_3: "Repetition Control: Choose whether generated numbers can repeat or must be unique.",
     f_4: "Flexible Sorting: Organize results in ascending, descending, or random order.",
-    usecases_title: "Common Use Cases",
+    use_cases_title: "Use Cases",
     uc_1: "Raffles & Lotteries: Generate random numbers to select winners or lottery combinations fairly.",
     uc_2: "Games & Simulations: Create random elements for game mechanics or computer simulations.",
     uc_3: "Software Testing: Produce varied input data to test system functionalities.",
@@ -336,7 +336,7 @@ defineI18nRoute({
     f_2: "Quantidade Definida: Especifique quantos números deseja gerar em uma única operação.",
     f_3: "Controle de Repetição: Escolha se os números gerados podem repetir ou devem ser únicos.",
     f_4: "Ordenação Flexível: Organize os resultados em ordem crescente, decrescente ou aleatória.",
-    usecases_title: "Casos de Uso Comuns",
+    use_cases_title: "Casos de Uso",
     uc_1: "Sorteios e Loteria: Gere números aleatórios para selecionar vencedores de forma imparcial.",
     uc_2: "Jogos e Simulações: Crie elementos aleatórios para dinâmicas de jogos ou simulações computacionais.",
     uc_3: "Testes de Software: Produza dados de entrada variados para testar funcionalidades de sistemas.",
@@ -381,7 +381,7 @@ defineI18nRoute({
     f_2: "Cantidad Definida: Especifica cuántos números generar en una sola operación.",
     f_3: "Control de Repetición: Elige si los números generados pueden repetirse o deben ser únicos.",
     f_4: "Ordenación Flexible: Organiza los resultados en orden ascendente, descendente o aleatorio.",
-    usecases_title: "Casos de Uso Comunes",
+    use_cases_title: "Casos de Uso",
     uc_1: "Sorteos y Lotería: Genera números aleatorios para seleccionar ganadores de forma imparcial.",
     uc_2: "Juegos y Simulaciones: Crea elementos aleatorios para dinámicas de juegos o simulaciones.",
     uc_3: "Pruebas de Software: Produce datos de entrada variados para probar funcionalidades del sistema.",
@@ -426,7 +426,7 @@ defineI18nRoute({
     f_2: "Nombres Multiples: Spécifiez combien de nombres générer en une seule opération.",
     f_3: "Contrôle des Répétitions: Choisissez si les nombres peuvent se répéter ou doivent être uniques.",
     f_4: "Tri Flexible: Organisez les résultats par ordre croissant, décroissant ou aléatoire.",
-    usecases_title: "Cas d'Utilisation Courants",
+    use_cases_title: "Cas d'Utilisation",
     uc_1: "Tirages et Loterie: Générez des nombres aléatoires pour sélectionner des gagnants de manière équitable.",
     uc_2: "Jeux et Simulations: Créez des éléments aléatoires pour des dynamiques de jeux ou des simulations.",
     uc_3: "Tests Logiciels: Produisez des données d'entrée variées pour tester des fonctionnalités système.",
@@ -471,7 +471,7 @@ defineI18nRoute({
     f_2: "Numeri Multipli: Specifica quanti numeri generare in una singola operazione.",
     f_3: "Controllo della Ripetizione: Scegli se i numeri possono ripetersi o devono essere unici.",
     f_4: "Ordinamento Flessibile: Organizza i risultati in ordine crescente, decrescente o casuale.",
-    usecases_title: "Casi d'Uso Comuni",
+    use_cases_title: "Casi d'Uso",
     uc_1: "Estrazioni e Lotterie: Genera numeri casuali per selezionare vincitori in modo imparziale.",
     uc_2: "Giochi e Simulazioni: Crea elementi casuali per dinamiche di gioco o simulazioni.",
     uc_3: "Test Software: Produci dati di input variati per testare funzionalità di sistema.",
@@ -516,7 +516,7 @@ defineI18nRoute({
     f_2: "Banyak Angka: Tentukan berapa banyak angka yang akan dihasilkan dalam satu operasi.",
     f_3: "Kontrol Pengulangan: Pilih apakah angka yang dihasilkan dapat berulang atau harus unik.",
     f_4: "Pengurutan Fleksibel: Atur hasil dalam urutan naik, turun, atau acak.",
-    usecases_title: "Kasus Penggunaan Umum",
+    use_cases_title: "Contoh Penggunaan",
     uc_1: "Undian & Lotere: Hasilkan angka acak untuk memilih pemenang secara adil.",
     uc_2: "Permainan & Simulasi: Buat elemen acak untuk dinamika permainan atau simulasi komputer.",
     uc_3: "Pengujian Perangkat Lunak: Hasilkan data masukan bervariasi untuk menguji fungsionalitas sistem.",
