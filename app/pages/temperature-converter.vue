@@ -14,11 +14,15 @@ usePageJsonLd({
     t('f_3'),
     t('f_4')
   ],
-  howToName: t('how_to_use_title'),
+  howToName: t('how_it_works_title'),
   howToSteps: [
     { name: t('step_1_title'), text: t('step_1_desc') },
     { name: t('step_2_title'), text: t('step_2_desc') },
     { name: t('step_3_title'), text: t('step_3_desc') }
+  ],
+  faq: [
+    { question: t('faq_1_q'), answer: t('faq_1_a') },
+    { question: t('faq_2_q'), answer: t('faq_2_a') }
   ]
 })
 
@@ -71,7 +75,7 @@ defineI18nRoute({
     :description="t('meta')"
     :show-ads="!!output"
     :wiki-url="`https://${locale}.wikipedia.org/wiki/Temperature`"
-    :wiki-label="'Wikipedia (Temperature)'"
+    wiki-label="Temperature"
     :see-also-links="[
       { label: t('see1'), to: 'length-converter' },
       { label: t('see2'), to: 'time-converter' },
@@ -81,23 +85,34 @@ defineI18nRoute({
   >
     <template #info>
       <div class="space-y-8">
-        <section>
-          <p class="mb-4">{{ t('d1') }}</p>
-        </section>
+        <div>
+          <p>{{ t('d1') }}</p>
+        </div>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+        <UseCaseSection
+          :title="t('use_cases_title')"
+          :items="[
+            { title: t('uc_1_title'), description: t('uc_1_desc') },
+            { title: t('uc_2_title'), description: t('uc_2_desc') }
+          ]"
+        />
+
+        <HowToSection
+          :title="t('how_it_works_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
+
+        <FaqSection
+          :title="t('faq_title')"
+          :items="[
+            { question: t('faq_1_q'), answer: t('faq_1_a') },
+            { question: t('faq_2_q'), answer: t('faq_2_a') }
+          ]"
+        />
       </div>
     </template>
 
@@ -157,13 +172,23 @@ defineI18nRoute({
     to: "To",
     result: "Result",
     err: "Conversion not performed",
-    how_to_use_title: "How to use",
+    how_it_works_title: "How It Works",
     step_1_title: "Enter Value",
     step_1_desc: "Type the temperature value you want to convert.",
     step_2_title: "Select Scales",
     step_2_desc: "Choose the source and target temperature scales.",
     step_3_title: "Copy Result",
     step_3_desc: "The conversion happens instantly. Use the copy button to send it to your clipboard.",
+    use_cases_title: "Use Cases",
+    uc_1_title: "Cooking & Recipes",
+    uc_1_desc: "Quickly convert oven temperatures between Celsius and Fahrenheit for international recipes.",
+    uc_2_title: "Scientific Research",
+    uc_2_desc: "Convert measurements to Kelvin or Rankine for thermodynamic calculations and laboratory work.",
+    faq_title: "Questions & Answers",
+    faq_1_q: "What is the difference between Celsius and Fahrenheit?",
+    faq_1_a: "Celsius is based on the freezing and boiling points of water (0°C and 100°C), while Fahrenheit uses a different scale (32°F and 212°F for the same points).",
+    faq_2_q: "When is Kelvin used?",
+    faq_2_a: "Kelvin is the primary unit of temperature in the physical sciences and is used when absolute temperature measurements are required.",
     see1: "Length Converter",
     see2: "Time Converter",
     see3: "Storage Unit Converter",
@@ -186,13 +211,23 @@ defineI18nRoute({
     to: "Para",
     result: "Resultado",
     err: "Conversão não realizada",
-    how_to_use_title: "Como usar",
+    how_it_works_title: "Como Funciona",
     step_1_title: "Inserir Valor",
     step_1_desc: "Digite o valor da temperatura que você deseja converter.",
     step_2_title: "Selecionar Escalas",
     step_2_desc: "Escolha as escalas de temperatura de origem e destino.",
     step_3_title: "Copiar Resultado",
     step_3_desc: "A conversão acontece instantaneamente. Use o botão de copiar para enviar para a área de transferência.",
+    use_cases_title: "Casos de Uso",
+    uc_1_title: "Culinária e Receitas",
+    uc_1_desc: "Converta rapidamente temperaturas de forno entre Celsius e Fahrenheit para receitas internacionais.",
+    uc_2_title: "Pesquisa Científica",
+    uc_2_desc: "Converta medições para Kelvin ou Rankine para cálculos termodinâmicos e trabalho de laboratório.",
+    faq_title: "Perguntas e Respostas",
+    faq_1_q: "Qual a diferença entre Celsius e Fahrenheit?",
+    faq_1_a: "Celsius é baseado nos pontos de congelamento e ebulição da água (0°C e 100°C), enquanto Fahrenheit usa uma escala diferente (32°F e 212°F para os mesmos pontos).",
+    faq_2_q: "Quando o Kelvin é usado?",
+    faq_2_a: "Kelvin é a unidade principal de temperatura nas ciências físicas e é usado quando medições de temperatura absoluta são necessárias.",
     see1: "Conversor de Comprimento",
     see2: "Conversor de Tempo",
     see3: "Conversor de Unidades de Armazenamento",
@@ -215,13 +250,23 @@ defineI18nRoute({
     to: "A",
     result: "Resultado",
     err: "Conversión no realizada",
-    how_to_use_title: "Cómo usar",
+    how_it_works_title: "Cómo Funciona",
     step_1_title: "Ingresar Valor",
     step_1_desc: "Escribe el valor de temperatura que deseas convertir.",
     step_2_title: "Seleccionar Escalas",
     step_2_desc: "Elige las escalas de temperatura de origen y destino.",
     step_3_title: "Copiar Resultado",
     step_3_desc: "La conversión es instantánea. Usa el botón de copiar para enviarlo al portapapeles.",
+    use_cases_title: "Casos de Uso",
+    uc_1_title: "Cocina y Recetas",
+    uc_1_desc: "Convierte rápidamente las temperaturas del horno entre Celsius y Fahrenheit para recetas internacionales.",
+    uc_2_title: "Investigación Científica",
+    uc_2_desc: "Convierte mediciones a Kelvin o Rankine para cálculos termodinámicos y trabajo de laboratorio.",
+    faq_title: "Preguntas y Respuestas",
+    faq_1_q: "¿Cuál es la diferencia entre Celsius y Fahrenheit?",
+    faq_1_a: "Celsius se basa en los puntos de congelación y ebullición del agua (0°C y 100°C), mientras que Fahrenheit utiliza una escala diferente (32°F y 212°F para los mismos puntos).",
+    faq_2_q: "¿Cuándo se usa el Kelvin?",
+    faq_2_a: "Kelvin es la unidad principal de temperatura en las ciencias físicas y se utiliza cuando se requieren mediciones de temperatura absoluta.",
     see1: "Convertidor de Longitud",
     see2: "Convertidor de Tiempo",
     see3: "Convertidor de Unidades de Almacenamiento",
@@ -244,13 +289,23 @@ defineI18nRoute({
     to: "À",
     result: "Résultat",
     err: "Conversion non effectuée",
-    how_to_use_title: "Comment utiliser l'outil",
+    how_it_works_title: "Comment Ça Marche",
     step_1_title: "Entrer la Valeur",
     step_1_desc: "Tapez la valeur de température que vous souhaitez convertir.",
     step_2_title: "Sélectionner les Échelles",
     step_2_desc: "Choisissez les échelles de température de départ et d'arrivée.",
     step_3_title: "Copier le Résultat",
     step_3_desc: "La conversion est instantanée. Utilisez le bouton de copie pour l'envoyer au presse-papiers.",
+    use_cases_title: "Cas d'Utilisation",
+    uc_1_title: "Cuisine et Recettes",
+    uc_1_desc: "Convertissez rapidement les températures du four entre Celsius et Fahrenheit pour des recettes internationales.",
+    uc_2_title: "Recherche Scientifique",
+    uc_2_desc: "Convertissez les mesures en Kelvin ou Rankine pour les calculs thermodynamiques et les travaux de laboratoire.",
+    faq_title: "Questions et Réponses",
+    faq_1_q: "Quelle est la différence entre Celsius et Fahrenheit ?",
+    faq_1_a: "Le Celsius est basé sur les points de congélation et d'ébullition de l'eau (0°C et 100°C), tandis que le Fahrenheit utilise une échelle différente (32°F et 212°F pour les mêmes points).",
+    faq_2_q: "Quand le Kelvin est-il utilisé ?",
+    faq_2_a: "Le Kelvin est l'unité principale de température dans les sciences physiques et est utilisé lorsque des mesures de température absolue sont nécessaires.",
     see1: "Convertisseur de Longueur",
     see2: "Convertisseur de Temps",
     see3: "Convertisseur d'Unités de Stockage",
@@ -273,13 +328,23 @@ defineI18nRoute({
     to: "A",
     result: "Risultato",
     err: "Conversione non eseguita",
-    how_to_use_title: "Come usare lo strumento",
+    how_it_works_title: "Come Funziona",
     step_1_title: "Inserisci Valore",
     step_1_desc: "Digita il valore di temperatura che desideri convertire.",
     step_2_title: "Seleziona Scale",
     step_2_desc: "Scegli le scale di temperatura di origine e destinazione.",
     step_3_title: "Copia Risultato",
     step_3_desc: "La conversione è istantanea. Usa il pulsante di copia per inviarlo agli appunti.",
+    use_cases_title: "Casi d'Uso",
+    uc_1_title: "Cucina e Ricette",
+    uc_1_desc: "Converti rapidamente le temperature del forno tra Celsius e Fahrenheit per ricette internazionali.",
+    uc_2_title: "Ricerca Scientifica",
+    uc_2_desc: "Converti le misurazioni in Kelvin o Rankine per calcoli termodinamici e lavori in laboratorio.",
+    faq_title: "Domande e Risposte",
+    faq_1_q: "Qual è la differenza tra Celsius e Fahrenheit?",
+    faq_1_a: "Celsius si basa sui punti di congelamento e ebollizione dell'acqua (0°C e 100°C), mentre Fahrenheit utilizza una scala diversa (32°F e 212°F per gli stessi punti).",
+    faq_2_q: "Quando viene usato il Kelvin?",
+    faq_2_a: "Il Kelvin è l'unità principale di temperatura nelle scienze fisiche e viene utilizzato quando sono richieste misurazioni della temperatura assoluta.",
     see1: "Convertitore di Lunghezza",
     see2: "Convertitore di Tempo",
     see3: "Convertitore di Unità di Archiviazione",
@@ -302,13 +367,23 @@ defineI18nRoute({
     to: "Ke",
     result: "Hasil",
     err: "Konversi tidak dilakukan",
-    how_to_use_title: "Cara menggunakan alat ini",
+    how_it_works_title: "Cara Kerja",
     step_1_title: "Masukkan Nilai",
     step_1_desc: "Ketik nilai suhu yang ingin Anda konversi.",
     step_2_title: "Pilih Skala",
     step_2_desc: "Pilih skala suhu asal dan tujuan.",
     step_3_title: "Salin Hasil",
     step_3_desc: "Konversi terjadi seketika. Gunakan tombol salin untuk mengirim ke papan klip.",
+    use_cases_title: "Contoh Penggunaan",
+    uc_1_title: "Memasak & Resep",
+    uc_1_desc: "Konversikan suhu oven antara Celsius dan Fahrenheit dengan cepat untuk resep internasional.",
+    uc_2_title: "Penelitian Ilmiah",
+    uc_2_desc: "Konversikan pengukuran ke Kelvin atau Rankine untuk perhitungan termodinamika dan pekerjaan laboratorium.",
+    faq_title: "Tanya Jawab",
+    faq_1_q: "Apa perbedaan antara Celsius dan Fahrenheit?",
+    faq_1_a: "Celsius didasarkan pada titik beku dan titik didih air (0°C dan 100°C), sedangkan Fahrenheit menggunakan skala yang berbeda (32°F dan 212°F untuk titik yang sama).",
+    faq_2_q: "Kapan Kelvin digunakan?",
+    faq_2_a: "Kelvin adalah satuan utama suhu dalam ilmu fisika dan digunakan ketika pengukuran suhu absolut diperlukan.",
     see1: "Konverter Panjang",
     see2: "Konverter Waktu",
     see3: "Konverter Unit Penyimpanan",
