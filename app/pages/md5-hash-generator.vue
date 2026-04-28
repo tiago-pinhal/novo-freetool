@@ -124,21 +124,26 @@ defineI18nRoute({
       </Transition>
     </div>
     <template #info>
-      <div class="space-y-4">
+      <div class="space-y-8">
         <p>{{ t('desc') }}</p>
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+
+        <!-- Features -->
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
+          icon="heroicons:shield-check-20-solid"
+        />
+
+        <!-- How to Use -->
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
+     
         <div class="bg-warning/10 p-4 rounded-xl border border-warning/20">
           <div class="font-bold mb-2 text-warning flex items-center gap-2">
             <Icon name="heroicons:exclamation-triangle-20-solid" class="w-5 h-5" />
@@ -161,6 +166,7 @@ defineI18nRoute({
     meta: "Easily calculate the MD5 hash (128-bit fingerprint) of any text and verify data integrity by comparing hashes.",
     desc: "MD5 (Message Digest Algorithm 5) is a widely used cryptographic hash algorithm that produces a 128-bit (32-character) fingerprint for any input text or data. It is primarily used to verify data integrity, as it will generate a unique and consistent hash, regardless of the size of the input data. Thus, even the slightest change in the input alters this code, making it easy to identify any modifications. MD5 is often used to verify that a file has not been altered, although for high-security password hashing, more modern algorithms like SHA-256 or Bcrypt are recommended.",
     bt: "Calculate",
+    features_title: "Features",
     plc: "Text to hash",
     see1: "Bcrypt Generator",
     see2: "JSON Viewer",
@@ -187,6 +193,7 @@ defineI18nRoute({
     meta: "Calcule facilmente o hash MD5 (impressão digital de 128 bits) de qualquer texto e verifique a integridade dos dados comparando os hashes.",
     desc: "O MD5 (Message Digest Algorithm 5) é um algoritmo de hash criptográfico bastante utilizado, que produz uma impressão digital de 128 bits (32 caracteres) para qualquer texto ou conjunto de dados. Ele é usado principalmente para verificar a integridade dos dados, pois gera um hash único e consistente. Até a menor alteração na entrada modifica esse código, permitindo identificar facilmente qualquer alteração nos dados originais. Embora útil para verificação de arquivos, para segurança de senhas recomenda-se algoritmos mais robustos como SHA-256 ou Bcrypt.",
     bt: "Calcular",
+    features_title: "Funcionalidades",
     plc: "Texto para gerar o hash",
     see1: "Gerador Bcrypt",
     see2: "Visualizador de JSON",
@@ -213,6 +220,7 @@ defineI18nRoute({
     meta: "Calcula fácilmente el hash MD5 (huella digital de 128 bits) de cualquier texto y verifica la integridad de tus datos comparando los hashes.",
     desc: "MD5 (Algoritmo de Resumen del Mensaje 5) es un algoritmo de hash criptográfico muy utilizado que produce una huella digital de 128 bits (32 caracteres) para cualquier texto o datos de entrada. Se utiliza principalmente para verificar la integridad de los datos, ya que genera un hash único y consistente. Incluso el cambio más mínimo en el texto de entrada altera este código, lo que facilita la identificación de cualquier modificación. Para la seguridad de las contraseñas, se recomienda el uso de algoritmos más modernos como SHA-256 o Bcrypt.",
     bt: "Calcular",
+    features_title: "Funcionalidades",
     plc: "Texto para generar el hash",
     see1: "Generador Bcrypt",
     see2: "Visor de JSON",
@@ -239,6 +247,7 @@ defineI18nRoute({
     meta: "Calculez facilement le hash MD5 (empreinte 128 bits) de n'importe quel texte et vérifiez l'intégrité des données en comparant les hachages.",
     desc: "Le MD5 (Message Digest Algorithm 5) est un algorithme de hachage cryptographique largement utilisé qui produit une empreinte numérique de 128 bits (32 caractères) pour n'importe quel texte ou jeu de données. Il sert principalement à vérifier l'intégrité des données, car il génère un hachage unique et constant. La moindre modification de l'entrée change ce code, ce qui permet de repérer facilement toute altération. Pour le hachage sécurisé des mots de passe, des algorithmes plus récents comme SHA-256 ou Bcrypt sont recommandés.",
     bt: "Calculer",
+    features_title: "Fonctionnalités",
     plc: "Texte à hacher",
     see1: "Générateur Bcrypt",
     see2: "Visualiseur JSON",
@@ -265,6 +274,7 @@ defineI18nRoute({
     meta: "Calcola l'hash MD5 (impronta a 128 bit) di qualsiasi testo e verifica l'integrità dei dati confrontando gli hash.",
     desc: "L'MD5 (Message Digest Algorithm 5) è un algoritmo di hash crittografico ampiamente utilizzato che produce un'impronta digitale di 128 bit (32 caratteri) per qualsiasi testo o dato in input. Viene usato soprattutto per verificare l'integrità dei dati, perché genera un hash unico e coerente. Anche la modifica più piccola dell'input cambia questo codice, rendendo semplice individuare eventuali alterazioni. Per la sicurezza delle password, sono consigliati algoritmi più moderni e robusti come SHA-256 o Bcrypt.",
     bt: "Calcola",
+    features_title: "Funzionalità",
     plc: "Testo per generare l'hash",
     see1: "Generatore Bcrypt",
     see2: "Visualizzatore di JSON",
@@ -291,6 +301,7 @@ defineI18nRoute({
     meta: "Hitung hash MD5 (sidik jari 128-bit) dengan mudah untuk teks apa pun dan verifikasi integritas data dengan membandingkan hash.",
     desc: "MD5 (Message Digest Algorithm 5) adalah algoritma hash kriptografi yang banyak digunakan yang menghasilkan sidik jari 128-bit (32-karakter) untuk teks atau data input apa pun. Ini terutama digunakan untuk memverifikasi integritas data, karena akan menghasilkan hash yang unik dan konsisten. Bahkan sedikit perubahan pada teks input akan mengubah kode ini, sehingga memudahkan untuk mengidentifikasi setiap perubahan pada data asli. Untuk keamanan kata sandi, algoritma yang lebih kuat seperti SHA-256 atau Bcrypt sangat disarankan. Semua pemrosesan dilakukan di browser Anda dan tidak diperlukan instalasi.",
     bt: "Hitung",
+    features_title: "Fitur",
     plc: "Teks untuk dibuat hash",
     see1: "Generator Bcrypt",
     see2: "Penampil JSON",

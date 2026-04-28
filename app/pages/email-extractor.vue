@@ -5,10 +5,10 @@ usePageJsonLd({
   name: t('title'),
   description: t('meta'),
   features: [
-    "Extract all valid email addresses from any text automatically",
-    "Remove duplicate emails automatically",
-    "Export with comma, line break, semicolon, or pipe separator",
-    "Drag and drop file support"
+    t('f_1'),
+    t('f_2'),
+    t('f_3'),
+    t('f_4')
   ],
   howToName: t('how_to_use_title'),
   howToSteps: [
@@ -87,36 +87,38 @@ defineI18nRoute({
   >
     <template #info>
       <div class="space-y-8">
-        <p class="mb-4">{{ t('desc') }}</p>
+        <p>{{ t('desc') }}</p>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+        <!-- How to Use -->
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:briefcase-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('use_cases_title') }}
-          </h2>
-          <p>{{ t('use_cases_desc') }}</p>
-        </section>
+        <!-- Use Cases -->
+        <ListSection
+          :title="t('use_cases_title')"
+          :description="t('use_cases_desc')"
+          :items="[]"
+        />
 
+        <!-- Features -->
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
+        />
+
+        <!-- Ideal For -->
         <section>
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
             <Icon name="heroicons:user-group-20-solid" class="w-6 h-6 text-primary" />
             {{ t('ideal_for_title') }}
           </h2>
-          <p>{{ t('ideal_for_desc') }}</p>
+          <p class="text-base-content/80 leading-relaxed">{{ t('ideal_for_desc') }}</p>
         </section>
       </div>
     </template>
@@ -206,6 +208,11 @@ defineI18nRoute({
         colon: "Semicolon",
         pipe: "Pipe",
         res: "Result",
+        features_title: "Features",
+        f_1: "Extract all valid email addresses from any text automatically",
+        f_2: "Remove duplicate emails automatically",
+        f_3: "Export with comma, line break, semicolon, or pipe separator",
+        f_4: "Drag and drop file support",
         see1: "Percentage Calculator",
         see2: "List Randomizer",
         see3: "Dice Roller",
@@ -235,6 +242,11 @@ defineI18nRoute({
         colon: "Ponto e vírgula",
         pipe: "Pipe",
         res: "Resultado",
+        features_title: "Funcionalidades",
+        f_1: "Extração automática de e-mails de qualquer texto",
+        f_2: "Remoção automática de e-mails duplicados",
+        f_3: "Exportação com vírgula, quebra de linha, ponto e vírgula ou pipe",
+        f_4: "Suporte para arrastar e soltar arquivos",
         see1: "Calculadora de Porcentagem",
         see2: "Sorteador de Listas",
         see3: "Lançador de Dados",
@@ -264,6 +276,11 @@ defineI18nRoute({
         colon: "Punto y coma",
         pipe: "Pipe",
         res: "Resultado",
+        features_title: "Funcionalidades",
+        f_1: "Extracción automática de correos de cualquier texto",
+        f_2: "Eliminación automática de correos duplicados",
+        f_3: "Exportación con coma, salto de línea, punto y coma o pipe",
+        f_4: "Soporte para arrastrar y soltar archivos",
         see1: "Calculadora de Porcentaje",
         see2: "Aleatorizador de Listas",
         see3: "Lanzador de Dados",
@@ -293,6 +310,11 @@ defineI18nRoute({
         colon: "Point-virgule",
         pipe: "Pipe",
         res: "Résultat",
+        features_title: "Fonctionnalités",
+        f_1: "Extraction automatique des e-mails à partir de n'importe quel texte",
+        f_2: "Suppression automatique des e-mails en double",
+        f_3: "Exportation avec virgule, saut de ligne, point-virgule ou pipe",
+        f_4: "Prise en charge du glisser-déposer de fichiers",
         see1: "Calculatrice de Pourcentage",
         see2: "Mélangeur de Listes",
         see3: "Lanceur de Dés",
@@ -322,6 +344,11 @@ defineI18nRoute({
         colon: "Punto e virgola",
         pipe: "Pipe",
         res: "Risultato",
+        features_title: "Funzionalità",
+        f_1: "Estrazione automatica di email da qualsiasi testo",
+        f_2: "Rimozione automatica delle email duplicate",
+        f_3: "Esportazione con virgola, riga, punto e virgola o pipe",
+        f_4: "Supporto per il trascinamento dei file",
         see1: "Calcolatrice di Percentuale",
         see2: "Randomizzatore di Liste",
         see3: "Lanciatore di Dadi",
@@ -351,6 +378,11 @@ defineI18nRoute({
         colon: "Titik koma",
         pipe: "Pipe",
         res: "Hasil",
+        features_title: "Fitur",
+        f_1: "Ekstrak otomatis semua email dari teks apa pun",
+        f_2: "Hapus email duplikat secara otomatis",
+        f_3: "Ekspor dengan koma, baris, titik koma, ou pipe",
+        f_4: "Dukungan seret dan lepas file",
         see1: "Kalkulator Persentase",
         see2: "Pengacak Daftar",
         see3: "Pelempar Dadu",

@@ -208,64 +208,45 @@ defineI18nRoute({
     <Mordizi v-if="state.ads" />
 
     <template #info>
-      <div class="space-y-8">
+      <div class="space-y-12">
         <section>
           <p>{{ t('d1') }}</p>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:check-badge-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('features_title') }}
-          </h2>
-          <ul class="grid sm:grid-cols-2 gap-3">
-            <li
-              v-for="i in 4"
-              :key="i"
-              class="flex items-start gap-2 bg-base-200/40 p-3 rounded-xl border border-primary/20"
-            >
-              <Icon name="heroicons:check-circle-20-solid" class="w-5 h-5 text-success shrink-0 mt-0.5" />
-              <span>{{ t(`f_${i}`) }}</span>
-            </li>
-          </ul>
-        </section>
+        <!-- Features -->
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
+          icon="heroicons:check-badge-20-solid"
+        />
 
+        <!-- What is CNPJ -->
         <section>
           <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
             <Icon name="heroicons:book-open-20-solid" class="w-6 h-6 text-primary" />
             {{ t('how_title') }}
           </h2>
-          <p>{{ t('how_desc') }}</p>
+          <p class="text-base-content/80 leading-relaxed">{{ t('how_desc') }}</p>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
-            <Icon name="heroicons:list-bullet-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('apps_title') }}
-          </h2>
-          <p class="mb-3">{{ t('use_cases_intro') }}</p>
-          <ul class="grid gap-2">
-            <li v-for="i in 5" :key="i" class="flex items-start gap-2">
-              <Icon name="heroicons:check-circle-20-solid" class="w-5 h-5 text-success shrink-0 mt-0.5" />
-              <span>{{ t(`use_${i}`) }}</span>
-            </li>
-          </ul>
-        </section>
+        <!-- Use Cases -->
+        <ListSection
+          :title="t('apps_title')"
+          :description="t('use_cases_intro')"
+          :items="[ t('use_1'), t('use_2'), t('use_3'), t('use_4'), t('use_5') ]"
+        />
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+        <!-- How to Use -->
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
 
+        <!-- FAQ Section -->
         <FaqSection
           :title="t('faq_title')"
           :items="[

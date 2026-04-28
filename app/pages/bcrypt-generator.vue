@@ -111,21 +111,24 @@ defineI18nRoute({
     ]"
   >
     <template #info>
-      <div class="space-y-4">
+      <div class="space-y-8">
         <p>{{ t('desc') }}</p>
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+
+        <!-- Features -->
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
+        />
+
+        <!-- How to Use -->
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
 
         <div class="bg-base-300/30 p-4 rounded-xl border border-base-content/20">
           <div class="font-bold mb-2">💡 {{ t('tip') }}</div>
@@ -247,6 +250,7 @@ defineI18nRoute({
     desc: "Bcrypt is a secure hashing algorithm widely used for passwords. It includes a unique salt in every hash to help prevent rainbow table attacks. The Rounds setting controls the computational cost: higher values are slower to process, but make brute-force attacks much harder. Even when the same text is used, each generated hash is different.",
     check: "Verify Hash",
     bt: "Generate Hash",
+    features_title: "Features",
     plc: "Text to hash",
     plcgen: "Bcrypt hash",
     plcver: "Original text",
@@ -279,6 +283,7 @@ defineI18nRoute({
     desc: "Bcrypt é um algoritmo de hash seguro, amplamente usado para senhas. Ele inclui um salt exclusivo em cada hash para ajudar a prevenir ataques com rainbow tables. A configuração de Rounds define o custo computacional: quanto maior o valor, mais lento será o processamento, mas mais difícil se torna um ataque de força bruta. Mesmo usando o mesmo texto, cada hash gerado é diferente.",
     check: "Verificar Hash",
     bt: "Gerar Hash",
+    features_title: "Funcionalidades",
     plc: "Texto para gerar o hash",
     plcgen: "Hash Bcrypt",
     plcver: "Texto original",
@@ -311,6 +316,7 @@ defineI18nRoute({
     desc: "Bcrypt es un algoritmo de hash seguro, muy utilizado para contraseñas. Incluye un salt único en cada hash para ayudar a prevenir ataques mediante rainbow tables. El ajuste de Rounds define el costo computacional: cuanto mayor sea el valor, más lento será el proceso, pero más difícil será un ataque de fuerza bruta. Incluso usando el mesmo texto, cada hash generado es diferente.",
     check: "Verificar Hash",
     bt: "Generar Hash",
+    features_title: "Funcionalidades",
     plc: "Texto para generar el hash",
     plcgen: "Hash Bcrypt",
     plcver: "Texto original",
@@ -343,6 +349,7 @@ defineI18nRoute({
     desc: "Bcrypt est un algorithme de hachage sécurisé, largement utilisé pour les mots de passe. Il inclut un salt unique dans chaque hachage afin d'aider à prévenir les attaques par tables arc-en-ciel. Le paramètre Rounds définit le coût de calcul : plus la valeur est élevée, plus le traitement est lent, mais plus les attaques par force brute deviennent difficiles. Même avec le mesmo texte, chaque hachage généré est différent.",
     check: "Vérifier le Hachage",
     bt: "Générer le Hachage",
+    features_title: "Fonctionnalités",
     plc: "Texte à hacher",
     plcgen: "Hachage Bcrypt",
     plcver: "Texte d'origine",
@@ -375,6 +382,7 @@ defineI18nRoute({
     desc: "Bcrypt è un algoritmo di hashing sicuro, ampiamente usato per le password. Include un salt univoco in ogni hash per aiutare a prevenire gli attacchi basati su rainbow table. L'impostazione dei Rounds definisce il costo computazionale: più alto è il valore, più lento sarà il processo, ma più difficile diventerà un attacco brute-force. Anche usando lo mesmo testo, ogni hash generato è diverso.",
     check: "Verifica Hash",
     bt: "Genera Hash",
+    features_title: "Funzionalità",
     plc: "Testo per generare l'hash",
     plcgen: "Hash Bcrypt",
     plcver: "Testo originale",
@@ -407,6 +415,7 @@ defineI18nRoute({
     desc: "Bcrypt adalah algoritma hashing yang aman dan banyak digunakan untuk kata sandi. Setiap hash menyertakan salt unik untuk membantu mencegah serangan rainbow table. Pengaturan Rounds menentukan biaya komputasi: semakin tinggi nilainya, semakin lama prosesnya, tetapi semakin sulit serangan brute-force dilakukan. Bahkan untuk teks yang sama, setiap hash yang dihasilkan akan berbeda.",
     check: "Verifikasi Hash",
     bt: "Buat Hash",
+    features_title: "Fitur",
     plc: "Teks untuk dibuat hash",
     plcgen: "Hash Bcrypt",
     plcver: "Teks asli",

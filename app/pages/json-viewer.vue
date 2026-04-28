@@ -156,74 +156,41 @@ defineI18nRoute({
 
     <!-- Info Section Content -->
     <template #info>
-      <div class="space-y-12">
+      <div class="space-y-8">
         <div>
           <p class="text-lg">{{ t('d1') }} {{ t('d2') }}</p>
         </div>
 
+        <!-- Features -->
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[
+            t('f_1'),
+            t('f_2'),
+            t('f_3'),
+            t('f_4')
+          ]"
+        />
+
         <!-- How It Works -->
-        <section>
-          <h2 class="text-2xl font-bold text-base-content mb-6 flex items-center gap-2">
-            <Icon name="heroicons:light-bulb" class="text-primary" />
-            {{ t('how_it_works_title') }}
-          </h2>
-          <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-base-200/50 p-6 rounded-2xl border border-base-content/20">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <span class="font-bold text-primary text-xl">1</span>
-              </div>
-              <h3 class="font-bold text-base-content mb-2">{{ t('hiw_1_title') }}</h3>
-              <p>{{ t('hiw_1_desc') }}</p>
-            </div>
-            <div class="bg-base-200/50 p-6 rounded-2xl border border-base-content/20">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <span class="font-bold text-primary text-xl">2</span>
-              </div>
-              <h3 class="font-bold text-base-content mb-2">{{ t('hiw_2_title') }}</h3>
-              <p>{{ t('hiw_2_desc') }}</p>
-            </div>
-            <div class="bg-base-200/50 p-6 rounded-2xl border border-base-content/20">
-              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <span class="font-bold text-primary text-xl">3</span>
-              </div>
-              <h3 class="font-bold text-base-content mb-2">{{ t('hiw_3_title') }}</h3>
-              <p>{{ t('hiw_3_desc') }}</p>
-            </div>
-          </div>
-        </section>
+        <HowToSection
+          :title="t('how_it_works_title')"
+          :items="[
+            { title: t('hiw_1_title'), description: t('hiw_1_desc') },
+            { title: t('hiw_2_title'), description: t('hiw_2_desc') },
+            { title: t('hiw_3_title'), description: t('hiw_3_desc') }
+          ]"
+        />
 
         <!-- Use Cases -->
-        <section>
-          <h2 class="text-2xl font-bold text-base-content mb-6 flex items-center gap-2">
-            <Icon name="heroicons:briefcase" class="text-primary" />
-            {{ t('use_cases_title') }}
-          </h2>
-          <div class="bg-base-200/30 rounded-3xl p-8 border border-base-content/20">
-            <ul class="grid sm:grid-cols-2 gap-6 list-none p-0 m-0">
-              <li class="flex gap-4">
-                <div class="mt-1"><Icon name="heroicons:check-circle-20-solid" class="text-success w-5 h-5" /></div>
-                <div>
-                  <strong class="text-base-content block mb-1 uppercase text-xs tracking-widest font-black">{{ t('uc_1_title') }}</strong>
-                  <span>{{ t('uc_1_desc') }}</span>
-                </div>
-              </li>
-              <li class="flex gap-4">
-                <div class="mt-1"><Icon name="heroicons:check-circle-20-solid" class="text-success w-5 h-5" /></div>
-                <div>
-                  <strong class="text-base-content block mb-1 uppercase text-xs tracking-widest font-black">{{ t('uc_2_title') }}</strong>
-                  <span>{{ t('uc_2_desc') }}</span>
-                </div>
-              </li>
-              <li class="flex gap-4 sm:col-span-2">
-                <div class="mt-1"><Icon name="heroicons:check-circle-20-solid" class="text-success w-5 h-5" /></div>
-                <div>
-                  <strong class="text-base-content block mb-1 uppercase text-xs tracking-widest font-black">{{ t('uc_3_title') }}</strong>
-                  <span>{{ t('uc_3_desc') }}</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+        <ListSection
+          :title="t('use_cases_title')"
+          :items="[
+            { title: t('uc_1_title'), description: t('uc_1_desc') },
+            { title: t('uc_2_title'), description: t('uc_2_desc') },
+            { title: t('uc_3_title'), description: t('uc_3_desc') }
+          ]"
+        />
 
         <!-- FAQ Section -->
         <FaqSection 
@@ -251,6 +218,7 @@ defineI18nRoute({
         result: "Result",
         plc: "Insert the JSON code here or drag a file",
         err: "Provide a valid JSON",
+        features_title: "Features",
         how_it_works_title: "How It Works",
         hiw_1_title: "Paste Your JSON",
         hiw_1_desc: "Simply paste or drag your raw JSON file into the editor.",
@@ -291,6 +259,7 @@ defineI18nRoute({
         result: "Resultado",
         plc: "Insira o código JSON aqui ou arraste um arquivo",
         err: "Informe um JSON estruturalmente válido",
+        features_title: "Funcionalidades",
         how_it_works_title: "Como Funciona",
         hiw_1_title: "Cole seu JSON",
         hiw_1_desc: "Cole ou arraste seu arquivo JSON bruto diretamente no editor.",
