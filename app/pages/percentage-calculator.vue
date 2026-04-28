@@ -257,40 +257,35 @@ defineI18nRoute({
 
     <template #info>
       <div class="space-y-8">
-        <p class="mb-4">{{ t('features_subtitle') }}</p>
+        <p class="mb-4">{{ t('desc') }}</p>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f1'), t('f2'), t('f3'), t('f4'), t('f5'), t('f6') ]"
+        />
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:briefcase-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('t4') }}
-          </h2>
-          <p>{{ t('applications_desc') }}</p>
-        </section>
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:academic-cap-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('t5') }}
-          </h2>
-          <div class="space-y-4">
-            <p>{{ t('professional_desc') }}</p>
-            <p>{{ t('simplicity_desc') }}</p>
-          </div>
-        </section>
+        <UseCaseSection
+          :title="t('use_cases_title')"
+          :items="[ t('uc1'), t('uc2'), t('uc3'), t('uc4') ]"
+        />
+
+        <FaqSection
+          :title="t('faq_title')"
+          :items="[
+            { question: t('faq_1_q'), answer: t('faq_1_a') },
+            { question: t('faq_2_q'), answer: t('faq_2_a') },
+            { question: t('faq_3_q'), answer: t('faq_3_a') }
+          ]"
+        />
       </div>
     </template>
   </ToolPage>
@@ -317,6 +312,19 @@ defineI18nRoute({
     applications_desc: "Use the calculator to calculate restaurant tips, find out how much you save on sales and promotions, compare offers, calculate product selling prices with profit margin, and analyze business growth rates.",
     professional_desc: "The calculator is useful for product pricing with profit margin, evaluating discounts, analyzing performance variations, solving math exercises, and understanding statistical concepts.",
     simplicity_desc: "Make your percentage calculations simpler with our percentage calculator, ideal for students, professionals, shoppers, and anyone who needs quick and accurate results.",
+    features_title: "Features",
+    use_cases_title: "Use Cases",
+    uc1: "Calculating restaurant tips easily.",
+    uc2: "Finding out how much you save on sales and promotions.",
+    uc3: "Calculating product selling prices with profit margins.",
+    uc4: "Analyzing business growth rates and performance variations.",
+    faq_title: "Questions & Answers",
+    faq_1_q: "What is the difference between percentage decrease and percentage difference?",
+    faq_1_a: "Percentage decrease calculates a discount on a starting value (e.g., 20% off $100). Percentage difference compares two independent numbers to show the relative change between them.",
+    faq_2_q: "How is the profit margin calculated?",
+    faq_2_a: "It uses your cost price and desired margin to find the final sale price, ensuring the specified percentage of the sale price is your actual profit.",
+    faq_3_q: "Can I use decimal numbers in my calculations?",
+    faq_3_a: "Yes! Our calculator fully supports decimal values for both base numbers and percentages, giving you precise results for complex calculations.",
     what: "What is",
     of: "Of:",
     answer: "Answer:",
@@ -363,6 +371,19 @@ defineI18nRoute({
     applications_desc: "Use a calculadora para calcular gorjetas em restaurantes, determinar o valor economizado em promoções, comparar ofertas, calcular o preço de venda de produtos com margem de lucro e analisar taxas de crescimento empresarial.",
     professional_desc: "A calculadora é útil para precificação de produtos com margem de lucro, avaliação de descontos e promoções, análise de variações de performance, resolução de exercícios de matemática e compreensão de conceitos estatísticos.",
     simplicity_desc: "Torne seus cálculos de porcentagem mais simples com nossa calculadora de porcentagens, ideal para estudantes, profissionais, compradores e qualquer pessoa que precise de respostas rápidas e precisas.",
+    features_title: "Funcionalidades",
+    use_cases_title: "Casos de Uso",
+    uc1: "Calcular gorjetas em restaurantes com facilidade.",
+    uc2: "Descobrir o valor economizado em promoções e liquidações.",
+    uc3: "Calcular preços de venda de produtos incluindo a margem de lucro desejada.",
+    uc4: "Analisar taxas de crescimento empresarial e variações de performance.",
+    faq_title: "Perguntas e Respostas",
+    faq_1_q: "Qual a diferença entre redução percentual e diferença percentual?",
+    faq_1_a: "A redução percentual calcula um desconto sobre um valor inicial (ex: 20% de desconto em R$ 100). A diferença percentual compara dois números independentes para mostrar a variação relativa entre eles.",
+    faq_2_q: "Como a margem de lucro é calculada?",
+    faq_2_a: "A ferramenta usa o preço de custo e a margem desejada para encontrar o preço de venda final, garantindo que a porcentagem informada seja o seu lucro real sobre a venda.",
+    faq_3_q: "Posso usar números decimais nos cálculos?",
+    faq_3_a: "Sim! Nossa calculadora tem suporte completo a valores decimais tanto para os números base quanto para as porcentagens, oferecendo precisão para cálculos complexos.",
     what: "Quanto é",
     of: "De:",
     answer: "Resposta:",
@@ -409,6 +430,19 @@ defineI18nRoute({
     applications_desc: "Usa la calculadora para calcular propinas en restaurantes, determinar el valor ahorrado en promociones, comparar ofertas, calcular el precio de venta de productos con margen de ganancia y analizar tasas de crecimiento empresarial.",
     professional_desc: "La calculadora es útil para fijar precios de productos con margen de ganancia, evaluar descuentos y promociones, analizar variaciones de rendimiento, resolver ejercicios de matemáticas y comprender conceptos estadísticos.",
     simplicity_desc: "Simplifica tus cálculos de porcentaje con nuestra calculadora de porcentajes, ideal para estudiantes, profesionales, compradores y cualquier persona que necesite respuestas rápidas y precisas.",
+    features_title: "Funcionalidades",
+    use_cases_title: "Casos de Uso",
+    uc1: "Calcular propinas en restaurantes fácilmente.",
+    uc2: "Saber cuánto ahorras en rebajas y promociones.",
+    uc3: "Calcular precios de venta de productos con margen de beneficio.",
+    uc4: "Analizar tasas de crecimiento empresarial y variaciones de rendimiento.",
+    faq_title: "Preguntas y Respuestas",
+    faq_1_q: "¿Cuál es la diferencia entre reducción porcentual y diferencia porcentual?",
+    faq_1_a: "La reducción porcentual calcula un descuento sobre un valor inicial (ej. 20% de descuento en $100). La diferencia porcentual compara dos números independientes para mostrar la variación relativa entre ellos.",
+    faq_2_q: "¿Cómo se calcula el margen de ganancia?",
+    faq_2_a: "La herramienta utiliza el precio de costo y el margen deseado para calcular el precio de venta final, asegurando que el porcentaje indicado sea su ganancia real sobre la venta.",
+    faq_3_q: "¿Puedo usar números decimales en mis cálculos?",
+    faq_3_a: "¡Sí! Nuestra calculadora admite valores decimales tanto para los números base como para los porcentajes, brindando precisión en cálculos complejos.",
     what: "Cuánto es",
     of: "De:",
     answer: "Respuesta:",
@@ -455,6 +489,19 @@ defineI18nRoute({
     applications_desc: "Utilisez la calculatrice pour calculer les pourboires au restaurant, déterminer le montant économisé lors de promotions, comparer des offres, calculer le prix de vente de produits avec marge bénéficiaire et analyser les taux de croissance d'une entreprise.",
     professional_desc: "La calculatrice est utile pour fixer le prix de produits avec marge bénéficiaire, évaluer des remises et des promotions, analyser des variations de performance, résoudre des exercices de mathématiques et comprendre des concepts statistiques.",
     simplicity_desc: "Simplifiez vos calculs de pourcentage avec notre calculatrice de pourcentage, idéale pour les étudiants, les professionnels, les consommateurs et toute personne qui a besoin de réponses rapides et précises.",
+    features_title: "Fonctionnalités",
+    use_cases_title: "Cas d'Utilisation",
+    uc1: "Calculer facilement les pourboires au restaurant.",
+    uc2: "Découvrir combien vous économisez pendant les soldes et promotions.",
+    uc3: "Calculer les prix de vente des produits avec une marge bénéficiaire.",
+    uc4: "Analyser les taux de croissance des entreprises et les variations de performance.",
+    faq_title: "Questions et Réponses",
+    faq_1_q: "Quelle est la différence entre la réduction en pourcentage et la différence en pourcentage ?",
+    faq_1_a: "La réduction calcule une remise sur une valeur initiale (ex. 20% de réduction sur 100€). La différence compare deux nombres indépendants pour montrer la variation relative entre eux.",
+    faq_2_q: "Comment la marge bénéficiaire est-elle calculée ?",
+    faq_2_a: "L'outil utilise le prix de revient et la marge souhaitée pour trouver le prix de vente final, garantissant que le pourcentage indiqué est votre bénéfice réel sur la vente.",
+    faq_3_q: "Puis-je utiliser des nombres décimaux dans mes calculs ?",
+    faq_3_a: "Oui ! Notre calculatrice prend entièrement en charge les valeurs décimales pour les nombres de base et les pourcentages, offrant une grande précision pour les calculs complexes.",
     what: "Quel est",
     of: "De:",
     answer: "Réponse:",
@@ -501,6 +548,19 @@ defineI18nRoute({
     applications_desc: "Usa la calcolatrice per calcolare mance al ristorante, determinare l'importo risparmiato nelle promozioni, confrontare offerte, calcolare il prezzo di vendita dei prodotti con margine di profitto e analizzare tassi di crescita aziendale.",
     professional_desc: "La calcolatrice è utile per la determinazione dei prezzi dei prodotti con margine di profitto, la valutazione di sconti e promozioni, l'analisi delle variazioni di performance, la risoluzione di esercizi di matematica e la comprensione di concetti statistici.",
     simplicity_desc: "Rendi più semplici i tuoi calcoli percentuali con la nostra calcolatrice di percentuali, ideale per studenti, professionisti, acquirenti e chiunque abbia bisogno di risposte rapide e precise.",
+    features_title: "Funzionalità",
+    use_cases_title: "Casi d'Uso",
+    uc1: "Calcolare facilmente le mance al ristorante.",
+    uc2: "Scoprire quanto risparmi durante i saldi e le promozioni.",
+    uc3: "Calcolare i prezzi di vendita dei prodotti con margine di profitto.",
+    uc4: "Analizzare i tassi di crescita aziendale e le variazioni di performance.",
+    faq_title: "Domande e Risposte",
+    faq_1_q: "Qual è la differenza tra riduzione percentuale e differenza percentuale?",
+    faq_1_a: "La riduzione calcola uno sconto su un valore iniziale (es. 20% di sconto su 100€). La differenza confronta due numeri indipendenti per mostrare la variazione relativa tra loro.",
+    faq_2_q: "Come viene calcolato il margine di profitto?",
+    faq_2_a: "Lo strumento utilizza il prezzo di costo e il margine desiderato per trovare il prezzo di vendita finale, assicurando che la percentuale indicata sia il tuo profitto reale sulla vendita.",
+    faq_3_q: "Posso usare numeri decimali nei miei calcoli?",
+    faq_3_a: "Sì! La nostra calcolatrice supporta pienamente i valori decimali sia per i numeri base che per le percentuali, offrendo precisione per calcoli complessi.",
     what: "Quanto è",
     of: "Di:",
     answer: "Risposta:",
@@ -547,6 +607,19 @@ defineI18nRoute({
     applications_desc: "Gunakan kalkulator untuk menghitung tip di restoran, menentukan jumlah yang dihemat saat promosi, membandingkan penawaran, menghitung harga jual produk dengan margin keuntungan, dan menganalisis tingkat pertumbuhan bisnis.",
     professional_desc: "Kalkulator ini berguna untuk penetapan harga produk dengan margin keuntungan, evaluasi diskon dan promosi, analisis variasi performa, penyelesaian latihan matematika, dan pemahaman konsep statistik.",
     simplicity_desc: "Buat perhitungan persentase Anda lebih sederhana dengan kalkulator persentase kami, ideal untuk pelajar, profesional, pembeli, dan siapa pun yang membutuhkan jawaban cepat dan akurat.",
+    features_title: "Fitur",
+    use_cases_title: "Contoh Penggunaan",
+    uc1: "Menghitung tip di restoran dengan mudah.",
+    uc2: "Mengetahui berapa banyak uang yang Anda hemat saat promosi dan diskon.",
+    uc3: "Menghitung harga jual produk dengan margin keuntungan.",
+    uc4: "Menganalisis tingkat pertumbuhan bisnis dan variasi kinerja.",
+    faq_title: "Tanya Jawab",
+    faq_1_q: "Apa perbedaan antara penurunan persentase dan perbedaan persentase?",
+    faq_1_a: "Penurunan persentase menghitung diskon pada nilai awal (misalnya diskon 20% dari $100). Perbedaan persentase membandingkan dua angka independen untuk menunjukkan perubahan relatif di antara keduanya.",
+    faq_2_q: "Bagaimana margin keuntungan dihitung?",
+    faq_2_a: "Alat ini menggunakan harga biaya dan margin yang diinginkan untuk menentukan harga jual akhir, memastikan persentase yang ditentukan adalah keuntungan nyata Anda dari penjualan.",
+    faq_3_q: "Bisakah saya menggunakan angka desimal dalam perhitungan?",
+    faq_3_a: "Ya! Kalkulator kami sepenuhnya mendukung nilai desimal untuk angka dasar maupun persentase, memberikan Anda hasil yang akurat untuk perhitungan rumit.",
     what: "Berapa",
     of: "Dari:",
     answer: "Jawaban:",

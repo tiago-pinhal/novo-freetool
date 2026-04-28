@@ -133,21 +133,36 @@ defineI18nRoute({
     </div>
 
     <template #info>
-      <div class="space-y-4">
+      <div class="space-y-8">
         <p>{{ t('desc') }}</p>
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
+        />
+
+        <UseCaseSection
+          :title="t('use_cases_title')"
+          :items="[ t('uc_1'), t('uc_2'), t('uc_3'), t('uc_4') ]"
+        />
+
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
+
+        <FaqSection
+          :title="t('faq_title')"
+          :items="[
+            { question: t('faq_1_q'), answer: t('faq_1_a') },
+            { question: t('faq_2_q'), answer: t('faq_2_a') },
+            { question: t('faq_3_q'), answer: t('faq_3_a') }
+          ]"
+        />
       </div>
     </template>
 
@@ -175,11 +190,24 @@ defineI18nRoute({
     step_2_title: "Shuffle Items",
     step_2_desc: "Click the 'Shuffle' button to run the randomization algorithm.",
     step_3_title: "Get Random Order",
-    step_3_desc: "The items will be rearranged into a completely random order instantly.",
+    step_3_desc: "The items will be rearranged instantly. You can copy the final result with one click using the copy button.",
     f_1: "Instantly shuffle any list of names or words",
     f_2: "Unbiased Fisher-Yates randomization algorithm",
     f_3: "Drag and drop text files support",
-    f_4: "Completely free and private (client-side processing)"
+    f_4: "Completely free and private (client-side processing)",
+    features_title: "Features",
+    use_cases_title: "Use Cases",
+    uc_1: "Drawing random names for giveaways or contests",
+    uc_2: "Shuffling groups and teams for sports or classroom activities",
+    uc_3: "Randomizing a daily task list to avoid routine",
+    uc_4: "Deciding a random order for presentations or turns in games",
+    faq_title: "Questions & Answers",
+    faq_1_q: "How many items can I shuffle at once?",
+    faq_1_a: "There is no strict limit, but for the best experience, we recommend shuffling up to 10,000 items. The processing is done entirely in your browser.",
+    faq_2_q: "Is the randomization fair?",
+    faq_2_a: "Yes. We use the Fisher-Yates shuffle algorithm, which is a mathematically proven method for generating unbiased permutations of a list.",
+    faq_3_q: "Is my data private?",
+    faq_3_a: "Absolutely. Your list never leaves your device. All randomization happens locally in your browser, and nothing is sent to our servers."
   },
   pt: {
     title: "Embaralhador e Sorteador de Listas",
@@ -199,11 +227,24 @@ defineI18nRoute({
     step_2_title: "Embaralhe os Itens",
     step_2_desc: "Clique no botão 'Embaralhar' para executar o algoritmo de aleatorização.",
     step_3_title: "Obtenha a Ordem Aleatória",
-    step_3_desc: "Os itens serão reorganizados em uma ordem completamente aleatória instantaneamente.",
+    step_3_desc: "Os itens serão reorganizados instantaneamente. Você pode copiar o resultado final com um clique usando o botão de cópia.",
     f_1: "Embaralhe nomes, palavras ou itens instantaneamente",
     f_2: "Algoritmo Fisher-Yates de aleatorização imparcial",
     f_3: "Suporte para arrastar e soltar arquivos de texto",
-    f_4: "Processamento local e totalmente gratuito"
+    f_4: "Processamento local e totalmente gratuito",
+    features_title: "Funcionalidades",
+    use_cases_title: "Casos de Uso",
+    uc_1: "Sortear nomes para rifas, concursos ou brindes",
+    uc_2: "Embaralhar grupos e times para esportes ou sala de aula",
+    uc_3: "Aleatorizar listas de tarefas diárias para evitar rotina",
+    uc_4: "Definir uma ordem aleatória para apresentações ou turnos em jogos",
+    faq_title: "Perguntas e Respostas",
+    faq_1_q: "Quantos itens posso embaralhar de uma vez?",
+    faq_1_a: "Não há um limite rígido, mas para uma melhor performance, recomendamos até 10.000 itens. Todo o processamento é feito localmente no seu navegador.",
+    faq_2_q: "O sorteio é realmente justo?",
+    faq_2_a: "Sim. Utilizamos o algoritmo Fisher-Yates, que é um método matematicamente comprovado para gerar permutações imparciais de uma lista.",
+    faq_3_q: "Meus dados estão seguros?",
+    faq_3_a: "Totalmente. Sua lista nunca sai do seu dispositivo. Toda a aleatorização acontece localmente no navegador e nada é enviado para nossos servidores."
   },
   es: {
     title: "Aleatorizador y Mezclador de Listas",
@@ -223,11 +264,24 @@ defineI18nRoute({
     step_2_title: "Mezclar Elementos",
     step_2_desc: "Haga clic en el botón 'Mezclar' para ejecutar el algoritmo de aleatorización.",
     step_3_title: "Obtener Orden Aleatorio",
-    step_3_desc: "Los elementos se reorganizarán en un orden completamente aleatorio al instante.",
+    step_3_desc: "Los elementos se reorganizarán al instante. Puede copiar el resultado final con un clic usando el botón de copiar.",
     f_1: "Mezcla cualquier lista de nombres o palabras al instante",
     f_2: "Algoritmo de aleatorización Fisher-Yates sin sesgos",
     f_3: "Soporte para arrastrar y soltar archivos de texto",
-    f_4: "Totalmente gratuito y privado (procesamiento local)"
+    f_4: "Totalmente gratuito y privado (procesamiento local)",
+    features_title: "Funcionalidades",
+    use_cases_title: "Casos de Uso",
+    uc_1: "Sortear nombres para rifas, concursos o regalos",
+    uc_2: "Mezclar grupos y equipos para deportes o actividades en clase",
+    uc_3: "Aleatorizar listas de tareas diarias para evitar la rutina",
+    uc_4: "Definir un orden aleatorio para presentaciones o turnos en juegos",
+    faq_title: "Preguntas y Respuestas",
+    faq_1_q: "¿Cuántos elementos puedo mezclar a la vez?",
+    faq_1_a: "No hay un límite estricto, pero para una mejor experiencia, recomendamos hasta 10,000 elementos. Todo el procesamiento se realiza localmente en su navegador.",
+    faq_2_q: "¿Es el sorteo realmente justo?",
+    faq_2_a: "Sí. Utilizamos el algoritmo Fisher-Yates, que es un método matemáticamente probado para generar permutaciones imparciales de una lista.",
+    faq_3_q: "¿Mis datos están seguros?",
+    faq_3_a: "Totalmente. Su lista nunca sale de su dispositivo. Toda la aleatorización ocurre localmente en el navegador y nada se envía a nuestros servidores."
   },
   fr: {
     title: "Générateur de Liste Aléatoire & Mélangeur",
@@ -247,11 +301,24 @@ defineI18nRoute({
     step_2_title: "Mélanger les Éléments",
     step_2_desc: "Cliquez sur le bouton 'Mélanger' pour lancer l'algorithme de randomisation.",
     step_3_title: "Obtenir l'Ordre Aléatoire",
-    step_3_desc: "Les éléments seront instantanément réorganisés dans un ordre complètement aléatoire.",
+    step_3_desc: "Les éléments seront instantanément réorganisés. Vous pouvez copier le résultat final en un clic à l'aide du bouton de copie.",
     f_1: "Mélangez instantanément n'importe quelle liste de noms ou de mots",
     f_2: "Algorithme de randomisation Fisher-Yates impartial",
     f_3: "Prise en charge du glisser-déposer de fichiers texte",
-    f_4: "Privé et gratuit (traitement côté client)"
+    f_4: "Privé et gratuit (traitement côté client)",
+    features_title: "Fonctionnalités",
+    use_cases_title: "Cas d'Utilisation",
+    uc_1: "Tirer des noms au sort pour des tombolas, des concours ou des cadeaux",
+    uc_2: "Mélanger des groupes et des équipes pour le sport ou la classe",
+    uc_3: "Randomiser des listes de tâches quotidiennes pour éviter la routine",
+    uc_4: "Définir un ordre aléatoire pour des présentations ou des tours de jeu",
+    faq_title: "Questions et Réponses",
+    faq_1_q: "Combien d'éléments puis-je mélanger à la fois ?",
+    faq_1_a: "Il n'y a pas de limite stricte, mais pour une meilleure expérience, nous recommandons jusqu'à 10 000 éléments. Tout le traitement est effectué localement dans votre navigateur.",
+    faq_2_q: "Le tirage est-il vraiment équitable ?",
+    faq_2_a: "Oui. Nous utilisons l'algorithme Fisher-Yates, qui est une méthode mathématiquement prouvée pour générer des permutations impartiales d'une liste.",
+    faq_3_q: "Mes données sont-elles en sécurité ?",
+    faq_3_a: "Totalement. Votre liste ne quitte jamais votre appareil. Toute la randomisation se produit localement dans le navigateur et rien n'est envoyé à nos serveurs."
   },
   it: {
     title: "Randomizzatore di Liste",
@@ -271,11 +338,24 @@ defineI18nRoute({
     step_2_title: "Mescola gli Elementi",
     step_2_desc: "Clicca sul pulsante 'Mescola' per eseguire l'algoritmo di randomizzazione.",
     step_3_title: "Ottieni l'Ordine Casuale",
-    step_3_desc: "Gli elementi saranno riorganizzati istantaneamente in un ordine completamente casuale.",
+    step_3_desc: "Gli elementi saranno riorganizzati istantaneamente. Puoi copiare il finale risultato con un clic usando il pulsante di copia.",
     f_1: "Mescola istantaneamente nomi, parole o elementi",
     f_2: "Algoritmo di randomizzazione Fisher-Yates imparziale",
     f_3: "Supporto drag-and-drop per file di testo",
-    f_4: "Interamente gratuito e privato (elaborazione locale)"
+    f_4: "Interamente gratuito e privato (elaborazione locale)",
+    features_title: "Funzionalità",
+    use_cases_title: "Casi d'Uso",
+    uc_1: "Estrarre nomi per lotterie, concorsi o omaggi",
+    uc_2: "Mescolare gruppi e squadre per sport o attività scolastiche",
+    uc_3: "Randomizzare elenchi di attività quotidiane per evitare la routine",
+    uc_4: "Definire un ordine casuale per presentazioni o turni di gioco",
+    faq_title: "Domande e Risposte",
+    faq_1_q: "Quanti elementi posso mescolare alla volta?",
+    faq_1_a: "Non esiste un limite rigido, ma per un'esperienza migliore consigliamo fino a 10.000 elementi. L'elaborazione avviene interamente nel tuo browser.",
+    faq_2_q: "Il sorteggio è davvero equo?",
+    faq_2_a: "Sì. Utilizziamo l'algoritmo Fisher-Yates, un metodo matematicamente provato per generare permutazioni imparziali di un elenco.",
+    faq_3_q: "I miei dati sono al sicuro?",
+    faq_3_a: "Assolutamente. Il tuo elenco non lascia mai o il tuo dispositivo. Tutta la randomizzazione avviene localmente nel browser e nulla viene inviato ai nostri server."
   },
   id: {
     title: "Pengacak Daftar",
@@ -295,11 +375,24 @@ defineI18nRoute({
     step_2_title: "Kocok Item",
     step_2_desc: "Klik tombol 'Kocok' untuk menjalankan algoritma pengacakan.",
     step_3_title: "Dapatkan Urutan Acak",
-    step_3_desc: "Item akan diatur ulang menjadi urutan yang benar-benar acak secara instan.",
+    step_3_desc: "Item akan diatur ulang secara instan. Anda dapat menyalin hasil akhir dengan satu klik menggunakan tombol salin.",
     f_1: "Kocok daftar nama atau kata secara instan",
     f_2: "Algoritma pengacakan Fisher-Yates yang tidak memihak",
     f_3: "Dukungan seret dan lepas file teks",
-    f_4: "Gratis dan pribadi (pemrosesan di sisi klien)"
+    f_4: "Gratis dan pribadi (pemrosesan di sisi klien)",
+    features_title: "Fitur",
+    use_cases_title: "Contoh Penggunaan",
+    uc_1: "Mengundi nama untuk undian, kontes, atau hadiah",
+    uc_2: "Mengocok kelompok dan tim untuk olahraga atau kegiatan kelas",
+    uc_3: "Mengacak daftar tugas harian untuk menghindari rutinitas",
+    uc_4: "Menentukan urutan acak untuk presentasi atau giliran dalam permainan",
+    faq_title: "Tanya Jawab",
+    faq_1_q: "Berapa banyak item yang bisa saya kocok sekaligus?",
+    faq_1_a: "Tidak ada batasan ketat, tetapi untuk pengalaman terbaik, kami merekomendasikan mengocok hingga 10.000 item. Pemrosesan dilakukan sepenuhnya di browser Anda.",
+    faq_2_q: "Apakah pengacakannya adil?",
+    faq_2_a: "Ya. Kami menggunakan algoritma pengocokan Fisher-Yates, yang merupakan metode yang terbukti secara matematis untuk menghasilkan permutasi daftar yang tidak memihak.",
+    faq_3_q: "Apakah data saya aman?",
+    faq_3_a: "Sangat aman. Daftar Anda tidak pernah meninggalkan perangkat Anda. Semua pengacakan terjadi secara lokal di browser Anda, dan tidak ada yang dikirim ke server kami."
   }
 }
 </i18n>
