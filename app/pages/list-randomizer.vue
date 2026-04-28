@@ -9,6 +9,12 @@ usePageJsonLd({
     t('f_2'),
     t('f_3'),
     t('f_4')
+  ],
+  howToName: t('how_to_use_title'),
+  howToSteps: [
+    { name: t('step_1_title'), text: t('step_1_desc') },
+    { name: t('step_2_title'), text: t('step_2_desc') },
+    { name: t('step_3_title'), text: t('step_3_desc') }
   ]
 })
 
@@ -127,13 +133,22 @@ defineI18nRoute({
     </div>
 
     <template #info>
-      <p>{{ t('desc') }}</p>
-      <div class="font-bold">{{ t('how_title') }}</div>
-      <ul class="list-disc list-inside">
-        <li>{{ t('how_1') }}</li>
-        <li>{{ t('how_2') }}</li>
-        <li>{{ t('how_3') }}</li>
-      </ul>
+      <div class="space-y-4">
+        <p>{{ t('desc') }}</p>
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
+            {{ t('how_to_use_title') }}
+          </h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
+              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
+              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
+              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </template>
 
     <DragDropText @onDrop="txt => state.list = txt"/>
@@ -154,10 +169,13 @@ defineI18nRoute({
     see2: "Dice Roller",
     see3: "Rule of Three Calculator",
     see4: "Email Extractor",
-    how_title: "How to use",
-    how_1: "Type or paste your list of items into the text area.",
-    how_2: "Ensure each item is on a new line.",
-    how_3: "Click the 'Shuffle' button to generate a random order.",
+    how_to_use_title: "How to use",
+    step_1_title: "Prepare List",
+    step_1_desc: "Type or paste your items into the input area, ensuring each item is on its own line.",
+    step_2_title: "Shuffle Items",
+    step_2_desc: "Click the 'Shuffle' button to run the randomization algorithm.",
+    step_3_title: "Get Random Order",
+    step_3_desc: "The items will be rearranged into a completely random order instantly.",
     f_1: "Instantly shuffle any list of names or words",
     f_2: "Unbiased Fisher-Yates randomization algorithm",
     f_3: "Drag and drop text files support",
@@ -175,10 +193,13 @@ defineI18nRoute({
     see2: "Lançador de Dados",
     see3: "Calculadora de Regra de Três",
     see4: "Extrator de E-mails",
-    how_title: "Como usar",
-    how_1: "Digite ou cole sua lista de itens no campo de texto.",
-    how_2: "Certifique-se de que cada item esteja em uma nova linha.",
-    how_3: "Clique no botão 'Embaralhar' para gerar uma ordem aleatória.",
+    how_to_use_title: "Como usar",
+    step_1_title: "Prepare a Lista",
+    step_1_desc: "Digite ou cole seus itens na área de entrada, garantindo que cada item esteja em sua própria linha.",
+    step_2_title: "Embaralhe os Itens",
+    step_2_desc: "Clique no botão 'Embaralhar' para executar o algoritmo de aleatorização.",
+    step_3_title: "Obtenha a Ordem Aleatória",
+    step_3_desc: "Os itens serão reorganizados em uma ordem completamente aleatória instantaneamente.",
     f_1: "Embaralhe nomes, palavras ou itens instantaneamente",
     f_2: "Algoritmo Fisher-Yates de aleatorização imparcial",
     f_3: "Suporte para arrastar e soltar arquivos de texto",
@@ -196,10 +217,13 @@ defineI18nRoute({
     see2: "Lanzador de Dados",
     see3: "Calculadora de Regla de Tres",
     see4: "Extractor de Correos Electrónicos",
-    how_title: "Cómo usar",
-    how_1: "Escribe o pega tu lista de elementos en el área de texto.",
-    how_2: "Asegúrate de que cada elemento esté en una línea nueva.",
-    how_3: "Haz clic en el botón 'Mezclar' para generar un orden aleatorio.",
+    how_to_use_title: "Cómo usar",
+    step_1_title: "Preparar Lista",
+    step_1_desc: "Escriba o pegue sus elementos en el área de entrada, asegurándose de que cada elemento esté en su propia línea.",
+    step_2_title: "Mezclar Elementos",
+    step_2_desc: "Haga clic en el botón 'Mezclar' para ejecutar el algoritmo de aleatorización.",
+    step_3_title: "Obtener Orden Aleatorio",
+    step_3_desc: "Los elementos se reorganizarán en un orden completamente aleatorio al instante.",
     f_1: "Mezcla cualquier lista de nombres o palabras al instante",
     f_2: "Algoritmo de aleatorización Fisher-Yates sin sesgos",
     f_3: "Soporte para arrastrar y soltar archivos de texto",
@@ -217,10 +241,13 @@ defineI18nRoute({
     see2: "Lanceur de Dés",
     see3: "Calculatrice de Règle de Trois",
     see4: "Extracteur d'E-mails",
-    how_title: "Comment utiliser",
-    how_1: "Saisissez ou collez votre liste d'éléments dans la zone de texte.",
-    how_2: "Assurez-vous que chaque élément est sur une nouvelle ligne.",
-    how_3: "Cliquez sur le bouton 'Mélanger' pour générer un ordre aléatoire.",
+    how_to_use_title: "Comment utiliser",
+    step_1_title: "Préparer la Liste",
+    step_1_desc: "Saisissez ou collez vos éléments dans la zone de saisie, en vous assurant que chaque élément est sur sa propre ligne.",
+    step_2_title: "Mélanger les Éléments",
+    step_2_desc: "Cliquez sur le bouton 'Mélanger' pour lancer l'algorithme de randomisation.",
+    step_3_title: "Obtenir l'Ordre Aléatoire",
+    step_3_desc: "Les éléments seront instantanément réorganisés dans un ordre complètement aléatoire.",
     f_1: "Mélangez instantanément n'importe quelle liste de noms ou de mots",
     f_2: "Algorithme de randomisation Fisher-Yates impartial",
     f_3: "Prise en charge du glisser-déposer de fichiers texte",
@@ -238,10 +265,13 @@ defineI18nRoute({
     see2: "Lanciatore di Dadi",
     see3: "Calcolatrice di Regola di Tre",
     see4: "Estrattore di Email",
-    how_title: "Come usare",
-    how_1: "Digita o incolla il tuo elenco di elementi nell'area di testo.",
-    how_2: "Assicurati che ogni elemento sia su una nuova riga.",
-    how_3: "Fai clic sul pulsante 'Mescola' per generare un ordine casuale.",
+    how_to_use_title: "Come usare",
+    step_1_title: "Prepara la Lista",
+    step_1_desc: "Digita o incolla i tuoi elementi nell'area di input, assicurandoti che ogni elemento sia su una riga a sé stante.",
+    step_2_title: "Mescola gli Elementi",
+    step_2_desc: "Clicca sul pulsante 'Mescola' per eseguire l'algoritmo di randomizzazione.",
+    step_3_title: "Ottieni l'Ordine Casuale",
+    step_3_desc: "Gli elementi saranno riorganizzati istantaneamente in un ordine completamente casuale.",
     f_1: "Mescola istantaneamente nomi, parole o elementi",
     f_2: "Algoritmo di randomizzazione Fisher-Yates imparziale",
     f_3: "Supporto drag-and-drop per file di testo",
@@ -259,10 +289,13 @@ defineI18nRoute({
     see2: "Pelempar Dadu",
     see3: "Kalkulator Aturan Tiga",
     see4: "Ekstraktor Email",
-    how_title: "Cara menggunakan",
-    how_1: "Ketik atau tempel daftar item Anda ke dalam area teks.",
-    how_2: "Pastikan setiap item berada di baris baru.",
-    how_3: "Klik tombol 'Kocok' untuk menghasilkan urutan acak.",
+    how_to_use_title: "Cara menggunakan",
+    step_1_title: "Siapkan Daftar",
+    step_1_desc: "Ketik atau tempel item Anda ke dalam area input, pastikan setiap item berada di barisnya sendiri.",
+    step_2_title: "Kocok Item",
+    step_2_desc: "Klik tombol 'Kocok' untuk menjalankan algoritma pengacakan.",
+    step_3_title: "Dapatkan Urutan Acak",
+    step_3_desc: "Item akan diatur ulang menjadi urutan yang benar-benar acak secara instan.",
     f_1: "Kocok daftar nama atau kata secara instan",
     f_2: "Algoritma pengacakan Fisher-Yates yang tidak memihak",
     f_3: "Dukungan seret dan lepas file teks",

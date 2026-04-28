@@ -15,6 +15,12 @@ usePageJsonLd({
     { question: t('faq_2_q'), answer: t('faq_2_a') },
     { question: t('faq_3_q'), answer: t('faq_3_a') },
     { question: t('faq_4_q'), answer: t('faq_4_a') }
+  ],
+  howToName: t('how_to_use_title'),
+  howToSteps: [
+    { name: t('step_1_title'), text: t('step_1_desc') },
+    { name: t('step_2_title'), text: t('step_2_desc') },
+    { name: t('step_3_title'), text: t('step_3_desc') }
   ]
 })
 
@@ -119,11 +125,18 @@ defineI18nRoute({
 
         <!-- How It Works -->
         <section>
-          <h2 class="text-2xl font-bold text-base-content mb-4 flex items-center gap-2">
-            <Icon name="heroicons:light-bulb" class="text-primary" />
-            {{ t('how_title') }}
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
+            {{ t('how_to_use_title') }}
           </h2>
-          <p>{{ t('how_desc') }}</p>
+          <p class="mb-4">{{ t('how_desc') }}</p>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
+              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
+              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
+              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
+            </div>
+          </div>
         </section>
 
         <!-- Applications -->
@@ -208,8 +221,14 @@ defineI18nRoute({
     see3: "JSON to XML Converter",
     see4: "Storage Unit Converter",
     d1: "Free online tool to convert numbers between any two bases from 2 to 20. Convert binary to decimal, hexadecimal to octal, or any combination instantly with maximum precision and zero delays.",
-    how_title: "How Number Base Conversion Works",
-    how_desc: "This tool parses the input number in its source base and converts it to the target base using mathematically exact algorithms. The conversion runs entirely in your browser, ensuring privacy and speed for integers within the standard safe numerical range (up to 2⁵³ − 1).",
+    how_to_use_title: "How to use",
+    how_desc: "This tool parses the input number in its source base and converts it to the target base using mathematically exact algorithms. The conversion runs entirely in your browser, ensuring privacy and speed.",
+    step_1_title: "Enter Number",
+    step_1_desc: "Type or paste the number you want to convert in the 'Number' field.",
+    step_2_title: "Select Bases",
+    step_2_desc: "Choose the source base (From) and the target base (To) from the dropdown menus.",
+    step_3_title: "Copy Result",
+    step_3_desc: "The converted number will appear instantly in the result area for you to copy.",
     apps_title: "Common Applications",
     uc_intro: "Number base conversion is a fundamental skill in computer science and engineering. Common real-world uses include:",
     uc_1: "Debug binary and hexadecimal representations in embedded systems and low-level programming",
@@ -269,8 +288,14 @@ defineI18nRoute({
     see3: "Conversor de JSON para XML",
     see4: "Conversor de Unidades de Armazenamento",
     d1: "Ferramenta online gratuita para converter números entre qualquer base de 2 a 20. Converta binário para decimal, hexadecimal para octal ou qualquer combinação instantaneamente, com máxima precisão e sem atrasos.",
-    how_title: "Como Funciona a Conversão de Bases Numéricas",
-    how_desc: "Esta ferramenta interpreta o número na base de origem e o converte para a base alvo usando algoritmos matematicamente exatos. O processo ocorre inteiramente no seu navegador, garantindo privacidade e rapidez para inteiros dentro do limite de segurança numérica (até 2⁵³ − 1).",
+    how_to_use_title: "Como usar",
+    how_desc: "Esta ferramenta interpreta o número na base de origem e o converte para a base alvo usando algoritmos matematicamente exatos. O processo ocorre inteiramente no seu navegador, garantindo privacidade e rapidez.",
+    step_1_title: "Digite o Número",
+    step_1_desc: "Digite ou cole o número que deseja converter no campo 'Número'.",
+    step_2_title: "Selecione as Bases",
+    step_2_desc: "Escolha a base de origem (De) e a base de destino (Para) nos menus suspensos.",
+    step_3_title: "Copie o Resultado",
+    step_3_desc: "O número convertido aparecerá instantaneamente na área de resultado para você copiar.",
     apps_title: "Aplicações Comuns",
     uc_intro: "A conversão de bases numéricas é uma habilidade fundamental em ciência da computação e engenharia. Usos comuns no mundo real incluem:",
     uc_1: "Depurar representações binárias e hexadecimais em sistemas embarcados e programação de baixo nível",
@@ -330,8 +355,14 @@ defineI18nRoute({
     see3: "Convertidor de JSON a XML",
     see4: "Convertidor de Unidades de Almacenamiento",
     d1: "Herramienta online gratuita para convertir números entre cualquier base del 2 al 20. Convierte binario a decimal, hexadecimal a octal o cualquier combinación al instante, con máxima precisión y sin retrasos.",
-    how_title: "Cómo Funciona la Conversión de Bases Numéricas",
-    how_desc: "Esta herramienta interpreta el número en la base de origen y lo convierte a la base destino utilizando algoritmos matemáticamente exactos. El proceso se ejecuta completamente en su navegador, garantizando privacidad y rapidez para enteros dentro del rango de seguridad numérica (hasta 2⁵³ − 1).",
+    how_to_use_title: "Cómo usar",
+    how_desc: "Esta herramienta interpreta el número en la base de origen y lo convierte a la base destino utilizando algoritmos matemáticamente exactos. El proceso se ejecuta completamente en su navegador, garantizando privacidad y rapidez.",
+    step_1_title: "Ingrese el Número",
+    step_1_desc: "Escriba o pegue el número que desea convertir en el campo 'Número'.",
+    step_2_title: "Seleccione las Bases",
+    step_2_desc: "Elija la base de origen (De) y la base de destino (A) en los menús desplegables.",
+    step_3_title: "Copie el Resultado",
+    step_3_desc: "El número convertido aparecerá instantáneamente en el área de resultado para que lo copies.",
     apps_title: "Aplicaciones Comunes",
     uc_intro: "La conversión de bases numéricas es una habilidad fundamental en ciencias de la computación e ingeniería. Usos comunes en el mundo real incluyen:",
     uc_1: "Depurar representaciones binarias y hexadecimales en sistemas embebidos y programación de bajo nivel",
@@ -391,8 +422,14 @@ defineI18nRoute({
     see3: "Convertisseur de JSON vers XML",
     see4: "Convertisseur d'Unités de Stockage",
     d1: "Outil en ligne gratuit pour convertir des nombres entre deux bases quelconques de 2 à 20. Convertissez binaire en décimal, hexadécimal en octal ou toute combinaison instantanément, avec une précision maximale et sans délai.",
-    how_title: "Comment Fonctionne la Conversion de Bases Numériques",
-    how_desc: "Cet outil interprète le nombre dans la base source et le convertit vers la base cible en utilisant des algorithmes mathématiquement exacts. Le processus s'exécute entièrement dans votre navigateur, garantissant confidentialité et rapidité pour les entiers dans la plage de sécurité numérique (jusqu'à 2⁵³ − 1).",
+    how_to_use_title: "Comment utiliser",
+    how_desc: "Cet outil interprète le nombre dans la base source et le convertit vers la base cible en utilisant des algorithmes mathématiquement exacts. Le processus s'exécute entièrement dans votre navigateur, garantissant confidentialité et rapidité.",
+    step_1_title: "Saisir le Nombre",
+    step_1_desc: "Saisissez ou collez le nombre que vous souhaitez convertir dans le champ 'Nombre'.",
+    step_2_title: "Sélectionner les Bases",
+    step_2_desc: "Choisissez la base source (De) et la base cible (À) dans les menus déroulants.",
+    step_3_title: "Copier le Résultat",
+    step_3_desc: "Le nombre converti apparaîtra instantanément dans la zone de résultat pour que vous puissiez le copier.",
     apps_title: "Applications Courantes",
     uc_intro: "La conversion de bases numériques est une compétence fondamentale en informatique et en ingénierie. Les utilisations courantes dans le monde réel incluent :",
     uc_1: "Déboguer les représentations binaires et hexadécimales dans les systèmes embarqués et la programmation bas niveau",
@@ -452,8 +489,14 @@ defineI18nRoute({
     see3: "Convertitore da JSON a XML",
     see4: "Convertitore di Unità di Archiviazione",
     d1: "Strumento online gratuito per convertire numeri tra due basi qualsiasi da 2 a 20. Converti binario in decimale, esadecimale in ottale o qualsiasi combinazione all'istante, con la massima precisione e senza ritardi.",
-    how_title: "Come Funziona la Conversione di Basi Numeriche",
-    how_desc: "Questo strumento interpreta il numero nella base di origine e lo converte nella base di destinazione utilizzando algoritmi matematicamente esatti. Il processo avviene interamente nel tuo browser, garantendo privacy e velocità per gli interi entro il limite di sicurezza numerica (fino a 2⁵³ − 1).",
+    how_to_use_title: "Come usare",
+    how_desc: "Questo strumento interpreta il numero nella base di origine e lo converte nella base di destinazione utilizzando algoritmi matematicamente esatti. Il processo avviene interamente nel tuo browser, garantendo privacy e velocità.",
+    step_1_title: "Inserisci il Numero",
+    step_1_desc: "Digita o incolla il numero che desideri convertire nel campo 'Numero'.",
+    step_2_title: "Seleziona le Basi",
+    step_2_desc: "Scegli la base di origine (Da) e la base di destinazione (A) dai menu a discesa.",
+    step_3_title: "Copia il Risultato",
+    step_3_desc: "Il numero convertito apparirà istantaneamente nell'area dei risultati per essere copiato.",
     apps_title: "Applicazioni Comuni",
     uc_intro: "La conversione di basi numeriche è una competenza fondamentale in informatica e ingegneria. Usi comuni nel mondo reale includono:",
     uc_1: "Eseguire il debug di rappresentazioni binarie ed esadecimali in sistemi embedded e programmazione a basso livello",
@@ -513,8 +556,14 @@ defineI18nRoute({
     see3: "Konverter JSON ke XML",
     see4: "Konverter Unit Penyimpanan",
     d1: "Alat online gratis untuk mengonversi angka antara dua basis apa pun dari 2 hingga 20. Konversi biner ke desimal, heksadesimal ke oktal, atau kombinasi apa pun secara instan dengan presisi maksimum tanpa hambatan.",
-    how_title: "Cara Kerja Konversi Basis Angka",
-    how_desc: "Alat ini mengurai angka input dalam basis sumber dan mengonversinya ke basis target menggunakan algoritma yang tepat secara matematis. Proses ini berjalan sepenuhnya di browser Anda, menjamin privasi dan kecepatan untuk angka bulat dalam rentang keamanan standar (hingga 2⁵³ − 1).",
+    how_to_use_title: "Cara menggunakan",
+    how_desc: "Alat ini mengurai angka input dalam basis sumber dan mengonversinya ke basis target menggunakan algoritma yang tepat secara matematis. Proses ini berjalan sepenuhnya di browser Anda, menjamin privasi dan kecepatan.",
+    step_1_title: "Masukkan Angka",
+    step_1_desc: "Ketik atau tempel angka yang ingin Anda konversi di kolom 'Angka'.",
+    step_2_title: "Pilih Basis",
+    step_2_desc: "Pilih basis sumber (Dari) dan basis target (Ke) dari menu tarik-turun.",
+    step_3_title: "Salin Hasil",
+    step_3_desc: "Angka yang dikonversi akan muncul secara instan di area hasil untuk Anda salin.",
     apps_title: "Aplikasi Umum",
     uc_intro: "Konversi basis angka adalah keterampilan mendasar dalam ilmu komputer dan teknik. Penggunaan dunia nyata yang umum meliputi:",
     uc_1: "Debugging representasi biner dan heksadesimal dalam sistem tertanam dan pemrograman tingkat rendah",

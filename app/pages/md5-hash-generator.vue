@@ -13,6 +13,12 @@ usePageJsonLd({
     t('f_2'),
     t('f_3'),
     t('f_4')
+  ],
+  howToName: t('how_to_use_title'),
+  howToSteps: [
+    { name: t('step_1_title'), text: t('step_1_desc') },
+    { name: t('step_2_title'), text: t('step_2_desc') },
+    { name: t('step_3_title'), text: t('step_3_desc') }
   ]
 })
 
@@ -120,11 +126,19 @@ defineI18nRoute({
     <template #info>
       <div class="space-y-4">
         <p>{{ t('desc') }}</p>
-        <div class="font-bold">{{ t('how_title') }}</div>
-        <ul class="list-disc list-inside">
-          <li>{{ t('how_1') }}</li>
-          <li>{{ t('how_2') }}</li>
-        </ul>
+        <section>
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
+            {{ t('how_to_use_title') }}
+          </h2>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
+              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
+              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
+              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
+            </div>
+          </div>
+        </section>
         <div class="bg-warning/10 p-4 rounded-xl border border-warning/20">
           <div class="font-bold mb-2 text-warning flex items-center gap-2">
             <Icon name="heroicons:exclamation-triangle-20-solid" class="w-5 h-5" />
@@ -156,9 +170,13 @@ defineI18nRoute({
     tip_security: "MD5 is not safe for password hashing as it's vulnerable to collision attacks.",
     tip_usage: "We recommend using Bcrypt for security. MD5 is best suited for file integrity (Checksum).",
     result: "Result",
-    how_title: "How to use",
-    how_1: "Enter or paste the text you want to use and click Calculate MD5 Hash.",
-    how_2: "To verify integrity between different contents, generate the hash for both and compare the results.",
+    how_to_use_title: "How to use",
+    step_1_title: "Enter Text",
+    step_1_desc: "Type or paste the source text into the input area.",
+    step_2_title: "Generate Hash",
+    step_2_desc: "Click the 'Calculate MD5 Hash' button to process the text.",
+    step_3_title: "Copy Result",
+    step_3_desc: "The unique 32-character MD5 hash will be generated instantly for you to copy.",
     f_1: "Fast MD5 hash calculation",
     f_2: "128-bit digital fingerprinting",
     f_3: "Data integrity verification",
@@ -178,9 +196,13 @@ defineI18nRoute({
     tip_security: "O MD5 não é seguro para senhas por ser vulnerável a colisões.",
     tip_usage: "Recomendamos o uso de Bcrypt para segurança de senhas. O MD5 é ideal para verificar a integridade de arquivos (Checksum).",
     result: "Resultado",
-    how_title: "Como usar",
-    how_1: "Digite ou cole o texto que deseja usar e clique em Calcular Hash MD5.",
-    how_2: "Para verificar a integridade entre diferentes conteúdos, gere o hash de ambos e compare os resultados.",
+    how_to_use_title: "Como usar",
+    step_1_title: "Digite o Texto",
+    step_1_desc: "Digite ou cole o texto de origem na área de entrada.",
+    step_2_title: "Gere o Hash",
+    step_2_desc: "Clique no botão 'Calcular Hash MD5' para processar o texto.",
+    step_3_title: "Copie o Resultado",
+    step_3_desc: "O hash MD5 exclusivo de 32 caracteres será gerado instantaneamente para você copiar.",
     f_1: "Cálculo rápido de hash MD5",
     f_2: "Impressão digital de 128 bits",
     f_3: "Verificação de integridade de dados",
@@ -200,9 +222,13 @@ defineI18nRoute({
     tip_security: "MD5 no es seguro para contraseñas ya que es vulnerable a ataques de colisión.",
     tip_usage: "Recomendamos usar Bcrypt para mayor seguridad. MD5 es ideal para verificar la integridad de archivos (Checksum).",
     result: "Resultado",
-    how_title: "Cómo usar",
-    how_1: "Escribe o pega el texto que quieres usar y haz clic en Calcular Hash MD5.",
-    how_2: "Para verificar la integridad entre contenidos diferentes, genera el hash de ambos y compara los resultados.",
+    how_to_use_title: "Cómo usar",
+    step_1_title: "Ingrese el Texto",
+    step_1_desc: "Escriba o pegue el texto de origen en el área de entrada.",
+    step_2_title: "Generar Hash",
+    step_2_desc: "Haga clic en el botón 'Calcular Hash MD5' para procesar el texto.",
+    step_3_title: "Copiar Resultado",
+    step_3_desc: "El hash MD5 único de 32 caracteres se generará al instante para que lo copies.",
     f_1: "Cálculo rápido de hash MD5",
     f_2: "Huella digital de 128 bits",
     f_3: "Verificación de integridad de datos",
@@ -222,9 +248,13 @@ defineI18nRoute({
     tip_security: "MD5 n'est pas sûr pour les mots de passe car il est vulnérable aux collisions.",
     tip_usage: "Nous recommandons d'utiliser Bcrypt pour la sécurité. MD5 est parfait pour vérifier l'intégrité des fichiers (Checksum).",
     result: "Résultat",
-    how_title: "Comment utiliser l'outil",
-    how_1: "Saisissez ou collez le texte à utiliser, puis cliquez sur Calculer le Hash MD5.",
-    how_2: "Pour vérifier l'intégrité entre différents contenus, générez le hachage des deux et comparez les résultats.",
+    how_to_use_title: "Comment utiliser",
+    step_1_title: "Saisir le Texte",
+    step_1_desc: "Saisissez ou collez le texte source dans la zone de saisie.",
+    step_2_title: "Générer le Hash",
+    step_2_desc: "Cliquez sur le bouton 'Calculer le Hash MD5' pour traiter le texte.",
+    step_3_title: "Copier le Résultat",
+    step_3_desc: "Le hachage MD5 unique de 32 caractères sera généré instantanément pour que vous puissiez le copier.",
     f_1: "Calcul rapide de hash MD5",
     f_2: "Empreinte numérique 128 bits",
     f_3: "Vérification de l'intégrité des données",
@@ -244,9 +274,13 @@ defineI18nRoute({
     tip_security: "MD5 non è sicuro per le password perché vulnerabile alle collisioni.",
     tip_usage: "Raccomandiamo di usare Bcrypt per la sicurezza. MD5 è ideale per verificare l'integrità dei file (Checksum).",
     result: "Risultato",
-    how_title: "Come usare lo strumento",
-    how_1: "Digita o incolla il testo da usare e fai clic su Calcola Hash MD5.",
-    how_2: "Per verificare l'integrità tra contenuti diversi, genera l'hash di entrambi e confronta i risultati.",
+    how_to_use_title: "Come usare",
+    step_1_title: "Inserisci il Testo",
+    step_1_desc: "Digita o incolla il testo sorgente nell'area di input.",
+    step_2_title: "Genera Hash",
+    step_2_desc: "Clicca sul pulsante 'Calcola Hash MD5' per elaborare il testo.",
+    step_3_title: "Copia il Risultato",
+    step_3_desc: "L'hash MD5 univoco di 32 caratteri verrà generato istantaneamente per essere copiato.",
     f_1: "Calcolo rapido hash MD5",
     f_2: "Impronta digitale a 128 bit",
     f_3: "Verifica integrità dati",
@@ -266,9 +300,13 @@ defineI18nRoute({
     tip_security: "MD5 tidak aman untuk kata sandi karena rentan terhadap collision attacks.",
     tip_usage: "Kami menyarankan penggunaan Bcrypt untuk keamanan. MD5 paling cocok untuk integritas file (Checksum).",
     result: "Hasil",
-    how_title: "Cara menggunakan alat ini",
-    how_1: "Ketik atau tempel teks yang ingin Anda gunakan, lalu klik Hitung Hash MD5.",
-    how_2: "Untuk memverifikasi integritas antara konten yang berbeda, buat hash untuk keduanya lalu bandingkan hasilnya.",
+    how_to_use_title: "Cara menggunakan",
+    step_1_title: "Masukkan Teks",
+    step_1_desc: "Ketik atau tempel teks sumber ke dalam area input.",
+    step_2_title: "Buat Hash",
+    step_2_desc: "Klik tombol 'Hitung Hash MD5' untuk memproses teks.",
+    step_3_title: "Salin Hasil",
+    step_3_desc: "Hash MD5 32-karakter yang unik akan dibuat secara instan untuk Anda salin.",
     f_1: "Perhitungan hash MD5 yang cepat",
     f_2: "Sidik jari digital 128-bit",
     f_3: "Verifikasi integritas data",

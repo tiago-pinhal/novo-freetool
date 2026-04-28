@@ -19,6 +19,12 @@ usePageJsonLd({
     { question: t('faq_2_q'), answer: t('faq_2_a') },
     { question: t('faq_3_q'), answer: t('faq_3_a') },
     { question: t('faq_4_q'), answer: t('faq_4_a') }
+  ],
+  howToName: t('how_to_use_title'),
+  howToSteps: [
+    { name: t('step_1_title'), text: t('step_1_desc') },
+    { name: t('step_2_title'), text: t('step_2_desc') },
+    { name: t('step_3_title'), text: t('step_3_desc') }
   ]
 })
 
@@ -139,11 +145,18 @@ defineI18nRoute({
 
         <!-- How It Works -->
         <section>
-          <h2 class="text-2xl font-bold text-base-content mb-4 flex items-center gap-2">
-            <Icon name="heroicons:light-bulb" class="text-primary" />
-            {{ t('how_title') }}
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
+            {{ t('how_to_use_title') }}
           </h2>
-          <p>{{ t('how_desc') }}</p>
+          <p class="mb-4">{{ t('how_desc') }}</p>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
+              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
+              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
+              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
+            </div>
+          </div>
         </section>
 
         <!-- Applications -->
@@ -236,8 +249,14 @@ defineI18nRoute({
     Pebibyte: "Pebibyte", Pebibit: "Pebibit", Terabyte: "Terabyte", Terabit: "Terabit",
     Tebibyte: "Tebibyte", Tebibit: "Tebibit", Microbyte: "Microbyte", Microbit: "Microbit",
     d1: "Free online tool to convert between 40 storage units — from bits and bytes to petabytes and pebibits. Supports both SI decimal units (KB = 1,000 bytes) and IEC binary units (KiB = 1,024 bytes). Ideal for developers, sysadmins, and anyone working with file sizes, RAM, or network bandwidth.",
-    how_title: "How Storage Unit Conversion Works",
-    how_desc: "This converter handles precise conversions using exact decimal and binary multiplication factors. All conversions normalize through a base byte value before being expressed in the target unit. The tool correctly implements both the SI (IEC 80000-13) decimal standard and the IEC binary (IEC 60027-2) standard, ensuring accurate results for all 40 supported units.",
+    how_to_use_title: "How to use",
+    how_desc: "This converter handles precise conversions using exact decimal and binary multiplication factors. All conversions normalize through a base byte value before being expressed in the target unit.",
+    step_1_title: "Enter Value",
+    step_1_desc: "Type the numeric value you want to convert in the 'Value' field.",
+    step_2_title: "Select Units",
+    step_2_desc: "Choose the original unit (From) and the unit you want to convert to (To) from the dropdowns.",
+    step_3_title: "Copy Conversion",
+    step_3_desc: "The converted value will be displayed immediately in the result field.",
     apps_title: "Common Applications",
     uc_intro: "Storage unit conversion is essential in many technical and everyday scenarios:",
     uc_1: "Plan storage infrastructure — convert GB to TB for NAS, backup systems and cloud deployments",
@@ -289,8 +308,14 @@ defineI18nRoute({
     Pebibyte: "Pebibyte", Pebibit: "Pebibit", Terabyte: "Terabyte", Terabit: "Terabit",
     Tebibyte: "Tebibyte", Tebibit: "Tebibit", Microbyte: "Microbyte", Microbit: "Microbit",
     d1: "Ferramenta online gratuita para converter entre 40 unidades de armazenamento — de bits e bytes a petabytes e pebibits. Suporta unidades decimais SI (KB = 1.000 bytes) e unidades binárias IEC (KiB = 1.024 bytes). Ideal para desenvolvedores, sysadmins e qualquer pessoa que trabalhe com tamanhos de arquivo, RAM ou largura de banda.",
-    how_title: "Como Funciona a Conversão de Unidades de Armazenamento",
-    how_desc: "Este conversor realiza conversões precisas usando fatores de multiplicação decimais e binários exatos. Todas as conversões normalizam por um valor base em bytes antes de serem expressas na unidade alvo. A ferramenta implementa corretamente o padrão SI decimal (IEC 80000-13) e o padrão binário IEC (IEC 60027-2), garantindo resultados precisos para todas as 40 unidades suportadas.",
+    how_to_use_title: "Como usar",
+    how_desc: "Este conversor realiza conversões precisas usando fatores de multiplicação decimais e binários exatos. Todas as conversões normalizam por um valor base em bytes antes de serem expressas na unidade alvo.",
+    step_1_title: "Digite o Valor",
+    step_1_desc: "Digite o valor numérico que deseja converter no campo 'Valor'.",
+    step_2_title: "Selecione as Unidades",
+    step_2_desc: "Escolha a unidade original (De) e a unidade para a qual deseja converter (Para) nos menus suspensos.",
+    step_3_title: "Copie a Conversão",
+    step_3_desc: "O valor convertido será exibido imediatamente no campo de resultado.",
     apps_title: "Aplicações Comuns",
     uc_intro: "A conversão de unidades de armazenamento é essencial em muitos cenários técnicos e cotidianos:",
     uc_1: "Planejar infraestrutura de armazenamento — converter GB para TB em NAS, sistemas de backup e cloud",
@@ -342,8 +367,14 @@ defineI18nRoute({
     Pebibyte: "Pebibyte", Pebibit: "Pebibit", Terabyte: "Terabyte", Terabit: "Terabit",
     Tebibyte: "Tebibyte", Tebibit: "Tebibit", Microbyte: "Microbyte", Microbit: "Microbit",
     d1: "Herramienta online gratuita para convertir entre 40 unidades de almacenamiento — de bits y bytes a petabytes y pebibits. Soporta unidades decimales SI (KB = 1.000 bytes) y unidades binarias IEC (KiB = 1.024 bytes). Ideal para desarrolladores, sysadmins y cualquiera que trabaje con tamaños de archivos, RAM o ancho de banda.",
-    how_title: "Cómo Funciona la Conversión de Unidades de Almacenamiento",
-    how_desc: "Este convertidor realiza conversiones precisas usando factores de multiplicación decimales y binarios exactos. Todas las conversiones normalizan a través de un valor base en bytes antes de expresarse en la unidad destino. La herramienta implementa correctamente el estándar decimal SI (IEC 80000-13) e el estándar binario IEC (IEC 60027-2), garantizando resultados precisos para las 40 unidades soportadas.",
+    how_to_use_title: "Cómo usar",
+    how_desc: "Este convertidor realiza conversiones precisas usando factores de multiplicación decimales y binarios exactos. Todas las conversiones normalizan a través de un valor base en bytes antes de expresarse en la unidad destino.",
+    step_1_title: "Ingrese el Valor",
+    step_1_desc: "Escriba el valor numérico que desea convertir en el campo 'Valor'.",
+    step_2_title: "Seleccione las Unidades",
+    step_2_desc: "Elija la unidad original (De) y la unidad a la que desea convertir (A) en los menús desplegables.",
+    step_3_title: "Copie la Conversión",
+    step_3_desc: "El valor convertido se mostrará inmediatamente en el campo de resultado.",
     apps_title: "Aplicaciones Comunes",
     uc_intro: "La conversión de unidades de almacenamiento es esencial en muchos escenarios técnicos y cotidianos:",
     uc_1: "Planificar infraestructura de almacenamiento — convertir GB a TB para NAS, sistemas de backup y cloud",
@@ -395,8 +426,14 @@ defineI18nRoute({
     Pebibyte: "Pebibyte", Pebibit: "Pebibit", Terabyte: "Terabyte", Terabit: "Terabit",
     Tebibyte: "Tebibyte", Tebibit: "Tebibit", Microbyte: "Microbyte", Microbit: "Microbit",
     d1: "Outil en ligne gratuit pour convertir entre 40 unités de stockage — des bits et octets aux pétaoctets et pébioctets. Supporte les unités décimales SI (KB = 1 000 octets) et les unités binaires IEC (KiB = 1 024 octets). Idéal pour les développeurs, sysadmins et toute personne travaillant avec des tailles de fichiers, de la RAM ou de la bande passante.",
-    how_title: "Comment Fonctionne la Conversion d'Unités de Stockage",
-    how_desc: "Ce convertisseur effectue des conversions précises en utilisant des facteurs de multiplication décimaux et binaires exacts. Toutes les conversions se normalisent via une valeur de base en octets avant d'être exprimées dans l'unité cible. L'outil implémente correctement la norme SI décimale (IEC 80000-13) et la norme binaire IEC (IEC 60027-2), garantissant des résultats précis pour les 40 unités supportées.",
+    how_to_use_title: "Comment utiliser",
+    how_desc: "Ce convertisseur effectue des conversions précises en utilisant des facteurs de multiplication décimaux et binaires exacts. Toutes les conversions se normalisent via une valeur de base en octets avant d'être exprimées dans l'unité cible.",
+    step_1_title: "Saisir la Valeur",
+    step_1_desc: "Saisissez la valeur numérique que vous souhaitez convertir dans le champ 'Valeur'.",
+    step_2_title: "Sélectionner les Unités",
+    step_2_desc: "Choisissez l'unité d'origine (De) et l'unité vers laquelle vous souhaitez convertir (À) dans les menus déroulants.",
+    step_3_title: "Copier la Conversion",
+    step_3_desc: "La valeur convertie s'affichera immédiatement dans le champ de résultat.",
     apps_title: "Applications Courantes",
     uc_intro: "La conversion d'unités de stockage est essentielle dans de nombreux scénarios techniques et quotidiens :",
     uc_1: "Planifier une infrastructure de stockage — convertir des GB en TB pour les NAS, systèmes de sauvegarde et cloud",
@@ -448,8 +485,14 @@ defineI18nRoute({
     Pebibyte: "Pebibyte", Pebibit: "Pebibit", Terabyte: "Terabyte", Terabit: "Terabit",
     Tebibyte: "Tebibyte", Tebibit: "Tebibit", Microbyte: "Microbyte", Microbit: "Microbit",
     d1: "Strumento online gratuito per convertire tra 40 unità di archiviazione — da bit e byte a petabyte e pebibit. Supporta unità decimali SI (KB = 1.000 byte) e unità binarie IEC (KiB = 1.024 byte). Ideale per sviluppatori, sysadmin e chiunque lavori con dimensioni di file, RAM o larghezza di banda.",
-    how_title: "Come Funziona la Conversione di Unità di Archiviazione",
-    how_desc: "Questo convertitore gestisce conversioni precise usando fattori di moltiplicazione decimali e binari esatti. Tutte le conversioni si normalizzano attraverso un valore base in byte prima di essere espresse nell'unità target. Lo strumento implementa correttamente lo standard decimale SI (IEC 80000-13) e lo standard binario IEC (IEC 60027-2), garantendo risultati precisi per tutte le 40 unità supportate.",
+    how_to_use_title: "Come usare",
+    how_desc: "Questo convertitore gestisce conversioni precise usando fattori di moltiplicazione decimali e binari esatti. Tutte le conversioni si normalizzano attraverso un valore base in byte prima di essere espresse nell'unità target.",
+    step_1_title: "Inserisci il Valore",
+    step_1_desc: "Digita il valore numerico che desideri convertire nel campo 'Valore'.",
+    step_2_title: "Seleziona le Unità",
+    step_2_desc: "Scegli l'unità originale (Da) e l'unità in cui desideri convertire (A) dai menu a discesa.",
+    step_3_title: "Copia la Conversione",
+    step_3_desc: "Il valore convertito verrà visualizzato immediatamente nel campo del risultato.",
     apps_title: "Applicazioni Comuni",
     uc_intro: "La conversione di unità di archiviazione è essenziale in molti scenari tecnici e quotidiani:",
     uc_1: "Pianificare infrastrutture di archiviazione — convertire GB in TB per NAS, sistemi di backup e cloud",
@@ -501,8 +544,14 @@ defineI18nRoute({
     Pebibyte: "Pebibyte", Pebibit: "Pebibit", Terabyte: "Terabyte", Terabit: "Terabit",
     Tebibyte: "Tebibyte", Tebibit: "Tebibit", Microbyte: "Microbyte", Microbit: "Microbit",
     d1: "Alat online gratis untuk mengonversi antara 40 unit penyimpanan — dari bit dan byte hingga petabyte dan pebibit. Mendukung unit desimal SI (KB = 1.000 byte) dan unit biner IEC (KiB = 1.024 byte). Ideal untuk pengembang, sysadmin, dan siapa saja yang bekerja dengan ukuran file, RAM, atau bandwidth jaringan.",
-    how_title: "Cara Kerja Konversi Unit Penyimpanan",
-    how_desc: "Konverter ini menangani konversi presisi menggunakan faktor perkalian desimal dan biner yang tepat. Semua konversi dinormalisasi melalui nilai dasar byte sebelum diekspresikan dalam unit target. Alat ini mengimplementasikan dengan benar standar desimal SI (IEC 80000-13) dan standar biner IEC (IEC 60027-2), memastikan hasil yang akurat untuk semua 40 unit yang didukung.",
+    how_to_use_title: "Cara menggunakan",
+    how_desc: "Konverter ini menangani konversi presisi menggunakan faktor perkalian desimal dan biner yang tepat. Semua konversi dinormalisasi melalui nilai dasar byte sebelum diekspresikan dalam unit target.",
+    step_1_title: "Masukkan Nilai",
+    step_1_desc: "Ketik nilai numerik yang ingin Anda konversi di kolom 'Nilai'.",
+    step_2_title: "Pilih Unit",
+    step_2_desc: "Pilih unit asli (Dari) dan unit tujuan konversi (Ke) dari menu tarik-turun.",
+    step_3_title: "Salin Konversi",
+    step_3_desc: "Nilai yang dikonversi akan segera ditampilkan di kolom hasil.",
     apps_title: "Aplikasi Umum",
     uc_intro: "Konversi unit penyimpanan sangat penting dalam banyak skenario teknis dan sehari-hari:",
     uc_1: "Merencanakan infrastruktur penyimpanan — mengonversi GB ke TB untuk NAS, sistem backup, dan cloud",

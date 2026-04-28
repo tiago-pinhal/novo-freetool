@@ -56,6 +56,12 @@ usePageJsonLd({
         t('f_2'),
         t('f_3'),
         t('f_4')
+    ],
+    howToName: t('how_to_use_title'),
+    howToSteps: [
+        { name: t('step_1_title'), text: t('step_1_desc') },
+        { name: t('step_2_title'), text: t('step_2_desc') },
+        { name: t('step_3_title'), text: t('step_3_desc') }
     ]
 })
 
@@ -194,11 +200,18 @@ defineI18nRoute({
         <template #info>
             <div class="space-y-8">
                 <section>
-                    <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
-                        <Icon name="heroicons:information-circle-20-solid" class="w-6 h-6 text-primary" />
-                        {{ t('how_title') }}
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
+                        {{ t('how_to_use_title') }}
                     </h2>
-                    <p>{{ t('how_desc') }}</p>
+                    <p class="mb-4">{{ t('how_desc') }}</p>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
+                            <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
+                            <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
+                            <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
+                        </div>
+                    </div>
                 </section>
 
                 <section>
@@ -246,8 +259,14 @@ defineI18nRoute({
         f_2: "Add flat modifiers to the final roll",
         f_3: "Instant sum and physics-like animated results",
         f_4: "100% free with no downloads required",
-        how_title: "How the Virtual Dice Roller Works",
-        how_desc: "This tool generates highly random outcomes utilizing standard cryptography-strength math functions found in modern browsers. It perfectly simulates classic tabletop physical polyhedral dice (D4, D6, D8, D10, D12, D20, and D100) combining the exact probability distributions needed for flawless Dungeons and Dragons campaigns or regular board gaming. You can throw multiple dice at once and include any number modifiers required by your attributes.",
+        how_to_use_title: "How to use",
+        how_desc: "This tool generates highly random outcomes utilizing standard cryptography-strength math functions found in modern browsers. It perfectly simulates classic tabletop physical polyhedral dice (D4, D6, D8, D10, D12, D20, and D100).",
+        step_1_title: "Select Dice Type",
+        step_1_desc: "Choose from standard D4, D6, D8, D10, D12, D20, or D100 dice from the selection menu.",
+        step_2_title: "Configure Roll",
+        step_2_desc: "Set the number of dice to roll (up to 100) and add any optional modifiers required by your game rules.",
+        step_3_title: "Roll and Result",
+        step_3_desc: "Click 'Roll Dice' to see animated results and the calculated sum total instantly.",
         usecases_title: "Use Cases",
         uc1: "Playing Tabletop Roleplaying Games (TTRPGs) like D&D, Pathfinder, Call of Cthulhu, etc without physical dice at hand.",
         uc2: "Generating stats for new tabletop characters (e.g., rolling 4d6 to obtain strength and dexterity).",
@@ -277,8 +296,14 @@ defineI18nRoute({
         f_2: "Adicione modificadores fixos ao resultado final",
         f_3: "Soma instantânea e resultados animados",
         f_4: "100% gratuito, sem necessidade de download",
-        how_title: "Como funciona o Lançador de Dados",
-        how_desc: "Esta ferramenta gera resultados altamente aleatórios utilizando funções matemáticas seguras nativas dos navegadores modernos. Ela simula perfeitamente os pesos físicos e probabilidades dos clássicos dados poliedrais de RPG de mesa (D4, D6, D8, D10, D12, D20 e D100). Você pode rolar incontáveis dados simultaneamente e incluir modificadores (+ e -) exigidos pelas acrobacias de seus personagens para facilitar toda a matemática da partida.",
+        how_to_use_title: "Como usar",
+        how_desc: "Esta ferramenta gera resultados altamente aleatórios utilizando funções matemáticas seguras nativas dos navegadores modernos. Ela simula perfeitamente os pesos físicos e probabilidades dos clássicos dados poliedrais.",
+        step_1_title: "Selecione o Tipo de Dado",
+        step_1_desc: "Escolha entre os dados padrão D4, D6, D8, D10, D12, D20 ou D100 no menu de seleção.",
+        step_2_title: "Configure a Rolagem",
+        step_2_desc: "Defina a quantidade de dados a serem rolados (até 100) e adicione modificadores opcionais exigidos pelas regras.",
+        step_3_title: "Role e Veja o Resultado",
+        step_3_desc: "Clique em 'Rolar Dados' para ver os resultados animados e o somatório total calculado instantaneamente.",
         usecases_title: "Casos de Uso",
         uc1: "Jogar RPG de mesa como Dungeons & Dragons ou Pathfinder rapidamente pelo celular.",
         uc2: "Gerar atributos na criação de personagens, simplificando rolagens repetidas de 4d6.",
@@ -308,8 +333,14 @@ defineI18nRoute({
         f_2: "Añade modificadores fijos al resultado final",
         f_3: "Suma instantánea y resultados animados",
         f_4: "100% gratis, sin necesidad de descarga",
-        how_title: "Cómo funciona el Lanzador Virtual de Dados",
-        how_desc: "Esta herramienta genera resultados altamente aleatorios utilizando funciones criptográficas matemáticamente seguras del navegador moderno permitiéndole simular idénticamente la física de cualquier dado de dados poliédricos clásicos (D4, D6, D8, D10, D12, D20 y D100). Sirve tanto como emulador vitalicio de combinaciones de juegos como Dungeons & Dragons así como para solucionar mecánicas de juego en segundos añadiendo cualquier modificador que apliquen los atributos de tu personaje en la ficha.",
+        how_to_use_title: "Cómo usar",
+        how_desc: "Esta herramienta genera resultados altamente aleatorios utilizando funciones criptográficas matemáticamente seguras del navegador moderno permitiéndole simular idénticamente la física de cualquier dado poliédrico.",
+        step_1_title: "Seleccione el Tipo de Dado",
+        step_1_desc: "Elija entre los dados estándar D4, D6, D8, D10, D12, D20 o D100 en el menú de selección.",
+        step_2_title: "Configure el Lanzamiento",
+        step_2_desc: "Defina la cantidad de dados a lanzar (hasta 100) y agregue cualquier modificador opcional requerido.",
+        step_3_title: "Lance y Vea el Resultado",
+        step_3_desc: "Haga clic en 'Lanzar Dados' para ver los resultados animados y la suma total calculada al instante.",
         usecases_title: "Casos de Uso",
         uc1: "Disfrutar de juegos de rol (TTRPGs) como Dungeons & Dragons cuando no hay dados físicos.",
         uc2: "Construcción rápida de atributos del personaje calculando sumas de alto volumen.",
@@ -339,8 +370,14 @@ defineI18nRoute({
         f_2: "Ajoutez des modificateurs fixes au résultat",
         f_3: "Somme instantanée et résultats animés",
         f_4: "100% gratuit, sans téléchargement",
-        how_title: "Comment fonctionne le dé en ligne",
-        how_desc: "Cet outil simule parfaitement les dés de jeu classiques grâce aux technologies de calcul pseudo-aléatoire internes de votre navigateur. En intégrant des dés polyédriques (D4, D6, D8, D10, D12, D20, D100), il permet de répondre aux besoins exigeants des campagnes de jeux de rôle ou des parties amicales. Vous pouvez ajouter des quantités multiples et inclure un ajustement chiffré (modificateur).",
+        how_to_use_title: "Comment utiliser",
+        how_desc: "Cet outil simule parfaitement les dés de jeu classiques grâce aux technologies de calcul pseudo-aléatoire internes de votre navigateur. Il intègre tous les dés polyédriques standards.",
+        step_1_title: "Sélectionnez le Type de Dé",
+        step_1_desc: "Choisissez parmi les dés standards D4, D6, D8, D10, D12, D20 ou D100 dans le menu de sélection.",
+        step_2_title: "Configurez le Lancer",
+        step_2_desc: "Définissez le nombre de dés à lancer (jusqu'à 100) et ajoutez d'éventuels modificateurs optionnels.",
+        step_3_title: "Lancez et Résultat",
+        step_3_desc: "Cliquez sur 'Lancer Dés' pour voir les résultats animés et le total calculé instantanément.",
         usecases_title: "Cas d'Utilisation",
         uc1: "Remplacer l'absence de dés physiques en cours de parties de Donjons et Dragons ou Pathfinder.",
         uc2: "Déterminer des jets complexes comme la création initiale d'aptitudes via du classique 4d6.",
@@ -370,8 +407,14 @@ defineI18nRoute({
         f_2: "Aggiungi modificatori fissi al risultato",
         f_3: "Somma istantanea e risultati animati",
         f_4: "100% gratuito, senza installazione",
-        how_title: "Come Funziona il Dado Virtuale",
-        how_desc: "Utilizziamo l'algoritmo di calcolo nativo del tuo browser per offrire risultati pseudo-casuali estremamente giusti simulando meticolosamente l'uso di veri e propri dadi di plastica sul tavolo. L'applicazione ingloba il set completo di dadi poliedrici richiesti per il Role Playing Game (D4, D6, D8, D10, D12, D20 e D100) dandovi flessibilità totale di raggruppamento e somministrazione di modificatori di gioco automatici.",
+        how_to_use_title: "Come usare",
+        how_desc: "Utilizziamo l'algoritmo di calcolo nativo del tuo browser per offrire risultati pseudo-casuali estremamente equi, simulando meticolosamente l'uso di veri dadi poliedrici.",
+        step_1_title: "Seleziona il Tipo di Dado",
+        step_1_desc: "Scegli tra i dadi standard D4, D6, D8, D10, D12, D20 o D100 dal menu di selezione.",
+        step_2_title: "Configura il Lancio",
+        step_2_desc: "Imposta il numero di dadi da lanciare (fino a 100) e aggiungi eventuali modificatori opzionali.",
+        step_3_title: "Lancia e Risultato",
+        step_3_desc: "Clicca su 'Lancia Dadi' per vedere i risultati animati e il totale calcolato istantaneamente.",
         usecases_title: "Casi d'Uso",
         uc1: "Masterizzare sessioni di D&D e Pathfinder in mobilità senza dadi fisici.",
         uc2: "Creazione rapida delle schede calcolando tiri voluminosi di 4d6 consecutivamente.",
@@ -401,8 +444,14 @@ defineI18nRoute({
         f_2: "Tambahkan modifikator tetap ke hasil akhir",
         f_3: "Jumlah instan dan hasil animasi",
         f_4: "100% gratis, tanpa unduhan",
-        how_title: "Cara Kerja Dadu Virtual",
-        how_desc: "Alat ini menyajikan hasil yang benar-benar acak dengan bantuan fungsi matematika bawaan peramban internet modern yang menyimulasikan hukum lemparan dadu fisik klasik secara sangat presisi. Kami menyediakan set semua kelompok dadu poliedrik standar tabletop (D4, D6, D8, D10, D12, D20, dan D100) serta fitur perhitungan modifikator.",
+        how_to_use_title: "Cara menggunakan",
+        how_desc: "Alat ini menyajikan hasil yang benar-benar acak dengan bantuan fungsi matematika bawaan peramban internet modern yang menyimulasikan hukum lemparan dadu fisik klasik secara sangat presisi.",
+        step_1_title: "Pilih Jenis Dadu",
+        step_1_desc: "Pilih dari dadu standar D4, D6, D8, D10, D12, D20, atau D100 dari menu pilihan.",
+        step_2_title: "Konfigurasi Lemparan",
+        step_2_desc: "Atur jumlah dadu yang akan dilempar (hingga 100) dan tambahkan modifikator opsional apa pun.",
+        step_3_title: "Lempar dan Hasil",
+        step_3_desc: "Klik 'Lempar Dadu' untuk melihat hasil animasi dan total jumlah yang dihitung secara instan.",
         usecases_title: "Contoh Penggunaan",
         uc1: "Pengganti praktis kala set fisik tidak tersedia untuk petualangan kampanye meja.",
         uc2: "Mempercepat lemparan awal untuk membangun status karakter (4d6).",
