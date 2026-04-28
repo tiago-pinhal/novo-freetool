@@ -61,15 +61,13 @@ function copy() {
 usePageJsonLd({
   name: t('title'),
   description: t('meta'),
-  features: [t('f_1'), t('f_2'), t('f_3'), t('f_4')],
   faq: [
     { question: t('faq_1_q'), answer: t('faq_1_a') },
     { question: t('faq_2_q'), answer: t('faq_2_a') },
     { question: t('faq_3_q'), answer: t('faq_3_a') },
-    { question: t('faq_4_q'), answer: t('faq_4_a') },
-    { question: t('faq_5_q'), answer: t('faq_5_a') }
+    { question: t('faq_4_q'), answer: t('faq_4_a') }
   ],
-  howToName: t('how_to_use_title'),
+  howToName: t('how_it_works_title'),
   howToSteps: [
     { name: t('step_1_title'), text: t('step_1_desc') },
     { name: t('step_2_title'), text: t('step_2_desc') },
@@ -198,49 +196,24 @@ defineI18nRoute({
 
     <template #info>
       <div class="space-y-8">
-        <section>
-          <p class="mb-4">{{ t('d1') }}</p>
-        </section>
+        <UseCaseSection
+          :title="t('use_cases_title')"
+          :items="[
+            { title: t('uc_1_title'), description: t('uc_1_desc') },
+            { title: t('uc_2_title'), description: t('uc_2_desc') },
+            { title: t('uc_3_title'), description: t('uc_3_desc') },
+            { title: t('uc_4_title'), description: t('uc_4_desc') }
+          ]"
+        />
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:check-badge-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('features_title') }}
-          </h2>
-          <ul class="grid sm:grid-cols-2 gap-3">
-            <li
-              v-for="i in 4"
-              :key="i"
-              class="flex items-start gap-2 bg-base-200/40 p-3 rounded-xl border border-primary/20"
-            >
-              <Icon name="heroicons:check-circle-20-solid" class="w-5 h-5 text-success shrink-0 mt-0.5" />
-              <span>{{ t(`f_${i}`) }}</span>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
-            <Icon name="heroicons:shield-check-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('security_title') }}
-          </h2>
-          <p class="mb-3">{{ t('d3') }}</p>
-          <p>{{ t('d4') }}</p>
-        </section>
+        <HowToSection
+          :title="t('how_it_works_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
 
         <FaqSection
           :title="t('faq_title')"
@@ -248,8 +221,7 @@ defineI18nRoute({
             { question: t('faq_1_q'), answer: t('faq_1_a') },
             { question: t('faq_2_q'), answer: t('faq_2_a') },
             { question: t('faq_3_q'), answer: t('faq_3_a') },
-            { question: t('faq_4_q'), answer: t('faq_4_a') },
-            { question: t('faq_5_q'), answer: t('faq_5_a') }
+            { question: t('faq_4_q'), answer: t('faq_4_a') }
           ]"
         />
       </div>
@@ -278,33 +250,31 @@ defineI18nRoute({
     str_4: "Very Strong",
     copy: "Copy Password",
     placeholder: "Click Generate to create a password",
-    d1: "With our Password Generator, you can instantly create strong, secure passwords to protect your accounts against unauthorized access. All generation happens locally in your browser. Your passwords never leave your device.",
-    how_to_use_title: "How to use",
+    use_cases_title: "Use Cases",
+    uc_1_title: "Online Accounts",
+    uc_1_desc: "Create unique, hack-proof passwords for your social media and email accounts.",
+    uc_2_title: "Financial Security",
+    uc_2_desc: "Protect your banking and financial apps with maximum password complexity.",
+    uc_3_title: "Work & Business",
+    uc_3_desc: "Comply with corporate security policies using professional-grade random passwords.",
+    uc_4_title: "Local Encryption",
+    uc_4_desc: "Secure your Wi-Fi networks, personal devices, and encrypted local files.",
+    how_it_works_title: "How It Works",
     step_1_title: "Customize",
     step_1_desc: "Select the character types (uppercase, lowercase, numbers, symbols) and password length.",
     step_2_title: "Generate",
     step_2_desc: "Click the 'Generate Password' button to create your secure password instantly.",
-    step_3_title: "Copy & Use",
-    step_3_desc: "Use the copy button to save the password to your clipboard.",
-    features_title: "Customize Your Security",
-    f_1: "Include uppercase letters (A-Z) to increase password complexity.",
-    f_2: "Mix in lowercase letters (a-z) for a broader character set.",
-    f_3: "Add numbers (0-9) to strengthen the password further.",
-    f_4: "Use special characters (!#${'@'}...) for maximum security.",
-    security_title: "Security First",
-    d3: "Our algorithm avoids predictable sequences and evaluates password strength in real time. The strength score reflects how difficult the password is to crack, ranging from Very Weak to Very Strong.",
-    d4: "We recommend creating a unique password for each account, updating them regularly, and storing them in a secure password manager.",
+    step_3_title: "Check & Use",
+    step_3_desc: "Review the strength meter and copy the result to your clipboard.",
     faq_title: "Frequently Asked Questions",
     faq_1_q: "Is it safe to generate passwords online?",
     faq_1_a: "Yes. Our generator runs entirely in your browser. Passwords are created locally on your device and are never sent to any server.",
     faq_2_q: "How do I create a strong password?",
-    faq_2_a: "A strong password should be at least 12 characters long and include a mix of uppercase letters, lowercase letters, numbers, and symbols. Avoid common words or personal data.",
+    faq_2_a: "A strong password should be at least 12 characters long and include a mix of uppercase letters, lowercase letters, numbers, and symbols. Avoid common words.",
     faq_3_q: "What makes a password weak?",
-    faq_3_a: "Short passwords (fewer than 8 characters), common words susceptible to dictionary attacks, predictable patterns like 123456, or reusing the same password across multiple sites.",
+    faq_3_a: "Short length (under 8 characters), common words (like 'admin'), or predictable patterns (like '123456').",
     faq_4_q: "Should I change my passwords frequently?",
-    faq_4_a: "It is recommended to change passwords periodically, especially for critical accounts such as email and banking, or immediately if you suspect a data breach.",
-    faq_5_q: "Is this tool free?",
-    faq_5_a: "Yes, 100% free and unlimited. Generate as many secure passwords as you need with no registration or payment required.",
+    faq_4_a: "It is recommended to change passwords periodically for sensitive accounts or immediately if you suspect a breach.",
     see1: "PDF Editor",
     see3: "Hours Calculator",
     see4: "Fancy Fonts"
@@ -328,33 +298,31 @@ defineI18nRoute({
     str_4: "Muito Forte",
     copy: "Copiar Senha",
     placeholder: "Clique em Gerar para criar uma senha",
-    d1: "Com o nosso Gerador de Senhas, você cria facilmente senhas fortes e seguras para blindar seus dados contra acessos não autorizados. Toda a geração ocorre localmente no seu navegador. Suas senhas nunca saem do seu dispositivo.",
-    how_to_use_title: "Como usar",
+    use_cases_title: "Casos de Uso",
+    uc_1_title: "Contas Online",
+    uc_1_desc: "Crie senhas únicas e à prova de invasão para suas redes sociais e e-mails.",
+    uc_2_title: "Segurança Financeira",
+    uc_2_desc: "Proteja seus aplicativos bancários e financeiros com complexidade máxima.",
+    uc_3_title: "Trabalho e Negócios",
+    uc_3_desc: "Cumpra políticas de segurança corporativa usando senhas profissionais.",
+    uc_4_title: "Criptografia Local",
+    uc_4_desc: "Proteja redes Wi-Fi, dispositivos pessoais e arquivos criptografados locais.",
+    how_it_works_title: "Como Funciona",
     step_1_title: "Personalizar",
     step_1_desc: "Selecione os tipos de caracteres (maiúsculas, minúsculas, números, símbolos) e o comprimento da senha.",
     step_2_title: "Gerar",
     step_2_desc: "Clique no botão 'Gerar Senha' para criar sua senha segura instantaneamente.",
     step_3_title: "Copiar e Usar",
-    step_3_desc: "Use o botão de copiar para enviar a senha à área de transferência.",
-    features_title: "Personalize sua Segurança",
-    f_1: "Inclua letras maiúsculas (A-Z) para aumentar a complexidade da senha.",
-    f_2: "Combine com letras minúsculas (a-z) para um conjunto de caracteres mais amplo.",
-    f_3: "Adicione números (0-9) para fortalecer ainda mais a senha.",
-    f_4: "Use caracteres especiais (!#${'@'}...) para máxima segurança.",
-    security_title: "Segurança em Primeiro Lugar",
-    d3: "Nosso algoritmo evita sequências previsíveis e avalia a robustez da senha em tempo real. A pontuação de força reflete o quão difícil é quebrar a senha, variando de Muito Fraca a Muito Forte.",
-    d4: "Recomendamos criar senhas únicas para cada conta, atualizá-las regularmente e guardá-las em gerenciadores de senha seguros.",
+    step_3_desc: "Verifique o medidor de força e copie o resultado para sua área de transferência.",
     faq_title: "Perguntas Frequentes",
     faq_1_q: "É seguro gerar senhas online?",
     faq_1_a: "Sim. Nosso gerador roda inteiramente no seu navegador. As senhas são criadas localmente no seu dispositivo e nunca são enviadas para nenhum servidor.",
     faq_2_q: "Como criar uma senha forte?",
-    faq_2_a: "Uma senha forte deve ter pelo menos 12 caracteres e incluir uma mistura de letras maiúsculas, minúsculas, números e símbolos. Evite palavras comuns ou dados pessoais.",
+    faq_2_a: "Uma senha forte deve ter pelo menos 12 caracteres e incluir uma mistura de letras maiúsculas, minúsculas, números e símbolos. Evite palavras comuns.",
     faq_3_q: "O que torna uma senha fraca?",
-    faq_3_a: "Senhas curtas (menos de 8 caracteres), palavras comuns sujeitas a ataques de dicionário, padrões previsíveis como 123456 ou reutilizar a mesma senha em vários sites.",
+    faq_3_a: "Comprimento curto (menos de 8 caracteres), palavras comuns (como 'admin') ou padrões previsíveis (como '123456').",
     faq_4_q: "Devo mudar minhas senhas frequentemente?",
-    faq_4_a: "Recomenda-se mudar senhas periodicamente, especialmente para contas críticas como e-mail e banco, ou imediatamente se suspeitar de vazamento de dados.",
-    faq_5_q: "A ferramenta é gratuita?",
-    faq_5_a: "Sim, 100% gratuita e sem limites. Gere quantas senhas seguras precisar sem cadastro ou pagamento.",
+    faq_4_a: "Recomenda-se mudar senhas periodicamente para contas críticas ou imediatamente se suspeitar de vazamento.",
     see1: "Editor de PDF",
     see3: "Calculadora de Horas",
     see4: "Fontes Diferentes"
@@ -378,33 +346,31 @@ defineI18nRoute({
     str_4: "Muy Fuerte",
     copy: "Copiar Contraseña",
     placeholder: "Haz clic en Generar para crear una contraseña",
-    d1: "Con nuestro Generador de Contraseñas, puedes crear fácilmente contraseñas fuertes y seguras para proteger tus cuentas contra accesos no autorizados. Toda la generación ocurre localmente en tu navegador. Tus contraseñas nunca salen de tu dispositivo.",
-    how_to_use_title: "Cómo usar",
+    use_cases_title: "Casos de Uso",
+    uc_1_title: "Cuentas Online",
+    uc_1_desc: "Crea contraseñas únicas para tus redes sociales y correos electrónicos.",
+    uc_2_title: "Seguridad Financiera",
+    uc_2_desc: "Protege tus aplicaciones bancarias con la máxima complejidad de caracteres.",
+    uc_3_title: "Trabajo y Negocios",
+    uc_3_desc: "Cumple con las políticas de seguridad corporativa usando contraseñas profesionales.",
+    uc_4_title: "Cifrado Local",
+    uc_4_desc: "Asegura redes Wi-Fi, dispositivos personales y archivos cifrados locales.",
+    how_it_works_title: "Cómo Funciona",
     step_1_title: "Personalizar",
-    step_1_desc: "Selecciona los tipos de caracteres (mayúsculas, minúsculas, números, símbolos) y la longitud de la contraseña.",
+    step_1_desc: "Selecciona los tipos de caracteres (mayúsculas, minúsculas, números, símbolos) y la longitud.",
     step_2_title: "Generar",
     step_2_desc: "Haz clic en el botón 'Generar Contraseña' para crear tu contraseña segura al instante.",
     step_3_title: "Copiar y Usar",
-    step_3_desc: "Usa el botón de copiar para enviar la contraseña al portapapeles.",
-    features_title: "Personaliza tu Seguridad",
-    f_1: "Incluye letras mayúsculas (A-Z) para aumentar la complejidad.",
-    f_2: "Combina con letras minúsculas (a-z) para un conjunto de caracteres más amplio.",
-    f_3: "Añade números (0-9) para fortalecer aún más la contraseña.",
-    f_4: "Usa caracteres especiales (!#${'@'}...) para máxima seguridad.",
-    security_title: "La Seguridad es lo Primero",
-    d3: "Nuestro algoritmo evita secuencias predecibles y evalúa la solidez de la contraseña en tiempo real. La puntuación de fortaleza refleja lo difícil que es descifrar la contraseña, desde Muy Débil hasta Muy Fuerte.",
-    d4: "Recomendamos crear contraseñas únicas para cada cuenta, actualizarlas regularmente y guardarlas en gestores de contraseñas seguros.",
+    step_3_desc: "Revisa el medidor de fuerza y copia el resultado en el portapapeles.",
     faq_title: "Preguntas Frecuentes",
     faq_1_q: "¿Es seguro generar contraseñas online?",
-    faq_1_a: "Sí. Nuestro generador funciona completamente en tu navegador. Las contraseñas se crean localmente en tu dispositivo y nunca se envían a ningún servidor.",
+    faq_1_a: "Sí. Nuestro generador funciona completamente en tu navegador. Las contraseñas se crean localmente.",
     faq_2_q: "¿Cómo crear una contraseña fuerte?",
-    faq_2_a: "Una contraseña fuerte debe tener al menos 12 caracteres e incluir una mezcla de letras mayúsculas, minúsculas, números y símbolos. Evita palabras comunes o datos personales.",
+    faq_2_a: "Debe tener al menos 12 caracteres e incluir una mezcla de mayúsculas, minúsculas, números y símbolos.",
     faq_3_q: "¿Qué hace débil a una contraseña?",
-    faq_3_a: "Contraseñas cortas (menos de 8 caracteres), palabras comunes vulnerables a ataques de diccionario, patrones predecibles como 123456 o reutilizar la misma contraseña en varios sitios.",
+    faq_3_a: "Longitud corta, palabras comunes (como 'admin') o patrones predecibles (como '123456').",
     faq_4_q: "¿Debo cambiar mis contraseñas con frecuencia?",
-    faq_4_a: "Se recomienda cambiar las contraseñas periódicamente, especialmente para cuentas críticas como correo y banco, o inmediatamente si sospechas de una filtración de datos.",
-    faq_5_q: "¿La herramienta es gratuita?",
-    faq_5_a: "Sí, 100% gratuita y sin límites. Genera todas las contraseñas seguras que necesites sin registro ni pago.",
+    faq_4_a: "Se recomienda cambiarlas periódicamente para cuentas críticas o si sospechas una filtración.",
     see1: "Editor de PDF",
     see3: "Calculadora de Horas",
     see4: "Fuentes Bonitas"
@@ -428,33 +394,31 @@ defineI18nRoute({
     str_4: "Très Fort",
     copy: "Copier le Mot de Passe",
     placeholder: "Cliquez sur Générer pour créer un mot de passe",
-    d1: "Avec notre Générateur de Mot de Passe, vous créez facilement des mots de passe forts et sécurisés pour protéger vos comptes contre les accès non autorisés. Toute la génération se fait localement dans votre navigateur. Vos mots de passe ne quittent jamais votre appareil.",
-    how_to_use_title: "Comment utiliser l'outil",
+    use_cases_title: "Cas d'Utilisation",
+    uc_1_title: "Comptes en Ligne",
+    uc_1_desc: "Créez des mots de passe uniques et inviolables pour vos réseaux sociaux et e-mails.",
+    uc_2_title: "Sécurité Financière",
+    uc_2_desc: "Protégez vos applications bancaires avec une complexité de caractères maximale.",
+    uc_3_title: "Travail & Entreprise",
+    uc_3_desc: "Respectez les politiques de sécurité d'entreprise avec des mots de passe professionnels.",
+    uc_4_title: "Chiffrement Local",
+    uc_4_desc: "Sécurisez vos réseaux Wi-Fi, appareils personnels et fichiers locaux chiffrés.",
+    how_it_works_title: "Comment Ça Marche",
     step_1_title: "Personnaliser",
-    step_1_desc: "Sélectionnez les types de caractères (majuscules, minuscules, chiffres, symboles) et la longueur du mot de passe.",
+    step_1_desc: "Sélectionnez les types de caractères (majuscules, minuscules, chiffres, symboles) et la longueur.",
     step_2_title: "Générer",
-    step_2_desc: "Cliquez sur le bouton 'Générer un Mot de Passe' pour créer votre mot de passe sécurisé instantanément.",
-    step_3_title: "Copier et Utiliser",
-    step_3_desc: "Utilisez le bouton de copie pour envoyer le mot de passe dans le presse-papiers.",
-    features_title: "Personnalisez Votre Sécurité",
-    f_1: "Incluez des lettres majuscules (A-Z) pour augmenter la complexité.",
-    f_2: "Combinez avec des lettres minuscules (a-z) pour un jeu de caractères plus large.",
-    f_3: "Ajoutez des chiffres (0-9) pour renforcer davantage le mot de passe.",
-    f_4: "Utilisez des caractères spéciaux (!#${'@'}...) pour une sécurité maximale.",
-    security_title: "La Sécurité avant Tout",
-    d3: "Notre algorithme évite les séquences prévisibles et évalue la solidité du mot de passe en temps réel. Le score de force reflète la difficulté à déchiffrer le mot de passe, allant de Très Faible à Très Fort.",
-    d4: "Nous recommandons de créer des mots de passe uniques pour chaque compte, de les mettre à jour régulièrement et de les stocker dans des gestionnaires de mots de passe sécurisés.",
+    step_2_desc: "Cliquez sur le bouton 'Générer' pour créer votre mot de passe sécurisé instantanément.",
+    step_3_title: "Copier & Utiliser",
+    step_3_desc: "Vérifiez l'indicateur de force et copiez le résultat dans votre presse-papiers.",
     faq_title: "Questions Fréquentes",
-    faq_1_q: "Est-il sûr de générer des mots de passe en ligne?",
-    faq_1_a: "Oui. Notre générateur fonctionne entièrement dans votre navigateur. Les mots de passe sont créés localement sur votre appareil et ne sont jamais envoyés à aucun serveur.",
-    faq_2_q: "Comment créer un mot de passe fort?",
-    faq_2_a: "Un mot de passe fort doit contenir au moins 12 caractères et inclure un mélange de lettres majuscules, minuscules, chiffres et symboles. Évitez les mots courants ou les données personnelles.",
-    faq_3_q: "Qu'est-ce qui rend un mot de passe faible?",
-    faq_3_a: "Les mots de passe courts (moins de 8 caractères), les mots courants vulnérables aux attaques par dictionnaire, les schémas prévisibles comme 123456 ou la réutilisation du même mot de passe sur plusieurs sites.",
-    faq_4_q: "Dois-je changer mes mots de passe fréquemment?",
-    faq_4_a: "Il est recommandé de changer les mots de passe périodiquement, surtout pour les comptes critiques comme l'email et la banque, ou immédiatement en cas de soupçon de fuite de données.",
-    faq_5_q: "Cet outil est-il gratuit?",
-    faq_5_a: "Oui, 100% gratuit et sans limites. Générez autant de mots de passe sécurisés que vous le souhaitez sans inscription ni paiement.",
+    faq_1_q: "Est-il sûr de générer des mots de passe en ligne ?",
+    faq_1_a: "Oui. Notre générateur fonctionne entièrement dans votre navigateur. Les mots de passe sont créés localement.",
+    faq_2_q: "Comment créer un mot de passe fort ?",
+    faq_2_a: "Visez au moins 12 caractères, en mélangeant majuscules, minuscules, chiffres et symboles.",
+    faq_3_q: "Qu'est-ce qui rend un mot de passe faible ?",
+    faq_3_a: "Une faible longueur, des mots courants (comme 'admin') ou des schémas prévisibles (comme '123456').",
+    faq_4_q: "Dois-je changer mes mots de passe fréquemment ?",
+    faq_4_a: "Il est recommandé de les changer périodiquement pour les comptes sensibles ou en cas de doute.",
     see1: "Éditeur de PDF",
     see3: "Calculatrice d'Heures",
     see4: "Polices Stylisées"
@@ -478,33 +442,31 @@ defineI18nRoute({
     str_4: "Molto Forte",
     copy: "Copia Password",
     placeholder: "Clicca su Genera per creare una password",
-    d1: "Con il nostro Generatore di Password, puoi creare facilmente password forti e sicure per proteggere i tuoi account dagli accessi non autorizzati. Tutta la generazione avviene localmente nel tuo browser. Le tue password non lasciano mai il tuo dispositivo.",
-    how_to_use_title: "Come usare lo strumento",
+    use_cases_title: "Casi d'Uso",
+    uc_1_title: "Account Online",
+    uc_1_desc: "Crea password uniche e inviolabili per i tuoi social media ed e-mail.",
+    uc_2_title: "Sicurezza Finanziaria",
+    uc_2_desc: "Proteggi le tue app bancarie con la massima complessità dei caratteri.",
+    uc_3_title: "Lavoro e Azienda",
+    uc_3_desc: "Rispetta le politiche di sicurezza aziendali con password casuali professionali.",
+    uc_4_title: "Crittografia Locale",
+    uc_4_desc: "Proteggi reti Wi-Fi, dispositivi personali e file criptati locali.",
+    how_it_works_title: "Come Funziona",
     step_1_title: "Personalizza",
-    step_1_desc: "Seleziona i tipi di caratteri (maiuscole, minuscole, numeri, simboli) e la lunghezza della password.",
+    step_1_desc: "Seleziona i tipi di caratteri (maiuscole, minuscole, numeri, simboli) e la lunghezza.",
     step_2_title: "Genera",
-    step_2_desc: "Fai clic sul pulsante 'Genera Password' per creare istantaneamente la tua password sicura.",
+    step_2_desc: "Fai clic sul pulsante 'Genera' per creare istantaneamente la tua password sicura.",
     step_3_title: "Copia e Usa",
-    step_3_desc: "Usa il pulsante di copia per inviare la password negli appunti.",
-    features_title: "Personalizza la Tua Sicurezza",
-    f_1: "Includi lettere maiuscole (A-Z) per aumentare la complessità.",
-    f_2: "Combina con lettere minuscole (a-z) per un set di caratteri più ampio.",
-    f_3: "Aggiungi numeri (0-9) per rafforzare ulteriormente la password.",
-    f_4: "Usa caratteri speciali (!#${'@'}...) per la massima sicurezza.",
-    security_title: "La Sicurezza Prima di Tutto",
-    d3: "Il nostro algoritmo evita sequenze prevedibili e valuta la solidità della password in tempo reale. Il punteggio di forza riflette quanto sia difficile decifrare la password, da Molto Debole a Molto Forte.",
-    d4: "Consigliamo di creare password uniche per ogni account, aggiornarle regolarmente e conservarle in gestori di password sicuri.",
+    step_3_desc: "Controlla l'indicatore di forza e copia il risultato negli appunti.",
     faq_title: "Domande Frequenti",
     faq_1_q: "È sicuro generare password online?",
-    faq_1_a: "Sì. Il nostro generatore funziona interamente nel tuo browser. Le password vengono create localmente sul tuo dispositivo e non vengono mai inviate ad alcun server.",
+    faq_1_a: "Sì. Il nostro generatore funziona interamente nel tuo browser. Le password sono create localmente.",
     faq_2_q: "Come creare una password forte?",
-    faq_2_a: "Una password forte deve avere almeno 12 caratteri e includere un mix di lettere maiuscole, minuscole, numeri e simboli. Evita parole comuni o dati personali.",
+    faq_2_a: "Usa almeno 12 caratteri, mescolando maiuscole, minuscole, numeri e simboli.",
     faq_3_q: "Cosa rende una password debole?",
-    faq_3_a: "Password corte (meno di 8 caratteri), parole comuni vulnerabili agli attacchi dizionario, schemi prevedibili come 123456 o riutilizzare la stessa password su più siti.",
+    faq_3_a: "Lunghezza ridotta, parole comuni (come 'admin') o schemi prevedibili (come '123456').",
     faq_4_q: "Dovrei cambiare le mie password frequentemente?",
-    faq_4_a: "Si raccomanda di cambiare le password periodicamente, soprattutto per account critici come email e banca, o immediatamente in caso di sospetta violazione dei dati.",
-    faq_5_q: "Lo strumento è gratuito?",
-    faq_5_a: "Sì, 100% gratuito e senza limiti. Genera tutte le password sicure che ti servono senza registrazione o pagamento.",
+    faq_4_a: "Si raccomanda di cambiarle periodicamente per account critici o in caso di dubbi.",
     see1: "Editor di PDF",
     see3: "Calcolatrice Ore",
     see4: "Font Diversi"
@@ -528,33 +490,31 @@ defineI18nRoute({
     str_4: "Sangat Kuat",
     copy: "Salin Kata Sandi",
     placeholder: "Klik Buat untuk membuat kata sandi",
-    d1: "Dengan Generator Kata Sandi kami, Anda dapat dengan mudah membuat kata sandi yang kuat dan aman untuk melindungi akun Anda dari akses yang tidak sah. Semua pembuatan terjadi secara lokal di browser Anda. Kata sandi Anda tidak pernah meninggalkan perangkat Anda.",
-    how_to_use_title: "Cara menggunakan alat ini",
+    use_cases_title: "Kasus Penggunaan",
+    uc_1_title: "Akun Online",
+    uc_1_desc: "Buat kata sandi unik dan tahan retas untuk media sosial dan email Anda.",
+    uc_2_title: "Keamanan Finansial",
+    uc_2_desc: "Lindungi aplikasi perbankan Anda dengan kompleksitas karakter maksimal.",
+    uc_3_title: "Pekerjaan & Bisnis",
+    uc_3_desc: "Patuhi kebijakan keamanan korporat menggunakan kata sandi acak profesional.",
+    uc_4_title: "Enkripsi Lokal",
+    uc_4_desc: "Amankan jaringan Wi-Fi, perangkat pribadi, dan file lokal yang dienkripsi.",
+    how_it_works_title: "Cara Kerja",
     step_1_title: "Sesuaikan",
     step_1_desc: "Pilih jenis karakter (huruf kapital, huruf kecil, angka, simbol) dan panjang kata sandi.",
     step_2_title: "Buat",
     step_2_desc: "Klik tombol 'Buat Kata Sandi' untuk langsung membuat kata sandi aman Anda.",
     step_3_title: "Salin & Gunakan",
-    step_3_desc: "Gunakan tombol salin untuk menyalin kata sandi ke papan klip.",
-    features_title: "Sesuaikan Keamanan Anda",
-    f_1: "Sertakan huruf kapital (A-Z) untuk meningkatkan kompleksitas.",
-    f_2: "Gabungkan dengan huruf kecil (a-z) untuk kumpulan karakter yang lebih luas.",
-    f_3: "Tambahkan angka (0-9) untuk memperkuat kata sandi lebih lanjut.",
-    f_4: "Gunakan karakter khusus (!#${'@'}...) untuk keamanan maksimal.",
-    security_title: "Keamanan adalah Prioritas",
-    d3: "Algoritma kami menghindari urutan yang dapat diprediksi dan mengevaluasi kekuatan kata sandi secara real time. Skor kekuatan mencerminkan seberapa sulit kata sandi untuk dipecahkan, mulai dari Sangat Lemah hingga Sangat Kuat.",
-    d4: "Kami menyarankan membuat kata sandi unik untuk setiap akun, memperbaruinya secara berkala, dan menyimpannya di pengelola kata sandi yang aman.",
+    step_3_desc: "Tinjau pengukur kekuatan dan salin hasilnya ke papan klip.",
     faq_title: "Pertanyaan Umum",
     faq_1_q: "Apakah aman membuat kata sandi secara online?",
-    faq_1_a: "Ya. Generator kami berjalan sepenuhnya di browser Anda. Kata sandi dibuat secara lokal di perangkat Anda dan tidak pernah dikirim ke server mana pun.",
-    faq_2_q: "Bagaimana membuat kata sandi yang kuat?",
-    faq_2_a: "Kata sandi yang kuat harus memiliki setidaknya 12 karakter dan mencakup campuran huruf kapital, huruf kecil, angka, dan simbol. Hindari kata-kata umum atau data pribadi.",
+    faq_1_a: "Ya. Generator kami berjalan sepenuhnya di browser Anda. Kata sandi dibuat secara lokal.",
+    faq_2_q: "Bagaimana cara membuat kata sandi yang kuat?",
+    faq_2_a: "Gunakan minimal 12 karakter, campurkan huruf besar, huruf kecil, angka, dan simbol.",
     faq_3_q: "Apa yang membuat kata sandi lemah?",
-    faq_3_a: "Kata sandi pendek (kurang dari 8 karakter), kata-kata umum yang rentan terhadap serangan kamus, pola yang dapat diprediksi seperti 123456, atau menggunakan kata sandi yang sama di banyak situs.",
+    faq_3_a: "Panjang pendek, kata-kata umum (seperti 'admin'), atau pola yang dapat diprediksi.",
     faq_4_q: "Haruskah saya mengganti kata sandi secara berkala?",
-    faq_4_a: "Disarankan untuk mengganti kata sandi secara berkala, terutama untuk akun penting seperti email dan perbankan, atau segera jika mencurigai kebocoran data.",
-    faq_5_q: "Apakah alat ini gratis?",
-    faq_5_a: "Ya, 100% gratis dan tanpa batas. Buat kata sandi aman sebanyak yang Anda butuhkan tanpa pendaftaran atau pembayaran.",
+    faq_4_a: "Disarankan untuk menggantinya secara berkala untuk akun sensitif atau jika ada kecurigaan.",
     see1: "Editor PDF",
     see3: "Kalkulator Jam",
     see4: "Font Keren"
