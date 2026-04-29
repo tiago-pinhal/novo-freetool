@@ -68,7 +68,8 @@ defineI18nRoute({
     es: "/extractor-de-emails",
     fr: '/extracteur-emails',
     it: '/estrattore-di-email',
-    id: '/ekstraktor-email'
+    id: '/ekstraktor-email',
+    de: '/email-extraktor'
   }
 })
 </script>
@@ -336,7 +337,7 @@ defineI18nRoute({
         step_3_title: "Copia Email",
         step_3_desc: "Copia l'elenco pulito delle email estratte, pronto all'uso.",
         use_cases_title: "Casi d'Uso",
-        use_cases_desc: "L'Estrattore di Email ti aiuta a transformar contenuti disordinati in un elenco di contatti pulito e pronto all'uso. È ideale per:",
+        use_cases_desc: "L'Estrattore di Email ti aiuta a trasformare contenuti disordinati in un elenco di contatti pulito e pronto all'uso. È ideale per:",
         uc_2: "Estrarre email da lunghe pagine HTML o log di messaggi",
         uc_4: "Rimuovere automaticamente gli indirizzi duplicati per l'outreach",
         ideal_for_title: "Ideale Per",
@@ -389,12 +390,48 @@ defineI18nRoute({
         features_title: "Fitur",
         f_1: "Ekstrak otomatis semua email dari teks apa pun",
         f_2: "Hapus email duplikat secara otomatis",
-        f_3: "Ekspor dengan koma, baris, titik koma, ou pipe",
+        f_3: "Ekspor dengan koma, baris, titik koma, atau pipe",
         f_4: "Dukungan seret dan lepas file",
         see1: "Kalkulator Persentase",
         see2: "Pengacak Daftar",
         see3: "Pelempar Dadu",
         see4: "Kalkulator Aturan Tiga"
+    },
+    de: {
+        title: "E-Mail-Extraktor",
+        meta: "Extrahiere automatisch mehrere E-Mail-Adressen aus beliebigem Text mit unserem Online-E-Mail-Extraktor.",
+        desc: "Musst du viele Kontakte aus einem großen Textblock oder Datensatz extrahieren? Unser E-Mail-Extraktor macht das einfach. Füge deinen Inhalt ein oder ziehe ihn in das Feld, wähle das gewünschte Trennzeichen für die Ausgabeliste (Komma, Zeilenumbruch, Semikolon oder Pipe) und klicke auf 'Extrahieren'. Das Tool findet automatisch gültige E-Mail-Adressen, entfernt Duplikate und erstellt eine saubere, sofort nutzbare Liste.",
+        how_to_use_title: "So verwendest du das Tool",
+        step_1_title: "Text eingeben",
+        step_1_desc: "Füge deinen Text ein oder ziehe eine Datei in das Eingabefeld.",
+        step_2_title: "Trennzeichen wählen",
+        step_2_desc: "Wähle das Trennzeichen (Komma, Zeilenumbruch usw.) und klicke auf Extrahieren.",
+        step_3_title: "E-Mails kopieren",
+        step_3_desc: "Kopiere die saubere Liste der extrahierten E-Mails, bereit zur Verwendung.",
+        use_cases_title: "Anwendungsfälle",
+        use_cases_desc: "Der E-Mail-Extraktor hilft dir, unübersichtliche Inhalte in eine saubere, sofort nutzbare Kontaktliste zu verwandeln. Er eignet sich besonders für:",
+        uc_2: "Extrahieren von E-Mails aus langen HTML-Seiten oder Nachrichtenprotokollen",
+        uc_4: "Automatisches Entfernen doppelter Adressen für Outreach",
+        ideal_for_title: "Ideal für",
+        ideal_for_desc: "Dieses Tool ist nützlich für Marketing, Vertrieb, Support, Recruiting, Kundenservice, Recherche und alle, die E-Mail-Adressen schnell und genau aus langen Texten herausfiltern müssen.",
+        sep: "Trennen nach",
+        empty: "Keine E-Mail gefunden",
+        bt: "Extrahieren",
+        plc: "Füge deinen Text hier ein oder ziehe eine Datei hinein",
+        comma: "Komma",
+        line: "Zeilenumbruch",
+        colon: "Semikolon",
+        pipe: "Pipe",
+        res: "Ergebnis",
+        features_title: "Funktionen",
+        f_1: "Alle gültigen E-Mail-Adressen automatisch aus beliebigem Text extrahieren",
+        f_2: "Doppelte E-Mails automatisch entfernen",
+        f_3: "Export mit Komma, Zeilenumbruch, Semikolon oder Pipe als Trennzeichen",
+        f_4: "Unterstützung für Drag-and-drop-Dateien",
+        see1: "Prozentrechner",
+        see2: "Listen-Zufallsgenerator",
+        see3: "Würfelroller",
+        see4: "Dreisatzrechner"
     }
 }
 </i18n>

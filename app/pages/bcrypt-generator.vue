@@ -91,7 +91,8 @@ defineI18nRoute({
     es: '/generador-de-bcrypt',
     fr: '/generateur-de-bcrypt',
     it: '/generatore-di-bcrypt',
-    id: '/generator-bcrypt'
+    id: '/generator-bcrypt',
+    de: '/bcrypt-generator-und-pruefer'
   }
 })
 </script>
@@ -309,7 +310,7 @@ defineI18nRoute({
   es: {
     title: "Generador y Verificador de Bcrypt",
     meta: "Genere hashes Bcrypt seguros a partir de cualquier texto con rondas personalizables o verifique si un hash existente coincide con un texto determinado.",
-    desc: "Bcrypt es un algoritmo de hash seguro, muy utilizado para contraseñas. Incluye un salt único en cada hash para ayudar a prevenir ataques mediante rainbow tables. El ajuste de Rounds define el costo computacional: cuanto mayor sea el valor, más lento será el proceso, pero más difícil será un ataque de fuerza bruta. Incluso usando el mesmo texto, cada hash generado es diferente.",
+    desc: "Bcrypt es un algoritmo de hash seguro, muy utilizado para contraseñas. Incluye un salt único en cada hash para ayudar a prevenir ataques mediante rainbow tables. El ajuste de Rounds define el costo computacional: cuanto mayor sea el valor, más lento será el proceso, pero más difícil será un ataque de fuerza bruta. Incluso usando el mismo texto, cada hash generado es diferente.",
     check: "Verificar Hash",
     bt: "Generar Hash",
     features_title: "Funcionalidades",
@@ -342,7 +343,7 @@ defineI18nRoute({
   fr: {
     title: "Générateur et Vérificateur Bcrypt",
     meta: "Générez des hachages Bcrypt sécurisés à partir de n'importe quel texte avec des rounds personnalisables, ou vérifiez si un hachage existant correspond à un texte donné.",
-    desc: "Bcrypt est un algorithme de hachage sécurisé, largement utilisé pour les mots de passe. Il inclut un salt unique dans chaque hachage afin d'aider à prévenir les attaques par tables arc-en-ciel. Le paramètre Rounds définit le coût de calcul : plus la valeur est élevée, plus le traitement est lent, mais plus les attaques par force brute deviennent difficiles. Même avec le mesmo texte, chaque hachage généré est différent.",
+    desc: "Bcrypt est un algorithme de hachage sécurisé, largement utilisé pour les mots de passe. Il inclut un salt unique dans chaque hachage afin d'aider à prévenir les attaques par tables arc-en-ciel. Le paramètre Rounds définit le coût de calcul : plus la valeur est élevée, plus le traitement est lent, mais plus les attaques par force brute deviennent difficiles. Même avec le même texte, chaque hachage généré est différent.",
     check: "Vérifier le Hachage",
     bt: "Générer le Hachage",
     features_title: "Fonctionnalités",
@@ -369,13 +370,13 @@ defineI18nRoute({
     tip_salt: "Salt : Inclus automatiquement pour aider à prévenir les attaques par tables arc-en-ciel.",
     f_1: "Génération sécurisée de hachages Bcrypt",
     f_2: "Nombre de rounds personnalisable (4-20)",
-    f_3: "Vérification de hachage en temps real",
+    f_3: "Vérification de hachage en temps réel",
     f_4: "Traitement côté client pour une confidentialité maximale"
   },
   it: {
     title: "Generatore e Verificatore Bcrypt",
     meta: "Genera Hash Bcrypt sicuri da qualsiasi testo con round personalizzabili oppure verifica se un hash esistente corrisponde a un testo specifico.",
-    desc: "Bcrypt è un algoritmo di hashing sicuro, ampiamente usato per le password. Include un salt univoco in ogni hash per aiutare a prevenire gli attacchi basati su rainbow table. L'impostazione dei Rounds definisce il costo computazionale: più alto è il valore, più lento sarà il processo, ma più difficile diventerà un attacco brute-force. Anche usando lo mesmo testo, ogni hash generato è diverso.",
+    desc: "Bcrypt è un algoritmo di hashing sicuro, ampiamente usato per le password. Include un salt univoco in ogni hash per aiutare a prevenire gli attacchi basati su rainbow table. L'impostazione dei Rounds definisce il costo computazionale: più alto è il valore, più lento sarà il processo, ma più difficile diventerà un attacco brute-force. Anche usando lo stesso testo, ogni hash generato è diverso.",
     check: "Verifica Hash",
     bt: "Genera Hash",
     features_title: "Funzionalità",
@@ -398,7 +399,7 @@ defineI18nRoute({
     step_2_desc: "Incolla l'Hash Bcrypt, inserisci il testo originale e fai clic su Verifica Hash.",
     step_3_title: "Copia Risultato",
     step_3_desc: "Usa il pulsante di copia accanto all'hash o il risultato del confronto per la tua app.",
-    tip_rounds: "Rounds: Valori più alti sono più sicuri, mas richiedono più tempo di elaborazione.",
+    tip_rounds: "Rounds: Valori più alti sono più sicuri, ma richiedono più tempo di elaborazione.",
     tip_salt: "Salt: Incluso automaticamente per aiutare a prevenire gli attacchi con rainbow table.",
     f_1: "Generazione sicura di Hash Bcrypt",
     f_2: "Numero di rounds personalizzabile (4-20)",
@@ -437,6 +438,39 @@ defineI18nRoute({
     f_2: "Jumlah rounds yang dapat disesuaikan (4-20)",
     f_3: "Verifikasi hash waktu nyata",
     f_4: "Pemrosesan sisi klien untuk privasi total"
+  },
+  de: {
+    title: "Bcrypt-Generator und Prüfer",
+    meta: "Erzeuge sichere Bcrypt-Hashes aus beliebigem Text mit anpassbaren Rounds oder prüfe, ob ein vorhandener Hash zu einem bestimmten Text passt.",
+    desc: "Bcrypt ist ein sicherer Hashing-Algorithmus, der häufig für Passwörter verwendet wird. Jeder Hash enthält einen eindeutigen Salt, um Angriffe mit Rainbow Tables zu erschweren. Die Einstellung Rounds steuert den Rechenaufwand: Höhere Werte sind langsamer, machen Brute-Force-Angriffe aber deutlich schwieriger. Auch bei gleichem Text ist jeder erzeugte Hash unterschiedlich.",
+    check: "Hash prüfen",
+    bt: "Hash erzeugen",
+    features_title: "Funktionen",
+    plc: "Text zum Hashen",
+    plcgen: "Bcrypt-Hash",
+    plcver: "Originaltext",
+    match: "Der Hash stimmt mit dem angegebenen Text überein.",
+    notmatch: "Der Hash stimmt nicht mit dem angegebenen Text überein.",
+    rounds: "Kostenfaktor (Rounds)",
+    see1: "MD5-Hash-Generator",
+    see2: "JSON-Viewer",
+    see3: "E-Mail-Extraktor",
+    see4: "XML-zu-JSON-Konverter",
+    tip: "Kurztipp:",
+    result: "Ergebnis",
+    how_to_use_title: "So verwendest du das Tool",
+    step_1_title: "Hash erzeugen",
+    step_1_desc: "Gib den Ausgangstext ein, wähle die Anzahl der Rounds und klicke auf Hash erzeugen.",
+    step_2_title: "Hash prüfen",
+    step_2_desc: "Füge den Bcrypt-Hash ein, gib den Originaltext ein und klicke auf Hash prüfen.",
+    step_3_title: "Ergebnis kopieren",
+    step_3_desc: "Nutze die Kopierschaltfläche neben dem Hash oder das Vergleichsergebnis für deine Anwendung.",
+    tip_rounds: "Rounds: Höhere Werte sind sicherer, benötigen aber mehr Verarbeitungszeit.",
+    tip_salt: "Salt: Wird automatisch eingefügt, um Angriffe mit Rainbow Tables zu erschweren.",
+    f_1: "Sichere Erzeugung von Bcrypt-Hashes",
+    f_2: "Anpassbare Rounds (4-20)",
+    f_3: "Hash-Prüfung in Echtzeit",
+    f_4: "Clientseitige Verarbeitung für maximale Privatsphäre"
   }
 }
 </i18n>

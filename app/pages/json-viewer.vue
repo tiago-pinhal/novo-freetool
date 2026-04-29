@@ -86,7 +86,8 @@ defineI18nRoute({
     es: '/visor-de-json', 
     fr: '/visualiseur-json',
     it: '/visualizzatore-di-json',
-    id: '/penampil-json'
+    id: '/penampil-json',
+    de: '/json-betrachter'
   }
 })
 </script>
@@ -444,6 +445,47 @@ defineI18nRoute({
         f_2: "Penyorotan sintaks dan kolom berwarna",
         f_3: "Validasi real-time dan deteksi kesalahan",
         f_4: "Tanpa pendaftaran atau instalasi"
+    },
+    de: {
+        m_title: "JSON-Betrachter Online - JSON kostenlos visualisieren und formatieren",
+        title: "JSON-Betrachter",
+        meta: "Kostenloser Online-JSON-Betrachter. Füge dein JSON ein oder lade es hoch und visualisiere es sofort als einklappbare Baumstruktur mit farbcodierten Feldern. Keine Registrierung erforderlich.",
+        info_title: "Informationen",
+        d1: "Dieser Online-JSON-Betrachter zeigt deine Daten in einem interaktiven Baumformat an, bei dem jeder Knoten eingerückt ist, um die Datenhierarchie darzustellen. Du kannst jede Gruppe ein- oder ausklappen, um dich auf die wichtigen Informationen zu konzentrieren.",
+        d2: "Felder und Werte sind farbcodiert, damit du sie schnell erfassen kannst. Jede Änderung an der Eingabe wird sofort in der Visualisierung übernommen. Ideal für Entwickler, die APIs debuggen, Antworten validieren oder Konfigurationsdateien prüfen, ohne Installation oder Anmeldung.",
+        result: "Ergebnis",
+        plc: "JSON-Code hier einfügen oder eine Datei ziehen",
+        err: "Gib ein gültiges JSON ein",
+        features_title: "Funktionen",
+        how_to_use_title: "So verwendest du das Tool",
+        hiw_1_title: "JSON einfügen",
+        hiw_1_desc: "Füge dein rohes JSON ein oder ziehe die JSON-Datei direkt in den Editor.",
+        hiw_2_title: "Sofortige Validierung",
+        hiw_2_desc: "Das Tool validiert deinen Code schnell und zeigt Fehler dynamisch an.",
+        hiw_3_title: "Baumvisualisierung",
+        hiw_3_desc: "Es erzeugt eine vollständig durchsuchbare, farbcodierte und interaktive Baumansicht für leichteres Lesen der Daten.",
+        use_cases_title: "Anwendungsfälle",
+        uc_1_title: "API-Debugging",
+        uc_1_desc: "Verstehe umfangreiche Payload-Strukturen, indem du Knoten isolierst und Eltern-Kind-Beziehungen prüfst.",
+        uc_2_title: "Konfigurationsprüfung",
+        uc_2_desc: "Finde fehlende Kommas, falsche Klammern oder schlecht strukturierte Einstellungsdateien mühelos.",
+        uc_3_title: "Datenpräsentation",
+        uc_3_desc: "Teile deinen Bildschirm in technischen Meetings mit einer bereinigten und einklappbaren JSON-Ansicht.",
+        faq_title: "Fragen und Antworten",
+        faq_1_q: "Werden meine JSON-Daten auf dem Server gespeichert?",
+        faq_1_a: "Nein. Die Verarbeitung erfolgt ausschließlich in deinem Browser. Wir übertragen oder speichern deine JSON-Objekte nicht auf unseren Servern und wahren so deine Privatsphäre.",
+        faq_2_q: "Kann ich einzelne Teile des JSON kopieren?",
+        faq_2_a: "Ja. Durch direkte Interaktion mit dem erzeugten JSON-Baum kannst du bestimmte Knoten, Arrays oder Unterobjekte kopieren, ohne den gesamten Rohtext zu durchsuchen.",
+        faq_3_q: "Zeigt der Betrachter JSON-Fehler an?",
+        faq_3_a: "Ja. Wenn dein JSON fehlerhaft ist, etwa durch fehlende Anführungszeichen oder zusätzliche Kommas, zeigt das Tool eine direkte Syntaxfehlermeldung an und verhindert die Baumdarstellung.",
+        see1: "XML-zu-JSON-Konverter",
+        see2: "JSON-zu-XML-Konverter",
+        see3: "MD5-Hash-Generator",
+        see4: "Bcrypt-Generator",
+        f_1: "Interaktive JSON-Baumvirtualisierung",
+        f_2: "Syntaxhervorhebung und farbcodierte Felder",
+        f_3: "Echtzeitvalidierung und Fehlererkennung",
+        f_4: "Keine Registrierung oder Installation erforderlich"
     }
 }
 </i18n>

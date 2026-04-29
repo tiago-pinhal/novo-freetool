@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, locale } = useI18n({ useScope: 'local' })
+const { t } = useI18n({ useScope: 'local' })
 
 const availableDice = [4, 6, 8, 10, 12, 20, 100]
 
@@ -87,7 +87,8 @@ defineI18nRoute({
         es: '/lanzador-de-dados',
         fr: '/lanceur-de-des',
         it: '/lanciatore-di-dadi',
-        id: '/lempar-dadu'
+        id: '/lempar-dadu',
+        de: '/wuerfelroller'
     }
 })
 </script>
@@ -192,7 +193,7 @@ defineI18nRoute({
 
                 <div v-if="state.total === null && !state.isRolling" class="text-center opacity-70">
                     <Icon name="heroicons:cube-transparent" class="w-16 h-16 mx-auto mb-2" />
-                    <p class="font-medium italic">{{ locale === 'pt' ? 'Pronto para rolar' : 'Ready to roll' }}</p>
+                    <p class="font-medium italic">{{ t('ready') }}</p>
                 </div>
             </div>
         </div>
@@ -268,6 +269,7 @@ defineI18nRoute({
         amount: "Number of Dice",
         modifier: "Modifier (+/-)",
         bt: "Roll Dice",
+        ready: "Ready to roll",
         see1: "Percentage Calculator",
         see2: "List Randomizer",
         see3: "Rule of Three",
@@ -306,6 +308,7 @@ defineI18nRoute({
         amount: "Quantidade de Dados",
         modifier: "Modificador (+/-)",
         bt: "Rolar Dados",
+        ready: "Pronto para rolar",
         see1: "Calculadora de Porcentagem",
         see2: "Sorteador de Listas",
         see3: "Regra de Três",
@@ -339,14 +342,15 @@ defineI18nRoute({
         faq2q: "¿Puedo lanzar varios a la vez?",
         faq2a: "Claro que sí. Modifica el campo 'Cantidad de Dados' y la plataforma lanzará todos al mismo tiempo y sumará automáticamente los valores.",
         faq3q: "¿Qué función cumple el espacio de 'Modificador (+/-)'?",
-        faq3a: "En RPGs cada lanzamiento puede tener un bônus (Ej: 1D20 + 4). Esta caja absorbe tu número y devuelve la suma total en tiempo real.",
+        faq3a: "En RPGs cada lanzamiento puede tener un bonus (Ej: 1D20 + 4). Esta caja absorbe tu número y devuelve la suma total en tiempo real.",
         dice_type: "Tipo de Dado",
         amount: "Cantidad de Dados",
         modifier: "Modificador (+/-)",
         bt: "Lanzar Dados",
+        ready: "Listo para lanzar",
         see1: "Calculadora de Porcentaje",
         see2: "Aleatorizador de Listas",
-        see3: "Regra de Tres",
+        see3: "Regla de Tres",
         see4: "Extractor de Correos Electrónicos"
     },
     fr: {
@@ -382,6 +386,7 @@ defineI18nRoute({
         amount: "Nombre de Dés",
         modifier: "Modificateur (+/-)",
         bt: "Lancer Dés",
+        ready: "Prêt à lancer",
         see1: "Calculatrice de Pourcentage",
         see2: "Mélangeur de Listes",
         see3: "Règle de Trois",
@@ -420,6 +425,7 @@ defineI18nRoute({
         amount: "Numero di Dadi",
         modifier: "Modificatore (+/-)",
         bt: "Lancia Dadi",
+        ready: "Pronto a lanciare",
         see1: "Calcolatrice di Percentuale",
         see2: "Generatore di Liste Casuali",
         see3: "Regola di Tre",
@@ -458,10 +464,50 @@ defineI18nRoute({
         amount: "Jumlah Dadu",
         modifier: "Modifikator (+/-)",
         bt: "Lempar Dadu",
+        ready: "Siap melempar",
         see1: "Kalkulator Persentase",
         see2: "Pengacak Daftar",
         see3: "Aturan Tiga",
         see4: "Ekstraktor Email"
+    },
+    de: {
+        pageTitle: "Virtueller Würfelroller online (D&D / RPG) | Kostenlos",
+        title: "Virtueller Würfelroller",
+        meta: "Würfle virtuelle polyedrische Würfel online sofort mit unserem kostenlosen Simulator. Perfekt für D&D, Brettspiele, Zufallsereignisse oder wann immer du schnell einen zuverlässigen D20- oder D6-Würfelroller brauchst.",
+        f_1: "Zufallszahlen von D4 bis D100 erzeugen",
+        f_2: "Feste Modifikatoren zum Endwurf hinzufügen",
+        f_3: "Sofortige Summe und animierte Ergebnisse",
+        f_4: "100% kostenlos, ohne Download",
+        features_title: "Funktionen",
+        how_to_use_title: "So verwendest du das Tool",
+        how_desc: "Dieses Tool erzeugt sehr zufällige Ergebnisse mit modernen mathematischen Zufallsfunktionen im Browser. Es simuliert klassische polyedrische Tischwürfel wie D4, D6, D8, D10, D12, D20 und D100.",
+        step_1_title: "Würfeltyp auswählen",
+        step_1_desc: "Wähle Standardwürfel wie D4, D6, D8, D10, D12, D20 oder D100 aus der Auswahl.",
+        step_2_title: "Wurf konfigurieren",
+        step_2_desc: "Lege die Anzahl der Würfel fest (bis zu 100) und füge optionale Modifikatoren hinzu, die deine Spielregeln erfordern.",
+        step_3_title: "Würfeln und Ergebnis",
+        step_3_desc: "Klicke auf 'Würfeln', um animierte Ergebnisse und die berechnete Gesamtsumme sofort zu sehen.",
+        use_cases_title: "Anwendungsfälle",
+        uc1: "Tischrollenspiele (TTRPGs) wie D&D, Pathfinder oder Call of Cthulhu spielen, wenn keine echten Würfel zur Hand sind.",
+        uc2: "Werte für neue Tischrollenspiel-Charaktere erzeugen, zum Beispiel mit 4W6 für Stärke oder Geschicklichkeit.",
+        uc3: "Große Schadenswürfe beschleunigen, bei denen das Kopfrechnen mit 10 oder 20 Würfeln zeitaufwendig ist.",
+        uc4: "Brettspiele, Wahrscheinlichkeitstraining oder spontane Entscheidungen im Alltag.",
+        faq_title: "Fragen und Antworten",
+        faq1q: "Ist dieser Online-Würfelroller wirklich zufällig?",
+        faq1a: "Ja. Das Tool nutzt robuste Pseudozufallszahlengeneratoren moderner Webbrowser und liefert eine faire Verteilung ohne versteckte Gewichtung oder voreingenommene Ergebnisse.",
+        faq2q: "Kann ich mehrere Würfel gleichzeitig werfen, zum Beispiel 4W6?",
+        faq2a: "Ja. Ändere einfach das Feld 'Anzahl der Würfel' auf die benötigte Menge. Der Simulator würfelt alle gleichzeitig und berechnet automatisch die Gesamtsumme.",
+        faq3q: "Wofür ist das Feld 'Modifikator'?",
+        faq3a: "In RPGs braucht man oft einen festen Bonus oder Malus zum Wurf, etwa 1W20 + 4. Mit dem Modifikator wird dieser Wert automatisch in die Gesamtsumme eingerechnet.",
+        dice_type: "Würfeltyp",
+        amount: "Anzahl der Würfel",
+        modifier: "Modifikator (+/-)",
+        bt: "Würfeln",
+        ready: "Bereit zum Würfeln",
+        see1: "Prozentrechner",
+        see2: "Listen-Zufallsgenerator",
+        see3: "Dreisatz",
+        see4: "E-Mail-Extraktor"
     }
 }
 </i18n>

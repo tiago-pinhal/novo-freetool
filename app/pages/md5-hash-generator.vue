@@ -66,7 +66,8 @@ defineI18nRoute({
     es: '/generador-de-hash-md5',
     fr: '/generateur-de-hash-md5',
     it: '/generatore-di-hash-md5',
-    id: '/generator-hash-md5'
+    id: '/generator-hash-md5',
+    de: '/md5-hash-generator'
   }
 })
 </script>
@@ -322,6 +323,33 @@ defineI18nRoute({
     f_2: "Sidik jari digital 128-bit",
     f_3: "Verifikasi integritas data",
     f_4: "Tanpa pendaftaran atau instalasi"
+  },
+  de: {
+    title: "MD5-Hash-Generator",
+    meta: "Berechne einfach den MD5-Hash (128-Bit-Fingerabdruck) eines beliebigen Textes und prüfe die Datenintegrität durch den Vergleich von Hashes.",
+    desc: "MD5 (Message Digest Algorithm 5) ist ein weit verbreiteter kryptografischer Hash-Algorithmus, der für jeden Eingabetext oder Datensatz einen 128-Bit-Fingerabdruck mit 32 Zeichen erzeugt. Er wird hauptsächlich zur Prüfung der Datenintegrität verwendet, da er einen eindeutigen und konsistenten Hash erzeugt. Schon die kleinste Änderung an der Eingabe verändert diesen Code und macht Änderungen leicht erkennbar. Für sicheres Passwort-Hashing werden jedoch modernere Algorithmen wie SHA-256 oder Bcrypt empfohlen.",
+    bt: "Berechnen",
+    features_title: "Funktionen",
+    plc: "Text zum Hashen",
+    see1: "Bcrypt-Generator",
+    see2: "JSON-Viewer",
+    see3: "E-Mail-Extraktor",
+    see4: "XML-zu-JSON-Konverter",
+    tip_title: "Sicherheitswarnung",
+    tip_security: "MD5 ist für Passwort-Hashing nicht sicher, da es anfällig für Kollisionsangriffe ist.",
+    tip_usage: "Wir empfehlen Bcrypt für die Passwortsicherheit. MD5 eignet sich am besten zur Prüfung der Dateiintegrität (Checksum).",
+    result: "Ergebnis",
+    how_to_use_title: "So verwendest du das Tool",
+    step_1_title: "Text eingeben",
+    step_1_desc: "Gib den Ausgangstext in das Eingabefeld ein oder füge ihn dort ein.",
+    step_2_title: "Hash erzeugen",
+    step_2_desc: "Klicke auf die Schaltfläche 'MD5-Hash berechnen', um den Text zu verarbeiten.",
+    step_3_title: "Ergebnis kopieren",
+    step_3_desc: "Der eindeutige MD5-Hash mit 32 Zeichen wird sofort erzeugt und kann kopiert werden.",
+    f_1: "Schnelle MD5-Hash-Berechnung",
+    f_2: "Digitaler 128-Bit-Fingerabdruck",
+    f_3: "Prüfung der Datenintegrität",
+    f_4: "Keine Registrierung oder Installation erforderlich"
   }
 }
 </i18n>

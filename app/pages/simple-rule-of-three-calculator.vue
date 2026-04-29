@@ -45,7 +45,8 @@ defineI18nRoute({
         es: '/calculadora-regla-de-tres-simple', 
         fr: '/calculatrice-regle-de-trois-simple',
         it: '/calcolatrice-regola-di-tre-semplice',
-        id: '/kalkulator-aturan-tiga-sederhana'
+        id: '/kalkulator-aturan-tiga-sederhana',
+        de: '/dreisatzrechner'
     }
 })
 </script>
@@ -362,7 +363,7 @@ defineI18nRoute({
         uc_2: "Calcolare il consumo di carburante per diverse distanze",
         uc_3: "Regolare misure tecniche e modelli in scala",
         uc_4: "Risolvere problemi matematici e compiti di proporzione aziendale",
-        f_1: "Risolvi proporzioni diretas con tre valori noti",
+        f_1: "Risolvi proporzioni dirette con tre valori noti",
         f_2: "Risultato in tempo reale durante la digitazione",
         f_3: "Utile per ricette, scale e compiti",
         f_4: "Nessuna registrazione o installazione"
@@ -402,6 +403,42 @@ defineI18nRoute({
         f_2: "Hasil waktu nyata saat Anda mengetik",
         f_3: "Berguna untuk resep, penskalaan, dan PR",
         f_4: "Tanpa pendaftaran atau instalasi"
+    },
+    de: {
+        title: "Einfacher Dreisatzrechner",
+        meta: "Berechne einfache Dreisatz-Proportionen online mit unserem kostenlosen Rechner. Finde unbekannte Werte in direkten Proportionen schnell und einfach.",
+        desc: "Der einfache Dreisatz, auch als Kreuzmultiplikation bekannt, ist eine praktische mathematische Methode, um einen unbekannten vierten Wert zu finden, wenn bereits drei Werte mit direktem proportionalem Verhältnis bekannt sind. Unser Rechner macht den Vorgang einfach: Ob du ein Rezept skalierst, Prozentsätze berechnest, Maße anpasst oder Hausaufgaben löst, fülle einfach die bekannten Werte aus und der Rechner führt die Berechnung automatisch durch und zeigt das Ergebnis.",
+        if: "Bedingungen",
+        then: "Ziel",
+        val1: "Wert A",
+        val2: "Wert B",
+        val3: "Wert C",
+        result: "Endergebnis (X)",
+        copy_result: "Ergebnis kopieren",
+        waiting: "Gib alle Werte oben ein, um das Ergebnis zu sehen",
+        tip_title: "So funktioniert es",
+        tip_formula: "Die verwendete Formel ist",
+        features_title: "Funktionen",
+        how_to_use_title: "So verwendest du das Tool",
+        step_1_title: "Basiswerte eingeben",
+        step_1_desc: "Gib Wert A und Wert B ein, um die bekannte Ausgangsproportion festzulegen.",
+        step_2_title: "Zielwert eingeben",
+        step_2_desc: "Gib Wert C ein, um den proportionalen Gegenwert (X) zu berechnen.",
+        step_3_title: "Ergebnis erhalten",
+        step_3_desc: "Das Ergebnis wird sofort berechnet. Nutze die Kopierschaltfläche, um es in die Zwischenablage zu übernehmen.",
+        see1: "Prozentrechner",
+        see2: "Bcrypt-Generator",
+        see3: "E-Mail-Extraktor",
+        see4: "JSON-Betrachter",
+        use_cases_title: "Anwendungsfälle",
+        uc_1: "Kochrezepte anhand verfügbarer Zutaten skalieren",
+        uc_2: "Kraftstoffverbrauch für unterschiedliche Entfernungen berechnen",
+        uc_3: "Technische Maße und maßstabsgetreue Modelle anpassen",
+        uc_4: "Matheaufgaben und geschäftliche Proportionsaufgaben lösen",
+        f_1: "Direkte Proportionen mit drei bekannten Werten lösen",
+        f_2: "Ergebnis in Echtzeit während der Eingabe",
+        f_3: "Nützlich für Rezepte, Skalierung und Hausaufgaben",
+        f_4: "Keine Registrierung oder Installation erforderlich"
     }
 }
 </i18n>
