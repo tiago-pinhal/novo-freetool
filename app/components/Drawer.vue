@@ -138,6 +138,17 @@ id:
     fmt: "Format Kode"
     conv: "Konverter"
     misc: "Berbagai Alat"
+de:
+    pdf: "PDF-Editor"
+    clr: "Farben"
+    img: "Bilder"
+    txt: "Texte"
+    dts: "Datum und Uhrzeit"
+    rand: "Zufallsdaten"
+    min: "Code minifizieren"
+    fmt: "Code formatieren"
+    conv: "Konverter"
+    misc: "Verschiedene Tools"
 </i18n>
 
 <style scoped>

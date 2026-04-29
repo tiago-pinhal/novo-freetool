@@ -69,6 +69,9 @@ it:
 id:
   about: "Tentang alat ini"
   label: "Bacaan yang Disarankan:"
+de:
+  about: "Über dieses Tool"
+  label: "Empfohlene Lektüre:"
 </i18n>
 
 <style scoped>

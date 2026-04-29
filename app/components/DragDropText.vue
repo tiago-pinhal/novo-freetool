@@ -80,7 +80,8 @@ function onDrop(e) {
   es: { drop_msg: "Suelta el archivo aquí" },
   fr: { drop_msg: "Déposez le fichier ici" },
   it: { drop_msg: "Rilascia il file qui" },
-  id: { drop_msg: "Lepas file di sini" }
+  id: { drop_msg: "Lepas file di sini" },
+  de: { drop_msg: "Datei hier ablegen" }
 }
 </i18n>
 

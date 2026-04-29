@@ -37,22 +37,25 @@ const localePath = useLocalePath()
 <i18n lang="yaml">
 {
     en: {
-        see: "See also"
+      see: "See also"
     },
     pt: {
-        see: "Veja também"
+      see: "Veja também"
     },
     es: {
-        see: "Ver también"
+      see: "Ver también"
     },
     fr: {
-        see: "Voir aussi"
+      see: "Voir aussi"
     },
     it: {
-        see: "Vedi anche"
+      see: "Vedi anche"
     },
     id: {
-        see: "Lihat juga"
+      see: "Lihat juga"
+    },
+    de: {
+      see: "Siehe auch"
     }
 }
 </i18n>

@@ -32,12 +32,12 @@ pt:
     t: "Termos"
 es:
     r: "Todos los Derechos Reservados"
-    a: "Sobre"
+    a: "Sobre nosotros"
     p: "Política de Privacidad"
     t: "Términos"
 fr:
     r: "Tous droits réservés"
-    a: "Propos"
+    a: "À propos"
     p: "Politique de Confidentialité"
     t: "Conditions"
 it:
@@ -50,4 +50,9 @@ id:
     a: "Tentang Kami"
     p: "Kebijakan Privasi"
     t: "Syarat dan Ketentuan"
+de:
+    r: "Alle Rechte vorbehalten"
+    a: "Über uns"
+    p: "Datenschutzrichtlinie"
+    t: "Nutzungsbedingungen"
 </i18n>

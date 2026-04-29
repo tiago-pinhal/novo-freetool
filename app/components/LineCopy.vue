@@ -74,6 +74,7 @@ async function copy() {
   es: { copy: "Copiar" },
   fr: { copy: "Copier" },
   it: { copy: "Copia" },
-  id: { copy: "Salin" }
+  id: { copy: "Salin" },
+  de: { copy: "Kopieren" }
 }
 </i18n>
