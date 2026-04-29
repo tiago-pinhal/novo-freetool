@@ -70,7 +70,8 @@ defineI18nRoute({
     es: '/mezclador-de-listas',
     fr: '/melangeur-de-listes',
     it: '/mescolatore-di-liste',
-    id: '/pengacak-daftar'
+    id: '/pengacak-daftar',
+    de: '/listen-zufallsgenerator'
   }
 })
 </script>
@@ -338,7 +339,7 @@ defineI18nRoute({
     step_2_title: "Mescola gli Elementi",
     step_2_desc: "Clicca sul pulsante 'Mescola' per eseguire l'algoritmo di randomizzazione.",
     step_3_title: "Ottieni l'Ordine Casuale",
-    step_3_desc: "Gli elementi saranno riorganizzati istantaneamente. Puoi copiare il finale risultato con un clic usando il pulsante di copia.",
+    step_3_desc: "Gli elementi saranno riorganizzati istantaneamente. Puoi copiare il risultato finale con un clic usando il pulsante di copia.",
     f_1: "Mescola istantaneamente nomi, parole o elementi",
     f_2: "Algoritmo di randomizzazione Fisher-Yates imparziale",
     f_3: "Supporto drag-and-drop per file di testo",
@@ -355,7 +356,7 @@ defineI18nRoute({
     faq_2_q: "Il sorteggio è davvero equo?",
     faq_2_a: "Sì. Utilizziamo l'algoritmo Fisher-Yates, un metodo matematicamente provato per generare permutazioni imparziali di un elenco.",
     faq_3_q: "I miei dati sono al sicuro?",
-    faq_3_a: "Assolutamente. Il tuo elenco non lascia mai o il tuo dispositivo. Tutta la randomizzazione avviene localmente nel browser e nulla viene inviato ai nostri server."
+    faq_3_a: "Assolutamente. Il tuo elenco non lascia mai il tuo dispositivo. Tutta la randomizzazione avviene localmente nel browser e nulla viene inviato ai nostri server."
   },
   id: {
     title: "Pengacak Daftar",
@@ -393,6 +394,43 @@ defineI18nRoute({
     faq_2_a: "Ya. Kami menggunakan algoritma pengocokan Fisher-Yates, yang merupakan metode yang terbukti secara matematis untuk menghasilkan permutasi daftar yang tidak memihak.",
     faq_3_q: "Apakah data saya aman?",
     faq_3_a: "Sangat aman. Daftar Anda tidak pernah meninggalkan perangkat Anda. Semua pengacakan terjadi secara lokal di browser Anda, dan tidak ada yang dikirim ke server kami."
+  },
+  de: {
+    title: "Listen-Zufallsgenerator und Listenmischer",
+    meta: "Mische Namen, Wörter oder Einträge einfach mit unserem kostenlosen Online-Listen-Zufallsgenerator. Erzeuge zufällige Reihenfolgen und faire Auslosungen in Sekunden.",
+    desc: "Dieses Tool randomisiert die Reihenfolge von Namen, Wörtern oder beliebigen Listeneinträgen schnell und fair. Es eignet sich ideal zum Ziehen zufälliger Namen, Mischen von Gruppen, Neuordnen von Aufgaben und für unvoreingenommene Ergebnisse bei Spielen, Wettbewerben, Unterrichtsaktivitäten und Alltagsentscheidungen.",
+    bt: "Mischen",
+    result: "Ergebnis",
+    plc: "Gib deine Liste von Einträgen ein",
+    plc_hint: "Einen Eintrag pro Zeile eingeben...",
+    see1: "Prozentrechner",
+    see2: "Würfelroller",
+    see3: "Dreisatzrechner",
+    see4: "E-Mail-Extraktor",
+    how_to_use_title: "So verwendest du das Tool",
+    step_1_title: "Liste vorbereiten",
+    step_1_desc: "Tippe oder füge deine Einträge in das Eingabefeld ein und achte darauf, dass jeder Eintrag in einer eigenen Zeile steht.",
+    step_2_title: "Einträge mischen",
+    step_2_desc: "Klicke auf die Schaltfläche 'Mischen', um den Zufallsalgorithmus auszuführen.",
+    step_3_title: "Zufällige Reihenfolge erhalten",
+    step_3_desc: "Die Einträge werden sofort neu angeordnet. Du kannst das Endergebnis mit einem Klick über die Kopierschaltfläche kopieren.",
+    f_1: "Jede Liste mit Namen oder Wörtern sofort mischen",
+    f_2: "Unvoreingenommener Fisher-Yates-Zufallsalgorithmus",
+    f_3: "Unterstützung für Drag-and-drop von Textdateien",
+    f_4: "Vollständig kostenlos und privat (clientseitige Verarbeitung)",
+    features_title: "Funktionen",
+    use_cases_title: "Anwendungsfälle",
+    uc_1: "Zufällige Namen für Verlosungen oder Wettbewerbe ziehen",
+    uc_2: "Gruppen und Teams für Sport oder Unterrichtsaktivitäten mischen",
+    uc_3: "Eine tägliche Aufgabenliste randomisieren, um Routine zu vermeiden",
+    uc_4: "Eine zufällige Reihenfolge für Präsentationen oder Spielzüge festlegen",
+    faq_title: "Fragen und Antworten",
+    faq_1_q: "Wie viele Einträge kann ich auf einmal mischen?",
+    faq_1_a: "Es gibt keine strikte Grenze, aber für die beste Erfahrung empfehlen wir bis zu 10.000 Einträge. Die Verarbeitung erfolgt vollständig in deinem Browser.",
+    faq_2_q: "Ist die Randomisierung fair?",
+    faq_2_a: "Ja. Wir verwenden den Fisher-Yates-Mischalgorithmus, eine mathematisch bewährte Methode zur Erzeugung unvoreingenommener Permutationen einer Liste.",
+    faq_3_q: "Sind meine Daten privat?",
+    faq_3_a: "Ja. Deine Liste verlässt dein Gerät nie. Die gesamte Randomisierung findet lokal in deinem Browser statt, und nichts wird an unsere Server gesendet."
   }
 }
 </i18n>

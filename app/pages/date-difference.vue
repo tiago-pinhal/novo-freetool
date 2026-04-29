@@ -156,16 +156,16 @@ defineI18nRoute({
       <!-- Exact breakdown -->
       <div>
         <p class="text-xs uppercase tracking-widest text-base-content/50 mb-2">{{ t('diff') }}</p>
-        <div class="stats shadow w-full border border-base-content/10">
-          <div class="stat">
+        <div class="stats shadow w-fit border border-base-content/10">
+          <div v-if="state.result.years > 0" class="stat text-center">
             <div class="stat-title">{{ t('years_label') }}</div>
             <div class="stat-value text-primary">{{ state.result.years }}</div>
           </div>
-          <div class="stat">
+          <div v-if="state.result.months > 0" class="stat text-center">
             <div class="stat-title">{{ t('months_label') }}</div>
             <div class="stat-value text-primary">{{ state.result.months }}</div>
           </div>
-          <div class="stat">
+          <div v-if="state.result.days > 0" class="stat text-center">
             <div class="stat-title">{{ t('days_label') }}</div>
             <div class="stat-value text-primary">{{ state.result.days }}</div>
           </div>
@@ -175,24 +175,24 @@ defineI18nRoute({
       <!-- Equivalents -->
       <div>
         <p class="text-xs uppercase tracking-widest text-base-content/50 mb-2">{{ t('or') }}</p>
-        <div class="stats stats-vertical lg:stats-horizontal shadow w-full border border-base-content/10">
-          <div v-if="state.result.totalMonths > 0" class="stat">
+        <div class="stats stats-vertical lg:stats-horizontal shadow w-fit border border-base-content/10">
+          <div v-if="state.result.totalMonths > 0" class="stat text-center">
             <div class="stat-title">{{ t('total_months_label') }}</div>
             <div class="stat-value text-3xl">{{ state.result.totalMonths.toLocaleString() }}</div>
           </div>
-          <div v-if="state.result.totalWeeks > 0" class="stat">
+          <div v-if="state.result.totalWeeks > 0" class="stat text-center">
             <div class="stat-title">{{ t('total_weeks_label') }}</div>
             <div class="stat-value text-3xl">{{ state.result.totalWeeks.toLocaleString() }}</div>
           </div>
-          <div class="stat">
+          <div class="stat text-center">
             <div class="stat-title">{{ t('total_days_label') }}</div>
             <div class="stat-value text-3xl">{{ state.result.totalDays.toLocaleString() }}</div>
           </div>
-          <div v-if="state.result.totalDays <= 730" class="stat">
+          <div v-if="state.result.totalDays <= 730" class="stat text-center">
             <div class="stat-title">{{ t('total_hours_label') }}</div>
             <div class="stat-value text-3xl">{{ state.result.totalHours.toLocaleString() }}</div>
           </div>
-          <div v-if="state.result.totalDays <= 60" class="stat">
+          <div v-if="state.result.totalDays <= 60" class="stat text-center">
             <div class="stat-title">{{ t('total_minutes_label') }}</div>
             <div class="stat-value text-3xl">{{ state.result.totalMinutes.toLocaleString() }}</div>
           </div>
