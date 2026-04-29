@@ -259,18 +259,16 @@ defineI18nRoute({
     <Mordizi v-if="state.ads" />
 
     <template #info>
-      <div class="space-y-12">
+      <div class="space-y-8">
         <section>
           <p>{{ t('d1') }}</p>
         </section>
 
-        <!-- Features -->
         <FeatureSection
           :title="t('features_title')"
           :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
         />
 
-        <!-- What is CPF -->
         <section>
           <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
             <Icon name="heroicons:book-open-20-solid" class="w-6 h-6 text-primary" />
@@ -279,14 +277,12 @@ defineI18nRoute({
           <p class="text-base-content/80 leading-relaxed">{{ t('how_desc') }}</p>
         </section>
 
-        <!-- Use Cases -->
         <UseCaseSection
           :title="t('use_cases_title')"
           :description="t('use_cases_intro')"
           :items="[ t('use_1'), t('use_2'), t('use_3'), t('use_4'), t('use_5') ]"
         />
 
-        <!-- How to Use -->
         <HowToSection
           :title="t('how_to_use_title')"
           :items="[
@@ -296,7 +292,6 @@ defineI18nRoute({
           ]"
         />
 
-        <!-- FAQ Section -->
         <FaqSection
           :title="t('faq_title')"
           :items="[

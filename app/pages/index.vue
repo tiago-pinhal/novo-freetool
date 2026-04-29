@@ -30,7 +30,7 @@ const toolCategories = [
 <template>
   <div class="min-h-screen bg-base-100">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-20 pb-16 sm:pt-32 sm:pb-24">
+    <section class="relative overflow-hidden py-8 pb-8 sm:py-16">
       <!-- Background Glow -->
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full pointer-events-none opacity-20">
         <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]"></div>
@@ -52,7 +52,7 @@ const toolCategories = [
     </section>
 
     <!-- Tools Grid Section -->
-    <section class="px-4">
+    <section>
       <div class="container mx-auto">
         <div class="flex items-center gap-4 mb-12">
           <h2 class="text-2xl font-bold text-base-content">{{ t('d3') }}</h2>

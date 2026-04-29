@@ -137,19 +137,14 @@ defineI18nRoute({
           <p>{{ t('d4') }}.</p>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <Icon name="heroicons:play-circle-20-solid" class="w-6 h-6 text-primary" />
-            {{ t('how_to_use_title') }}
-          </h2>
-          <div class="grid sm:grid-cols-3 gap-4">
-            <div v-for="i in 3" :key="i" class="flex flex-col gap-2 bg-base-200/40 p-4 rounded-xl border border-primary/20">
-              <span class="text-3xl font-black text-primary/30 leading-none">{{ i }}</span>
-              <span class="font-bold text-base-content">{{ t(`step_${i}_title`) }}</span>
-              <span class="text-sm text-base-content/70">{{ t(`step_${i}_desc`) }}</span>
-            </div>
-          </div>
-        </section>
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
       </div>
     </template>
   </ToolPage>

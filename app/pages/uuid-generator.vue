@@ -1,0 +1,512 @@
+<script setup lang="ts">
+const { t } = useI18n({ useScope: 'local' })
+
+const uuid = ref('')
+const uuidList = ref<string[]>([])
+const showMultiple = ref(false)
+const multipleCount = ref(5)
+const copiedField = ref<string | null>(null)
+
+function generate() {
+  uuidList.value = []
+  uuid.value = crypto.randomUUID()
+}
+
+function generateMultiple() {
+  uuid.value = ''
+  const count = Math.min(Math.max(multipleCount.value, 2), 100)
+  uuidList.value = Array.from({ length: count }, () => crypto.randomUUID())
+}
+
+async function copy(value: string, field: string) {
+  if (!value) return
+  await navigator.clipboard.writeText(value).catch(() => {})
+  copiedField.value = field
+  setTimeout(() => { copiedField.value = null }, 2000)
+}
+
+async function copyAll() {
+  await navigator.clipboard.writeText(uuidList.value.join('\n')).catch(() => {})
+  copiedField.value = 'all'
+  setTimeout(() => { copiedField.value = null }, 2000)
+}
+
+watch(showMultiple, (val) => {
+  if (val) uuid.value = ''
+  else uuidList.value = []
+})
+
+usePageJsonLd({
+  name: t('title'),
+  description: t('meta'),
+  features: [t('f_1'), t('f_2'), t('f_3'), t('f_4')],
+  faq: [
+    { question: t('faq_1_q'), answer: t('faq_1_a') },
+    { question: t('faq_2_q'), answer: t('faq_2_a') },
+    { question: t('faq_3_q'), answer: t('faq_3_a') },
+    { question: t('faq_4_q'), answer: t('faq_4_a') },
+  ],
+  howToName: t('how_to_use_title'),
+  howToSteps: [
+    { name: t('step_1_title'), text: t('step_1_desc') },
+    { name: t('step_2_title'), text: t('step_2_desc') },
+    { name: t('step_3_title'), text: t('step_3_desc') },
+  ],
+})
+
+useHead({
+  title: t('pageTitle'),
+  meta: [{ name: 'description', content: t('meta') }],
+})
+
+defineI18nRoute({
+  paths: {
+    en: '/uuid-generator',
+    pt: '/gerador-de-uuid',
+    es: '/generador-de-uuid',
+    fr: '/generateur-de-uuid',
+    it: '/generatore-di-uuid',
+    id: '/generator-uuid',
+  },
+})
+</script>
+
+<template>
+  <ToolPage
+    :title="t('title')"
+    :description="t('meta')"
+    wiki-url="https://en.wikipedia.org/wiki/Universally_unique_identifier"
+    wiki-label="UUID (RFC 4122)"
+    :see-also-links="[
+      { label: t('see1'), to: 'crontab-generator' },
+      { label: t('see2'), to: 'random-number-generator' },
+      { label: t('see3'), to: 'credit-card-generator' },
+      { label: t('see4'), to: 'text-comparator' },
+    ]"
+  >
+    <div class="grid lg:grid-cols-2 gap-8 mb-4">
+      <!-- Left Column: Controls -->
+      <div class="space-y-5">
+        <div class="form-control">
+          <label class="label cursor-pointer justify-start gap-3 pb-1">
+            <input type="checkbox" v-model="showMultiple" class="toggle toggle-primary" />
+            <span class="label-text font-bold text-base-content/80">{{ t('multiple_label') }}</span>
+          </label>
+        </div>
+
+        <div v-if="showMultiple" class="form-control">
+          <label class="label pb-1" for="count-input">
+            <span class="label-text font-bold text-base-content/80">{{ t('quantity') }}</span>
+          </label>
+          <input
+            id="count-input"
+            type="number"
+            v-model.number="multipleCount"
+            min="2"
+            max="100"
+            class="input input-bordered w-full"
+          />
+        </div>
+
+        <ButtonPrimary
+          @click="showMultiple ? generateMultiple() : generate()"
+          icon="heroicons:key-20-solid"
+          class="w-full h-14 text-lg"
+        >
+          {{ showMultiple ? t('bt_multiple') : t('bt') }}
+        </ButtonPrimary>
+      </div>
+
+      <!-- Right Column: Output -->
+      <div class="flex flex-col justify-center gap-3">
+        <!-- Single UUID -->
+        <div v-if="uuid" class="bg-base-200/60 border border-base-content/10 rounded-2xl p-5">
+          <div class="text-[10px] uppercase tracking-wider text-base-content/50 mb-2">UUID v4</div>
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-sm sm:text-base break-all flex-1">{{ uuid }}</span>
+            <button
+              @click="copy(uuid, 'single')"
+              class="shrink-0 transition-all duration-200"
+              :class="copiedField === 'single' ? 'text-success' : 'text-base-content/40 hover:text-base-content'"
+            >
+              <Icon :name="copiedField === 'single' ? 'material-symbols:check-rounded' : 'material-symbols:content-copy-outline'" class="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Multiple UUIDs -->
+        <div v-if="uuidList.length > 0" class="bg-base-200/60 border border-base-content/10 rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] uppercase tracking-wider text-base-content/50">{{ t('generated_uuids', { count: uuidList.length }) }}</span>
+            <button
+              @click="copyAll()"
+              class="flex items-center gap-1.5 text-xs font-medium transition-all duration-200"
+              :class="copiedField === 'all' ? 'text-success' : 'text-primary hover:text-primary/80'"
+            >
+              <Icon :name="copiedField === 'all' ? 'material-symbols:check-rounded' : 'material-symbols:content-copy-outline'" class="w-4 h-4" />
+              {{ copiedField === 'all' ? t('copied') : t('copy_all') }}
+            </button>
+          </div>
+          <div class="divide-y divide-base-content/10 max-h-72 overflow-y-auto pr-1">
+            <div v-for="(id, index) in uuidList" :key="index" class="flex items-center gap-2 py-2">
+              <span class="font-mono text-xs flex-1 break-all text-base-content/80">{{ id }}</span>
+              <button
+                @click="copy(id, `uuid-${index}`)"
+                class="shrink-0 transition-all duration-200"
+                :class="copiedField === `uuid-${index}` ? 'text-success' : 'text-base-content/40 hover:text-base-content'"
+              >
+                <Icon :name="copiedField === `uuid-${index}` ? 'material-symbols:check-rounded' : 'material-symbols:content-copy-outline'" class="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder -->
+        <div v-if="!uuid && !uuidList.length" class="text-center opacity-70 py-8">
+          <Icon name="heroicons:key" class="w-16 h-16 mx-auto mb-2" />
+          <p class="font-medium italic">{{ t('placeholder') }}</p>
+        </div>
+      </div>
+    </div>
+
+    <template #info>
+      <div class="space-y-8">
+        <section>
+          <p>{{ t('d1') }}</p>
+        </section>
+
+        <FeatureSection
+          :title="t('features_title')"
+          :items="[ t('f_1'), t('f_2'), t('f_3'), t('f_4') ]"
+          icon="heroicons:check-badge-20-solid"
+        />
+
+        <section>
+          <h2 class="text-2xl font-bold mb-3 flex items-center gap-2">
+            <Icon name="heroicons:book-open-20-solid" class="w-6 h-6 text-primary" />
+            {{ t('how_title') }}
+          </h2>
+          <p class="text-base-content/80 leading-relaxed">{{ t('how_desc') }}</p>
+        </section>
+
+        <UseCaseSection
+          :title="t('apps_title')"
+          :description="t('use_cases_intro')"
+          :items="[ t('use_1'), t('use_2'), t('use_3'), t('use_4'), t('use_5') ]"
+        />
+
+        <HowToSection
+          :title="t('how_to_use_title')"
+          :items="[
+            { title: t('step_1_title'), description: t('step_1_desc') },
+            { title: t('step_2_title'), description: t('step_2_desc') },
+            { title: t('step_3_title'), description: t('step_3_desc') }
+          ]"
+        />
+
+        <FaqSection
+          :title="t('faq_title')"
+          :items="[
+            { question: t('faq_1_q'), answer: t('faq_1_a') },
+            { question: t('faq_2_q'), answer: t('faq_2_a') },
+            { question: t('faq_3_q'), answer: t('faq_3_a') },
+            { question: t('faq_4_q'), answer: t('faq_4_a') },
+          ]"
+        />
+      </div>
+    </template>
+  </ToolPage>
+</template>
+
+<i18n lang="yaml">
+{
+  en: {
+    pageTitle: "UUID Generator - Generate UUID v4 Online | Free",
+    title: "UUID Generator",
+    meta: "Free online UUID v4 generator. Create single or multiple unique identifiers instantly for software, databases, APIs and distributed systems. RFC 4122 compliant.",
+    d1: "Generate universally unique identifiers with one click. UUID v4 (Universally Unique Identifier version 4) is a 36-character alphanumeric code specified by RFC 4122. Generate a single UUID or a bulk list for testing, database seeding, and distributed systems.",
+    features_title: "Features",
+    f_1: "Generate UUID v4 instantly in the browser",
+    f_2: "Bulk generation of up to 100 UUIDs at once",
+    f_3: "Copy individual values or the entire list with one click",
+    f_4: "RFC 4122 compliant UUID v4 format",
+    how_title: "How the UUID Generator Works",
+    how_desc: "Click the generate button to create a random UUID v4 instantly in your browser. If you need a batch, enable multiple generation and choose how many IDs to create. Each UUID follows the standard v4 pattern defined by RFC 4122, making the tool useful for testing, development, integrations and data modeling.",
+    apps_title: "Main Use Cases",
+    use_cases_intro: "This tool is ideal for various everyday situations for developers and technology professionals:",
+    use_1: "Software development: create unique identifiers for entities, records and internal references",
+    use_2: "Databases: generate distributed primary keys without relying on auto-increment sequences",
+    use_3: "APIs and microservices: assign resource IDs, request IDs and correlation IDs",
+    use_4: "Testing and seeding: produce batches of realistic unique values for QA and fixtures",
+    use_5: "Tracking systems: label jobs, events, sessions and imported data safely",
+    how_to_use_title: "How to Use This Tool",
+    step_1_title: "Choose a mode",
+    step_1_desc: "Select single UUID generation for one result, or toggle 'Generate Multiple' to set a custom quantity (2–100).",
+    step_2_title: "Generate",
+    step_2_desc: "Click the generate button. Your UUID(s) appear instantly, ready to use.",
+    step_3_title: "Copy",
+    step_3_desc: "Click the copy icon next to any UUID, or use 'Copy All' to copy the entire list at once.",
+    faq_title: "Questions & Answers",
+    faq_1_q: "What is a UUID?",
+    faq_1_a: "UUID (Universally Unique Identifier) is a 128-bit identifier standard defined by RFC 4122. Version 4 uses random numbers to generate unique codes, making collisions virtually impossible.",
+    faq_2_q: "Are UUID v4 truly unique?",
+    faq_2_a: "Yes. With 122 random bits, there are 5.3 undecillion possible combinations. The probability of generating two identical UUIDs is astronomically low, making them safe for distributed systems.",
+    faq_3_q: "What is the difference between UUID versions?",
+    faq_3_a: "UUID v1 uses timestamp and MAC address; v4 uses random numbers (most common); v5 uses namespace and SHA-1 hash. Version 4 is preferred for its simplicity and privacy (no hardware info exposed).",
+    faq_4_q: "Can I use UUIDs as database primary keys?",
+    faq_4_a: "Yes. UUIDs are ideal for distributed databases where auto-increment IDs would conflict. They allow generating IDs client-side without database coordination.",
+    multiple_label: "Generate Multiple UUIDs",
+    quantity: "Quantity",
+    bt: "Generate UUID",
+    bt_multiple: "Generate UUIDs",
+    generated_uuids: "Generated UUIDs ({count})",
+    copy_all: "Copy All",
+    copied: "Copied!",
+    placeholder: "Click Generate to create a UUID",
+    see1: "Crontab Generator",
+    see2: "Random Number Generator",
+    see3: "Credit Card Generator",
+    see4: "Text Comparator"
+  },
+  pt: {
+    pageTitle: "Gerador de UUID - Gerar UUID v4 Online | Grátis",
+    title: "Gerador de UUID",
+    meta: "Gerador de UUID v4 online grátis. Crie identificadores únicos instantaneamente para software, bancos de dados, APIs e sistemas distribuídos. Compatível com RFC 4122.",
+    d1: "Gere identificadores universalmente únicos com um clique. UUID v4 (Universally Unique Identifier versão 4) é um código alfanumérico de 36 caracteres especificado pela RFC 4122. Gere um UUID único ou uma lista em lote para testes, população de bancos de dados e sistemas distribuídos.",
+    features_title: "Funcionalidades",
+    f_1: "Gerar UUID v4 instantaneamente no navegador",
+    f_2: "Geração em lote de até 100 UUIDs de uma vez",
+    f_3: "Copiar valores individuais ou a lista inteira com um clique",
+    f_4: "Formato UUID v4 compatível com RFC 4122",
+    how_title: "Como Funciona o Gerador de UUID",
+    how_desc: "Clique no botão de gerar para criar instantaneamente um UUID v4 aleatório no navegador. Se precisar de um lote, ative a geração múltipla e escolha quantos IDs deseja criar. Cada UUID segue o padrão v4 definido pela RFC 4122, tornando a ferramenta útil para testes, desenvolvimento, integrações e modelagem de dados.",
+    apps_title: "Principais Casos de Uso",
+    use_cases_intro: "Esta ferramenta é ideal para diversas situações do dia a dia de desenvolvedores e profissionais de tecnologia:",
+    use_1: "Desenvolvimento de software: criar identificadores únicos para entidades, registros e referências internas",
+    use_2: "Bancos de dados: gerar chaves primárias distribuídas sem depender de sequências auto-incrementais",
+    use_3: "APIs e microsserviços: atribuir IDs de recursos, requisições e correlação",
+    use_4: "Testes e seed de dados: produzir lotes de valores únicos realistas para QA e fixtures",
+    use_5: "Sistemas de rastreamento: rotular jobs, eventos, sessões e dados importados com segurança",
+    how_to_use_title: "Como Utilizar Esta Ferramenta",
+    step_1_title: "Escolha o modo",
+    step_1_desc: "Selecione geração de UUID único ou ative 'Gerar Múltiplos' para definir uma quantidade personalizada (2–100).",
+    step_2_title: "Gere",
+    step_2_desc: "Clique no botão de gerar. Seu(s) UUID(s) aparece(m) instantaneamente, pronto(s) para uso.",
+    step_3_title: "Copie",
+    step_3_desc: "Clique no ícone de cópia ao lado de qualquer UUID ou use 'Copiar Todos' para copiar a lista inteira de uma vez.",
+    faq_title: "Perguntas e Respostas",
+    faq_1_q: "O que é um UUID?",
+    faq_1_a: "UUID (Universally Unique Identifier) é um padrão de identificador de 128 bits definido pela RFC 4122. A versão 4 usa números aleatórios para gerar códigos únicos, tornando colisões virtualmente impossíveis.",
+    faq_2_q: "UUIDs v4 são realmente únicos?",
+    faq_2_a: "Sim. Com 122 bits aleatórios, existem 5,3 undecilhões de combinações possíveis. A probabilidade de gerar dois UUIDs idênticos é astronomicamente baixa, tornando-os seguros para sistemas distribuídos.",
+    faq_3_q: "Qual a diferença entre versões de UUID?",
+    faq_3_a: "UUID v1 usa timestamp e endereço MAC; v4 usa números aleatórios (mais comum); v5 usa namespace e hash SHA-1. A versão 4 é preferida pela simplicidade e privacidade (não expõe informações de hardware).",
+    faq_4_q: "Posso usar UUIDs como chaves primárias no banco de dados?",
+    faq_4_a: "Sim. UUIDs são ideais para bancos de dados distribuídos onde IDs auto-incrementais causariam conflitos. Permitem gerar IDs no cliente sem coordenação com o banco de dados.",
+    multiple_label: "Gerar Múltiplos UUIDs",
+    quantity: "Quantidade",
+    bt: "Gerar UUID",
+    bt_multiple: "Gerar UUIDs",
+    generated_uuids: "UUIDs Gerados ({count})",
+    copy_all: "Copiar Todos",
+    copied: "Copiado!",
+    placeholder: "Clique em Gerar para criar um UUID",
+    see1: "Gerador de Crontab",
+    see2: "Números Aleatórios",
+    see3: "Gerador de Cartão de Crédito",
+    see4: "Comparador de Texto"
+  },
+  es: {
+    pageTitle: "Generador de UUID - Generar UUID v4 Online | Gratis",
+    title: "Generador de UUID",
+    meta: "Generador de UUID v4 online gratis. Crea identificadores únicos al instante para software, bases de datos, APIs y sistemas distribuidos. Compatible con RFC 4122.",
+    d1: "Genera identificadores universalmente únicos con un clic. UUID v4 (Universally Unique Identifier versión 4) es un código alfanumérico de 36 caracteres especificado por RFC 4122. Genera un UUID único o una lista en lote para pruebas, llenado de bases de datos y sistemas distribuidos.",
+    features_title: "Funcionalidades",
+    f_1: "Generar UUID v4 al instante en el navegador",
+    f_2: "Generación masiva de hasta 100 UUIDs a la vez",
+    f_3: "Copiar valores individuales o la lista completa con un clic",
+    f_4: "Formato UUID v4 compatible con RFC 4122",
+    how_title: "Cómo Funciona el Generador de UUID",
+    how_desc: "Haz clic en el botón de generar para crear un UUID v4 aleatorio al instante en tu navegador. Si necesitas un lote, activa la generación múltiple y elige cuántos IDs deseas crear. Cada UUID sigue el patrón v4 definido por RFC 4122, por lo que la herramienta resulta útil para pruebas, desarrollo, integraciones y modelado de datos.",
+    apps_title: "Principales Casos de Uso",
+    use_cases_intro: "Esta herramienta es ideal para diversas situaciones cotidianas de desarrolladores y profesionales de tecnología:",
+    use_1: "Desarrollo de software: crear identificadores únicos para entidades, registros y referencias internas",
+    use_2: "Bases de datos: generar claves primarias distribuidas sin depender de secuencias auto-incrementales",
+    use_3: "APIs y microservicios: asignar IDs de recursos, solicitudes y correlación",
+    use_4: "Pruebas y carga de datos: producir lotes de valores únicos realistas para QA y fixtures",
+    use_5: "Sistemas de seguimiento: etiquetar trabajos, eventos, sesiones y datos importados de forma segura",
+    how_to_use_title: "Cómo Utilizar Esta Herramienta",
+    step_1_title: "Elige un modo",
+    step_1_desc: "Selecciona generación de un UUID único o activa 'Generar Múltiples' para definir una cantidad personalizada (2–100).",
+    step_2_title: "Genera",
+    step_2_desc: "Haz clic en el botón de generar. Tu(s) UUID(s) aparece(n) al instante, listo(s) para usar.",
+    step_3_title: "Copia",
+    step_3_desc: "Haz clic en el ícono de copiar junto a cualquier UUID o usa 'Copiar Todos' para copiar la lista completa de una vez.",
+    faq_title: "Preguntas y Respuestas",
+    faq_1_q: "¿Qué es un UUID?",
+    faq_1_a: "UUID (Identificador Universalmente Único) es un estándar de identificador de 128 bits definido por RFC 4122. La versión 4 usa números aleatorios para generar códigos únicos, haciendo las colisiones virtualmente imposibles.",
+    faq_2_q: "¿Los UUID v4 son realmente únicos?",
+    faq_2_a: "Sí. Con 122 bits aleatorios, existen 5,3 undecillones de combinaciones posibles. La probabilidad de generar dos UUIDs idénticos es astronómicamente baja, haciéndolos seguros para sistemas distribuidos.",
+    faq_3_q: "¿Cuál es la diferencia entre versiones de UUID?",
+    faq_3_a: "UUID v1 usa timestamp y dirección MAC; v4 usa números aleatorios (más común); v5 usa namespace y hash SHA-1. La versión 4 es preferida por su simplicidad y privacidad (no expone información de hardware).",
+    faq_4_q: "¿Puedo usar UUIDs como claves primarias en la base de datos?",
+    faq_4_a: "Sí. Los UUIDs son ideales para bases de datos distribuidas donde IDs auto-incrementales causarían conflictos. Permiten generar IDs en el cliente sin coordinación con la base de datos.",
+    multiple_label: "Generar Múltiples UUIDs",
+    quantity: "Cantidad",
+    bt: "Generar UUID",
+    bt_multiple: "Generar UUIDs",
+    generated_uuids: "UUIDs Generados ({count})",
+    copy_all: "Copiar Todos",
+    copied: "¡Copiado!",
+    placeholder: "Haz clic en Generar para crear un UUID",
+    see1: "Generador de Crontab",
+    see2: "Números Aleatorios",
+    see3: "Generador de Tarjeta de Crédito",
+    see4: "Comparador de Texto"
+  },
+  fr: {
+    pageTitle: "Générateur de UUID - Générer UUID v4 en Ligne | Gratuit",
+    title: "Générateur de UUID",
+    meta: "Générateur de UUID v4 en ligne gratuit. Créez des identifiants uniques instantanément pour logiciels, bases de données, APIs et systèmes distribués. Conforme RFC 4122.",
+    d1: "Générez des identifiants universellement uniques en un clic. UUID v4 (Identifiant Universel Unique version 4) est un code alphanumérique de 36 caractères spécifié par la RFC 4122. Générez un UUID unique ou une liste en lot pour les tests, le remplissage de bases de données et les systèmes distribués.",
+    features_title: "Fonctionnalités",
+    f_1: "Générer un UUID v4 instantanément dans le navigateur",
+    f_2: "Génération en lot de jusqu'à 100 UUIDs à la fois",
+    f_3: "Copier une valeur individuelle ou toute la liste en un clic",
+    f_4: "Format UUID v4 conforme à la RFC 4122",
+    how_title: "Comment Fonctionne le Générateur de UUID",
+    how_desc: "Cliquez sur le bouton de génération pour créer instantanément un UUID v4 aléatoire dans votre navigateur. Si vous avez besoin d'un lot, activez la génération multiple et choisissez le nombre d'identifiants à produire. Chaque UUID suit le modèle v4 défini par la RFC 4122, ce qui rend l'outil utile pour les tests, le développement, les intégrations et la modélisation des données.",
+    apps_title: "Principaux Cas d'Usage",
+    use_cases_intro: "Cet outil est idéal pour diverses situations quotidiennes des développeurs et des professionnels de la technologie :",
+    use_1: "Développement logiciel : créer des identifiants uniques pour les entités, enregistrements et références internes",
+    use_2: "Bases de données : générer des clés primaires distribuées sans dépendre de séquences auto-incrémentées",
+    use_3: "APIs et microservices : attribuer des IDs de ressources, de requêtes et de corrélation",
+    use_4: "Tests et jeux de données : produire des lots de valeurs uniques réalistes pour la QA et les fixtures",
+    use_5: "Systèmes de suivi : étiqueter en toute sécurité des jobs, événements, sessions et données importées",
+    how_to_use_title: "Comment Utiliser Cet Outil",
+    step_1_title: "Choisissez un mode",
+    step_1_desc: "Sélectionnez la génération d'un UUID unique ou activez 'Générer Plusieurs' pour définir une quantité personnalisée (2–100).",
+    step_2_title: "Générez",
+    step_2_desc: "Cliquez sur le bouton de génération. Votre ou vos UUID(s) apparaissent instantanément, prêts à l'emploi.",
+    step_3_title: "Copiez",
+    step_3_desc: "Cliquez sur l'icône de copie à côté de n'importe quel UUID ou utilisez 'Copier Tout' pour copier toute la liste en une seule fois.",
+    faq_title: "Questions et Réponses",
+    faq_1_q: "Qu'est-ce qu'un UUID ?",
+    faq_1_a: "UUID (Identifiant Universel Unique) est un standard d'identifiant de 128 bits défini par RFC 4122. La version 4 utilise des nombres aléatoires pour générer des codes uniques, rendant les collisions virtuellement impossibles.",
+    faq_2_q: "Les UUID v4 sont-ils vraiment uniques ?",
+    faq_2_a: "Oui. Avec 122 bits aléatoires, il existe 5,3 undécillions de combinaisons possibles. La probabilité de générer deux UUIDs identiques est astronomiquement faible, les rendant sûrs pour les systèmes distribués.",
+    faq_3_q: "Quelle est la différence entre les versions d'UUID ?",
+    faq_3_a: "UUID v1 utilise timestamp et adresse MAC ; v4 utilise des nombres aléatoires (plus courant) ; v5 utilise namespace et hash SHA-1. La version 4 est préférée pour sa simplicité et confidentialité (n'expose pas d'informations matérielles).",
+    faq_4_q: "Puis-je utiliser les UUIDs comme clés primaires dans la base de données ?",
+    faq_4_a: "Oui. Les UUIDs sont idéaux pour les bases de données distribuées où les IDs auto-incrémentés causeraient des conflits. Ils permettent de générer des IDs côté client sans coordination avec la base de données.",
+    multiple_label: "Générer Plusieurs UUIDs",
+    quantity: "Quantité",
+    bt: "Générer un UUID",
+    bt_multiple: "Générer des UUIDs",
+    generated_uuids: "UUIDs Générés ({count})",
+    copy_all: "Copier Tout",
+    copied: "Copié !",
+    placeholder: "Cliquez sur Générer pour créer un UUID",
+    see1: "Générateur de Crontab",
+    see2: "Nombres Aléatoires",
+    see3: "Générateur de Carte de Crédit",
+    see4: "Comparateur de Texte"
+  },
+  it: {
+    pageTitle: "Generatore di UUID - Generare UUID v4 Online | Gratis",
+    title: "Generatore di UUID",
+    meta: "Generatore di UUID v4 online gratis. Crea identificatori unici istantaneamente per software, database, API e sistemi distribuiti. Conforme RFC 4122.",
+    d1: "Genera identificatori universalmente unici con un clic. UUID v4 (Identificatore Universalmente Unico versione 4) è un codice alfanumerico di 36 caratteri specificato dalla RFC 4122. Genera un UUID singolo o una lista in blocco per test, popolamento di database e sistemi distribuiti.",
+    features_title: "Funzionalità",
+    f_1: "Generare UUID v4 istantaneamente nel browser",
+    f_2: "Generazione in blocco di fino a 100 UUID alla volta",
+    f_3: "Copiare valori singoli o l'intera lista con un clic",
+    f_4: "Formato UUID v4 conforme alla RFC 4122",
+    how_title: "Come Funziona il Generatore di UUID",
+    how_desc: "Fai clic sul pulsante di generazione per creare istantaneamente un UUID v4 casuale nel browser. Se ti serve un lotto, attiva la generazione multipla e scegli quanti ID creare. Ogni UUID segue il formato v4 definito dalla RFC 4122, rendendo lo strumento utile per test, sviluppo, integrazioni e modellazione dei dati.",
+    apps_title: "Principali Casi d'Uso",
+    use_cases_intro: "Questo strumento è ideale per diverse situazioni quotidiane di sviluppatori e professionisti tecnologici:",
+    use_1: "Sviluppo software: creare identificatori unici per entità, record e riferimenti interni",
+    use_2: "Database: generare chiavi primarie distribuite senza dipendere da sequenze auto-incrementali",
+    use_3: "API e microservizi: assegnare ID di risorse, richieste e correlazione",
+    use_4: "Test e seed di dati: produrre lotti di valori unici realistici per QA e fixture",
+    use_5: "Sistemi di tracciamento: etichettare in sicurezza job, eventi, sessioni e dati importati",
+    how_to_use_title: "Come Utilizzare Questo Strumento",
+    step_1_title: "Scegli una modalità",
+    step_1_desc: "Seleziona la generazione di un singolo UUID o attiva 'Genera Multipli' per impostare una quantità personalizzata (2–100).",
+    step_2_title: "Genera",
+    step_2_desc: "Clicca sul pulsante di generazione. Il tuo o i tuoi UUID appaiono istantaneamente, pronti all'uso.",
+    step_3_title: "Copia",
+    step_3_desc: "Clicca sull'icona di copia accanto a qualsiasi UUID o usa 'Copia Tutti' per copiare l'intera lista in una volta.",
+    faq_title: "Domande e Risposte",
+    faq_1_q: "Cos'è un UUID?",
+    faq_1_a: "UUID (Identificatore Universalmente Unico) è uno standard di identificatore a 128 bit definito da RFC 4122. La versione 4 usa numeri casuali per generare codici unici, rendendo le collisioni virtualmente impossibili.",
+    faq_2_q: "Gli UUID v4 sono veramente unici?",
+    faq_2_a: "Sì. Con 122 bit casuali, esistono 5,3 undecilioni di combinazioni possibili. La probabilità di generare due UUID identici è astronomicamente bassa, rendendoli sicuri per sistemi distribuiti.",
+    faq_3_q: "Qual è la differenza tra le versioni UUID?",
+    faq_3_a: "UUID v1 usa timestamp e indirizzo MAC; v4 usa numeri casuali (più comune); v5 usa namespace e hash SHA-1. La versione 4 è preferita per semplicità e privacy (non espone informazioni hardware).",
+    faq_4_q: "Posso usare UUID come chiavi primarie nel database?",
+    faq_4_a: "Sì. Gli UUID sono ideali per database distribuiti dove ID auto-incrementali causerebbero conflitti. Permettono di generare ID lato client senza coordinazione con il database.",
+    multiple_label: "Genera Multipli UUID",
+    quantity: "Quantità",
+    bt: "Genera UUID",
+    bt_multiple: "Genera UUID",
+    generated_uuids: "UUID Generati ({count})",
+    copy_all: "Copia Tutti",
+    copied: "Copiato!",
+    placeholder: "Clicca su Genera per creare un UUID",
+    see1: "Generatore di Crontab",
+    see2: "Numeri Casuali",
+    see3: "Generatore di Carta di Credito",
+    see4: "Comparatore di Testo"
+  },
+  id: {
+    pageTitle: "Generator UUID - Buat UUID v4 Online | Gratis",
+    title: "Generator UUID",
+    meta: "Generator UUID v4 online gratis. Buat identifier unik secara instan untuk software, database, API, dan sistem terdistribusi. Sesuai RFC 4122.",
+    d1: "Hasilkan identifier unik secara universal dengan satu klik. UUID v4 (Universally Unique Identifier versi 4) adalah kode alfanumerik 36 karakter yang ditentukan oleh RFC 4122. Hasilkan satu UUID atau daftar dalam jumlah banyak untuk pengujian, pengisian database, dan sistem terdistribusi.",
+    features_title: "Fitur",
+    f_1: "Menghasilkan UUID v4 secara instan di browser",
+    f_2: "Pembuatan massal hingga 100 UUID sekaligus",
+    f_3: "Menyalin nilai individual atau seluruh daftar dengan satu klik",
+    f_4: "Format UUID v4 sesuai RFC 4122",
+    how_title: "Cara Kerja Generator UUID",
+    how_desc: "Klik tombol generate untuk langsung membuat UUID v4 acak di browser Anda. Jika membutuhkan banyak sekaligus, aktifkan mode multiple dan pilih jumlah ID yang ingin dibuat. Setiap UUID mengikuti pola v4 yang ditentukan oleh RFC 4122, sehingga alat ini berguna untuk testing, development, integrasi, dan pemodelan data.",
+    apps_title: "Kegunaan Utama",
+    use_cases_intro: "Alat ini ideal untuk berbagai situasi sehari-hari bagi pengembang dan profesional teknologi:",
+    use_1: "Pengembangan software: membuat identifier unik untuk entitas, record, dan referensi internal",
+    use_2: "Database: menghasilkan primary key terdistribusi tanpa bergantung pada urutan auto-increment",
+    use_3: "API dan microservices: menetapkan ID resource, request, dan correlation",
+    use_4: "Testing dan seeding data: membuat banyak nilai unik yang realistis untuk QA dan fixture",
+    use_5: "Sistem pelacakan: memberi label job, event, session, dan data impor dengan aman",
+    how_to_use_title: "Cara Menggunakan Alat Ini",
+    step_1_title: "Pilih mode",
+    step_1_desc: "Pilih pembuatan UUID tunggal atau aktifkan 'Hasilkan Banyak' untuk mengatur jumlah yang diinginkan (2–100).",
+    step_2_title: "Generate",
+    step_2_desc: "Klik tombol generate. UUID Anda muncul seketika, siap digunakan.",
+    step_3_title: "Salin",
+    step_3_desc: "Klik ikon salin di sebelah UUID mana saja atau gunakan 'Salin Semua' untuk menyalin seluruh daftar sekaligus.",
+    faq_title: "Pertanyaan dan Jawaban",
+    faq_1_q: "Apa itu UUID?",
+    faq_1_a: "UUID (Universally Unique Identifier) adalah standar identifier 128-bit yang ditentukan oleh RFC 4122. Versi 4 menggunakan angka acak untuk menghasilkan kode unik, sehingga kemungkinan tabrakan hampir tidak ada.",
+    faq_2_q: "Apakah UUID v4 benar-benar unik?",
+    faq_2_a: "Ya. Dengan 122 bit acak, terdapat sekitar 5,3 undecillion kemungkinan kombinasi. Kemungkinan menghasilkan dua UUID yang sama sangat kecil secara astronomis, sehingga aman untuk sistem terdistribusi.",
+    faq_3_q: "Apa perbedaan antar versi UUID?",
+    faq_3_a: "UUID v1 menggunakan timestamp dan alamat MAC; v4 menggunakan angka acak (paling umum); v5 menggunakan namespace dan hash SHA-1. Versi 4 lebih disukai karena sederhana dan menjaga privasi (tidak mengekspos informasi hardware).",
+    faq_4_q: "Bisakah saya menggunakan UUID sebagai primary key database?",
+    faq_4_a: "Ya. UUID sangat cocok untuk database terdistribusi di mana ID auto-increment bisa menyebabkan konflik. UUID memungkinkan pembuatan ID di sisi client tanpa koordinasi dengan database.",
+    multiple_label: "Hasilkan Banyak UUID",
+    quantity: "Jumlah",
+    bt: "Generate UUID",
+    bt_multiple: "Generate UUID",
+    generated_uuids: "UUID yang Dihasilkan ({count})",
+    copy_all: "Salin Semua",
+    copied: "Disalin!",
+    placeholder: "Klik Generate untuk membuat UUID",
+    see1: "Generator Crontab",
+    see2: "Angka Acak",
+    see3: "Generator Kartu Kredit",
+    see4: "Pembanding Teks"
+  }
+}
+</i18n>
