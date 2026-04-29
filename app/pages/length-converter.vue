@@ -64,7 +64,8 @@ defineI18nRoute({
     es: '/convertidor-de-longitud',
     fr: '/convertisseur-de-longueur',
     it: '/convertitore-di-lunghezza',
-    id: '/konverter-panjang'
+    id: '/konverter-panjang',
+    de: '/laengen-umrechner'
   }
 })
 </script>
@@ -453,6 +454,55 @@ defineI18nRoute({
     f_2: "Konversi instan secara real-time",
     f_3: "Mendukung satuan metrik, imperial, dan astronomi",
     f_4: "Pemrosesan di browser — tidak ada data yang dikirim ke server"
+  },
+  de: {
+    title: "Längen-Umrechner",
+    meta: "Mit unserem Umrechner für Längeneinheiten kannst du ganz einfach zwischen verschiedenen Maßeinheiten wie Metern, Kilometern, Meilen und vielen weiteren umrechnen.",
+    d1: "Egal ob du Zentimeter in Zoll, Kilometer in Meilen, Fuß in Meter oder eine andere Kombination umwandeln möchtest, unser Tool ist dafür bereit. Gib einfach den Wert ein, der umgerechnet werden soll, und wähle die Ausgangs- und Zieleinheit aus, um das Ergebnis sofort zu erhalten.",
+    d2: "Zu den verfügbaren Maßeinheiten für die Umrechnung gehören",
+    m: "Meter",
+    km: "Kilometer",
+    cm: "Zentimeter",
+    mm: "Millimeter",
+    μm: "Mikrometer",
+    nm: "Nanometer",
+    ft: "Fuß",
+    in: "Zoll",
+    yd: "Yard",
+    mi: "Meile",
+    nmi: "Seemeile",
+    ly: "Lichtjahr",
+    point: "Punkt",
+    value: "Wert",
+    from: "Von",
+    to: "Nach",
+    result: "Ergebnis",
+    err: "Umrechnung nicht durchgeführt",
+    how_it_works_title: "So funktioniert es",
+    step_1_title: "Wert eingeben",
+    step_1_desc: "Gib den Längenwert ein, den du umrechnen möchtest.",
+    step_2_title: "Einheiten auswählen",
+    step_2_desc: "Wähle die Ausgangs- und Zieleinheit der Länge.",
+    step_3_title: "Ergebnis kopieren",
+    step_3_desc: "Die Umrechnung erfolgt sofort. Nutze den Kopier-Button, um das Ergebnis in die Zwischenablage zu senden.",
+    use_cases_title: "Anwendungsfälle",
+    uc_1_title: "Ingenieurwesen und Bau",
+    uc_1_desc: "Rechne zwischen metrischen und imperialen Einheiten für technische Zeichnungen und Bauspezifikationen um.",
+    uc_2_title: "Internationale Reisen",
+    uc_2_desc: "Wandle Straßenentfernungen schnell von Kilometern in Meilen oder Körpergrößen von Metern in Fuß um.",
+    faq_title: "Fragen und Antworten",
+    faq_1_q: "Was ist der Unterschied zwischen dem metrischen und dem imperialen System?",
+    faq_1_a: "Das metrische System basiert auf Zehnerschritten (Meter, Kilometer), während das imperiale System traditionelle Einheiten wie Zoll, Fuß und Meilen verwendet. Der größte Teil der Welt nutzt das metrische System, aber in den USA und im Vereinigten Königreich sind imperiale Einheiten in vielen Bereichen noch üblich.",
+    faq_2_q: "Ist dieser Umrechner auch für astronomische Entfernungen genau?",
+    faq_2_a: "Ja. Er unterstützt Einheiten wie Lichtjahre und Seemeilen mit hoher Präzision und eignet sich dadurch sowohl für irdische als auch für astronomische Berechnungen.",
+    see1: "Temperatur-Umrechner",
+    see2: "Zeit-Umrechner",
+    see3: "Speichereinheiten-Umrechner",
+    see4: "Römische-Zahlen-Umrechner",
+    f_1: "Zwischen 13 Längeneinheiten umrechnen",
+    f_2: "Sofortige Umrechnung in Echtzeit",
+    f_3: "Unterstützt metrische, imperiale und astronomische Einheiten",
+    f_4: "Verarbeitung im Browser — keine Daten werden an Server gesendet"
   }
 }
 </i18n>

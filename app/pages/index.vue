@@ -165,6 +165,21 @@ const toolCategories = [
         fmt: "Format Kode",
         conv: "Konverter",
         misc: "Alat Lainnya"
+    },
+    de: {
+        d1: "Willkommen bei",
+        d2: "Vereinfache deine Aufgaben mit kostenlosen Online-Tools, einschließlich Lösungen für Softwareentwickler.",
+        d3: "Nach Kategorie durchsuchen",
+        pdf: "PDF",
+        clr: "Farben",
+        img: "Bilder",
+        txt: "Texte",
+        dts: "Datum und Uhrzeit",
+        rand: "Zufallsdatengeneratoren",
+        min: "Code minifizieren",
+        fmt: "Code formatieren",
+        conv: "Konverter",
+        misc: "Verschiedene Tools"
     }
 }
 </i18n>

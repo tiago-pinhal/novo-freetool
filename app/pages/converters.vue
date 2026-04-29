@@ -19,7 +19,8 @@ defineI18nRoute({
     es: "/convertidores",
     fr: '/convertisseurs',
     it: '/convertitori',
-    id: '/konverter'
+    id: '/konverter',
+    de: '/umrechner'
   }
 })
 </script>
@@ -176,6 +177,24 @@ defineI18nRoute({
         jsonToCsv: "JSON → CSV",
         num: "Basis Angka",
         unit: "Unit Penyimpanan",
+    },
+    de: {
+        title: "Umrechner-Tools",
+        meta: "Kostenlose Online-Umrechner: Einheiten, Temperatur, Zeit, römische Zahlen, URL, LESS zu CSS, XML/JSON und mehr. Daten sofort umrechnen!",
+        desc: "Wandle Längen-, Temperatur- und Zeiteinheiten um, kodiere und dekodiere URLs, konvertiere römische Zahlen und wechsle zwischen Datenformaten wie XML, JSON und CSV. Die gesamte Verarbeitung läuft in deinem Browser und es ist keine Installation erforderlich.",
+        devs: "Für Entwickler",
+        roman: "Römische Zahlen",
+        length: "Länge",
+        temperature: "Temperatur",
+        time: "Zeit",
+        url: "URL/Link",
+        less: "LESS → CSS",
+        xmlToJson: "XML → JSON",
+        jsonToXml: "JSON → XML",
+        csvToJson: "CSV → JSON",
+        jsonToCsv: "JSON → CSV",
+        num: "Zahlenbasen",
+        unit: "Speichereinheiten",
     }
 }
 </i18n>

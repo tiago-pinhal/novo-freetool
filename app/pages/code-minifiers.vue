@@ -19,7 +19,8 @@ defineI18nRoute({
     es: '/minificadores-de-codigo',
     fr: '/minificateurs-de-code',
     it: '/minificatori-di-codice',
-    id: '/minifikasi-kode'
+    id: '/minifikasi-kode',
+    de: '/code-minimierer'
   },
 })
 </script>
@@ -108,6 +109,14 @@ defineI18nRoute({
         html: "Minifikasi HTML",
         js: "Minifikasi JavaScript",
         css: "Minifikasi CSS"
+    },
+    de: {
+        title: "Code-Minimierer",
+        meta: "Kostenlose Online-Code-Minimierer: HTML, JavaScript und CSS. Optimiere und komprimiere deinen Code, um die Ladezeit sofort zu verbessern!",
+        desc: "Minimiere und komprimiere deinen HTML-, JavaScript- und CSS-Code, um die Dateigröße zu reduzieren und das Laden von Seiten zu beschleunigen. Die gesamte Verarbeitung läuft in deinem Browser, dein Code verlässt niemals dein Gerät und es ist keine Installation erforderlich.",
+        html: "HTML-Minimierer",
+        js: "JavaScript-Minimierer",
+        css: "CSS-Minimierer"
     }
 }
 </i18n>

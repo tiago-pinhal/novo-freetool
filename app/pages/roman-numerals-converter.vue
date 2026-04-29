@@ -81,7 +81,8 @@ defineI18nRoute({
     es: '/convertidor-de-numeros-romanos',
     fr: '/convertisseur-de-nombres-romains',
     it: '/convertitore-di-numeri-romani',
-    id: '/konverter-angka-romawi'
+    id: '/konverter-angka-romawi',
+    de: '/roemische-zahlen-konverter'
   }
 })
 </script>
@@ -406,6 +407,43 @@ defineI18nRoute({
     f_2: "Konversi angka Romawi ke angka Arab",
     f_3: "Konversi instan di sisi klien",
     f_4: "Mendukung angka dari 1 hingga 3999"
+  },
+  de: {
+    title: "Römische-Zahlen-Umrechner",
+    meta: "Wandle einfach zwischen römischen Zahlen und arabischen Zahlen um. Gib einen beliebigen Wert ein und konvertiere sofort von oder zu römischen Zahlen.",
+    desc: "Mit diesem Tool kannst du römische Zahlen in ihre Entsprechung in arabischen Zahlen umwandeln und umgekehrt. Gib einfach den Wert ein, den du konvertieren möchtest, und klicke auf die Schaltfläche für die gewünschte Umrechnung. Ob für Schüler, Lehrkräfte oder alle, die eine schnelle Umrechnung benötigen, dieses Tool macht es einfach.",
+    in: "Wert eingeben (Römisch oder Arabisch)",
+    result: "Ergebnis",
+    to: "zu",
+    from: "von",
+    btn_to: "In Römisch umrechnen",
+    btn_from: "Aus Römisch umrechnen",
+    err: "Der Wert konnte nicht {0} Römisch umgerechnet werden",
+    how_it_works_title: "So funktioniert es",
+    step_1_title: "Wert eingeben",
+    step_1_desc: "Gib eine arabische Zahl (z. B. 2024) oder eine römische Zahl (z. B. MMXXIV) ein.",
+    step_2_title: "Umrechnen",
+    step_2_desc: "Klicke je nach Eingabe auf 'In Römisch umrechnen' oder 'Aus Römisch umrechnen'.",
+    step_3_title: "Kopieren",
+    step_3_desc: "Nutze den Kopier-Button, um das umgerechnete Ergebnis in die Zwischenablage zu senden.",
+    use_cases_title: "Anwendungsfälle",
+    uc_1_title: "Geschichte und Bildung",
+    uc_1_desc: "Entschlüssle Daten auf historischen Denkmälern, Forschungsarbeiten und in klassischer Literatur.",
+    uc_2_title: "Architektur und Design",
+    uc_2_desc: "Verwende römische Zahlen für stilvolle Zifferblätter, Baujahresmarkierungen und Kapitelüberschriften.",
+    faq_title: "Fragen und Antworten",
+    faq_1_q: "Warum gibt es eine Begrenzung auf 3999?",
+    faq_1_a: "Standardmäßige römische Zahlen verwenden M (1000) als größtes Symbol. Größere Zahlen können zwar mit Überstrichen dargestellt werden, aber die meisten Standardsysteme und dieses Tool konzentrieren sich auf den Bereich 1 bis 3999, der in typischen Anwendungen verwendet wird.",
+    faq_2_q: "Wie lese ich römische Zahlen?",
+    faq_2_a: "Symbole werden normalerweise addiert (XVI = 10+5+1 = 16). Wenn jedoch ein kleineres Symbol vor einem größeren steht, wird es subtrahiert (IV = 5-1 = 4, IX = 10-1 = 9).",
+    see1: "Zahlenbasen-Umrechner",
+    see2: "Längen-Umrechner",
+    see3: "Speichereinheiten-Umrechner",
+    see4: "Temperatur-Umrechner",
+    f_1: "Arabische Zahlen in römische Zahlen umrechnen",
+    f_2: "Römische Zahlen in arabische Zahlen umrechnen",
+    f_3: "Sofortige Umrechnung im Browser",
+    f_4: "Unterstützt Zahlen von 1 bis 3999"
   }
 }
 </i18n>

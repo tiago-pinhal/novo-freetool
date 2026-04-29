@@ -19,7 +19,8 @@ defineI18nRoute({
         es: '/herramientas-para-fechas-y-horas',
         fr: '/outils-pour-dates-et-heures',
         it: '/strumenti-per-date-e-ore',
-        id: '/alat-tanggal-dan-waktu'
+        id: '/alat-tanggal-dan-waktu',
+        de: '/werkzeuge-fuer-datum-und-uhrzeit'
     }
 })
 </script>
@@ -150,7 +151,7 @@ defineI18nRoute({
         desc: "Con estas herramientas, puedes calcular diferencias entre fechas y horas, generar fechas aleatorias, calcular edades y crear expresiones cron con facilidad. Instantáneo, preciso y sin necesidad de instalación.",
         dt: "Diferencia entre Fechas",
         times: "Diferencia entre Horas",
-        diff: "Diferencia entre Fechas Y Horas",
+        diff: "Diferencia entre Fechas y Horas",
         birth: "Fecha de Nacimiento",
         age: "Calculadora de Edad",
         hour: "Calculadora de Horas y Minutos",
@@ -211,6 +212,23 @@ defineI18nRoute({
         time: "Konverter Waktu",
         unix: "Konverter Timestamp Unix",
         devs: "Untuk Developer"
+    },
+    de: {
+        title: "Werkzeuge für Datum und Uhrzeit",
+        meta: "Kostenlose Online-Tools für Datum und Uhrzeit: Unterschiede berechnen, Daten generieren, Altersrechner, Crontab-Generator und mehr. Zeitberechnungen einfach gemacht!",
+        desc: "Mit diesen Tools kannst du Datums- und Zeitunterschiede berechnen, zufällige Daten erzeugen, Alter berechnen und Cron-Ausdrücke ganz einfach erstellen. Sofort, genau und ohne Installation.",
+        dt: "Datumsdifferenz",
+        times: "Zeitdifferenz",
+        diff: "Datums- und Zeitdifferenz",
+        birth: "Geburtsdatum-Generator",
+        age: "Altersrechner",
+        hour: "Stunden-und-Minuten-Rechner",
+        cron: "Crontab-Generator",
+        future: "Rechner für zukünftiges Datum",
+        past: "Rechner für vergangenes Datum",
+        time: "Zeit-Umrechner",
+        unix: "Unix-Zeitstempel-Umrechner",
+        devs: "Für Entwickler"
     }
 }
 </i18n>
