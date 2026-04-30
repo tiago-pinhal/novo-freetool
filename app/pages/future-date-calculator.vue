@@ -95,6 +95,7 @@ defineI18nRoute({
     fr: '/calculatrice-de-date-future',
     it: '/calcolatrice-di-data-futura',
     id: '/kalkulator-tanggal-masa-depan',
+    de: '/zukuenftiges-datum-rechner',
   },
 })
 </script>
@@ -468,7 +469,7 @@ defineI18nRoute({
     faq3q: "¿Qué añade el modo Fecha y Hora?",
     faq3a: "En el modo Fecha y Hora también puedes añadir horas, minutos y segundos además de cualquier intervalo en días, semanas, meses o años.",
     see1: "Diferencia entre Horas",
-    see2: "Diferencia entre Fechas Y Horas",
+    see2: "Diferencia entre Fechas y Horas",
     see3: "Calculadora de Fecha Pasada",
     see4: "Calculadora de Horas y Minutos"
   },
