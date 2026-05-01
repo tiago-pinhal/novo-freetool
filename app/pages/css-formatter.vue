@@ -470,7 +470,7 @@ defineI18nRoute({
         see2: "Pemformat HTML",
         see3: "Pemformat JavaScript",
         see4: "Penampil JSON",
-        f_1: "Pemformatan CSS secara instan",
+        f_1: "Pemercantikan dan pemformatan CSS secara instan",
         f_2: "Indentasi yang benar dan spasi yang konsisten",
         f_3: "Deteksi dan pelaporan kesalahan sintaks",
         f_4: "Tanpa pendaftaran atau instalasi"
@@ -503,7 +503,7 @@ defineI18nRoute({
         uc_3_desc: "Gut formatiertes CSS ist leichter zu lesen, zu verstehen und in Dokumentationen oder Tutorials einzubinden.",
         faq_title: "Fragen & Antworten",
         faq_1_q: "Wird mein CSS-Code an einen Server gesendet?",
-        faq_1_a: "No. Die gesamte Verarbeitung erfolgt in Ihrem Browser. Ihr Code verlässt Ihr Gerät nicht.",
+        faq_1_a: "Nein. Die gesamte Verarbeitung erfolgt in Ihrem Browser. Ihr Code verlässt Ihr Gerät nicht.",
         faq_2_q: "Unterstützt der Formatter moderne CSS-Syntax?",
         faq_2_a: "Ja. Der Formatter unterstützt modernes CSS, einschließlich benutzerdefinierter Eigenschaften, Verschachtelung, Media Queries und At-Rules.",
         faq_3_q: "Was passiert, wenn mein CSS Syntaxfehler enthält?",
