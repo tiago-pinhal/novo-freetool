@@ -159,7 +159,8 @@ defineI18nRoute({
     fr: '/generateur-de-cpf',
     it: '/generatore-di-cpf',
     id: '/generator-cpf',
-    de: '/cpf-generator'
+    de: '/cpf-generator',
+    nl: '/cpf-generator'
   }
 })
 </script>
@@ -299,7 +300,7 @@ defineI18nRoute({
   pt: {
     pageTitle: "Gerador de CPF Válido Online — Grátis e Sem Cadastro",
     title: "Gerador de CPF Válido",
-    meta: "Gere CPFs válidos online de graça. Por estado, em massa (até 100 por vez), com ou sem pontuação. Para testes de software e desenvolvimento.",
+    meta: "Gere CPFs válidos online e grátis, seja por estado, um ou múltiplos CPFs de uma só vez (com ou sem pontuação). Ferramenta ideal para testes e desenvolvimento.",
 
     num: "Somente Números",
     multiple_label: "Gerar Múltiplos CPFs",
@@ -367,7 +368,7 @@ defineI18nRoute({
   en: {
     pageTitle: "Valid CPF Generator Online — Free, No Sign-Up Required",
     title: "Valid CPF Generator",
-    meta: "Generate valid CPF numbers online for free. By state, in bulk (up to 100 at once), with or without formatting. For software testing and development.",
+    meta: "Generate valid CPFs online for free, whether by state, one or multiple CPFs at once (with or without formatting). Ideal tool for testing and development.",
 
     num: "Numbers Only",
     multiple_label: "Generate Multiple CPFs",
@@ -435,7 +436,7 @@ defineI18nRoute({
   es: {
     pageTitle: "Generador de CPF Válido Online — Gratis y Sin Registro",
     title: "Generador de CPF Válido",
-    meta: "Genera CPFs válidos en línea de forma gratuita. Por estado, en lote (hasta 100 a la vez), con o sin formato. Para pruebas de software y desarrollo.",
+    meta: "Genera CPFs válidos online y gratis, ya sea por estado, uno o múltiples CPFs a la vez (con o sin puntuación). Herramienta ideal para pruebas y desarrollo.",
 
     num: "Solo Números",
     multiple_label: "Generar Múltiples CPFs",
@@ -503,7 +504,7 @@ defineI18nRoute({
   fr: {
     pageTitle: "Générateur de CPF Valide en Ligne — Gratuit et Sans Inscription",
     title: "Générateur de CPF Valide",
-    meta: "Générez des CPF valides en ligne gratuitement. Par état, en lot (jusqu'à 100 à la fois), avec ou sans formatage. Pour les tests logiciels et le développement.",
+    meta: "Générez des CPFs valides en ligne gratuitement, que ce soit par état, un ou plusieurs CPFs à la fois (avec ou sans ponctuation). Outil idéal pour les tests et le développement.",
 
     num: "Chiffres Uniquement",
     multiple_label: "Générer Plusieurs CPF",
@@ -571,7 +572,7 @@ defineI18nRoute({
   it: {
     pageTitle: "Generatore di CPF Valido Online — Gratuito e Senza Registrazione",
     title: "Generatore di CPF Valido",
-    meta: "Genera CPF validi online gratuitamente. Per stato, in blocco (fino a 100 alla volta), con o senza formattazione. Per test software e sviluppo.",
+    meta: "Genera CPF validi online gratuitamente, sia per stato, uno o più CPF alla volta (con o senza punteggiatura). Strumento ideale per test e sviluppo.",
 
     num: "Solo Numeri",
     multiple_label: "Genera Più CPF",
@@ -639,7 +640,7 @@ defineI18nRoute({
   id: {
     pageTitle: "Generator CPF Valid Online — Gratis Tanpa Pendaftaran",
     title: "Generator CPF Valid",
-    meta: "Buat CPF valid secara online secara gratis. Per negara bagian, massal (hingga 100 sekaligus), dengan atau tanpa format. Untuk pengujian perangkat lunak dan pengembangan.",
+    meta: "Buat CPF valid online secara gratis, baik berdasarkan negara bagian, satu atau beberapa CPF sekaligus (dengan atau tanpa tanda baca). Alat ideal untuk pengujian dan pengembangan.",
 
     num: "Angka Saja",
     multiple_label: "Buat Beberapa CPF",
@@ -707,7 +708,7 @@ defineI18nRoute({
   de: {
     pageTitle: "Gültiger CPF-Generator Online — Kostenlos und Ohne Anmeldung",
     title: "Gültiger CPF-Generator",
-    meta: "Generieren Sie gültige CPF-Nummern kostenlos online. Nach Bundesstaat, in Massen (bis zu 100 auf einmal), mit oder ohne Formatierung. Für Softwaretests und Entwicklung.",
+    meta: "Gültige CPFs kostenlos online generieren, ob nach Bundesstaat, einer oder mehrere CPFs auf einmal (mit oder ohne Interpunktion). Ideales Tool für Tests und Entwicklung.",
 
     num: "Nur Zahlen",
     multiple_label: "Mehrere CPFs generieren",
@@ -771,6 +772,74 @@ defineI18nRoute({
     see2: "Andere Buchstaben",
     see3: "Kreditkartengenerator",
     see4: "Geburtsdatum-Generator"
+  },
+  nl: {
+    pageTitle: "Geldige CPF-generator Online — Gratis en Zonder Registratie",
+    title: "Geldige CPF-generator",
+    meta: "Genereer gratis online geldige CPF's, per staat, één of meerdere CPF's tegelijk (met of zonder interpunctie). Ideale tool voor testen en ontwikkeling.",
+
+    num: "Alleen cijfers",
+    multiple_label: "Genereer meerdere CPF's",
+    select_state: "Selecteer staat",
+    all_states: "Alle staten",
+    region_from: "Fiscale regio",
+    bt: "Genereer CPF",
+    bt_multiple: "Genereer CPF's",
+    cpf_label: "Gegenereerde CPF",
+    quantity: "Aantal",
+    generated_cpfs: "Gegenereerde CPF's ({count})",
+    copy_all: "Alles kopiëren",
+    placeholder: "Klik op Genereer CPF om een nummer aan te maken",
+    warning: "De gegenereerde nummers zijn fictief en dienen uitsluitend voor testdoeleinden.",
+
+    d1: "Gratis online CPF-generator voor ontwikkelaars en softwaretests. Genereer wiskundig geldige CPF-nummers met controlecijfers berekend volgens het officiële algoritme, zodat ze elke formuliervalidatie of bedrijfsregel doorstaan. Onze tool werkt direct in de browser, is 100% veilig (geen verbinding met echte personen) en vereist geen registratie. Maak gebruik van geavanceerde functies zoals CPF-generatie per staat en het maken van batches tot 100 nummers tegelijk.",
+
+    features_title: "Functionaliteiten",
+    f_1: "Genereer geldige CPF per staat",
+    f_2: "Batches tot 100 unieke CPF's",
+    f_3: "Formaat met interpunctie of alleen cijfers",
+    f_4: "Controlecijfers berekend met modulo 11",
+
+    how_title: "Hoe het CPF-algoritme werkt",
+    how_desc: "Het CPF-algoritme bestaat uit 11 cijfers: 9 identificatiecijfers en 2 controlecijfers aan het einde. De eerste 9 zijn opeenvolgend per fiscale regio, en het 9e cijfer geeft de staat aan waar het document is uitgegeven. De laatste twee zijn het resultaat van een modulo 11-berekening over de voorgaande cijfers: elk cijfer wordt vermenigvuldigd met een gewicht, alles wordt opgeteld, gedeeld door 11, en de rest bepaalt het controlecijfer. De methode is ontworpen om typefouten te detecteren. Het wijzigen van een cijfer of het omdraaien van twee cijfers verbreekt bijna altijd de validatie, waardoor elk systeem ongeldige nummers kan weigeren zonder de belastingdienst te raadplegen.",
+
+    use_cases_title: "Gebruiksscenario's",
+    use_cases_intro: "Hier zijn de belangrijkste praktische toepassingen van de CPF-generator in de ontwikkelings- en QA-workflow:",
+    use_1_t: "Formuliervalidatie",
+    use_1_d: "Inputmaskers, validators en foutmeldingen in registratievelden testen.",
+    use_2_t: "Geautomatiseerde tests",
+    use_2_d: "Testscenario's vullen met gegevens die de validatie doorstaan zonder echte CPF's bloot te stellen.",
+    use_3_t: "Ontwikkelomgevingen",
+    use_3_d: "Records aanmaken in staging en homologatie zonder privacywetten te overtreden of productiegegevens te gebruiken.",
+    use_4_t: "Integraties en API's",
+    use_4_d: "Endpoints, payloads en diensten van derden testen die een CPF als parameter vereisen.",
+    use_5_t: "Mockup en demonstraties",
+    use_5_d: "Prototypes, demoschermen en productpresentaties invullen zonder echte gegevens te gebruiken.",
+
+    how_to_use_title: "Hoe te gebruiken",
+    step_1_title: "Snel een CPF genereren",
+    step_1_desc: "Bij het openen van de pagina is de eerste CPF al klaar. Om een nieuwe te genereren, klik op \"Genereer CPF\" — het nummer is met één klik beschikbaar om te kopiëren.",
+    step_2_title: "Meerdere tegelijk genereren",
+    step_2_desc: "Vink \"Genereer meerdere CPF's\" aan, kies het aantal (tussen 2 en 100) en klik op \"Genereer CPF's\". De knop \"Alles kopiëren\" stuurt de hele lijst naar het klembord.",
+    step_3_title: "Formaat kiezen",
+    step_3_desc: "Standaard wordt de CPF geformatteerd met punten en een streepje. Als je het ruwe nummer nodig hebt (database, JSON, etc.), schakel dan \"Alleen cijfers\" in voor het genereren.",
+
+    faq_title: "Veelgestelde vragen",
+    faq_1_q: "Zijn de hier gegenereerde CPF's echt of geregistreerd bij de Receita Federal?",
+    faq_1_a: "Nee. Het zijn fictieve nummers die zijn opgebouwd met hetzelfde validatie-algoritme dat de Receita Federal gebruikt, maar zonder enige link met echte personen. Ze slagen voor de controlecijferverificatie omdat de berekening correct is, en meer niet. Probeer ze niet te gebruiken voor officiële registraties — ze zullen niet worden geaccepteerd en de poging kan als fraude worden beschouwd.",
+    faq_2_q: "Waarom is er een staatsfilter in de generator?",
+    faq_2_a: "Het 9e cijfer van de CPF (vlak voor de controlecijfers) komt overeen met de fiscale regio waar het document is uitgegeven. São Paulo is 8, Rio Grande do Sul is 0, enzovoort. Voor sommige tests is het belangrijk om nummers te genereren die consistent zijn met een specifieke regio, en het filter is daarvoor bedoeld. Als het niet uitmaakt, laat het dan op \"Alle staten\" staan en de trekking zal willekeurig zijn.",
+    faq_3_q: "Wanneer het formaat met interpunctie gebruiken en wanneer alleen cijfers?",
+    faq_3_a: "Dat hangt ervan af waar het nummer gebruikt gaat worden. Formulieren en schermen die de CPF aan de gebruiker tonen, gebruiken meestal het geformatteerde formaat (999.999.999-99). Databases, API's en backend-validaties hebben de neiging om het ruwe nummer op te slaan, zonder speciale tekens. De schakelaar \"Alleen cijfers\" lost dit op zonder dat de string achteraf bewerkt hoeft te worden.",
+    faq_4_q: "Kan ik de generator voor elk doel gebruiken?",
+    faq_4_a: "Voor softwaretests, leren, demonstraties en ontwikkeling, ja. Dat is precies waarvoor het is gemaakt. Wat je niet kunt doen, is een gegenereerde CPF gebruiken bij officiële registraties, contracten, verklaringen of elke situatie die een echte identificatie vereist. Dit vormt valsheid in geschrifte en kan, afhankelijk van de omstandigheden, als oplichting worden beschouwd.",
+    faq_5_q: "Wat is het verschil tussen een \"valse CPF\" en een \"willekeurige CPF\"?",
+    faq_5_a: "In de praktijk verwijzen beide termen naar dezelfde tool: een hulpprogramma dat nummers genereert volgens de wiskundige regel van de CPF, maar zonder dat ze van iemand zijn. De termen \"valse\" en \"fake\" zijn populair in zoekopdrachten, hoewel sommige ontwikkelaars de voorkeur geven aan \"fictief\" of \"test-CPF\" omdat ze minder suggestief klinken. Het resultaat en het gebruik zijn identiek.",
+
+    see1: "CNPJ-generator",
+    see2: "Mooie letters",
+    see3: "Creditcard-generator",
+    see4: "Geboortedatum-generator"
   }
 }
 </i18n>

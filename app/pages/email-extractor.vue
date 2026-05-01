@@ -69,7 +69,8 @@ defineI18nRoute({
     fr: '/extracteur-emails',
     it: '/estrattore-di-email',
     id: '/ekstraktor-email',
-    de: '/email-extraktor'
+    de: '/email-extraktor',
+    nl: '/e-mailextractor'
   }
 })
 </script>
@@ -432,6 +433,42 @@ defineI18nRoute({
         see2: "Listen-Zufallsgenerator",
         see3: "Würfelroller",
         see4: "Dreisatzrechner"
+    },
+    nl: {
+        title: "E-mailextractor",
+        meta: "Extraheer automatisch meerdere e-mailadressen uit elke tekst met onze online e-mailextractor.",
+        desc: "Moet je tientallen contacten extraheren die verborgen zitten in een groot blok tekst of gegevens? Onze e-mailextractor maakt dat eenvoudig. Plak of sleep je inhoud in het vak, kies het gewenste scheidingsteken voor de resultatenlijst (komma, regeleinde, puntkomma of pipe) en klik op 'Extraheren'. De tool vindt automatisch geldige e-mailadressen, verwijdert duplicaten en genereert een schone, gebruiksklare lijst.",
+        how_to_use_title: "Hoe te gebruiken",
+        step_1_title: "Tekst invoeren",
+        step_1_desc: "Plak je tekst of sleep een bestand naar het invoervak.",
+        step_2_title: "Scheidingsteken selecteren",
+        step_2_desc: "Kies het scheidingsteken (komma, regeleinde, etc.) en klik op Extraheren.",
+        step_3_title: "E-mails kopiëren",
+        step_3_desc: "Kopieer de schone lijst met geëxtraheerde e-mails, klaar voor gebruik.",
+        use_cases_title: "Gebruiksvoorbeelden",
+        use_cases_desc: "De e-mailextractor helpt je rommelige inhoud om te zetten in een schone, gebruiksklare lijst met contactpersonen. Het is perfect voor:",
+        uc_2: "E-mails extraheren uit lange HTML-pagina's of berichtlogs",
+        uc_4: "Automatisch dubbele adressen verwijderen voor outreach",
+        ideal_for_title: "Ideaal voor",
+        ideal_for_desc: "Deze tool is nuttig voor marketing, verkoop, support, werving, klantenservice, onderzoek en iedereen die snel en nauwkeurig e-mailadressen uit lange teksten moet scheiden.",
+        sep: "Scheiden door",
+        empty: "Geen e-mail gevonden",
+        bt: "Extraheren",
+        plc: "Voer hier je tekst in of sleep een bestand",
+        comma: "Komma",
+        line: "Regeleinde",
+        colon: "Puntkomma",
+        pipe: "Pipe",
+        res: "Resultaat",
+        features_title: "Functies",
+        f_1: "Extraheer automatisch alle geldige e-mailadressen uit elke tekst",
+        f_2: "Verwijder automatisch dubbele e-mails",
+        f_3: "Exporteren met komma, regeleinde, puntkomma of pipe als scheidingsteken",
+        f_4: "Ondersteuning voor drag-and-drop bestanden",
+        see1: "Percentagecalculator",
+        see2: "Lijst-randomizer",
+        see3: "Dobbelsteenroller",
+        see4: "Regel-van-drie-calculator"
     }
 }
 </i18n>

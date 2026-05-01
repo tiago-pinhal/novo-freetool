@@ -46,7 +46,8 @@ defineI18nRoute({
         fr: '/calculatrice-regle-de-trois-simple',
         it: '/calcolatrice-regola-di-tre-semplice',
         id: '/kalkulator-aturan-tiga-sederhana',
-        de: '/dreisatzrechner'
+        de: '/dreisatzrechner',
+        nl: '/regel-van-drie-calculator'
     }
 })
 </script>
@@ -439,6 +440,42 @@ defineI18nRoute({
         f_2: "Ergebnis in Echtzeit während der Eingabe",
         f_3: "Nützlich für Rezepte, Skalierung und Hausaufgaben",
         f_4: "Keine Registrierung oder Installation erforderlich"
+    },
+    nl: {
+        title: "Regel van drie",
+        meta: "Bereken eenvoudig de regel van drie online met onze gratis calculator. Vind snel en eenvoudig onbekende waarden in directe proporties.",
+        desc: "De eenvoudige regel van drie, ook wel kruislings vermenigvuldigen genoemd, is een praktische wiskundige methode om een onbekende vierde waarde te vinden wanneer je al drie waarden met een direct proportionele relatie kent. Onze calculator maakt het proces eenvoudig: of je nu een recept schaalt, percentages berekent, afmetingen aanpast of huiswerk maakt, vul gewoon de velden in met de bekende waarden en de calculator voert de berekening automatisch uit en toont het resultaat.",
+        if: "Voorwaarden",
+        then: "Doel",
+        val1: "Waarde A",
+        val2: "Waarde B",
+        val3: "Waarde C",
+        result: "Eindresultaat (X)",
+        copy_result: "Resultaat kopiëren",
+        waiting: "Voer alle waarden hierboven in om het resultaat te zien",
+        tip_title: "Hoe het werkt",
+        tip_formula: "De gebruikte formule is",
+        features_title: "Functies",
+        how_to_use_title: "Hoe te gebruiken",
+        step_1_title: "Basiswaarden invoeren",
+        step_1_desc: "Voer Waarde A en Waarde B in om de initiële bekende verhouding te definiëren.",
+        step_2_title: "Doel invoeren",
+        step_2_desc: "Voer Waarde C in om de proportionele tegenhanger (X) te vinden.",
+        step_3_title: "Resultaat ophalen",
+        step_3_desc: "Het resultaat wordt direct berekend. Gebruik de kopieerknop om het naar je klembord te sturen.",
+        see1: "Percentagecalculator",
+        see2: "Bcrypt-generator",
+        see3: "E-mailextractor",
+        see4: "JSON-viewer",
+        use_cases_title: "Gebruiksvoorbeelden",
+        uc_1: "Kookrecepten schalen op basis van beschikbare ingrediënten",
+        uc_2: "Brandstofverbruik berekenen voor verschillende afstanden",
+        uc_3: "Technische afmetingen en schaalmodellen aanpassen",
+        uc_4: "Wiskundeproblemen en zakelijke verhoudingsopdrachten oplossen",
+        f_1: "Los directe proporties op met drie bekende waarden",
+        f_2: "Realtime resultaat terwijl je typt",
+        f_3: "Handig voor recepten, schalen en huiswerk",
+        f_4: "Geen registratie of installatie vereist"
     }
 }
 </i18n>

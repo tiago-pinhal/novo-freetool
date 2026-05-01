@@ -71,7 +71,8 @@ defineI18nRoute({
     fr: '/melangeur-de-listes',
     it: '/mescolatore-di-liste',
     id: '/pengacak-daftar',
-    de: '/listen-zufallsgenerator'
+    de: '/listen-zufallsgenerator',
+    nl: '/lijst-randomizer'
   }
 })
 </script>
@@ -431,6 +432,43 @@ defineI18nRoute({
     faq_2_a: "Ja. Wir verwenden den Fisher-Yates-Mischalgorithmus, eine mathematisch bewährte Methode zur Erzeugung unvoreingenommener Permutationen einer Liste.",
     faq_3_q: "Sind meine Daten privat?",
     faq_3_a: "Ja. Deine Liste verlässt dein Gerät nie. Die gesamte Randomisierung findet lokal in deinem Browser statt, und nichts wird an unsere Server gesendet."
+  },
+  nl: {
+    title: "Lijst-randomizer & Lijst-shuffler",
+    meta: "Hussel eenvoudig namen, woorden of items met onze gratis online Lijst-randomizer. Genereer in enkele seconden een willekeurige volgorde of een eerlijke loting.",
+    desc: "Deze tool randomiseert snel en eerlijk de volgorde van namen, woorden of een willekeurige lijst met items. Het is ideaal voor het loten van namen, het husselen van groepen, het reorganiseren van taken en het garanderen van onbevooroordeelde resultaten bij spellen, wedstrijden, klassikale activiteiten en dagelijkse beslissingen.",
+    bt: "Husselen",
+    result: "Resultaat",
+    plc: "Voer je lijst met items in",
+    plc_hint: "Voer één item per regel in...",
+    see1: "Percentagecalculator",
+    see2: "Dobbelsteenroller",
+    see3: "Regel-van-drie-calculator",
+    see4: "E-mailextractor",
+    how_to_use_title: "Hoe te gebruiken",
+    step_1_title: "Lijst voorbereiden",
+    step_1_desc: "Typ of plak je items in het invoerveld en zorg ervoor dat elk item op een eigen regel staat.",
+    step_2_title: "Items husselen",
+    step_2_desc: "Klik op de knop 'Husselen' om het randomisatie-algoritme uit te voeren.",
+    step_3_title: "Krijg willekeurige volgorde",
+    step_3_desc: "De items worden direct opnieuw gerangschikt. Je kunt het eindresultaat met één klik kopiëren met de kopieerknop.",
+    f_1: "Hussel direct elke lijst met namen of woorden",
+    f_2: "Onbevooroordeeld Fisher-Yates randomisatie-algoritme",
+    f_3: "Ondersteuning voor drag-and-drop tekstbestanden",
+    f_4: "Volledig gratis en privé (verwerking op je eigen apparaat)",
+    features_title: "Functies",
+    use_cases_title: "Gebruiksvoorbeelden",
+    uc_1: "Willekeurige namen loten voor weggeefacties of wedstrijden",
+    uc_2: "Groepen en teams husselen voor sport of klassikale activiteiten",
+    uc_3: "Een dagelijkse takenlijst randomiseren om routine te voorkomen",
+    uc_4: "Een willekeurige volgorde bepalen voor presentaties of beurten in spellen",
+    faq_title: "Vragen & Antwoorden",
+    faq_1_q: "Hoeveel items kan ik tegelijk husselen?",
+    faq_1_a: "Er is geen strikte limiet, maar voor de beste ervaring raden we aan tot 10.000 items te husselen. De verwerking gebeurt volledig in je browser.",
+    faq_2_q: "Is de randomisatie eerlijk?",
+    faq_2_a: "Ja. We gebruiken het Fisher-Yates husselalgoritme, een wiskundig bewezen methode voor het genereren van onbevooroordeelde permutaties van een lijst.",
+    faq_3_q: "Zijn mijn gegevens privé?",
+    faq_3_a: "Absoluut. Je lijst verlaat nooit je apparaat. Alle randomisatie gebeurt lokaal in je browser en er wordt niets naar onze servers gestuurd."
   }
 }
 </i18n>

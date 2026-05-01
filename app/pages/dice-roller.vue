@@ -88,7 +88,8 @@ defineI18nRoute({
         fr: '/lanceur-de-des',
         it: '/lanciatore-di-dadi',
         id: '/lempar-dadu',
-        de: '/wuerfelroller'
+        de: '/wuerfelroller',
+        nl: '/dobbelsteenroller'
     }
 })
 </script>
@@ -508,6 +509,45 @@ defineI18nRoute({
         see2: "Listen-Zufallsgenerator",
         see3: "Dreisatzrechner",
         see4: "E-Mail-Extraktor"
+    },
+    nl: {
+        pageTitle: "Online virtuele dobbelsteenroller (D&D / RPG) | Gratis",
+        title: "Virtuele dobbelsteenroller",
+        meta: "Werp direct online virtuele polyedrische dobbelstenen met onze gratis simulator. Perfect voor D&D, bordspellen, willekeurige gebeurtenissen of wanneer je snel een betrouwbare d20- of d6-dobbelsteenroller nodig hebt.",
+        f_1: "Genereer willekeurige getallen van D4 tot D100",
+        f_2: "Voeg vaste modifiers toe aan de uiteindelijke worp",
+        f_3: "Directe som en geanimeerde resultaten",
+        f_4: "100% gratis zonder downloads vereist",
+        features_title: "Functies",
+        how_to_use_title: "Hoe te gebruiken",
+        how_desc: "Deze tool genereert zeer willekeurige uitkomsten met behulp van standaard cryptografische rekenfuncties in moderne browsers. Het simuleert perfect de klassieke fysieke polyedrische dobbelstenen (D4, D6, D8, D10, D12, D20 en D100).",
+        step_1_title: "Selecteer dobbelsteentype",
+        step_1_desc: "Kies uit standaard D4, D6, D8, D10, D12, D20 of D100 dobbelstenen uit het keuzemenu.",
+        step_2_title: "Worp configureren",
+        step_2_desc: "Stel het aantal te werpen dobbelstenen in (tot 100) en voeg eventuele optionele modifiers toe.",
+        step_3_title: "Werpen en resultaat",
+        step_3_desc: "Klik op 'Dobbelstenen werpen' om direct de geanimeerde resultaten en de berekende som te zien.",
+        use_cases_title: "Gebruiksvoorbeelden",
+        uc1: "Het spelen van tafelrollenspellen (TTRPG's) zoals D&D of Pathfinder zonder fysieke dobbelstenen bij de hand.",
+        uc2: "Het genereren van statistieken voor nieuwe personages (bijv. 4d6 werpen voor kracht en behendigheid).",
+        uc3: "Het versnellen van zware schadeworpen waarbij het handmatig berekenen van de som tijdrovend is.",
+        uc4: "Gewone bordspellen, educatieve waarschijnlijkheidstraining of beslissen wie het diner betaalt.",
+        faq_title: "Vragen & Antwoorden",
+        faq1q: "Is deze online dobbelsteenroller echt willekeurig?",
+        faq1a: "Ja. Onze tool vertrouwt op robuuste pseudowillekeurige getallengeneratoren die in moderne webbrowsers zijn ingebouwd, wat zorgt voor een eerlijke verdeling.",
+        faq2q: "Kan ik meerdere dobbelstenen tegelijk werpen?",
+        faq2a: "Absoluut. Verander gewoon het veld 'Aantal dobbelstenen'. De simulator werpt ze allemaal tegelijkertijd en berekent automatisch de som.",
+        faq3q: "Wat doet het veld 'Modifier'?",
+        faq3a: "In RPG's moet je vaak een vaste bonus of straf toevoegen (zoals 1d20 + 4). De engine houdt automatisch rekening met deze bewerking in het totaal.",
+        dice_type: "Dobbelsteentype",
+        amount: "Aantal dobbelstenen",
+        modifier: "Modifier (+/-)",
+        bt: "Dobbelstenen werpen",
+        ready: "Klaar om te werpen",
+        see1: "Percentagecalculator",
+        see2: "Lijst-randomizer",
+        see3: "Regel-van-drie-calculator",
+        see4: "E-mailextractor"
     }
 }
 </i18n>

@@ -65,7 +65,8 @@ defineI18nRoute({
     fr: '/convertisseur-de-temps',
     it: '/convertitore-di-tempo',
     id: '/konverter-waktu',
-    de: '/zeit-umrechner'
+    de: '/zeit-umrechner',
+    nl: '/tijdconverter'
   }
 })
 </script>
@@ -503,6 +504,55 @@ defineI18nRoute({
     f_2: "Sofortige Umrechnung in Echtzeit",
     f_3: "Unterstützt von Nanosekunden bis Jahrtausenden",
     f_4: "Verarbeitung im Browser — keine Daten werden an Server gesendet"
+  },
+  nl: {
+    title: "Tijdconverter",
+    meta: "Deze tijdconverter vereenvoudigt de conversie tussen verschillende tijdseenheden, zoals minuten, uren, seconden, dagen, weken, maanden, jaren en meer.",
+    d1: "Met deze tijdconverter kun je bijvoorbeeld seconden omzetten naar minuten, minuten naar uren, uren naar dagen, dagen naar weken, maanden of jaren, enzovoort. Om de conversie uit te voeren, voer je gewoon de waarde in die je wilt omzetten, kies je de huidige meeteenheid en de eenheid waarnaar de waarde moet worden omgezet. De tool toont direct het geconverteerde resultaat in de gekozen doeleenheid.",
+    d2: "Ondersteunde tijdseenheden",
+    s: "Seconden",
+    ms: "Milliseconden",
+    μs: "Microseconden",
+    ns: "Nanoseconden",
+    min: "Minuten",
+    h: "Uren",
+    d: "Dagen",
+    wk: "Weken",
+    mo: "Maanden",
+    yr: "Jaren",
+    dec: "Decennia",
+    century: "Eeuwen",
+    millennium: "Millennia",
+    value: "Waarde",
+    from: "Van",
+    to: "Naar",
+    result: "Resultaat",
+    err: "Conversie niet uitgevoerd",
+    how_it_works_title: "Hoe het werkt",
+    step_1_title: "Voer waarde in",
+    step_1_desc: "Typ de tijdwaarde die je wilt omzetten.",
+    step_2_title: "Selecteer eenheden",
+    step_2_desc: "Kies de bron- en doel-tijdseenheden.",
+    step_3_title: "Kopieer resultaat",
+    step_3_desc: "De conversie vindt direct plaats. Gebruik de kopieerknop om het resultaat naar je klembord te sturen.",
+    use_cases_title: "Gebruiksscenario's",
+    uc_1_title: "Projectplanning",
+    uc_1_desc: "Schat de projectduur snel in door weken en maanden om te zetten in uren of dagen voor een nauwkeurige planning.",
+    uc_2_title: "Wetenschappelijke berekeningen",
+    uc_2_desc: "Converteer nanoseconden en microseconden naar standaardeenheden voor technische documentatie en experimenten.",
+    faq_title: "Vragen & Antwoorden",
+    faq_1_q: "Hoe worden maanden en jaren behandeld?",
+    faq_1_a: "Omdat maanden en jaren variërende lengtes hebben, gebruiken we standaard gemiddelde waarden voor de conversie. Dit zorgt voor consistente resultaten voor schattingen en algemene planning.",
+    faq_2_q: "Welke eenheden worden ondersteund?",
+    faq_2_a: "We ondersteunen 13 eenheden, variërend van nanoseconden tot millennia, inclusief eeuwen en decennia.",
+    see1: "Tijdverschil",
+    see2: "Uren- en minutencalculator",
+    see3: "Datum- en tijdverschil",
+    see4: "Crontab-generator",
+    f_1: "Converteer tussen 13 tijdseenheden",
+    f_2: "Directe real-time conversie",
+    f_3: "Ondersteuning van nanoseconden tot millennia",
+    f_4: "Verwerking in de browser — geen gegevens naar servers verzonden"
   }
 }
 </i18n>

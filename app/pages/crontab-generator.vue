@@ -230,6 +230,12 @@ useHead({
 defineI18nRoute({
   paths: {
     pt: '/gerador-de-crontab',
+    es: '/generador-de-crontab',
+    fr: '/generateur-de-crontab',
+    it: '/generatore-di-crontab',
+    id: '/generator-crontab',
+    de: '/crontab-generator',
+    nl: '/crontab-generator'
   },
 })
 </script>
