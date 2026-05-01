@@ -270,7 +270,7 @@ defineI18nRoute({
         modifier: "Modifier (+/-)",
         bt: "Roll Dice",
         ready: "Ready to roll",
-        see1: "Percentage Calculator",
+        see1: "Percentage",
         see2: "List Randomizer",
         see3: "Rule of Three",
         see4: "Email Extractor"
@@ -309,7 +309,7 @@ defineI18nRoute({
         modifier: "Modificador (+/-)",
         bt: "Rolar Dados",
         ready: "Pronto para rolar",
-        see1: "Calculadora de Porcentagem",
+        see1: "Porcentagem",
         see2: "Sorteador de Listas",
         see3: "Regra de Três",
         see4: "Extrator de E-mails"
@@ -348,7 +348,7 @@ defineI18nRoute({
         modifier: "Modificador (+/-)",
         bt: "Lanzar Dados",
         ready: "Listo para lanzar",
-        see1: "Calculadora de Porcentaje",
+        see1: "Porcentaje",
         see2: "Aleatorizador de Listas",
         see3: "Regla de Tres",
         see4: "Extractor de Emails"
@@ -387,7 +387,7 @@ defineI18nRoute({
         modifier: "Modificateur (+/-)",
         bt: "Lancer Dés",
         ready: "Prêt à lancer",
-        see1: "Calculatrice de Pourcentage",
+        see1: "Pourcentage",
         see2: "Mélangeur de Listes",
         see3: "Règle de Trois",
         see4: "Extracteur d'Emails"
@@ -426,9 +426,9 @@ defineI18nRoute({
         modifier: "Modificatore (+/-)",
         bt: "Lancia Dadi",
         ready: "Pronto a lanciare",
-        see1: "Calcolatrice di Percentuale",
+        see1: "Percentuale",
         see2: "Randomizzatore di Liste",
-        see3: "Regola del Tre",
+        see3: "Regola di Tre",
         see4: "Estrattore di Email"
     },
     id: {
@@ -465,7 +465,7 @@ defineI18nRoute({
         modifier: "Modifikator (+/-)",
         bt: "Lempar Dadu",
         ready: "Siap melempar",
-        see1: "Kalkulator Persentase",
+        see1: "Persentase",
         see2: "Pengacak Daftar",
         see3: "Aturan Tiga",
         see4: "Ekstraktor Email"

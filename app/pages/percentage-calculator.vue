@@ -580,7 +580,7 @@ defineI18nRoute({
     sale_price: "Prezzo di vendita:",
     see1: "Randomizzatore di Liste",
     see2: "Lanciatore di Dadi",
-    see3: "Regola del Tre",
+    see3: "Regola di Tre",
     see4: "Estrattore di Email",
     f1: "Calcola quale percentuale un numero rappresenta di un altro",
     f2: "Aumento e riduzione percentuale con importo risparmiato",

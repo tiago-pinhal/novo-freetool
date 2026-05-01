@@ -78,10 +78,10 @@ defineI18nRoute({
     :wiki-url="`https://${locale}.wikipedia.org/wiki/Unit_of_time`"
     wiki-label="Units of Time"
     :see-also-links="[
-      { label: t('see1'), to: 'date-time-tools' },
-      { label: t('see2'), to: 'date-time-tools' },
-      { label: t('see3'), to: 'date-time-tools' },
-      { label: t('see4'), to: 'date-time-tools' }
+      { label: t('see1'), to: 'time-difference' },
+      { label: t('see2'), to: 'hours-and-minutes-calculator' },
+      { label: t('see3'), to: 'date-time-difference' },
+      { label: t('see4'), to: 'crontab-generator' }
     ]"
   >
     <template #info>

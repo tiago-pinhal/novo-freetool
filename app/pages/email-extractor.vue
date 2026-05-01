@@ -212,7 +212,7 @@ defineI18nRoute({
         f_2: "Remove duplicate emails automatically",
         f_3: "Export with comma, line break, semicolon, or pipe separator",
         f_4: "Drag and drop file support",
-        see1: "Percentage Calculator",
+        see1: "Percentage",
         see2: "List Randomizer",
         see3: "Dice Roller",
         see4: "Rule of Three"
@@ -248,7 +248,7 @@ defineI18nRoute({
         f_2: "Remoção automática de e-mails duplicados",
         f_3: "Exportação com vírgula, quebra de linha, ponto e vírgula ou pipe",
         f_4: "Suporte para arrastar e soltar arquivos",
-        see1: "Calculadora de Porcentagem",
+        see1: "Porcentagem",
         see2: "Sorteador de Listas",
         see3: "Lançador de Dados",
         see4: "Regra de Três"
@@ -284,7 +284,7 @@ defineI18nRoute({
         f_2: "Eliminación automática de correos duplicados",
         f_3: "Exportación con coma, salto de línea, punto y coma o pipe",
         f_4: "Soporte para arrastrar y soltar archivos",
-        see1: "Calculadora de Porcentaje",
+        see1: "Porcentaje",
         see2: "Aleatorizador de Listas",
         see3: "Lanzador de Dados",
         see4: "Regla de Tres"
@@ -320,7 +320,7 @@ defineI18nRoute({
         f_2: "Suppression automatique des e-mails en double",
         f_3: "Exportation avec virgule, saut de ligne, point-virgule ou pipe",
         f_4: "Prise en charge du glisser-déposer de fichiers",
-        see1: "Calculatrice de Pourcentage",
+        see1: "Pourcentage",
         see2: "Mélangeur de Listes",
         see3: "Lanceur de Dés",
         see4: "Règle de Trois"
@@ -356,10 +356,10 @@ defineI18nRoute({
         f_2: "Rimozione automatica delle email duplicate",
         f_3: "Esportazione con virgola, riga, punto e virgola o pipe",
         f_4: "Supporto per il trascinamento dei file",
-        see1: "Calcolatrice di Percentuale",
+        see1: "Percentuale",
         see2: "Randomizzatore di Liste",
-        see3: "Lanciatore di Dadi",
-        see4: "Regola del Tre"
+        see3: "Lancio dei Dadi",
+        see4: "Regola di Tre"
     },
     id: {
         title: "Ekstraktor Email",
@@ -392,7 +392,7 @@ defineI18nRoute({
         f_2: "Hapus email duplikat secara otomatis",
         f_3: "Ekspor dengan koma, baris, titik koma, atau pipe",
         f_4: "Dukungan seret dan lepas file",
-        see1: "Kalkulator Persentase",
+        see1: "Persentase",
         see2: "Pengacak Daftar",
         see3: "Pelempar Dadu",
         see4: "Aturan Tiga"
