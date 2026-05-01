@@ -149,6 +149,17 @@ de:
     fmt: "Code formatieren"
     conv: "Konverter"
     misc: "Verschiedene Tools"
+nl:
+    pdf: "PDF-tools"
+    clr: "Kleuren"
+    img: "Afbeeldingen"
+    txt: "Teksten"
+    dts: "Datum & Tijd"
+    rand: "Willekeurige gegevens"
+    min: "Code-minifiers"
+    fmt: "Code-formatteerders"
+    conv: "Converters"
+    misc: "Diverse tools"
 </i18n>
 
 <style scoped>

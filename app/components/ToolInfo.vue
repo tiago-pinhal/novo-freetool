@@ -72,6 +72,9 @@ id:
 de:
   about: "Über dieses Tool"
   label: "Empfohlene Lektüre:"
+nl:
+  about: "Over deze tool"
+  label: "Aanbevolen lectuur:"
 </i18n>
 
 <style scoped>

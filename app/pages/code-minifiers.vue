@@ -20,7 +20,8 @@ defineI18nRoute({
     fr: '/minificateurs-de-code',
     it: '/minificatori-di-codice',
     id: '/minifikasi-kode',
-    de: '/code-minimierer'
+    de: '/code-minimierer',
+    nl: '/code-minifiers'
   },
 })
 </script>
@@ -117,6 +118,14 @@ defineI18nRoute({
         html: "HTML-Minimierer",
         js: "JavaScript-Minimierer",
         css: "CSS-Minimierer"
+    },
+    nl: {
+        title: "Code-minifiers",
+        meta: "Gratis online code-minifiers: HTML, JavaScript en CSS. Optimaliseer en comprimeer je code om de laadtijd van je pagina direct te verbeteren!",
+        desc: "Minificeer en comprimeer je HTML-, JavaScript- en CSS-code om de bestandsgrootte te verkleinen en de laadtijd van pagina's te versnellen. Alle verwerking vindt plaats in je browser, je code verlaat je apparaat nooit en er is geen installatie nodig.",
+        html: "HTML-minifier",
+        js: "JavaScript-minifier",
+        css: "CSS-minifier"
     }
 }
 </i18n>

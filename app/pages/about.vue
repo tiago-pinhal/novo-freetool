@@ -31,6 +31,8 @@ usePageJsonLd({
   es: { title: "Sobre", desc: "Esta página está en construcción. Pronto encontrarás más información sobre o proyecto Freetool aqui." },
   fr: { title: "Propos", desc: "Cette page est en construction. Bientôt, vous trouverez ici plus d'informations sur le projet Freetool." },
   it: { title: "Su di noi", desc: "Questa pagina è in costruzione. Presto troverai qui maggiori informazioni sul progetto Freetool." },
-  id: { title: "Tentang Kami", desc: "Halaman ini sedang dalam pembangunan. Segera Anda akan menemukan informasi lebih lanjut tentang proyek Freetool di sini." }
+  id: { title: "Tentang Kami", desc: "Halaman ini sedang dalam pembangunan. Segera Anda akan menemukan informasi lebih lanjut tentang proyek Freetool di sini." },
+  de: { title: "Über uns", desc: "Diese Seite befindet sich im Aufbau. In Kürze findest du hier weitere Informationen über das Freetool-Projekt." },
+  nl: { title: "Over ons", desc: "Deze pagina is in aanbouw. Binnenkort vind je hier meer informatie over het Freetool-project." }
 }
 </i18n>

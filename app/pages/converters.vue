@@ -20,7 +20,8 @@ defineI18nRoute({
     fr: '/convertisseurs',
     it: '/convertitori',
     id: '/konverter',
-    de: '/umrechner'
+    de: '/umrechner',
+    nl: '/converters'
   }
 })
 </script>
@@ -180,7 +181,7 @@ defineI18nRoute({
     },
     de: {
         title: "Umrechner-Tools",
-        meta: "Kostenlose Online-Umrechner: Einheiten, Temperatur, Zeit, römische Zahlen, URL, LESS zu CSS, XML/JSON und mehr. Daten sofort umrechnen!",
+        meta: "Kostenlose Online-Umrechner: Einheiten, Temperatur, Zeit, römische Zahlen, URL, LESS zu CSS, XML/JSON and mehr. Daten sofort umrechnen!",
         desc: "Wandle Längen-, Temperatur- und Zeiteinheiten um, kodiere und dekodiere URLs, konvertiere römische Zahlen und wechsle zwischen Datenformaten wie XML, JSON und CSV. Die gesamte Verarbeitung läuft in deinem Browser und es ist keine Installation erforderlich.",
         devs: "Für Entwickler",
         roman: "Römische Zahlen",
@@ -195,6 +196,24 @@ defineI18nRoute({
         jsonToCsv: "JSON → CSV",
         num: "Zahlenbasen",
         unit: "Speichereinheiten",
+    },
+    nl: {
+        title: "Conversietools",
+        meta: "Gratis online converters: eenheden, temperatuur, tijd, Romeinse cijfers, URL, LESS naar CSS, XML/JSON en meer. Converteer gegevens direct!",
+        desc: "Converteer eenheden voor lengte, temperatuur en tijd, codeer en decodeer URL's, converteer Romeinse cijfers en schakel tussen gegevensformaten zoals XML, JSON en CSV. Alle verwerking vindt plaats in je browser en er is geen installatie vereist.",
+        devs: "Voor ontwikkelaars",
+        roman: "Romeinse cijfers",
+        length: "Lengte",
+        temperature: "Temperatuur",
+        time: "Tijd",
+        url: "URL/Link",
+        less: "LESS → CSS",
+        xmlToJson: "XML → JSON",
+        jsonToXml: "JSON → XML",
+        csvToJson: "CSV → JSON",
+        jsonToCsv: "JSON → CSV",
+        num: "Getalstelsels",
+        unit: "Opslageenheden",
     }
 }
 </i18n>

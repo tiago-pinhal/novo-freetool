@@ -20,7 +20,8 @@ defineI18nRoute({
         fr: '/donnees-aleatoires',
         it: '/dati-casuali',
         id: '/data-acak',
-        de: '/zufallsdaten'
+        de: '/zufallsdaten',
+        nl: '/willekeurige-gegevens'
     }
 })
 </script>
@@ -190,6 +191,20 @@ defineI18nRoute({
         rg: "RG-Generator 🇧🇷",
         uuid: "UUID-Generator",
         devs: "Für Entwickler"
+    },
+    nl: {
+        title: "Willekeurige gegevensgeneratoren",
+        meta: "Gratis online willekeurige gegevensgeneratoren: getallen, wachtwoorden, CPF, CNPJ, RG, creditcards en UUID. Genereer direct testgegevens!",
+        desc: "Met deze tools kun je willekeurige getallen, veilige wachtwoorden en fictieve gegevens genereren voor testen en ontwikkeling. Perfect voor ontwikkelaars en testers. Direct en geen installatie vereist.",
+        available_generators: "Beschikbare generatoren",
+        cc: "Creditcardgenerator",
+        number: "Willekeurige getallengenerator",
+        pass: "Wachtwoordgenerator",
+        cpf: "CPF-generator 🇧🇷",
+        cnpj: "CNPJ-generator 🇧🇷",
+        rg: "RG-generator 🇧🇷",
+        uuid: "UUID-generator",
+        devs: "Voor ontwikkelaars"
     }
 }
 </i18n>

@@ -20,7 +20,8 @@ defineI18nRoute({
         fr: '/outils-pour-dates-et-heures',
         it: '/strumenti-per-date-e-ore',
         id: '/alat-tanggal-dan-waktu',
-        de: '/werkzeuge-fuer-datum-und-uhrzeit'
+        de: '/werkzeuge-fuer-datum-und-uhrzeit',
+        nl: '/datum-en-tijd-tools'
     }
 })
 </script>
@@ -229,6 +230,23 @@ defineI18nRoute({
         time: "Zeit-Umrechner",
         unix: "Unix-Zeitstempel-Umrechner",
         devs: "Für Entwickler"
+    },
+    nl: {
+        title: "Datum- en tijdtools",
+        meta: "Gratis online datum- en tijdtools: bereken verschillen, genereer datums, leeftijdscalculator, crontab-generator en meer. Vereenvoudig tijdberekeningen!",
+        desc: "Met deze tools kun je met gemak verschillen tussen datums en tijden berekenen, willekeurige datums genereren, leeftijden berekenen en cron-expressies maken. Direct, nauwkeurig en geen installatie vereist.",
+        dt: "Datumverschil",
+        times: "Tijdverschil",
+        diff: "Datum- en tijdverschil",
+        birth: "Geboortedatumgenerator",
+        age: "Leeftijdscalculator",
+        hour: "Uren- en minutencalculator",
+        cron: "Crontab-generator",
+        future: "Toekomstige datumcalculator",
+        past: "Verleden datumcalculator",
+        time: "Tijdconverter",
+        unix: "Unix timestamp-converter",
+        devs: "Voor ontwikkelaars"
     }
 }
 </i18n>

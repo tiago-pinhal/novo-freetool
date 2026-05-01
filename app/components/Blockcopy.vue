@@ -90,6 +90,7 @@ async function copy() {
   fr: { copy: "Copier", copied: "Copié !" },
   it: { copy: "Copia", copied: "Copiato!" },
   id: { copy: "Salin", copied: "Disalin!" },
-  de: { copy: "Kopieren", copied: "Kopiert!" }
+  de: { copy: "Kopieren", copied: "Kopiert!" },
+  nl: { copy: "Kopiëren", copied: "Gekopieerd!" }
 }
 </i18n>

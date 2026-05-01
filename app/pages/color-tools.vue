@@ -19,7 +19,8 @@ defineI18nRoute({
         fr: '/outils-pour-couleurs',
         it: '/strumenti-per-colori',
         id: '/alat-warna',
-        de: '/farb-werkzeuge'
+        de: '/farb-werkzeuge',
+        nl: '/kleurtools'
     }
 })
 </script>
@@ -135,6 +136,16 @@ defineI18nRoute({
         contrast: "Farbkontrast",
         converter: "Farbkonverter",
         combination: "Farbkombination",
+    },
+    nl: {
+        title: "Kleurtools",
+        meta: "Gratis online kleurtools: willekeurige paletten, afbeeldingskleurextractor, kleurconverter en kleurcombinaties. Geen installatie nodig!",
+        desc: "Genereer willekeurige kleurenpaletten, haal dominante kleuren rechtstreeks uit een afbeelding, schakel tussen kleurformaten en stel harmonieuze combinaties samen. Alles draait in je browser, je bestanden verlaten je apparaat nooit en er is geen installatie nodig.",
+        random: "Willekeurige kleuren",
+        dominant: "Afbeeldingskleuren",
+        contrast: "Kleurcontrast",
+        converter: "Kleurconverter",
+        combination: "Kleurcombinatie",
     }
 }
 </i18n>

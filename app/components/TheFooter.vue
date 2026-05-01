@@ -55,4 +55,9 @@ de:
     a: "Über uns"
     p: "Datenschutzrichtlinie"
     t: "Nutzungsbedingungen"
+nl:
+    r: "Alle rechten voorbehouden"
+    a: "Over ons"
+    p: "Privacybeleid"
+    t: "Voorwaarden"
 </i18n>

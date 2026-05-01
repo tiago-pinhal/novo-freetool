@@ -20,7 +20,8 @@ defineI18nRoute({
         fr: '/outils-pour-textes',
         it: '/strumenti-per-testi',
         id: '/alat-teks',
-        de: '/textwerkzeuge'
+        de: '/textwerkzeuge',
+        nl: '/teksttools'
     }
 })
 </script>
@@ -153,6 +154,17 @@ defineI18nRoute({
         diff: "Textvergleicher",
         count: "Textzähler",
         lorem: "Textgenerator"
+    },
+    nl: {
+        title: "Teksttools",
+        meta: "Gratis online teksttools: woordenteller, tekstgenerator, converter, vergelijker, bijzondere letters en ASCII-kunst. Verhoog je productiviteit!",
+        desc: "Transformeer hoofdletters en kleine letters, vergelijk documenten, tel woorden, genereer placeholder-tekst, maak bijzondere letters en ASCII-kunst. Alle verwerking vindt plaats in je browser, je gegevens verlaten je apparaat nooit en er is geen installatie nodig.",
+        asc: "ASCII-letters",
+        fonts: "Bijzondere letters",
+        txt: "Tekstconverter",
+        diff: "Tekstvergelijker",
+        count: "Tekstteller",
+        lorem: "Tekstgenerator"
     }
 }
 </i18n>

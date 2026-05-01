@@ -31,6 +31,8 @@ usePageJsonLd({
   es: { title: "Política de Privacidad", desc: "Esta página está en construcción. Pronto encontrarás aqui nuestra Política de Privacidad." },
   fr: { title: "Politique de Confidentialité", desc: "Cette page est en construction. Bientôt, vous trouverez ici notre Politique de Confidentialité." },
   it: { title: "Informativa sulla Privacy", desc: "Questa pagina è in costruzione. Presto troverai qui la nostra Informativa sulla Privacy." },
-  id: { title: "Kebijakan Privasi", desc: "Halaman ini sedang dalam pembangunan. Segera Anda akan menemukan Kebijakan Privasi kami di sini." }
+  id: { title: "Kebijakan Privasi", desc: "Halaman ini sedang dalam pembangunan. Segera Anda akan menemukan Kebijakan Privasi kami di sini." },
+  de: { title: "Datenschutzbestimmungen", desc: "Diese Seite befindet sich im Aufbau. In Kürze findest du hier unsere Datenschutzbestimmungen." },
+  nl: { title: "Privacybeleid", desc: "Deze pagina is in aanbouw. Binnenkort vind je hier ons privacybeleid." }
 }
 </i18n>

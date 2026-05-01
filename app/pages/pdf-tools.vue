@@ -19,7 +19,8 @@ defineI18nRoute({
         fr: '/outils-pour-pdf',
         it: '/strumenti-per-pdf',
         id: '/alat-pdf',
-        de: '/pdf-werkzeuge'
+        de: '/pdf-werkzeuge',
+        nl: '/pdf-tools'
     }
 })
 </script>
@@ -128,6 +129,15 @@ defineI18nRoute({
         split: "PDF aufteilen",
         num: "PDF nummerieren",
         to_img: "PDF zu Bild",
+    },
+    nl: {
+        title: "PDF-tools",
+        meta: "Gratis online PDF-tools: bewerken, splitsen, pagina's nummeren en PDF naar afbeelding converteren. Krachtige documentmanipulatie zonder software-installatie!",
+        desc: "Bewerk, splits en nummer PDF-pagina's of converteer bestanden naar afbeeldingen, allemaal zonder je browser te verlaten. Je documenten verlaten je apparaat nooit en er is geen software-installatie vereist.",
+        edit: "PDF bewerken",
+        split: "PDF splitsen",
+        num: "PDF nummeren",
+        to_img: "PDF naar afbeelding",
     }
 }
 </i18n>

@@ -31,6 +31,8 @@ usePageJsonLd({
   es: { title: "Términos de Uso", desc: "Esta página está en construcción. Pronto encontrarás aqui nossos Términos de Uso." },
   fr: { title: "Conditions d'Utilisation", desc: "Cette page est en construction. Bientôt, vous trouverez ici nos Conditions d'Utilisation." },
   it: { title: "Termini di Utilizzo", desc: "Questa pagina è in costruzione. Presto troverai qui i nostri Termini di Utilizzo." },
-  id: { title: "Ketentuan Penggunaan", desc: "Halaman ini sedang dalam pembangunan. Segera Anda akan menemukan Ketentuan Penggunaan kami di sini." }
+  id: { title: "Ketentuan Penggunaan", desc: "Halaman ini sedang dalam pembangunan. Segera Anda akan menemukan Ketentuan Penggunaan kami di sini." },
+  de: { title: "Nutzungsbedingungen", desc: "Diese Seite befindet sich im Aufbau. In Kürze findest du hier unsere Nutzungsbedingungen." },
+  nl: { title: "Gebruiksvoorwaarden", desc: "Deze pagina is in aanbouw. Binnenkort vind je hier onze gebruiksvoorwaarden." }
 }
 </i18n>

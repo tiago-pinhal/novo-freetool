@@ -180,6 +180,21 @@ const toolCategories = [
         fmt: "Code formatieren",
         conv: "Konverter",
         misc: "Verschiedene Tools"
+    },
+    nl: {
+        d1: "Welkom bij",
+        d2: "Vereenvoudig je taken met gratis online tools, inclusief oplossingen voor softwareontwikkelaars.",
+        d3: "Blader per categorie",
+        pdf: "PDF-tools",
+        clr: "Kleuren",
+        img: "Afbeeldingen",
+        txt: "Teksten",
+        dts: "Datum & Tijd",
+        rand: "Willekeurige gegevens",
+        min: "Code-minifiers",
+        fmt: "Code-formatteerders",
+        conv: "Converters",
+        misc: "Diverse tools"
     }
 }
 </i18n>

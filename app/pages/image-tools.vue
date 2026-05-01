@@ -19,7 +19,8 @@ defineI18nRoute({
         fr: '/outils-pour-images',
         it: '/strumenti-per-immagini',
         id: '/alat-gambar',
-        de: '/bild-werkzeuge'
+        de: '/bild-werkzeuge',
+        nl: '/afbeeldingstools'
     }
 })
 </script>
@@ -164,6 +165,18 @@ defineI18nRoute({
         cropper: "Bild zuschneiden",
         resizer: "Bildgröße ändern",
         img_pdf: "Bild zu PDF",
+    },
+    nl: {
+        title: "Afbeeldingstools",
+        meta: "Gratis online afbeeldingstools: emoji-kiezer, symboolkiezer, QR-code- en barcodegeneratoren, afbeelding bijsnijden, formaat wijzigen en afbeelding naar PDF converter. Geen installatie nodig!",
+        desc: "Kies emoji's en symbolen, genereer QR-codes en barcodes, snijd afbeeldingen bij en wijzig het formaat of converteer ze zelfs naar PDF. Alle verwerking vindt plaats in je browser, je bestanden verlaten je apparaat nooit en er is geen installatie nodig.",
+        emoji: "Emoji-kiezer",
+        symbol: "Symboolkiezer",
+        qr: "QR-codegenerator",
+        barcode: "Barcodegenerator",
+        cropper: "Bijsnijden",
+        resizer: "Formaat wijzigen",
+        img_pdf: "Afbeelding naar PDF",
     }
 }
 </i18n>
