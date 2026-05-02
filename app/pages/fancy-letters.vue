@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { dfs, f1, f2, f3, f4, f5, d1 } from '~/assets/js/fonts.js'
 
-const { t } = useI18n({ useScope: 'local' })
+const { t, locale } = useI18n({ useScope: 'local' })
+
+const MAX_INPUT_LENGTH = 60
+const COPY_FEEDBACK_MS = 2000
+const COMBINING_DIACRITICS = /[\u0300-\u036f]/g
 
 usePageJsonLd({
   name: t('title'),
@@ -18,13 +22,22 @@ usePageJsonLd({
     { question: t('faq_2_q'), answer: t('faq_2_a') },
     { question: t('faq_3_q'), answer: t('faq_3_a') },
     { question: t('faq_4_q'), answer: t('faq_4_a') },
-    { question: t('faq_5_q'), answer: t('faq_5_a') }
+    { question: t('faq_5_q'), answer: t('faq_5_a') },
+    { question: t('faq_6_q'), answer: t('faq_6_a') },
+    { question: t('faq_7_q'), answer: t('faq_7_a') }
   ]
 })
 
-useHead({
+useSeoMeta({
   title: t('m_title'),
-  meta: [{ name: 'description', content: t('meta') }]
+  description: t('meta'),
+  ogTitle: t('m_title'),
+  ogDescription: t('meta'),
+  ogType: 'website',
+  ogLocale: locale.value === 'pt' ? 'pt_BR' : locale.value,
+  twitterCard: 'summary_large_image',
+  twitterTitle: t('m_title'),
+  twitterDescription: t('meta')
 })
 
 function toArray(text: string): string[] {
@@ -35,19 +48,18 @@ function toArray(text: string): string[] {
 }
 
 const allFonts: string[][] = []
-
 for (const font of f1) allFonts.push(toArray(font))
 for (const font of f2) allFonts.push(font.split(' '))
 
 const fontStyles = [
-  { name: 'st_cursive',  desc: 'st_cursive_d'  },
-  { name: 'st_gothic',   desc: 'st_gothic_d'   },
-  { name: 'st_bubble',   desc: 'st_bubble_d'   },
-  { name: 'st_square',   desc: 'st_square_d'   },
-  { name: 'st_mono',     desc: 'st_mono_d'     },
-  { name: 'st_invert',   desc: 'st_invert_d'   },
-  { name: 'st_manga',    desc: 'st_manga_d'    },
-  { name: 'st_zalgo',    desc: 'st_zalgo_d'    }
+  { name: 'st_cursive', desc: 'st_cursive_d' },
+  { name: 'st_gothic',  desc: 'st_gothic_d'  },
+  { name: 'st_bubble',  desc: 'st_bubble_d'  },
+  { name: 'st_square',  desc: 'st_square_d'  },
+  { name: 'st_mono',    desc: 'st_mono_d'    },
+  { name: 'st_invert',  desc: 'st_invert_d'  },
+  { name: 'st_manga',   desc: 'st_manga_d'   },
+  { name: 'st_zalgo',   desc: 'st_zalgo_d'   }
 ]
 
 const state = reactive({
@@ -55,13 +67,14 @@ const state = reactive({
   letters: [] as string[],
   decorations: d1.replaceAll('t', t('text')).split('&') as string[],
   selectedDecoration: null as string | null,
-  copiedIndex: null as number | null
+  copiedIndex: null as number | null,
+  copyAnnouncement: ''
 })
 
 function convert(text: string) {
   const raw = text.trim()
-  const src = raw === '' ? 'FreeTool' : raw
-  const noAccents = src.normalize('NFD').replace(/[̀-ͯ]/g, '')
+  const src = raw === '' ? t('preview_text') : raw
+  const noAccents = src.normalize('NFD').replace(COMBINING_DIACRITICS, '')
   const letters: string[] = []
 
   for (const font of allFonts) {
@@ -103,12 +116,22 @@ watch(() => state.selectedDecoration, () => {
   convert(state.text)
 })
 
+function clearInput() {
+  state.text = ''
+}
+
 async function copy(text: string, index: number) {
   try {
     await navigator.clipboard.writeText(text)
     state.copiedIndex = index
-    setTimeout(() => { state.copiedIndex = null }, 2000)
-  } catch {}
+    state.copyAnnouncement = t('copied_announce')
+    setTimeout(() => {
+      state.copiedIndex = null
+      state.copyAnnouncement = ''
+    }, COPY_FEEDBACK_MS)
+  } catch {
+    // Fallback silencioso — navegadores antigos sem Clipboard API
+  }
 }
 
 defineI18nRoute({
@@ -137,22 +160,40 @@ defineI18nRoute({
   >
     <div class="space-y-5 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
-      <!-- Input -->
+      <!-- Input principal com contador e botão limpar -->
       <div class="form-control w-full">
         <label for="fancy-input" class="label">
           <span class="label-text font-bold text-base-content">{{ t('in_label') }}</span>
+          <span class="label-text-alt text-base-content/50 text-sm">
+            {{ state.text.length }} / {{ MAX_INPUT_LENGTH }}
+          </span>
         </label>
-        <input
-          id="fancy-input"
-          v-model="state.text"
-          type="text"
-          class="input input-bordered input-lg w-full bg-base-200 focus:bg-base-200 transition-all rounded-2xl"
-          :placeholder="t('plc')"
-          autofocus
-        />
+        <div class="relative">
+          <input
+            id="fancy-input"
+            v-model="state.text"
+            type="text"
+            :maxlength="MAX_INPUT_LENGTH"
+            class="input input-bordered input-lg w-full bg-base-200 focus:bg-base-200 transition-all rounded-2xl pr-12"
+            :placeholder="t('plc')"
+            enterkeyhint="done"
+            autocomplete="off"
+            spellcheck="false"
+            autofocus
+          />
+          <button
+            v-if="state.text.length > 0"
+            type="button"
+            @click="clearInput"
+            :aria-label="t('clear')"
+            class="absolute right-3 top-1/2 -translate-y-1/2 btn btn-circle btn-ghost btn-xs text-base-content/40 hover:text-base-content"
+          >
+            <Icon name="material-symbols:close-rounded" class="w-4 h-4" aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
-      <!-- Decoration Select -->
+      <!-- Seletor de decoração -->
       <div class="form-control w-full sm:w-fit">
         <label for="decoration-select" class="label">
           <span class="label-text font-semibold text-base-content">{{ t('decoration') }}</span>
@@ -160,18 +201,18 @@ defineI18nRoute({
         <select
           id="decoration-select"
           v-model="state.selectedDecoration"
-          class="select select-bordered bg-base-200 rounded-2xl w-full sm:w-auto"
+          class="select select-bordered bg-base-200 rounded-2xl w-full sm:w-auto ml-2"
         >
           <option :value="null">{{ t('no_deco') }}</option>
           <option v-for="dec in state.decorations" :key="dec" :value="dec">{{ dec }}</option>
         </select>
       </div>
 
-      <!-- Results — height fixo elimina CLS -->
+      <!-- Lista de resultados (altura fixa para evitar CLS) -->
       <ul
         class="bg-base-100 rounded-2xl border border-base-content/10 shadow-sm overflow-y-auto"
         style="height: 420px"
-        aria-label="Resultados"
+        :aria-label="t('results_label')"
       >
         <li
           v-for="(letter, i) in state.letters"
@@ -206,6 +247,16 @@ defineI18nRoute({
         </li>
       </ul>
 
+      <!-- Anúncio acessível para leitores de tela ao copiar -->
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        class="sr-only"
+      >
+        {{ state.copyAnnouncement }}
+      </div>
+
     </div>
 
     <template #info>
@@ -218,7 +269,8 @@ defineI18nRoute({
           :items="[
             { title: t('uc_1_title'), description: t('uc_1_desc') },
             { title: t('uc_2_title'), description: t('uc_2_desc') },
-            { title: t('uc_3_title'), description: t('uc_3_desc') }
+            { title: t('uc_3_title'), description: t('uc_3_desc') },
+            { title: t('uc_4_title'), description: t('uc_4_desc') }
           ]"
         />
 
@@ -231,9 +283,10 @@ defineI18nRoute({
           ]"
         />
 
-        <!-- Glossário de Estilos -->
+        <!-- Glossário de estilos -->
         <div>
           <h2 class="text-xl font-bold mb-4">{{ t('styles_title') }}</h2>
+          <p class="text-base-content mb-4">{{ t('styles_intro') }}</p>
           <div class="grid gap-3 sm:grid-cols-2">
             <div
               v-for="style in fontStyles"
@@ -241,12 +294,19 @@ defineI18nRoute({
               class="flex gap-2"
             >
               <span class="text-primary font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span>
-              <p class="text-sm">
+              <p>
                 <strong>{{ t(style.name) }}:</strong>
                 {{ t(style.desc) }}
               </p>
             </div>
           </div>
+        </div>
+
+        <!-- Seção educacional: substitui o keyword stuffing antigo -->
+        <div>
+          <h2 class="text-xl font-bold mb-3">{{ t('unicode_title') }}</h2>
+          <p class="text-base-content leading-relaxed">{{ t('unicode_p1') }}</p>
+          <p class="text-base-content leading-relaxed mt-2">{{ t('unicode_p2') }}</p>
         </div>
 
         <FaqSection
@@ -256,15 +316,11 @@ defineI18nRoute({
             { question: t('faq_2_q'), answer: t('faq_2_a') },
             { question: t('faq_3_q'), answer: t('faq_3_a') },
             { question: t('faq_4_q'), answer: t('faq_4_a') },
-            { question: t('faq_5_q'), answer: t('faq_5_a') }
+            { question: t('faq_5_q'), answer: t('faq_5_a') },
+            { question: t('faq_6_q'), answer: t('faq_6_a') },
+            { question: t('faq_7_q'), answer: t('faq_7_a') }
           ]"
         />
-
-        <!-- Lista de fontes para SEO -->
-        <div>
-          <p class="text-sm font-semibold mb-1 text-base-content/70">{{ t('fonts_included') }}</p>
-          <p class="text-xs text-base-content/40 leading-relaxed">{{ t('fonts_list') }}</p>
-        </div>
 
       </div>
     </template>
@@ -274,64 +330,83 @@ defineI18nRoute({
 <i18n lang="yaml">
 {
   pt: {
-    m_title: "Gerador de Letras Diferentes Online para Copiar e Colar Grátis",
-    title: "Letras Diferentes e Bonitas",
-    meta: "Crie letras diferentes, bonitas e personalizadas para Instagram, WhatsApp e jogos. Dezenas de estilos prontos para copiar e colar.",
-    d1: "Transforme seu texto comum em algo único e cheio de estilo. Nosso gerador cria dezenas de variações com fontes cursivas, góticas e decoradas para você personalizar sua bio, nicks de jogos e mensagens em qualquer plataforma.",
+    m_title: "Gerador de Letras Diferentes e Fontes Bonitas para Copiar e Colar",
+    title: "Gerador de Letras Diferentes e Bonitas",
+    meta: "Gere letras diferentes e estilizadas para Instagram, WhatsApp, Discord e jogos. Mais de 30 estilos de fontes únicas para copiar e colar com um clique.",
+    d1: "Transforme qualquer texto comum em algo único, decorativo e cheio de personalidade. Esta ferramenta gera dezenas de variações ao mesmo tempo, com fontes cursivas, góticas, bolha, monoespaçadas, invertidas e muitas outras, prontas para você usar na bio do Instagram, em nicks de jogos, status do WhatsApp ou em qualquer aplicativo que aceite texto.",
     in_label: "Seu texto",
     plc: "Digite seu nome, frase ou nick aqui...",
+    preview_text: "Exemplo",
     text: "Texto",
-    decoration: "Símbolos",
+    decoration: "Símbolos e Bordas:",
     no_deco: "Sem decoração",
     copy: "Copiar",
+    clear: "Limpar texto",
+    copied_announce: "Texto copiado para a área de transferência",
+    results_label: "Lista de estilos gerados",
+
     use_cases_title: "Onde usar suas letras personalizadas",
-    uc_1_title: "Instagram, TikTok e Redes Sociais",
-    uc_1_desc: "Destaque sua bio, legenda ou nome de perfil com fontes decorativas. Como são símbolos prontos para uso, funcionam em qualquer plataforma sem precisar instalar nada.",
-    uc_2_title: "Nicknames para Jogos",
-    uc_2_desc: "Crie nicks exclusivos para Free Fire, Roblox, Fortnite e outros. Combine estilos com os símbolos decorativos para um visual profissional no seu perfil gamer.",
-    uc_3_title: "WhatsApp e Mensagens",
-    uc_3_desc: "Deixe seus status e mensagens com um visual único. Os caracteres funcionam em praticamente todos os aplicativos e redes sociais modernos.",
+    uc_1_title: "Instagram, TikTok e redes sociais",
+    uc_1_desc: "Destaque a bio, a legenda ou o nome do seu perfil com fontes decorativas. Como tudo é baseado em símbolos universais, funciona direto, sem instalar nenhum aplicativo extra.",
+    uc_2_title: "Nicknames para jogos online",
+    uc_2_desc: "Crie nicks únicos para Free Fire, Roblox, Fortnite, Valorant e outros. Combine estilos com bordas decorativas para um visual marcante no seu perfil de jogador.",
+    uc_3_title: "WhatsApp, Telegram e Discord",
+    uc_3_desc: "Personalize seu nome de exibição, status, recados e mensagens. Os caracteres funcionam em praticamente todos os aplicativos de mensagem modernos.",
+    uc_4_title: "E-mails, apresentações e currículos",
+    uc_4_desc: "Use com moderação para destacar títulos, citações ou seções específicas em comunicações digitais. Ideal para chamar atenção em assuntos de e-mail e slides.",
+
     how_it_works_title: "Como usar o gerador de letras bonitas",
     hiw_1_title: "Digite ou cole seu texto",
-    hiw_1_desc: "Escreva seu nome, frase ou nick no campo acima. Os resultados aparecerão automaticamente em dezenas de estilos diferentes.",
-    hiw_2_title: "Adicione símbolos (opcional)",
-    hiw_2_desc: "Use o seletor de símbolos para adicionar bordas ou efeitos decorativos. Explore as combinações até encontrar o seu estilo favorito.",
-    hiw_3_title: "Copie e cole!",
-    hiw_3_desc: "Clique no ícone de cópia ao lado do estilo que você mais gostou e cole direto na sua rede social, jogo ou aplicativo preferido.",
-    styles_title: "Conheça os estilos de letras disponíveis",
-    st_cursive: "Cursiva / Script",
-    st_cursive_d: "Imita uma caligrafia elegante e fluida. Ideal para biografias sofisticadas, nomes artísticos e convites digitais.",
-    st_gothic: "Gótica / Fraktur",
-    st_gothic_d: "Traços fortes inspirados em manuscritos medievais. Perfeita para quem busca um visual com mais peso e tradição.",
+    hiw_1_desc: "Escreva seu nome, frase ou nick no campo principal. Os resultados aparecem automaticamente em mais de 30 estilos diferentes, sem precisar clicar em gerar.",
+    hiw_2_title: "Adicione bordas e símbolos (opcional)",
+    hiw_2_desc: "Use o seletor de decoração para envolver o texto com molduras de estrelas, corações, ondas e outros enfeites. Combine estilos até encontrar o visual perfeito.",
+    hiw_3_title: "Copie e cole onde quiser",
+    hiw_3_desc: "Clique no ícone ao lado do estilo que mais gostou. O texto vai direto para a área de transferência, pronto para colar na sua rede social, jogo ou aplicativo.",
+
+    styles_title: "Estilos de letras disponíveis",
+    styles_intro: "A ferramenta cobre as principais categorias de fontes Unicode usadas em redes sociais e jogos. Veja abaixo o que cada uma representa:",
+    st_cursive: "Cursiva e Script",
+    st_cursive_d: "Imitam uma caligrafia elegante e fluida. Ideais para biografias sofisticadas, nomes artísticos e convites digitais.",
+    st_gothic: "Gótica e Fraktur",
+    st_gothic_d: "Traços fortes inspirados em manuscritos medievais. Boa escolha para um visual com peso, tradição ou pegada heavy metal.",
     st_bubble: "Bolha (Bubble)",
-    st_bubble_d: "Letras arredondadas e divertidas, que parecem bolhas infladas. Ótima para mensagens casuais e perfis lúdicos.",
-    st_square: "Quadrado",
-    st_square_d: "Caracteres inseridos em molduras quadradas, criando um visual geométrico e moderno muito popular em nicks de jogos.",
-    st_mono: "Monoespaçado (Retro)",
-    st_mono_d: "Cada caractere ocupa o mesmo espaço, lembrando máquinas de escrever. Ideal para uma estética limpa e minimalista.",
-    st_invert: "Invertido / Upside Down",
-    st_invert_d: "Texto virado de cabeça para baixo ou espelhado. Perfeito para criar efeitos visuais inusitados e brincadeiras nas redes.",
+    st_bubble_d: "Letras arredondadas e divertidas, que parecem bolhas infladas. Funcionam bem em mensagens casuais e perfis lúdicos.",
+    st_square: "Quadrada (Square)",
+    st_square_d: "Caracteres dentro de molduras quadradas, criando um visual geométrico e moderno muito usado em nicks de jogos.",
+    st_mono: "Monoespaçada (Retro)",
+    st_mono_d: "Cada caractere ocupa exatamente o mesmo espaço, lembrando máquinas de escrever e terminais. Estética limpa e minimalista.",
+    st_invert: "Invertida e Espelhada",
+    st_invert_d: "Texto virado de cabeça para baixo ou refletido. Útil para efeitos visuais inusitados e brincadeiras nas redes.",
     st_manga: "Mangá",
-    st_manga_d: "Inspirado na tipografia de quadrinhos japoneses, com traços dinâmicos que dão movimento ao texto.",
-    st_zalgo: "Zalgo / Glitch",
-    st_zalgo_d: "Efeito de texto 'corrompido' com símbolos sobrepostos. Muito usado em estéticas de terror, mistério ou cyberpunk.",
-    faq_title: "Perguntas Frequentes (FAQ)",
+    st_manga_d: "Inspirada na tipografia de quadrinhos japoneses, com traços dinâmicos que dão movimento ao texto.",
+    st_zalgo: "Zalgo e Glitch",
+    st_zalgo_d: "Efeito de texto corrompido, com símbolos sobrepostos formando uma trama caótica. Combina com estéticas de terror, mistério e cyberpunk.",
+
+    unicode_title: "Por que essas letras funcionam em qualquer plataforma",
+    unicode_p1: "Apesar de parecerem fontes especiais, essas letras não são fontes no sentido técnico. São caracteres reais do padrão Unicode, o mesmo sistema universal que define os emojis e os alfabetos do mundo todo. É por isso que o resultado aparece igual no Android, iPhone, Windows ou Mac, sem precisar instalar nada.",
+    unicode_p2: "Como cada caractere é um símbolo independente, o texto pode ser colado em qualquer campo que aceite escrita comum: bio do Instagram, nome no WhatsApp, recado no Discord, nick em jogos e até em formulários. A única limitação aparece quando o aplicativo bloqueia certos blocos do Unicode por questão de moderação ou segurança.",
+
+    faq_title: "Perguntas frequentes",
     faq_1_q: "Como gerar letras diferentes para copiar e colar?",
-    faq_1_a: "É simples: digite sua frase no campo no topo desta página. Nossa ferramenta converterá seu texto instantaneamente para mais de 30 estilos diferentes. Depois, basta clicar no botão copiar e colar no seu perfil.",
-    faq_2_q: "As letras personalizadas funcionam na Bio do Instagram?",
-    faq_2_a: "Sim! Como usamos símbolos universais, o Instagram aceita essas fontes na Bio, nos comentários e nas legendas das suas postagens.",
+    faq_1_a: "Basta digitar o texto desejado no campo no topo da página. A ferramenta converte sua frase instantaneamente em mais de 30 estilos. Depois, clique no botão de copiar ao lado do estilo escolhido e cole onde quiser.",
+    faq_2_q: "As letras personalizadas funcionam na bio do Instagram?",
+    faq_2_a: "Sim. O Instagram aceita esses caracteres na bio, nos comentários, nas legendas e até nos stories. Como são símbolos Unicode universais, não há necessidade de aplicativos extras.",
     faq_3_q: "Posso usar essas letras no nome do WhatsApp?",
-    faq_3_a: "Com certeza. O WhatsApp suporta totalmente esses caracteres. Você pode usá-los no seu nome de perfil, nos status ou nas mensagens do dia a dia.",
-    faq_4_q: "Essas letras funcionam em nicks de Free Fire e Roblox?",
-    faq_4_a: "Na maioria dos casos, sim. Jogos populares como Free Fire, Roblox e Fortnite aceitam diversos símbolos e caracteres para criar nomes únicos. Alguns caracteres específicos podem não ser compatíveis dependendo das regras do jogo.",
-    faq_5_q: "Por que algumas letras aparecem como quadrados (□)?",
-    faq_5_a: "Isso acontece quando o seu dispositivo ou navegador é muito antigo e não suporta o caractere específico. No entanto, na maioria dos celulares e PCs modernos, elas aparecerão normalmente.",
-    fonts_included: "Lista de estilos incluídos no gerador",
-    fonts_list: "Negrito Serifado, Negrito Itálico, Sans-Serif, Sans-Serif Itálico, Sans-Serif Negrito, Sans-Serif Negrito Itálico, Script Cursivo, Script Negrito, Fraktur Gótico, Fraktur Negrito, Double-Struck Contorno, Quadrado, Quadrado Negativo, Circulado, Circulado Negativo, Entre Parênteses, Cherokee, Etíope, Mistura Grega, Acentos Agudos, Trema, Letras Riscadas, Invertido, Símbolos de Moeda, Mistura Grego/Coreano, Mistura Cirílico, Silabário Aborígene Canadense, CJK Estético, Monoespaçado, Versalete, Leet Speak, Sobrescrito, Largura Total, Zalgo Glitch, Decoração Sublinhada, Decoração Tachada, Decoração em Onda, Bordas com Estrelas, Bordas com Corações, Bordas com Notas Musicais, Bordas com Brilhos",
+    faq_3_a: "Sim. O WhatsApp suporta esses caracteres no nome de perfil, nas mensagens, nos status e na descrição de grupos. Vale lembrar que algumas combinações podem ficar pequenas em telas menores.",
+    faq_4_q: "Funcionam em nicks de Free Fire, Roblox, Fortnite e Valorant?",
+    faq_4_a: "Na maioria dos casos, sim. Esses jogos aceitam grande parte dos caracteres Unicode para criar nicks únicos. Alguns símbolos específicos podem ser bloqueados pelas regras internas de cada jogo, então vale testar antes de salvar.",
+    faq_5_q: "Por que algumas letras aparecem como quadrados (□) ou pontos de interrogação?",
+    faq_5_a: "Isso acontece quando o sistema operacional, navegador ou aplicativo é antigo e não tem a fonte instalada para renderizar aquele caractere específico. Em celulares e computadores atualizados, a maioria aparece sem problema.",
+    faq_6_q: "Funciona no Discord, Telegram e Twitter (X)?",
+    faq_6_a: "Sim. Discord, Telegram e Twitter aceitam todos os estilos. No Discord você pode usar no nome de exibição, nos canais e em mensagens diretas. Cada plataforma tem suas próprias regras de moderação, mas, em geral, esses caracteres são tratados como texto comum.",
+    faq_7_q: "Essas são fontes ou símbolos? Qual a diferença?",
+    faq_7_a: "Tecnicamente são símbolos Unicode, não fontes. Uma fonte muda a aparência das mesmas letras (a letra A continua sendo um A). Aqui, cada estilo é um conjunto distinto de caracteres dentro do padrão Unicode. Por isso o resultado se mantém ao copiar para qualquer aplicativo, sem depender da fonte instalada no dispositivo.",
+
     see1: "Codificador de URL",
     see2: "Gerador de Senhas",
     see3: "Randomizador de Listas",
     see4: "Extrator de E-mails",
+
     f_1: "Mais de 30 estilos de letras personalizadas",
     f_2: "Cópia rápida com um clique",
     f_3: "Compatível com Instagram, WhatsApp, Discord e jogos",
