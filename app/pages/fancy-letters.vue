@@ -332,7 +332,7 @@ defineI18nRoute({
   pt: {
     m_title: "Letras Diferentes - Gerador de Letras Bonitas - Copiar e Colar",
     title: "Letras Diferentes",
-    meta: "Gere letras diferentes e estilizadas para Instagram, WhatsApp, Discord e jogos. Mais de 30 estilos de fontes únicas para copiar e colar com um clique.",
+    meta: "Crie letras diferentes e bonitas para Instagram, WhatsApp, Free Fire e Discord. Mais de 30 estilos de fontes estilizadas prontas para copiar e colar.",
     d1: "Transforme qualquer texto comum em algo único, decorativo e cheio de personalidade. Esta ferramenta gera dezenas de variações ao mesmo tempo, com fontes cursivas, góticas, bolha, monoespaçadas, invertidas e muitas outras, prontas para você usar na bio do Instagram, em nicks de jogos, status do WhatsApp ou em qualquer aplicativo que aceite texto.",
     in_label: "Seu texto",
     plc: "Digite seu nome, frase ou nick aqui...",
