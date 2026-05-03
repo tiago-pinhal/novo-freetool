@@ -298,8 +298,8 @@ defineI18nRoute({
 <i18n lang="yaml">
 {
   pt: {
-    pageTitle: "Gerador de CPF Válido Online — Grátis e Sem Cadastro",
-    title: "Gerador de CPF Válido",
+    pageTitle: "Gerador de CPF Válido Online para Testes — Grátis",
+    title: "Gerador de CPF",
     meta: "Gere CPFs válidos online e grátis, seja por estado, um ou múltiplos CPFs de uma só vez (com ou sem pontuação). Ferramenta ideal para testes e desenvolvimento.",
 
     num: "Somente Números",
@@ -366,8 +366,8 @@ defineI18nRoute({
     see4: "Gerador de Data de Nascimento"
   },
   en: {
-    pageTitle: "Valid CPF Generator Online — Free, No Sign-Up Required",
-    title: "Valid CPF Generator",
+    pageTitle: "Valid CPF Generator Online for Testing — Free",
+    title: "CPF Generator",
     meta: "Generate valid CPFs online for free, whether by state, one or multiple CPFs at once (with or without formatting). Ideal tool for testing and development.",
 
     num: "Numbers Only",
@@ -434,8 +434,8 @@ defineI18nRoute({
     see4: "Birthday Generator"
   },
   es: {
-    pageTitle: "Generador de CPF Válido Online — Gratis y Sin Registro",
-    title: "Generador de CPF Válido",
+    pageTitle: "Generador de CPF Válido Online para Pruebas — Gratis",
+    title: "Generador de CPF",
     meta: "Genera CPFs válidos online y gratis, ya sea por estado, uno o múltiples CPFs a la vez (con o sin puntuación). Herramienta ideal para pruebas y desarrollo.",
 
     num: "Solo Números",
@@ -502,8 +502,8 @@ defineI18nRoute({
     see4: "Generador de Fecha de Nacimiento"
   },
   fr: {
-    pageTitle: "Générateur de CPF Valide en Ligne — Gratuit et Sans Inscription",
-    title: "Générateur de CPF Valide",
+    pageTitle: "Générateur de CPF Valide en Ligne pour Tests — Gratuit",
+    title: "Générateur de CPF",
     meta: "Générez des CPFs valides en ligne gratuitement, que ce soit par état, un ou plusieurs CPFs à la fois (avec ou sans ponctuation). Outil idéal pour les tests et le développement.",
 
     num: "Chiffres Uniquement",
@@ -570,8 +570,8 @@ defineI18nRoute({
     see4: "Générateur de Date de Naissance"
   },
   it: {
-    pageTitle: "Generatore di CPF Valido Online — Gratuito e Senza Registrazione",
-    title: "Generatore di CPF Valido",
+    pageTitle: "Generatore di CPF Valido Online per Test — Gratuito",
+    title: "Generatore di CPF",
     meta: "Genera CPF validi online gratuitamente, sia per stato, uno o più CPF alla volta (con o senza punteggiatura). Strumento ideale per test e sviluppo.",
 
     num: "Solo Numeri",
@@ -638,8 +638,8 @@ defineI18nRoute({
     see4: "Generatore di Data di Nascita"
 },
   id: {
-    pageTitle: "Generator CPF Valid Online — Gratis Tanpa Pendaftaran",
-    title: "Generator CPF Valid",
+    pageTitle: "Generator CPF Valid Online untuk Pengujian — Gratis",
+    title: "Generator CPF",
     meta: "Buat CPF valid online secara gratis, baik berdasarkan negara bagian, satu atau beberapa CPF sekaligus (dengan atau tanpa tanda baca). Alat ideal untuk pengujian dan pengembangan.",
 
     num: "Angka Saja",
@@ -706,8 +706,8 @@ defineI18nRoute({
     see4: "Generator Tanggal Lahir"
   },
   de: {
-    pageTitle: "Gültiger CPF-Generator Online — Kostenlos und Ohne Anmeldung",
-    title: "Gültiger CPF-Generator",
+    pageTitle: "Gültiger CPF-Generator Online für Tests — Kostenlos",
+    title: "CPF-Generator",
     meta: "Gültige CPFs kostenlos online generieren, ob nach Bundesstaat, einer oder mehrere CPFs auf einmal (mit oder ohne Interpunktion). Ideales Tool für Tests und Entwicklung.",
 
     num: "Nur Zahlen",
@@ -774,8 +774,8 @@ defineI18nRoute({
     see4: "Geburtsdatum-Generator"
   },
   nl: {
-    pageTitle: "Geldige CPF-generator Online — Gratis en Zonder Registratie",
-    title: "Geldige CPF-generator",
+    pageTitle: "Geldige CPF-generator Online voor Tests — Gratis",
+    title: "CPF-generator",
     meta: "Genereer gratis online geldige CPF's, per staat, één of meerdere CPF's tegelijk (met of zonder interpunctie). Ideale tool voor testen en ontwikkeling.",
 
     num: "Alleen cijfers",
