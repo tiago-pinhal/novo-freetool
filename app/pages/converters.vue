@@ -15,6 +15,7 @@ useHead({
 
 defineI18nRoute({
   paths: {
+    en: "/converters",
     pt: "/conversores",
     es: "/convertidores",
     fr: '/convertisseurs',

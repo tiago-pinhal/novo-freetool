@@ -15,6 +15,7 @@ useHead({
 
 defineI18nRoute({
   paths: {
+    en: "/various-tools",
     pt: "/ferramentas-diversas",
     es: "/herramientas-diversas",
     fr: '/outils-divers',

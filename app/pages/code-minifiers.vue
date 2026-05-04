@@ -15,6 +15,7 @@ useHead({
 
 defineI18nRoute({
   paths: {
+    en: '/code-minifiers',
     pt: '/minificadores-de-codigo',
     es: '/minificadores-de-codigo',
     fr: '/minificateurs-de-code',
