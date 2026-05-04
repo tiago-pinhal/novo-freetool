@@ -1,7 +1,7 @@
 <script setup lang="ts">
-useScript('https://cdn.jsdelivr.net/npm/xml-js@1.6.11/dist/xml-js.js', {
-  trigger: 'client'
-})
+  useScript('https://cdn.jsdelivr.net/npm/xml-js@1.6.11/dist/xml-js.js', {
+    trigger: 'client'
+  })
 
 const { t, locale } = useI18n({ useScope: 'local' })
 
@@ -555,7 +555,6 @@ defineI18nRoute({
     f_2: "Verwerkt geneste objecten en arrays",
     f_3: "Genereert geldige en goed gestructureerde XML",
     f_4: "Geen registratie of installatie vereist"
-  }
   }
 }
 </i18n>

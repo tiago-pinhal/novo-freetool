@@ -3,8 +3,8 @@ const { t } = useI18n({ useScope: 'local' })
 const route = useRoute()
 const router = useRouter()
 
-const nowSeconds = ref(Math.floor(Date.now() / 1000))
-const nowMs = ref(Date.now())
+const nowSeconds = ref(0)
+const nowMs = ref(0)
 const localTz = ref('UTC')
 const shareFeedback = ref(false)
 const copiedKey = ref<string | null>(null)
@@ -31,28 +31,49 @@ const timezoneOptions = computed(() => {
 })
 
 const state = reactive({
-  inputTs: Math.floor(Date.now() / 1000),
+  inputTs: 0,
   timezone: 'UTC',
   manualDate: {
-    y: new Date().getFullYear(),
-    m: new Date().getMonth() + 1,
-    d: new Date().getDate(),
-    h: new Date().getHours(),
-    min: new Date().getMinutes(),
-    s: new Date().getSeconds(),
+    y: 2024,
+    m: 1,
+    d: 1,
+    h: 0,
+    min: 0,
+    s: 0,
   },
-  deltaBase: Math.floor(Date.now() / 1000),
+  deltaBase: 0,
   delta: { d: 0, h: 0, min: 0, s: 0 },
 })
 
 onMounted(() => {
-  if (route.query.ts) state.inputTs = Number(route.query.ts)
+  const now = Date.now()
+  const nowS = Math.floor(now / 1000)
+
+  // Initialize values
+  nowSeconds.value = nowS
+  nowMs.value = now
+  if (!route.query.ts) state.inputTs = nowS
+  else state.inputTs = Number(route.query.ts)
+
+  state.deltaBase = nowS
+
+  const d = new Date()
+  state.manualDate = {
+    y: d.getFullYear(),
+    m: d.getMonth() + 1,
+    d: d.getDate(),
+    h: d.getHours(),
+    min: d.getMinutes(),
+    s: d.getSeconds(),
+  }
+
   localTz.value = Intl.DateTimeFormat().resolvedOptions().timeZone
   state.timezone = localTz.value
+
   timer = setInterval(() => {
-    const now = Date.now()
-    nowSeconds.value = Math.floor(now / 1000)
-    nowMs.value = now
+    const tick = Date.now()
+    nowSeconds.value = Math.floor(tick / 1000)
+    nowMs.value = tick
   }, 1000)
 })
 
@@ -217,28 +238,30 @@ defineI18nRoute({
     ]"
   >
     <!-- Live Timestamps -->
-    <div class="stats stats-vertical sm:stats-horizontal shadow w-full border border-base-content/10 mb-6">
-      <div class="stat">
-        <div class="stat-title text-sm uppercase tracking-widest">{{ t('live_s') }}</div>
-        <div class="stat-value font-mono text-primary text-2xl tabular-nums">{{ nowSeconds }}</div>
-        <div class="stat-actions mt-2">
-          <button @click="copyValue(nowSeconds.toString(), 'nowS')" class="btn btn-xs btn-outline">
-            <Icon :name="copiedKey === 'nowS' ? 'heroicons:check' : 'heroicons:clipboard'" class="w-3 h-3" />
-            {{ copiedKey === 'nowS' ? t('copied') : t('copy') }}
-          </button>
+    <ClientOnly>
+      <div class="stats stats-vertical sm:stats-horizontal shadow w-full border border-base-content/10 mb-6">
+        <div class="stat">
+          <div class="stat-title text-sm uppercase tracking-widest">{{ t('live_s') }}</div>
+          <div class="stat-value font-mono text-primary text-2xl tabular-nums">{{ nowSeconds }}</div>
+          <div class="stat-actions mt-2">
+            <button @click="copyValue(nowSeconds.toString(), 'nowS')" class="btn btn-xs btn-outline">
+              <Icon :name="copiedKey === 'nowS' ? 'heroicons:check' : 'heroicons:clipboard'" class="w-3 h-3" />
+              {{ copiedKey === 'nowS' ? t('copied') : t('copy') }}
+            </button>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-title text-sm uppercase tracking-widest">{{ t('live_ms') }}</div>
+          <div class="stat-value font-mono text-2xl tabular-nums">{{ nowMs }}</div>
+          <div class="stat-actions mt-2">
+            <button @click="copyValue(nowMs.toString(), 'nowMs')" class="btn btn-xs btn-outline">
+              <Icon :name="copiedKey === 'nowMs' ? 'heroicons:check' : 'heroicons:clipboard'" class="w-3 h-3" />
+              {{ copiedKey === 'nowMs' ? t('copied') : t('copy') }}
+            </button>
+          </div>
         </div>
       </div>
-      <div class="stat">
-        <div class="stat-title text-sm uppercase tracking-widest">{{ t('live_ms') }}</div>
-        <div class="stat-value font-mono text-2xl tabular-nums">{{ nowMs }}</div>
-        <div class="stat-actions mt-2">
-          <button @click="copyValue(nowMs.toString(), 'nowMs')" class="btn btn-xs btn-outline">
-            <Icon :name="copiedKey === 'nowMs' ? 'heroicons:check' : 'heroicons:clipboard'" class="w-3 h-3" />
-            {{ copiedKey === 'nowMs' ? t('copied') : t('copy') }}
-          </button>
-        </div>
-      </div>
-    </div>
+    </ClientOnly>
 
     <!-- Timestamp to Date -->
     <div class="card border border-base-content/10 bg-base-100 shadow mb-4">
@@ -278,19 +301,21 @@ defineI18nRoute({
           </button>
         </div>
         <div v-if="convertedRows.length" class="grid sm:grid-cols-2 gap-2">
-          <div
-            v-for="item in convertedRows"
-            :key="item.key"
-            class="flex items-center gap-2 p-3 rounded-lg border border-base-content/10 bg-base-200"
-          >
-            <div class="flex-1 min-w-0">
-              <p class="text-sm text-base-content/60 uppercase tracking-wider">{{ item.label }}</p>
-              <p class="font-mono text-sm truncate">{{ item.value }}</p>
+          <ClientOnly>
+            <div
+              v-for="item in convertedRows"
+              :key="item.key"
+              class="flex items-center gap-2 p-3 rounded-lg border border-base-content/10 bg-base-200"
+            >
+              <div class="flex-1 min-w-0">
+                <p class="text-sm text-base-content/60 uppercase tracking-wider">{{ item.label }}</p>
+                <p class="font-mono text-sm truncate">{{ item.value }}</p>
+              </div>
+              <button @click="copyValue(item.value, `conv_${item.key}`)" class="btn btn-xs btn-ghost shrink-0">
+                <Icon :name="copiedKey === `conv_${item.key}` ? 'heroicons:check' : 'heroicons:clipboard'" class="w-4 h-4" />
+              </button>
             </div>
-            <button @click="copyValue(item.value, `conv_${item.key}`)" class="btn btn-xs btn-ghost shrink-0">
-              <Icon :name="copiedKey === `conv_${item.key}` ? 'heroicons:check' : 'heroicons:clipboard'" class="w-4 h-4" />
-            </button>
-          </div>
+          </ClientOnly>
         </div>
       </div>
     </div>

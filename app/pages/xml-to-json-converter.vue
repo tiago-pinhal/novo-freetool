@@ -109,7 +109,8 @@ defineI18nRoute({
     fr: '/convertisseur-de-xml-en-json',
     it: '/convertitore-da-xml-a-json',
     id: '/konverter-xml-ke-json',
-    de: '/xml-zu-json-konverter'
+    de: '/xml-zu-json-konverter',
+    nl: '/xml-naar-json-converter'
   }
 })
 </script>
@@ -552,6 +553,49 @@ defineI18nRoute({
     f_2: "Unterstützung für XML-Attribute",
     f_3: "Bewahrt Datenhierarchie und Verschachtelung",
     f_4: "Keine Registrierung oder Installation erforderlich"
+  },
+  nl: {
+    m_title: "XML naar JSON Converter Online - Gratis en Direct",
+    title: "XML naar JSON Converter",
+    meta: "Converteer XML gratis online naar JSON. Plak je XML en krijg schone, geformatteerde JSON zonder dat je een tool of installatie nodig hebt.",
+    d1: "Deze tool analyseert je XML-input en koppelt elk element, attribuut en waarde aan het bijbehorende JSON-equivalent. Tags worden object keys, geneste elementen worden geneste objecten, en herhaalde tags worden automatisch gegroepeerd in arrays, waardoor de oorspronkelijke datastructuur behouden blijft.",
+    d2: "Het converteren van XML naar JSON is vooral handig bij het integreren van systemen die alleen JSON accepteren, het migreren van oude gegevens of het gebruiken van REST API's die JSON-payloads verwachten.",
+    bt: "Converteren",
+    rst: "Opnieuw beginnen",
+    copy: "Kopiëren",
+    plc: "Voer hier de XML-code in of sleep een bestand hiernaartoe",
+    attr: "XML-attributen opnemen (indien aanwezig)",
+    err: "Fout",
+    err_label: "Analysefout",
+    how_it_works_title: "Hoe het werkt",
+    hiw_1_title: "Plak je XML",
+    hiw_1_desc: "Plak of sleep je XML-bestand in de editor. Schakel de attribuut-optie in als je XML attributen gebruikt die je wilt behouden.",
+    hiw_2_title: "Klik op Converteren",
+    hiw_2_desc: "Klik op Converteren en de tool analyseert je XML en zet deze direct om naar een schone, geformatteerde JSON-structuur.",
+    hiw_3_title: "Kopieer de JSON",
+    hiw_3_desc: "De resulterende JSON verschijnt in de editor, klaar voor gebruik. Klik op Kopiëren om deze naar je klembord te kopiëren.",
+    use_cases_title: "Gebruiksvoorbeelden",
+    uc_1_title: "API-integratie",
+    uc_1_desc: "Zet XML-antwoorden van oude API's om naar JSON voor gebruik in moderne front-end apps of andere diensten.",
+    uc_2_title: "Datamigratie",
+    uc_2_desc: "Transformeer oude XML-datasets naar JSON-formaat bij het migreren van databases of het verplaatsen tussen systemen.",
+    uc_3_title: "Configuratieconversie",
+    uc_3_desc: "Vertaal XML-configuratiebestanden naar JSON voor gebruik met tools en frameworks die standaard met JSON werken.",
+    faq_title: "Vragen & Antwoorden",
+    faq_1_q: "Worden mijn XML-gegevens naar een server verzonden?",
+    faq_1_a: "Nee. De conversie vindt volledig plaats in je browser. Je gegevens verlaten je apparaat nooit.",
+    faq_2_q: "Wat gebeurt er met XML-attributen?",
+    faq_2_a: "Standaard worden attributen genegeerd. Schakel de optie 'XML-attributen opnemen' in om ze als keys met het voorvoegsel {'@'} in de JSON-output op te nemen.",
+    faq_3_q: "Wat als mijn XML herhaalde tags heeft?",
+    faq_3_a: "Herhaalde tags op hetzelfde niveau worden automatisch gegroepeerd in een JSON-array, waardoor de oorspronkelijke structuur behouden blijft.",
+    see1: "JSON → XML",
+    see2: "CSV → JSON",
+    see3: "JSON → CSV",
+    see4: "LESS → CSS",
+    f_1: "Directe XML naar JSON conversie",
+    f_2: "Ondersteuning voor XML-attributen",
+    f_3: "Behoudt datastructuur en nesting",
+    f_4: "Geen registratie of installatie vereist"
   }
 }
 </i18n>
