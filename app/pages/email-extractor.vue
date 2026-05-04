@@ -64,6 +64,7 @@ function extract() {
 
 defineI18nRoute({
   paths: {
+    en: "/email-extractor",
     pt: "/extrator-de-emails",
     es: "/extractor-de-emails",
     fr: '/extracteur-emails',

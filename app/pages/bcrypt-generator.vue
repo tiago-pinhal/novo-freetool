@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useScript('https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js', {
-  trigger: 'onNuxtReady'
+  trigger: 'client'
 })
 
 const { t, locale } = useI18n({ useScope: 'local' })

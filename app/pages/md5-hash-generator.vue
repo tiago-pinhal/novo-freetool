@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useScript('https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.js', {
-  trigger: 'onNuxtReady'
+  trigger: 'client'
 })
 
 const { t, locale } = useI18n({ useScope: 'local' })

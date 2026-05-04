@@ -15,6 +15,7 @@ useHead({
 
 defineI18nRoute({
     paths: {
+        en: "/code-formatters",
         pt: "/formatadores-de-codigo",
         es: "/formateadores-de-codigo",
         fr: '/formateurs-de-code',
