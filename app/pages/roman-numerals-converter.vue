@@ -82,7 +82,8 @@ defineI18nRoute({
     fr: '/convertisseur-de-nombres-romains',
     it: '/convertitore-di-numeri-romani',
     id: '/konverter-angka-romawi',
-    de: '/roemische-zahlen-konverter'
+    de: '/roemische-zahlen-konverter',
+    nl: '/romeinse-cijfers-converter'
   }
 })
 </script>
@@ -444,6 +445,43 @@ defineI18nRoute({
     f_2: "Römische Zahlen in arabische Zahlen umrechnen",
     f_3: "Sofortige Umrechnung im Browser",
     f_4: "Unterstützt Zahlen von 1 bis 3999"
+  },
+  nl: {
+    title: "Romeinse cijfers",
+    meta: "Zet eenvoudig om tussen Romeinse cijfers en Arabische cijfers. Voer een waarde in en converteer direct van of naar Romeinse cijfers.",
+    desc: "Met deze tool kun je Romeinse cijfers omzetten naar hun equivalent in Arabische cijfers en andersom. Voer de waarde in die je wilt converteren en klik op de knop voor de gewenste omzetting. Ideaal voor studenten, docenten of iedereen die een snelle berekening nodig heeft.",
+    in: "Voer waarde in (Romeins of Arabisch)",
+    result: "Resultaat",
+    to: "naar",
+    from: "van",
+    btn_to: "Converteren naar Romeins",
+    btn_from: "Converteren van Romeins",
+    err: "De waarde kon niet {0} Romeins worden geconverteerd",
+    how_it_works_title: "Hoe het werkt",
+    step_1_title: "Voer waarde in",
+    step_1_desc: "Typ een Arabisch getal (bijv. 2024) of een Romeins cijfer (bijv. MMXXIV) in.",
+    step_2_title: "Converteren",
+    step_2_desc: "Klik op 'Converteren naar Romeins' of 'Converteren van Romeins' afhankelijk van je invoer.",
+    step_3_title: "Kopiëren",
+    step_3_desc: "Gebruik de kopieerknop om het geconverteerde resultaat naar je klembord te sturen.",
+    use_cases_title: "Gebruiksvoorbeelden",
+    uc_1_title: "Geschiedenis en onderwijs",
+    uc_1_desc: "Ontcijfer datums op historische monumenten, in onderzoekspapers en klassieke literatuur.",
+    uc_2_title: "Architectuur en ontwerp",
+    uc_2_desc: "Lees datums van gebouwen, voorbladen van boeken en hoofdstukken die Romeinse cijfers gebruiken.",
+    faq_title: "Veelgestelde vragen",
+    faq_1_q: "Waarom is er een limiet van 3999?",
+    faq_1_a: "Standaard Romeinse cijfers gebruiken M (1000) als grootste symbool. Hoewel grotere getallen kunnen worden weergegeven met een streep (vinculum), richten de meeste standaardsystemen en deze tool zich op het bereik 1-3999 dat in algemene toepassingen wordt gebruikt.",
+    faq_2_q: "Hoe lees je Romeinse cijfers?",
+    faq_2_a: "Symbolen worden meestal opgeteld (XVI = 10+5+1 = 16). Echter, als een kleiner symbool voor een groter symbool verschijnt, wordt het afgetrokken (IV = 5-1 = 4, IX = 10-1 = 9).",
+    see1: "Getalstelsels",
+    see2: "Lengte",
+    see3: "Temperatuur",
+    see4: "Tijd",
+    f_1: "Converteer Arabische getallen naar Romeinse cijfers",
+    f_2: "Converteer Romeinse cijfers naar Arabische getallen",
+    f_3: "Directe conversie in de browser",
+    f_4: "Ondersteunt getallen van 1 tot 3999"
   }
 }
 </i18n>

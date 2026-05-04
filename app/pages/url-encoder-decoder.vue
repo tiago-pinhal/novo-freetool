@@ -52,7 +52,8 @@ defineI18nRoute({
     fr: '/encodeur-et-decodeur-d-url',
     it: '/codificatore-e-decodificatore-di-url',
     id: '/enkoder-dekoder-url',
-    de: '/url-kodierer-und-dekodierer'
+    de: '/url-kodierer-und-dekodierer',
+    nl: '/url-encoder-decoder-tool'
   }
 })
 </script>
@@ -382,6 +383,39 @@ defineI18nRoute({
     f_2: "Dekodiere kodierte URLs in ein lesbares Format",
     f_3: "Sofortiges Kodieren und Dekodieren",
     f_4: "Verarbeitung im Browser — keine Daten werden an Server gesendet"
+  },
+  nl: {
+    title: "URL Encoder & Decoder",
+    meta: "Snel URL's coderen e decoderen online. Maak uw URL's veilig voor webtransmissie door speciale tekens om te zetten in percent-gecodeerde formaten.",
+    d1: "Onze online URL Encoder & Decoder is een essentieel hulpmiddel voor webontwikkelaars e iedereen die met webadressen werkt. Het stelt u in staat om speciale tekens in een URL om te zetten naar een formaat dat veilig over het internet kan worden verzonden (encoding) of om gecodeerde URL's terug te zetten naar hun leesbare vorm (decoding).",
+    in: "Voer URL of tekst in",
+    encode: "Coderen (Encode)",
+    decode: "Decoderen (Decode)",
+    how_it_works_title: "Hoe het werkt",
+    step_1_title: "Invoer plakken",
+    step_1_desc: "Plak de tekst of URL die u wilt coderen of decoderen in het tekstvak.",
+    step_2_title: "Actie kiezen",
+    step_2_desc: "Klik op 'Coderen' om tekens naar %-formaat om te zetten, of op 'Decoderen' om %-tekens terug te zetten.",
+    step_3_title: "Resultaat gebruiken",
+    step_3_desc: "Kopieer de verwerkte tekst direct vanuit de resultaatsectie.",
+    use_cases_title: "Gebruiksvoorbeelden",
+    uc_1_title: "Query Parameters",
+    uc_1_desc: "Codeer waarden in URL-queryreeksen om fouten met spaties e speciale tekens te voorkomen.",
+    uc_2_title: "API Ontwikkeling",
+    uc_2_desc: "Decodeer API-responses of codeer verzoeken om een correcte gegevensverwerking tussen systemen te garanderen.",
+    faq_title: "Vragen & Antwoorden",
+    faq_1_q: "Wat is URL Encoding?",
+    faq_1_a: "URL encoding (ook wel percent-encoding genoemd) vervangt onveilige ASCII-tekens door een '%' gevolgd door hun hexadecimale equivalent. Spaties worden bijvoorbeeld vaak gecodeerd als %20.",
+    faq_2_q: "Waarom moeten URL's gecodeerd worden?",
+    faq_2_a: "URL's mogen alleen bepaalde tekens uit de standaard ASCII-set bevatten. Tekens daarbuiten moeten worden gecodeerd om te voorkomen dat ze verkeerd worden geïnterpreteerd door browsers of servers.",
+    see1: "LESS → CSS",
+    see2: "XML → JSON",
+    see3: "JSON → XML",
+    see4: "Getalstelsels",
+    f_1: "Codeer tekst naar URL-veilig formaat",
+    f_2: "Decodeer percent-gecodeerde URL's",
+    f_3: "Real-time e veilige verwerking",
+    f_4: "Ondersteunt UTF-8 tekens"
   }
 }
 </i18n>

@@ -65,7 +65,8 @@ defineI18nRoute({
     fr: '/convertisseur-de-longueur',
     it: '/convertitore-di-lunghezza',
     id: '/konverter-panjang',
-    de: '/laengen-umrechner'
+    de: '/laengen-umrechner',
+    nl: '/lengte-converter'
   }
 })
 </script>
@@ -503,6 +504,55 @@ defineI18nRoute({
     f_2: "Sofortige Umrechnung in Echtzeit",
     f_3: "Unterstützt metrische, imperiale und astronomische Einheiten",
     f_4: "Verarbeitung im Browser — keine Daten werden an Server gesendet"
+  },
+  nl: {
+    title: "Lengte-converter",
+    meta: "Met onze Lengtemeeteenheid-converter kun je eenvoudig omrekenen tussen verschillende meeteenheden, zoals meters, kilometers, mijlen en nog veel meer.",
+    d1: "Of je nu centimeters in inches, kilometers in mijlen, voet in meters of een andere combinatie wilt omzetten, onze tool staat klaar om aan je behoeften te voldoen. Voer eenvoudig de te converteren waarde in en selecteer de bron- en doeleenheden om direct het resultaat te krijgen.",
+    d2: "De meeteenheden die beschikbaar zijn voor conversie omvatten",
+    m: "Meter",
+    km: "Kilometer",
+    cm: "Centimeter",
+    mm: "Millimeter",
+    μm: "Micrometer",
+    nm: "Nanometer",
+    ft: "Voet",
+    in: "Inch",
+    yd: "Yard",
+    mi: "Mijl",
+    nmi: "Zeemijl",
+    ly: "Lichtjaar",
+    point: "Punt",
+    value: "Waarde",
+    from: "Van",
+    to: "Naar",
+    result: "Resultaat",
+    err: "Conversie niet uitgevoerd",
+    how_it_works_title: "Hoe het werkt",
+    step_1_title: "Voer waarde in",
+    step_1_desc: "Typ de lengtewaarde die je wilt converteren.",
+    step_2_title: "Selecteer eenheden",
+    step_2_desc: "Kies de bron- en doellengte-eenheden.",
+    step_3_title: "Resultaat kopiëren",
+    step_3_desc: "De conversie vindt direct plaats. Gebruik de kopieerknop om het naar je klembord te sturen.",
+    use_cases_title: "Gebruiksvoorbeelden",
+    uc_1_title: "Techniek & Bouw",
+    uc_1_desc: "Converteer tussen metrische e imperiale eenheden voor technische tekeningen en bouwspecificaties.",
+    uc_2_title: "Internationaal reizen",
+    uc_2_desc: "Converteer snel wegafstanden van kilometers naar mijlen of hoogtes van meters naar voet.",
+    faq_title: "Vragen & Antwoorden",
+    faq_1_q: "Wat is het verschil tussen het metrische en het imperiale systeem?",
+    faq_1_a: "Het metrische systeem is gebaseerd op decimalen (meters, kilometers), terwijl het imperiale systeem traditionele eenheden gebruikt (inches, voet, mijlen). Het grootste deel van de wereld gebruikt het metrische systeem, maar de VS en het VK gebruiken nog steeds imperiale eenheden voor veel toepassingen.",
+    faq_2_q: "Is deze converter nauwkeurig voor astronomische afstanden?",
+    faq_2_a: "Ja, het ondersteunt eenheden zoals lichtjaren en zeemijlen met hoge precisie, waardoor het geschikt is voor zowel aardse als hemelse berekeningen.",
+    see1: "Temperatuur",
+    see2: "Tijd",
+    see3: "Opslageenheden",
+    see4: "Romeinse cijfers",
+    f_1: "Converteer tussen 13 lengte-eenheden",
+    f_2: "Directe real-time conversie",
+    f_3: "Ondersteunt metrische, imperiale en astronomische eenheden",
+    f_4: "Verwerking in de browser — geen gegevens naar servers verzonden"
   }
 }
 </i18n>

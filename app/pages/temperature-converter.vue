@@ -65,7 +65,8 @@ defineI18nRoute({
     fr: '/convertisseur-de-temperature',
     it: '/convertitore-di-temperatura',
     id: '/konverter-suhu',
-    de: '/temperatur-umrechner'
+    de: '/temperatur-umrechner',
+    nl: '/temperatuur-converter'
   }
 })
 </script>
@@ -432,6 +433,45 @@ defineI18nRoute({
     f_2: "Sofortige Umrechnung in Echtzeit",
     f_3: "Unterstützt alle wichtigen Temperaturskalen",
     f_4: "Verarbeitung im Browser — keine Daten werden an Server gesendet"
+  },
+  nl: {
+    title: "Temperatuur-converter",
+    meta: "Converteer eenvoudig tussen Celsius, Fahrenheit, Kelvin en Rankine met onze gratis online temperatuur-converter.",
+    d1: "Of je nu de weersverwachting in een ander land wilt begrijpen, een wetenschappelijk experiment uitvoert of een recept volgt, onze tool biedt directe en nauwkeurige temperatuurconversies.",
+    C: "Celsius",
+    F: "Fahrenheit",
+    K: "Kelvin",
+    R: "Rankine",
+    value: "Waarde",
+    from: "Van",
+    to: "Naar",
+    result: "Resultaat",
+    err: "Conversie niet uitgevoerd",
+    how_it_works_title: "Hoe het werkt",
+    step_1_title: "Voer waarde in",
+    step_1_desc: "Typ de temperatuurwaarde die je wilt converteren.",
+    step_2_title: "Selecteer eenheden",
+    step_2_desc: "Kies de bron- en doeltemperatuurschalen.",
+    step_3_title: "Resultaat bekijken",
+    step_3_desc: "Het resultaat verschijnt direct. Gebruik de kopieerknop om het op te slaan.",
+    use_cases_title: "Gebruiksvoorbeelden",
+    uc_1_title: "Koken & Bakken",
+    uc_1_desc: "Converteer oventemperaturen tussen Celsius e Fahrenheit voor internationale recepten.",
+    uc_2_title: "Wetenschap & Techniek",
+    uc_2_desc: "Zet temperaturen om naar Kelvin voor thermodynamische berekeningen e laboratoriumwerk.",
+    faq_title: "Vragen & Antwoorden",
+    faq_1_q: "Wat is het absolute nulpunt?",
+    faq_1_a: "Het absolute nulpunt is de laagst mogelijke temperatuur waarbij alle thermische beweging stopt. Dit komt overeen met 0 Kelvin of -273,15 Celsius.",
+    faq_2_q: "Bij welke temperatuur zijn Celsius e Fahrenheit gelijk?",
+    faq_2_a: "De schalen van Celsius e Fahrenheit snijden elkaar precies op -40 graden. Dus -40°C is gelijk aan -40°F.",
+    see1: "Lengte",
+    see2: "Tijd",
+    see3: "Romeinse cijfers",
+    see4: "Getalstelsels",
+    f_1: "Converteer Celsius, Fahrenheit, Kelvin e Rankine",
+    f_2: "Directe real-time resultaten",
+    f_3: "Ondersteuning voor wetenschappelijke schalen",
+    f_4: "Privé e veilig in uw browser"
   }
 }
 </i18n>
