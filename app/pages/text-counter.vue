@@ -25,9 +25,6 @@ useHead({
   title: t('meta_title'),
   meta: [
     { name: 'description', content: t('meta') }
-  ],
-  script: [
-    { src: 'https://cdn.jsdelivr.net/npm/countable@3.0.1/Countable.js', defer: true, crossorigin: "anonymous", referrerpolicy: "no-referrer" }
   ]
 })
 
@@ -66,16 +63,8 @@ function updateCounts() {
     }
 }
 
-onMounted(() => {
-    // Attempt an initial count once script loads
-    const interval = setInterval(() => {
-        if ((window as any).Countable) {
-            updateCounts();
-            clearInterval(interval);
-        }
-    }, 100);
-    // clear after 5s just in case
-    setTimeout(() => clearInterval(interval), 5000);
+useScript('https://cdn.jsdelivr.net/npm/countable@3.0.1/Countable.js', { trigger: 'client' }).onLoaded(() => {
+    updateCounts();
 })
 
 watch(() => state.text, () => {

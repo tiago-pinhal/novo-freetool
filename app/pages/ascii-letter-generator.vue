@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, onMounted, computed } from 'vue'
+import { reactive, onMounted, computed, watch } from 'vue'
 
 const { t } = useI18n({ useScope: 'local' })
 
@@ -79,27 +79,28 @@ usePageJsonLd({
 
 useHead({
   title: t('m_title'),
-  meta: [{ name: 'description', content: t('meta') }],
-  script: [
-    { src: 'https://unpkg.com/figlet@1.5.2/lib/figlet.js', defer: true, crossorigin: 'anonymous', referrerpolicy: 'no-referrer' },
-    { src: 'https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.20/fetch.min.js', defer: true, crossorigin: 'anonymous', referrerpolicy: 'no-referrer' }
-  ]
+  meta: [{ name: 'description', content: t('meta') }]
 })
 
 onMounted(() => {
   generatePagination()
-  const interval = setInterval(() => {
-    if ((window as any).figlet) {
-      clearInterval(interval)
-      const figlet = (window as any).figlet
-      figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts' })
-      figlet.preloadFonts(['3-D'], () => {
-        state.output = figlet.textSync('Freetool', '3-D')
-        state.loading = false
-      })
-    }
-  }, 100)
-  setTimeout(() => clearInterval(interval), 10000)
+})
+
+useScript('https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.20/fetch.min.js', { trigger: 'client' })
+
+useScript('https://unpkg.com/figlet@1.5.2/lib/figlet.js', {
+  trigger: 'client'
+}).onLoaded(() => {
+  const figlet = (window as any).figlet
+  figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts' })
+  figlet.preloadFonts(['3-D'], () => {
+    state.output = figlet.textSync('Freetool', '3-D')
+    state.loading = false
+  })
+})
+
+watch([() => state.font, () => state.width, () => state.lineBreak], () => {
+  state.output = null
 })
 
 function generate() {

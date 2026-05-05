@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { dfs, f1, f2, f3, f4, f5, d1 } from '~/assets/js/fonts.js'
 
-const { t, locale } = useI18n({ useScope: 'local' })
+const { t } = useI18n({ useScope: 'local' })
 
 const MAX_INPUT_LENGTH = 60
 const COPY_FEEDBACK_MS = 2000
@@ -28,16 +28,11 @@ usePageJsonLd({
   ]
 })
 
-useSeoMeta({
+useHead({
   title: t('m_title'),
-  description: t('meta'),
-  ogTitle: t('m_title'),
-  ogDescription: t('meta'),
-  ogType: 'website',
-  ogLocale: locale.value === 'pt' ? 'pt_BR' : locale.value,
-  twitterCard: 'summary_large_image',
-  twitterTitle: t('m_title'),
-  twitterDescription: t('meta')
+  meta: [
+    { name: 'description', content: t('meta') }
+  ]
 })
 
 function toArray(text: string): string[] {

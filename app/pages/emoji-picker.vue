@@ -38,18 +38,6 @@ usePageJsonLd({
   ]
 })
 
-useSeoMeta({
-  title: t('m_title'),
-  description: t('meta'),
-  ogTitle: t('m_title'),
-  ogDescription: t('meta'),
-  ogType: 'website',
-  ogLocale: locale.value === 'pt' ? 'pt_BR' : locale.value,
-  twitterCard: 'summary_large_image',
-  twitterTitle: t('m_title'),
-  twitterDescription: t('meta')
-})
-
 const state = reactive({
   keyword: '',
   tab: 0,
