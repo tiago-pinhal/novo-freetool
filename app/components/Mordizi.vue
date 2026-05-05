@@ -34,7 +34,7 @@ const { t, locale } = useI18n({ useScope: 'local' })
   pt: {
     label: "Conheça nosso novo sistema",
     title: "Mordizi — Cardápio Digital Interativo",
-    desc: "Agilize pedidos e aumente suas vendas.",
+    desc: "Receba pedidos organizados diretamente no seu WhatsApp.",
     btnSite: "Site",
     btnPlay: "Google Play"
   }
