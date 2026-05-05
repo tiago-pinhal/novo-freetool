@@ -229,7 +229,7 @@ defineI18nRoute({
     edge_3_d: "Ajuda a verificar a estrutura de artigos, posts e textos formatados.",
     edge_4_t: "Atualização em tempo real",
     edge_4_d: "Os totais mudam automaticamente enquanto você digita ou cola um texto.",
-    faq_title: "Perguntas Frequentes",
+    faq_title: "Perguntas e Respostas",
     faq1q: "Qual a diferença entre caracteres e caracteres com espaços?",
     faq1a: "Caracteres normalmente contam letras, números e pontuação sem incluir espaços. Já caracteres com espaços somam também os espaços em branco no total.",
     faq2q: "O contador funciona com textos em outros idiomas?",
