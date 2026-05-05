@@ -215,10 +215,11 @@ defineI18nRoute({
                 :options="fontOptions"
               />
               <div class="form-control w-full">
-                <label class="label">
+                <label for="width" class="label">
                   <span class="label-text font-bold text-base-content text-xs uppercase tracking-wider">{{ t('width') }}</span>
                 </label>
                 <select
+                  id="width"
                   v-model="state.width"
                   class="select select-bordered select-lg bg-base-200 rounded-2xl w-full transition-all duration-300 focus:border-primary"
                 >

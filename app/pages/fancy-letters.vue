@@ -166,7 +166,7 @@ defineI18nRoute({
       <div class="form-control w-full">
         <label for="fancy-input" class="label">
           <span class="label-text font-bold text-base-content">{{ t('in_label') }}</span>
-          <span class="label-text-alt text-base-content/50 text-sm">
+          <span class="label-text-alt text-base-content/70 text-sm">
             {{ state.text.length }} / {{ MAX_INPUT_LENGTH }}
           </span>
         </label>
