@@ -17,8 +17,6 @@ declare global {
 
 const { t } = useI18n({ useScope: 'local' })
 
-const QR_SCRIPT_ID = 'qr-code-styling-script'
-const QR_SCRIPT_SRC = 'https://cdn.jsdelivr.net/npm/@charles-goode/qr-code-styling@1.6.2/lib/qr-code-styling.js'
 
 const state = reactive({
   type: 'URL',
@@ -113,7 +111,13 @@ usePageJsonLd({
 useHead({
   title: t('page_title'),
   meta: [
-    { name: 'description', content: t('meta') }
+    { name: 'description', content: t('meta') },
+    { property: 'og:title', content: t('og_title') },
+    { property: 'og:description', content: t('meta') },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:title', content: t('og_title') },
+    { name: 'twitter:description', content: t('meta') }
   ]
 })
 
@@ -131,9 +135,7 @@ watch(state, () => {
 
 const previewContainerRef = ref<HTMLElement | null>(null)
 
-onMounted(async () => {
-  await loadQrLibrary()
-  
+onMounted(() => {
   // Auto-size based on container if it's the first load
   if (previewContainerRef.value) {
     const width = previewContainerRef.value.clientWidth - 24 // Subtract padding
@@ -142,37 +144,14 @@ onMounted(async () => {
       state.height = Math.floor(width)
     }
   }
-
-  qrLoaded.value = true
-  generate()
 })
 
 onBeforeUnmount(() => {
   if (logoObjectUrl) URL.revokeObjectURL(logoObjectUrl)
 })
 
-function loadQrLibrary() {
-  if (window.QRCodeStyling) return Promise.resolve()
-
-  return new Promise<void>((resolve, reject) => {
-    const existingScript = document.getElementById(QR_SCRIPT_ID) as HTMLScriptElement | null
-
-    if (existingScript) {
-      existingScript.addEventListener('load', () => resolve(), { once: true })
-      existingScript.addEventListener('error', () => reject(new Error('QR Code script failed')), { once: true })
-      return
-    }
-
-    const script = document.createElement('script')
-    script.id = QR_SCRIPT_ID
-    script.src = QR_SCRIPT_SRC
-    script.async = true
-    script.crossOrigin = 'anonymous'
-    script.referrerPolicy = 'no-referrer'
-    script.addEventListener('load', () => resolve(), { once: true })
-    script.addEventListener('error', () => reject(new Error('QR Code script failed')), { once: true })
-    document.head.appendChild(script)
-  })
+function removeAccents(str: string) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
 function generate() {
@@ -242,10 +221,10 @@ function getData() {
    const pixKey = state.pix_key.trim()
    if (!pixKey) return ''
  
-   const name = state.pix_name.trim() || 'RECEBEDOR'
-   const city = state.pix_city.trim() || 'CIDADE'
+   const name = removeAccents(state.pix_name.trim() || 'RECEBEDOR').toUpperCase().substring(0, 25)
+   const city = removeAccents(state.pix_city.trim() || 'CIDADE').toUpperCase().substring(0, 15)
    const amount = state.pix_amount ? Number(state.pix_amount).toFixed(2) : ''
-   const desc = state.pix_desc.trim()
+   const desc = removeAccents(state.pix_desc.trim()).substring(0, 20)
  
    // Merchant Account Information
    let merchantInfo = '0014br.gov.bcb.pix'
@@ -264,8 +243,8 @@ function getData() {
    }
  
    payload += '5802BR'   // Country Code
-   payload += `59${name.length.toString().padStart(2, '0')}${name.substring(0, 25).toUpperCase()}`
-   payload += `60${city.length.toString().padStart(2, '0')}${city.substring(0, 15).toUpperCase()}`
+   payload += `59${name.length.toString().padStart(2, '0')}${name}`
+   payload += `60${city.length.toString().padStart(2, '0')}${city}`
    payload += '62070503***' // Additional Data Field (Reference Label)
    payload += '6304'      // CRC16 Indicator
  
@@ -357,6 +336,15 @@ defineI18nRoute({
     it: '/generatore-di-qr-code',
     id: '/pembuat-kode-qr'
   }
+})
+
+const { onLoaded } = useScript('https://cdn.jsdelivr.net/npm/@charles-goode/qr-code-styling@1.6.2/lib/qr-code-styling.js', {
+  trigger: 'client'
+})
+
+onLoaded(() => {
+  qrLoaded.value = true
+  generate()
 })
 </script>
 
@@ -803,6 +791,102 @@ defineI18nRoute({
 <i18n lang="yaml">
 {
   en: {
+    title: "QR Code Generator",
+    page_title: "QR Code Generator with Logo - Create Free Custom QR Code",
+    meta: "Create free custom QR codes for URL, vCard, Wi-Fi, PIX, Email, SMS and text. Adjust colors, shapes, size, logo and download your high-resolution image.",
+    og_title: "Free Online QR Code Generator with Logo",
+    intro: "Create custom QR codes simply and for free, with real-time preview and high-resolution image download. Generate the main types of QR codes with full control over colors, styles, and logos.",
+    data: "QR Code Data",
+    data_opt: "Data type",
+    text: "Text",
+    text_placeholder: "Type the text that will be saved in the QR Code",
+    first_name: "First Name",
+    last_name: "Last Name",
+    address: "Address",
+    street: "Street",
+    city: "City",
+    state: "State",
+    zip: "Zip Code",
+    country: "Country",
+    phone: "Phone",
+    cell: "Cell",
+    tel_work: "Work Phone",
+    org: "Organization",
+    job: "Job Title",
+    subject: "Subject",
+    msg: "Message",
+    ssid: "Network Name",
+    cripto: "Encryption",
+    none: "None",
+    hidden: "Hidden Wi-Fi network",
+    pass: "Password",
+    pix_key: "PIX Key",
+    pix_name: "Receiver Name",
+    pix_city: "City",
+    pix_amount: "Amount",
+    colors_label: "Colors",
+    customization: "Customization",
+    width: "Width",
+    height: "Height",
+    margin: "Margin",
+    logo: "Logo",
+    logo_help: "Add an image to the center of the QR Code and test reading before printing.",
+    choose_logo: "Choose logo",
+    logo_margin: "Logo margin",
+    hide: "Hide dots behind logo",
+    remove: "Remove",
+    dot_style: "Dot style",
+    corner_style: "Corner style",
+    square: "Square",
+    dots: "Dots",
+    rounded: "Rounded",
+    classy: "Classy",
+    dot_color: "Dots",
+    corners_color: "Corners",
+    corners_dot_color: "Corner center",
+    bck_clr: "Background",
+    preview: "Preview",
+    scan_tip: "Tip: use good contrast between dots and background to keep the QR Code easy to scan.",
+    download_aria: "Download QR Code as PNG image",
+    download_success: "QR Code downloaded successfully.",
+    features_title: "QR Code generator features",
+    feature_1: "QR Code creation for URL, vCard contacts, Wi-Fi, PIX, Email, SMS and text",
+    feature_2: "Customization of colors, dot shapes, corners, size and margin",
+    feature_3: "Central logo upload with margin control and hidden background",
+    feature_4: "Real-time preview and PNG download",
+    use_cases_title: "Where to use custom QR Codes",
+    use_cases_desc: "Custom QR codes help connect physical materials to digital experiences without requiring the person to manually type links or data.",
+    uc_1_title: "Marketing and printed materials",
+    uc_1_desc: "Include QR codes on cards, folders, packaging, banners and posters to lead visitors to pages, catalogs, coupons and campaigns.",
+    uc_2_title: "Digital business card",
+    uc_2_desc: "Use the vCard template to share name, phone, email, company, job title, address and website in a single scan.",
+    uc_3_title: "Quick Wi-Fi access",
+    uc_3_desc: "Create QR codes for Wi-Fi networks and allow customers, guests or teams to connect without typing the password.",
+    uc_4_title: "Service and communication",
+    uc_4_desc: "Generate QR codes for pre-filled SMS or email and reduce steps in forms, support, reservations and quote requests.",
+    how_to_title: "How to create a QR Code",
+    how_1_title: "Choose content type",
+    how_1_desc: "Select a content type and fill in only the necessary fields for that format.",
+    how_2_title: "Customize appearance",
+    how_2_desc: "Adjust size, margin, colors, dot shape and corners. If you want, add your brand logo to the center.",
+    how_3_title: "Test and download in PNG",
+    how_3_desc: "Check the preview, scan with your phone to validate and download the PNG file ready to use digitally or in print.",
+    types_title: "Available QR Code types",
+    types_desc: "Each type generates a structure compatible with common QR code readers on modern smartphones.",
+    type_url: "URL: directs the person to a website, landing page, form, menu, social profile or online file.",
+    type_vcard: "vCard: saves contact data directly to the phone's agenda.",
+    type_email: "Email: opens the email app with recipient, subject and message already filled in.",
+    type_wifi: "Wi-Fi: facilitates connection to a network with SSID, password and encryption type.",
+    type_sms: "SMS: opens a text message with phone and content defined.",
+    type_pix: "PIX: generates a static QR Code for receiving payments and transfers.",
+    type_text: "Text: stores simple information that appears directly upon scanning.",
+    faq_title: "Frequently Asked Questions",
+    faq_1_q: "Can I add my logo to the QR Code?",
+    faq_1_a: "Yes. Use the logo option to upload an image and position it in the center. To keep reading reliable, prefer simple logos and test the QR code before printing.",
+    faq_3_q: "Does the QR Code still work with different colors and shapes?",
+    faq_3_a: "Yes, as long as there is enough contrast between the dots and the background. Avoid very light colors on dots and always test reading on your phone.",
+    faq_4_q: "What format is the download in?",
+    faq_4_a: "Files are generated in high-quality PNG format, ideal for digital use and printing.",
     see1: "Emoji Picker",
     see2: "Barcode Generator",
     see3: "Random Colors",
