@@ -470,9 +470,9 @@ defineI18nRoute({
   pt: {
     title: "Gerador de Código de Barras",
     page_title: "Gerador de Código de Barras - Criar Códigos Online Grátis",
-    meta: "Crie códigos de barras online grátis em diferentes formatos. Personalize tamanho, cores, texto e baixe como imagem PNG.",
+    meta: "Gerador de código de barras online grátis. Crie etiquetas em CODE128, EAN-13, UPC, CODE39 e mais. Personalize e baixe em Imagem PNG.",
     og_title: "Gerador de Código de Barras Online e Grátis",
-    intro: "Gere códigos de barras personalizados para produtos, etiquetas, estoque, ingressos e materiais internos. A visualização prévia atualiza em tempo real de acordo com as configurações escolhidas, mostrando até que momento o conteúdo é válido para o formato em questão.",
+    intro: "Gere códigos de barras profissionais prontos para impressão, com processamento local e instantâneo. Ideal para etiquetas de produtos, controle de estoque e logística, com visualização em tempo real e validação de formatos.",
 
     data: "Dados do código",
     text: "Código",
@@ -513,7 +513,7 @@ defineI18nRoute({
     feature_1: "Suporte a CODE128, EAN, UPC, CODE39, CODE93, ITF, MSI, Pharmacode e Codabar.",
     feature_2: "Ajuste de altura, largura das barras, margens, fonte, tamanho e posição do texto.",
     feature_3: "Personalização das cores das barras e do fundo com prévia em tempo real.",
-    feature_4: "Download em imagem PNG, direto no navegador, sem necessidade de cadastro.",
+    feature_4: "Download em PNG de alta resolução, pronto para impressão nítida em etiquetas, embalagens e documentos.",
 
     use_cases_title: "Onde usar códigos de barras",
     use_cases_desc: "Códigos de barras são úteis quando você precisa identificar itens de forma rápida, padronizada e compatível com leitores comuns.",
