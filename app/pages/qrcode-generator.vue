@@ -17,6 +17,8 @@ declare global {
 
 const { t } = useI18n({ useScope: 'local' })
 
+const PIX_GUI = 'br.gov.bcb.pix'
+const PIX_EMPTY_MESSAGE = 'Informe uma chave PIX para gerar o QR Code'
 
 const state = reactive({
   type: 'URL',
@@ -91,7 +93,12 @@ const hasCustomData = computed(() => {
     state.card_first_name ||
     state.card_last_name ||
     state.card_cell ||
-    state.card_email
+    state.card_email ||
+    state.pix_key ||
+    state.pix_name ||
+    state.pix_city ||
+    state.pix_amount ||
+    state.pix_desc
   )
 })
 
@@ -214,41 +221,53 @@ function getData() {
        return generatePixPayload()
      default:
        return state.text.trim() || t('text_placeholder')
-   }
+ }
  }
  
  function generatePixPayload() {
    const pixKey = state.pix_key.trim()
-   if (!pixKey) return ''
+   if (!pixKey) return PIX_EMPTY_MESSAGE
  
    const name = removeAccents(state.pix_name.trim() || 'RECEBEDOR').toUpperCase().substring(0, 25)
    const city = removeAccents(state.pix_city.trim() || 'CIDADE').toUpperCase().substring(0, 15)
-   const amount = state.pix_amount ? Number(state.pix_amount).toFixed(2) : ''
+   const amount = formatPixAmount(state.pix_amount)
    const desc = removeAccents(state.pix_desc.trim()).substring(0, 20)
  
    // Merchant Account Information
-   let merchantInfo = '0014br.gov.bcb.pix'
-   merchantInfo += `01${pixKey.length.toString().padStart(2, '0')}${pixKey}`
-   if (desc) {
-     merchantInfo += `02${desc.length.toString().padStart(2, '0')}${desc}`
-   }
+   let merchantInfo = emvField('00', PIX_GUI)
+   merchantInfo += emvField('01', pixKey)
+   if (desc) merchantInfo += emvField('02', desc)
  
-   let payload = '000201' // Payload Format Indicator
-   payload += `26${merchantInfo.length.toString().padStart(2, '0')}${merchantInfo}`
-   payload += '52040000' // Merchant Category Code
-   payload += '5303986'  // Transaction Currency (BRL)
+   let payload = emvField('00', '01') // Payload Format Indicator
+   payload += emvField('26', merchantInfo)
+   payload += emvField('52', '0000') // Merchant Category Code
+   payload += emvField('53', '986')  // Transaction Currency (BRL)
    
    if (amount && amount !== '0.00') {
-     payload += `54${amount.length.toString().padStart(2, '0')}${amount}`
+     payload += emvField('54', amount)
    }
  
-   payload += '5802BR'   // Country Code
-   payload += `59${name.length.toString().padStart(2, '0')}${name}`
-   payload += `60${city.length.toString().padStart(2, '0')}${city}`
-   payload += '62070503***' // Additional Data Field (Reference Label)
+   payload += emvField('58', 'BR')   // Country Code
+   payload += emvField('59', name)
+   payload += emvField('60', city)
+   payload += emvField('62', emvField('05', '***')) // Additional Data Field (Reference Label)
    payload += '6304'      // CRC16 Indicator
  
    return payload + calculateCRC16(payload)
+ }
+
+ function emvField(id: string, value: string) {
+   return `${id}${value.length.toString().padStart(2, '0')}${value}`
+ }
+
+ function formatPixAmount(value: string) {
+   const normalized = String(value).trim().replace(',', '.')
+   if (!normalized) return ''
+
+   const amount = Number(normalized)
+   if (!Number.isFinite(amount) || amount <= 0) return ''
+
+   return amount.toFixed(2)
  }
  
  function calculateCRC16(data: string) {
