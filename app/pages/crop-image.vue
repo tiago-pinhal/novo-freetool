@@ -60,13 +60,7 @@ useHead({
     { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css' },
   ],
   meta: [
-    { name: 'description', content: t('meta') },
-    { property: 'og:title', content: t('og_title') },
-    { property: 'og:description', content: t('meta') },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary' },
-    { name: 'twitter:title', content: t('og_title') },
-    { name: 'twitter:description', content: t('meta') },
+    { name: 'description', content: t('meta') }
   ],
 })
 
@@ -377,7 +371,6 @@ en:
   title: "Crop Image"
   page_title: "Crop Image Online - Free form or presets"
   meta: "Crop images online for free with presets for Instagram, YouTube, TikTok, and more. Rotate, flip, and export as PNG, JPEG, or WebP."
-  og_title: "Free Online Image Cropper"
   intro: "Crop your images quickly and easily with ready-made presets for the main social networks. All processing happens locally in your browser, which means your images never leave your device, ensuring complete privacy."
   upload_hint: "Supports JPG, PNG, WebP, GIF, and more"
   aspect_ratio: "Aspect Ratio"
@@ -445,7 +438,6 @@ pt:
   title: "Recortar Imagem"
   page_title: "Recortar Imagem Online - Formato livre ou predefinido para Redes Sociais"
   meta: "Recorte imagens online gratuitamente com formatos para Instagram, YouTube, TikTok e mais. Gire, espelhe e exporte como PNG, JPEG ou WebP."
-  og_title: "Recortar Imagem Online Grátis"
   intro: "Recorte suas imagens de forma rápida e fácil com formatos prontos para as principais redes sociais. Todo o processamento acontece localmente no seu navegador, ou seja, suas imagens nunca saem do seu dispositivo, garantindo privacidade absoluta."
   upload_hint: "Suporta JPG, PNG, WebP, GIF e mais"
   aspect_ratio: "Proporção"
@@ -513,7 +505,6 @@ es:
   title: "Recortar Imagen"
   page_title: "Recortar Imagen Online - Formato libre o predefinido"
   meta: "Recorta imágenes online gratis con formatos para Instagram, YouTube, TikTok y más. Gira, voltea y exporta como PNG, JPEG o WebP."
-  og_title: "Recortador de Imagen Online Gratis"
   intro: "Recorta tus imágenes de forma rápida y sencilla con formatos listos para las principales redes sociales. Todo el procesamiento ocurre localmente en tu navegador, es decir, tus imágenes nunca salen de tu dispositivo, garantizando privacidad total."
   upload_hint: "Compatible con JPG, PNG, WebP, GIF y más"
   aspect_ratio: "Proporción"
@@ -700,7 +691,6 @@ de:
   title: "Bild Zuschneiden"
   page_title: "Bild Online Zuschneiden - Freiform oder Voreinstellungen"
   meta: "Schneide Bilder online kostenlos mit Vorlagen für Instagram, YouTube, TikTok und mehr zu. Drehe, spiegele und exportiere als PNG, JPEG oder WebP."
-  og_title: "Kostenloses Online-Bildzuschnitt-Tool"
   intro: "Schneide deine Bilder schnell und einfach mit fertigen Vorlagen für die wichtigsten sozialen Netzwerke zu. Die gesamte Verarbeitung findet lokal in deinem Browser statt, das heißt, deine Bilder verlassen niemals dein Gerät und deine Privatsphäre bleibt vollständig geschützt."
   upload_hint: "Unterstützt JPG, PNG, WebP, GIF und mehr"
   aspect_ratio: "Seitenverhältnis"

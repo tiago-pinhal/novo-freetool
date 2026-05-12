@@ -51,6 +51,13 @@ usePageJsonLd({
   ]
 })
 
+useHead({
+  title: t('m_title'),
+  meta: [
+    { name: 'description', content: t('meta') },
+  ]
+})
+
 const state = reactive({
   tab: 0,
   recentlyCopied: [] as string[],

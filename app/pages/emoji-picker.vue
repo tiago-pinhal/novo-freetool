@@ -38,6 +38,13 @@ usePageJsonLd({
   ]
 })
 
+useHead({
+  title: t('m_title'),
+  meta: [
+    { name: 'description', content: t('meta') },
+  ]
+})
+
 const state = reactive({
   keyword: '',
   tab: 0,
