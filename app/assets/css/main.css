@@ -71,6 +71,16 @@ textarea:focus,
   vertical-align: middle;
 }
 
+select option {
+  background-color: #191e24;
+  color: #a6adbb;
+}
+
+select option:hover {
+  background-color: #252d38;
+  color: #a6adbb;
+}
+
 .adsense-wrapper {
   transition: all 0.3s ease;
 }
